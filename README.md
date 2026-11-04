@@ -77,7 +77,7 @@ These were measured live on Meta's models; the full study is in **[EVALUATION.md
 | Those 100 reports, fact-checked claim by claim by Muse Spark 1.3 with web search | 541 of 554 claims supported, 6 contradicted (near misses, like a bus that's 75 minutes, not an hour) |
 | Cost per question | About half a cent; Heads-up adds about $0.25 an hour of nearby conversation |
 | Cost of all six steps above | About $0.10 to $0.32, mostly the research job ([details](EVALUATION.md#7-what-the-public-demo-costs-to-run)) |
-| Unit tests | 99, all using fake models and fake speech recognition |
+| Unit tests | 102, all using fake models and fake speech recognition |
 
 ## How it works: one cascade over Meta's models
 

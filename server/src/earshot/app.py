@@ -27,6 +27,7 @@ OPEN: Counter[str] = Counter()  # live sessions per client IP
 # Shared: research jobs outlive the connection that started them, and (kept on disk) the server process too.
 RESEARCHER = Researcher(CFG, BUDGET, store=DATA_DIR / "research")
 BRAIN_CHECK_S = 300
+REFUSALS = DATA_DIR / "refused.json"  # on the volume: a refusing brain stays skipped across restarts
 
 
 async def watch_brain() -> None:
@@ -41,12 +42,14 @@ async def watch_brain() -> None:
             agent.UNAVAILABLE[brain] = time.monotonic() + BRAIN_CHECK_S * 2
         elif ok:
             agent.UNAVAILABLE.pop(brain, None)
+        agent.save_refusals(REFUSALS)
         log.info("brain %s check: %s", brain, {True: "live", False: "refused, using fallback", None: "unsure"}[ok])
         await asyncio.sleep(BRAIN_CHECK_S)
 
 
 @asynccontextmanager
 async def lifespan(_: FastAPI):
+    agent.restore_refusals(REFUSALS)  # before the first request: the first turn and /healthz know at once
     watcher = asyncio.create_task(watch_brain())
     if n := RESEARCHER.resume():
         log.info("resumed %d research job(s) from before the restart", n)

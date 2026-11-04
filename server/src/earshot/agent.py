@@ -79,6 +79,34 @@ UNAVAILABLE: dict[str, float] = {}  # model key -> monotonic time until which we
 MAX_HISTORY = 40  # resent items per conversation; older whole turns are dropped
 
 
+def save_refusals(path) -> None:
+    """Writes UNAVAILABLE to disk with wall-clock deadlines, so a restart doesn't forget a refusing brain.
+
+    Fly's trial restarts the server every 5 minutes. Without this, each fresh start would try the refusing brain
+    again on its first turn (seconds lost before the fallback answers) and report it live on /healthz."""
+    now_m, now_w = time.monotonic(), time.time()
+    left = {k: now_w + (t - now_m) for k, t in UNAVAILABLE.items() if t > now_m}
+    try:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        tmp = path.with_suffix(".tmp")
+        tmp.write_text(json.dumps(left))
+        tmp.replace(path)
+    except OSError:
+        log.warning("couldn't save which models are refused", exc_info=True)
+
+
+def restore_refusals(path) -> None:
+    """Reads back what save_refusals wrote before a restart; deadlines already passed are dropped."""
+    try:
+        saved = json.loads(path.read_text())
+    except (OSError, ValueError):
+        return
+    now_m, now_w = time.monotonic(), time.time()
+    for key, until in saved.items() if isinstance(saved, dict) else ():
+        if isinstance(until, (int, float)) and until > now_w:
+            UNAVAILABLE[key] = max(UNAVAILABLE.get(key, 0), now_m + (until - now_w))
+
+
 def user_now(tz: str | None) -> datetime:
     try:
         return datetime.now(ZoneInfo(tz or "UTC"))

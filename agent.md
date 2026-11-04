@@ -88,5 +88,6 @@ The phone or browser speaks each answer into the headset. Architecture and the c
   - each device's conversation (`history/`, without photos). It's deleted on a clean close (codes 1000/1001), and ignored and deleted after 15 minutes.
   - research in flight (`research/pending/`, the Wonder response id), which `RESEARCHER.resume()` polls again at startup.
   - undelivered reports (`research/inbox/`).
+  - models the API refused, with when to try them again (`refused.json`, written by `watch_brain` after each check). The app restores it before serving, so the first turn and `/healthz` already know about a refusal.
 - The web page resends a question that got no reply at all before a reconnect.
 - The relay reports `relayDown` after 3 refused attempts in a row, and the page shows "can't hear you".

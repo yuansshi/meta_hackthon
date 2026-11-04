@@ -29,7 +29,8 @@ All 18 of 18 trials passed: 3 trials of each judge prompt against https://earsho
   - a photo question was still answered correctly from the image, without SAM 3.1's outline;
   - speech recognition accepted each session, then closed it (1008). The relay now counts a session as working only once it sends something, and the page shows its "can't hear you" notice 2.7 s after a hands-free session starts;
   - all spoken prompts failed until credit is added;
-  - a cold start still worked, after the trial stopped the machine at 10:14 AM: the page loaded in 6.3 s, and a typed question's first word came 10.3 s after asking (4.4 s on the next visit), against 2.6 s on Meta's hosted Muse Spark.
+  - a cold start still worked, after the trial stopped the machine at 10:14 AM: the page loaded in 6.3 s, and a typed question's first word came 10.3 s after asking (4.4 s on the next visit), against 2.6 s on Meta's hosted Muse Spark;
+  - each fresh start had forgotten the refusal, so its first turn tried Meta again before falling back, and `/healthz` reported the brain live until then. The server now keeps refusals on the volume (`refused.json`) across restarts. The next cold start, at 10:58 AM, went straight to the fallback: the page in 5.4 s, the first word in 4.2 s. Muse Spark Open's own times vary (3.3 to 6.1 s on warm visits).
 - **Speech recognition:** a transcript arrives 0.17 to 0.30 s after speech ends.
 - **History:** resending the conversation, instead of chaining with `previous_response_id`, cut the answer after a tool from 7.3 s to 2.1 s (`scripts/probe.py`).
 - **Unit tests:** 99, all using fake models and fake speech recognition.
@@ -230,7 +231,7 @@ Earshot itself records no video. For demo footage of other people, we tested the
 Each model does the one job it measured best at. The cascade sends everything to the cheapest model that can handle it, and hands off to a bigger one only when needed.
 
 **The honest costs:**
-- More parts can fail. We cover that with the fallback and the 99 tests.
+- More parts can fail. We cover that with the fallback and the 102 tests.
 - Each extra stage adds a little latency.
 - Any always-listening feature has to earn trust. That's why Heads-up and Rewind are opt-in, text-only, memory-only and ask first.
 
