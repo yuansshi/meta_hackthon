@@ -95,7 +95,7 @@ async def test_wake_word_turn_runs_a_device_tool_and_resends_history(env):
     assert call["name"] == "create_reminder" and call["args"]["title"] == "buy coffee filters"
     await s.handle_text({"type": "tool_result", "id": call["id"], "ok": True, "result": {"ok": True, "id": "R1"}})
     await s.turn
-    assert says(sent) == ["On it.", question["question"], "Done, coffee filters at six."]
+    assert says(sent) == ["Okay.", question["question"], "Done, coffee filters at six."]
     first, second = models["meta"].responses.calls
     assert first["input"] == [{"role": "user", "content": "remind me to buy coffee filters at 6"}]
     assert first["reasoning"] == {"effort": "minimal"} and {"type": "web_search"} in first["tools"]
@@ -394,6 +394,50 @@ async def test_narration_beside_a_tool_call_is_not_spoken(env):
     await s.handle_text({"type": "text", "text": "rain in seattle?"})
     await s.turn
     assert says(sent) == ["On it.", "Dry and overcast all afternoon."]
+
+
+async def test_narration_before_a_search_after_a_tool_is_not_spoken(env):
+    from types import SimpleNamespace as NS
+
+    from fakes import completed, item
+    search = item("web_search_call", id="ws1", status="completed")
+    after_tool = [NS(type="response.output_item.added", item=item("message")),
+                  NS(type="response.output_text.delta", delta="Got the weather. "),
+                  NS(type="response.output_text.delta", delta="Now I'll check the hours."),
+                  NS(type="response.output_item.added", item=search),
+                  NS(type="response.output_item.added", item=item("message")),
+                  NS(type="response.output_text.delta", delta="Rain after three, "),
+                  NS(type="response.output_text.delta", delta="and they close at nine."),
+                  completed("r2", [item("message"), search, item("message")])]
+    s, sent, models = await make_session(meta=[
+        tool_reply("r1", "get_weather", {"place": "Seattle"}, "c1"), after_tool])
+    await s.handle_text({"type": "text", "text": "rain, and is the store open till nine?"})
+    await s.turn
+    assert says(sent) == ["On it.", "Rain after three, and they close at nine."]
+
+
+async def test_text_cut_off_by_a_search_does_not_run_into_the_answer(env):
+    from types import SimpleNamespace as NS
+
+    from fakes import completed, item
+    search = item("web_search_call", id="ws1", status="completed")
+    events = [NS(type="response.output_item.added", item=item("message")),
+              NS(type="response.output_text.delta", delta="Let me look that up"),
+              NS(type="response.output_item.added", item=search),
+              NS(type="response.output_item.added", item=item("message")),
+              NS(type="response.output_text.delta", delta="They close at nine tonight."),
+              completed("r1", [item("message"), search, item("message")])]
+    s, sent, models = await make_session(meta=[events])
+    await s.handle_text({"type": "text", "text": "are they open till nine?"})
+    await s.turn
+    assert says(sent) == ["Let me check.", "They close at nine tonight."]
+
+
+def test_confirm_question_reads_a_capitalized_title_as_a_verb():
+    from earshot.agent import confirm_question
+    assert (confirm_question("create_reminder", {"title": "Go to Clement Street Night Market"}, None)
+            == "Should I remind you to go to Clement Street Night Market?")
+    assert confirm_question("create_reminder", {"title": "Dentist"}, None) == "Should I remind you about Dentist?"
 
 
 def test_split_report_skips_wondering_out_loud():

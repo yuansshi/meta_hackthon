@@ -108,7 +108,9 @@ DEVICE_TOOLS = {
         "create_reminder",
         "Add a reminder on the user's phone. `due` is local time in ISO 8601 (for example "
         "2026-11-03T18:00); leave it out when the user gave no time.",
-        obj({"title": {"type": "string"}, "due": {"type": "string"}, "notes": {"type": "string"}}, ("title",)),
+        obj({"title": {"type": "string", "description": "What to do, as a short phrase that starts with a verb, "
+                                                        "like 'Buy coffee filters' or 'Go to the night market'."},
+             "due": {"type": "string"}, "notes": {"type": "string"}}, ("title",)),
         "device", side_effect=True),
 }
 

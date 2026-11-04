@@ -93,7 +93,7 @@ def confirm_question(name: str, args: dict, tz: str | None) -> str:
     if name == "create_reminder":
         title = str(args.get("title") or "that").strip().rstrip(".")
         first = title.split()[0].lower() if title.split() else ""
-        about = f"to {title}" if first in ACTION_VERBS else f"about {title}"
+        about = f"to {title[0].lower()}{title[1:]}" if first in ACTION_VERBS else f"about {title}"
         return f"Should I remind you {about}{say_when(args.get('due'), tz)}?"
     return f"Should I {name.replace('_', ' ')}?"
 
@@ -279,7 +279,7 @@ class Agent:
             self.items.append(user)
             pending = self.items
         spoke = stats.says > 0
-        for _ in range(self.cfg["turns"]["max_tool_rounds"]):
+        for round_no in range(self.cfg["turns"]["max_tool_rounds"]):
             stats.rounds += 1
             if not chained:
                 self.items = pending = trim_history(self.items)
@@ -288,29 +288,38 @@ class Agent:
                           stream=True)
             if chained and self.prev_id:
                 kwargs["previous_response_id"] = self.prev_id
-            splitter, final, called = Sentences(), None, False
+            # Once a tool has run the user has heard "On it", so the reply is held until no further tool call
+            # follows: text before a tool call only narrates it ("Got your list, now I'll check the hours").
+            splitter, final, called, hold, held = Sentences(), None, False, round_no > 0, []
             stream = await self.client(m).responses.create(**kwargs)
             async for ev in stream:
                 if ev.type == "response.output_text.delta":
                     if called:
                         continue  # narration beside a tool call; the next round has the real answer
                     for sentence in splitter.feed(ev.delta):
-                        spoke = True
-                        await say(sentence)
+                        if hold:
+                            held.append(sentence)
+                        else:
+                            spoke = True
+                            await say(sentence)
                 elif ev.type == "response.output_item.added":
+                    if ev.item.type in ACK:  # unspoken text before a tool call only announced it
+                        splitter, held = Sentences(), []
                     called = called or ev.item.type == "function_call"
                     if ev.item.type in ACK and not spoke:
                         spoke = True
-                        await say(ACK[ev.item.type])
+                        await say(self.ack(ev.item.type, getattr(ev.item, "name", None)))
                 elif ev.type in ("response.completed", "response.incomplete"):
                     final = ev.response
                 elif ev.type == "response.failed":
                     raise AgentError(f"model failed: {getattr(ev.response, 'error', None)}")
                 elif ev.type == "error":
                     raise AgentError(f"model error: {getattr(ev, 'message', ev)}")
-            if (tail := splitter.flush()) and not called:
-                spoke = True
-                await say(tail)
+            tail = splitter.flush()
+            if not called:
+                for sentence in held + ([tail] if tail else []):
+                    spoke = True
+                    await say(sentence)
             if final is None:
                 raise AgentError("stream ended without a final response")
             self._account(m, final, stats)
@@ -339,7 +348,7 @@ class Agent:
             strip_images(self.messages)
         self.messages.append({"role": "user", "content": user_content(text, image, "chat")})
         spoke = stats.says > 0
-        for _ in range(self.cfg["turns"]["max_tool_rounds"]):
+        for round_no in range(self.cfg["turns"]["max_tool_rounds"]):
             stats.rounds += 1
             self.messages = trim_history(self.messages)
             extra = {"reasoning_effort": m["reasoning_effort"]} if m.get("reasoning_effort") else {}
@@ -348,6 +357,7 @@ class Agent:
                 tools=tools, max_tokens=m["max_output_tokens"], stream=True,
                 stream_options={"include_usage": True}, **extra)
             splitter, content, calls, usage = Sentences(), "", {}, None
+            hold, held = round_no > 0, []  # as in _responses_turn: after a tool, speak once no tool call follows
             async for ch in stream:
                 usage = ch.usage or usage
                 if not ch.choices:
@@ -356,8 +366,11 @@ class Agent:
                 if d.content:
                     content += d.content
                     for sentence in [] if calls else splitter.feed(d.content):  # silent once a tool call starts
-                        spoke = True
-                        await say(sentence)
+                        if hold:
+                            held.append(sentence)
+                        else:
+                            spoke = True
+                            await say(sentence)
                 for tc in d.tool_calls or []:
                     slot = calls.setdefault(tc.index, {"id": "", "name": "", "arguments": ""})
                     slot["id"] = tc.id or slot["id"]
@@ -366,10 +379,12 @@ class Agent:
                         slot["arguments"] += tc.function.arguments or ""
                     if not spoke:
                         spoke = True
-                        await say(ACK["function_call"])
-            if (tail := splitter.flush()) and not calls:
-                spoke = True
-                await say(tail)
+                        await say(self.ack("function_call", slot["name"]))
+            tail = splitter.flush()
+            if not calls:
+                for sentence in held + ([tail] if tail else []):
+                    spoke = True
+                    await say(sentence)
             if usage:
                 cached = getattr(getattr(usage, "prompt_tokens_details", None), "cached_tokens", 0) or 0
                 cost = token_cost(m, usage.prompt_tokens, cached, usage.completion_tokens)
@@ -399,6 +414,15 @@ class Agent:
         stats.cost_usd += cost
         self.budget.add(cost)
 
+    def asks_first(self, name: str | None) -> bool:
+        """Side-effect tools ask "Should I…?" and wait for a yes before they run."""
+        tool = self.tools.get(name or "")
+        return bool(tool and tool.side_effect and self.confirm and self.cfg["turns"].get("confirm_side_effects", True))
+
+    def ack(self, kind: str, name: str | None = None) -> str:
+        """What the user hears when a tool starts. "Okay." leads into the "Should I…?" question instead."""
+        return "Okay." if self.asks_first(name) else ACK[kind]
+
     async def _run_tool(self, name: str, arguments: str, emit: Emit, device_call: DeviceCall,
                         stats: TurnStats) -> str:
         """Runs one tool call with a receipt; returns the JSON string the model sees."""
@@ -412,8 +436,7 @@ class Agent:
         try:
             if tool is None:
                 result = {"error": f"unknown tool {name!r}"}
-            elif (tool.side_effect and self.confirm and self.cfg["turns"].get("confirm_side_effects", True)
-                  and not await self.confirm(confirm_question(name, args, self.context.get("tz")))):
+            elif self.asks_first(name) and not await self.confirm(confirm_question(name, args, self.context.get("tz"))):
                 result = {"cancelled": True, "reason": "the user didn't say yes, so nothing was changed"}
             elif tool.where == "server":
                 result = await tool.run(**args)

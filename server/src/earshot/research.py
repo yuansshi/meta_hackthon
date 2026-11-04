@@ -43,8 +43,9 @@ TOOL_DESCRIPTION = (
     "me' or 'figure out', or when a good answer clearly needs more than one quick search. After calling it, "
     "tell the user in a few words that you'll get back to them; don't answer the question yourself.")
 TOOL_PARAMETERS = obj({
-    "goal": {"type": "string", "description": "What to find out, as a short noun phrase, e.g. "
-                                              "'the best e-bikes under $1,500 for a hilly commute'."},
+    "goal": {"type": "string", "description": "What to find out, as a short phrase that reads naturally after "
+                                              "'I looked into', e.g. 'the best e-bikes under $1,500 for a hilly "
+                                              "commute' or 'whether Pike Place Market is open late tonight'."},
     "context": {"type": "string", "description": "Anything useful from the conversation: where the user "
                                                  "is, preferences, constraints, dates."},
 }, ("goal",))
@@ -110,7 +111,8 @@ class Researcher:
         self.tasks.add(task)
         task.add_done_callback(self.tasks.discard)
         return {"started": True, "job": job.id, "model": model_cfg(self.cfg, self.cfg["background"])["id"],
-                "expect": "a minute or two"}
+                "expect": "a minute or two",
+                "tell_user": "only that you'll get back to them, in under ten words. The app already said 'On it'."}
 
     async def _run(self, job: Job) -> None:
         entry = job.actions.start("research", {"goal": job.goal}, "server")
