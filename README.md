@@ -63,7 +63,8 @@ These were measured live on Meta's models; the full study is in **[EVALUATION.md
 | Spoken end to end in 23 languages, live, 3 trials each | Weather 68/69 answered in the language; a reminder confirmed by a spoken yes 62/69 |
 | An hour in a pocket: one session for 70 minutes | 13 of 14 answered, across speech recognition's 60-minute session cap and 3 dropped connections |
 | A server restart mid-session (the Fly trial forces one every 5 minutes), 3 trials | Reconnected in 5.4 to 6.1 s; the conversation and a research job in flight both survived, 3/3 |
-| Muse Wonder research report | 20 of 20 varied jobs reported back: 29 s and $0.12 at the median, 6.5 web searches |
+| Muse Wonder research report | 100 of 100 varied jobs reported back: 29 s (41 s p90), 7 web searches and $0.13 at the median |
+| Those 100 reports, fact-checked claim by claim by Muse Spark 1.3 with web search | 541 of 554 claims supported, 6 contradicted (near misses, like a bus that's 75 minutes, not an hour) |
 | Cost per question | About half a cent; Heads-up adds about $0.25 an hour of nearby conversation |
 | Cost of all six steps above | About $0.10 to $0.32, mostly the research job ([details](EVALUATION.md#7-what-the-public-demo-costs-to-run)) |
 | Unit tests | 99, all using fake models and fake speech recognition |

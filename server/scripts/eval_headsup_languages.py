@@ -83,10 +83,17 @@ async def main() -> None:
         path.parent.mkdir(parents=True, exist_ok=True)
         if path.exists():
             return json.loads(path.read_text())
+        part = path.with_suffix(".partial.jsonl")  # each translation as it finishes, so a restart keeps them
+        have = {r["id"]: r for r in map(json.loads, part.read_text().splitlines())} if part.exists() else {}
 
         async def one(item):
+            if item["id"] in have:
+                return have[item["id"]]
             async with gate:
-                return await translate(client, item, resolve(code).name)
+                t = await translate(client, item, resolve(code).name)
+            with part.open("a") as f:
+                f.write(json.dumps(t, ensure_ascii=False) + "\n")
+            return t
         out = await asyncio.gather(*(one(it) for it in items))
         path.write_text(json.dumps(out, ensure_ascii=False, indent=1))
         return out
@@ -110,7 +117,21 @@ async def main() -> None:
                 "s": round(time.perf_counter() - t, 3), "cost": cost, "error": error}
 
     t0 = time.perf_counter()
-    rows = await asyncio.gather(*(screen_one(c, it, rep) for c in codes for it in sets[c] for rep in range(args.repeats)))
+    rows_path = (DATA_DIR / "eval-lang" / f"{args.set}-rows.jsonl") if args.set != "overheard" else None
+    done_rows = {}
+    if rows_path and rows_path.exists():
+        for r in map(json.loads, rows_path.read_text().splitlines()):
+            done_rows[(r["language"], r["id"], r["rep"])] = r
+
+    async def kept(c, it, rep):
+        if (c, it["id"], rep) in done_rows:
+            return done_rows[(c, it["id"], rep)]
+        row = await screen_one(c, it, rep)
+        if rows_path and not row["error"]:
+            with rows_path.open("a") as f:
+                f.write(json.dumps(row, ensure_ascii=False) + "\n")
+        return row
+    rows = await asyncio.gather(*(kept(c, it, rep) for c in codes for it in sets[c] for rep in range(args.repeats)))
     summary = {}
     for c in codes:
         rs = [r for r in rows if r["language"] == c]
@@ -139,4 +160,9 @@ async def main() -> None:
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    async def limited():
+        try:
+            await asyncio.wait_for(main(), 255)
+        except TimeoutError:
+            print("not finished: run again")
+    asyncio.run(limited())

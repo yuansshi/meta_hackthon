@@ -28,12 +28,28 @@ async def main() -> None:
     cfg = load_config()
     m = model_cfg(cfg, "muse-spark")
     client = AsyncOpenAI(api_key=api_key(m["api_key_env"]), base_url=m["base_url"], timeout=240, max_retries=2)
-    src = next(p for p in (ROOT / "eval" / "research-2026-11-04.json", ROOT / "eval" / "results" / "research-2026-11-04.json")
-               if p.exists())
-    reports = [r for r in json.loads(src.read_text())["rows"] if r.get("ok")]
+    rows_file = DATA_DIR / "eval-research" / "rows.jsonl"  # eval_research.py's 100 jobs, if they've run
+    if rows_file.exists():
+        reports = [r for r in map(json.loads, rows_file.read_text().splitlines()) if r.get("ok")]
+    else:
+        src = next(p for p in (ROOT / "eval" / "research-2026-11-04.json",
+                               ROOT / "eval" / "results" / "research-2026-11-04.json") if p.exists())
+        reports = [r for r in json.loads(src.read_text())["rows"] if r.get("ok")]
+    checked_file = DATA_DIR / "eval-research" / "checked.jsonl"
+    checked_file.parent.mkdir(parents=True, exist_ok=True)
+    done = {r["goal"]: r for r in map(json.loads, checked_file.read_text().splitlines())} if checked_file.exists() else {}
     gate = asyncio.Semaphore(10)
 
     async def check(r: dict) -> dict:
+        if r["goal"] in done:
+            return done[r["goal"]]
+        row = await _check(r)
+        if "claims" in row:
+            with checked_file.open("a") as f:
+                f.write(json.dumps(row) + "\n")
+        return row
+
+    async def _check(r: dict) -> dict:
         async with gate:
             t = time.perf_counter()
             try:
@@ -51,17 +67,21 @@ async def main() -> None:
             except Exception as e:
                 return {"goal": r["goal"], "error": f"{type(e).__name__}: {e}"[:160]}
 
-    rows = await asyncio.wait_for(asyncio.gather(*(check(r) for r in reports)), 260)
+    try:
+        rows = await asyncio.wait_for(asyncio.gather(*(check(r) for r in reports)), 255)
+    except TimeoutError:
+        print("not finished: run again")
+        return
     claims = [c for r in rows for c in r.get("claims", [])]
     verdicts = {v: sum(c.get("verdict") == v for c in claims) for v in ("supported", "contradicted", "unverifiable")}
     summary = {"reports": len(reports), "checked": sum("claims" in r for r in rows), "claims": len(claims), **verdicts,
                "reports_with_a_contradiction": sum(any(c.get("verdict") == "contradicted" for c in r.get("claims", []))
                                                    for r in rows),
                "cost_usd": round(sum(r.get("cost", 0) for r in rows), 3)}
-    (DATA_DIR / "eval-research-check.json").write_text(json.dumps({"at": time.strftime("%Y-%m-%dT%H:%M:%S"),
+    (DATA_DIR / "eval-research" / "checked-summary.json").write_text(json.dumps({"at": time.strftime("%Y-%m-%dT%H:%M:%S"),
                                                                    "summary": summary, "rows": rows}, indent=1))
     print(json.dumps(summary, indent=1))
-    print("done")
+    print("done" if all("claims" in r for r in rows) else "not finished: run again")
 
 
 if __name__ == "__main__":

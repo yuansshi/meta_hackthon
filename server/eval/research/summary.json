@@ -1,0 +1,1018 @@
+{
+ "at": "2026-11-04T17:24:27",
+ "summary": {
+  "jobs": 100,
+  "reported": 100,
+  "models": [
+   "muse-wonder-1.0"
+  ],
+  "seconds_p50": 28.75,
+  "seconds_max": 55.6,
+  "searches_p50": 7.0,
+  "cost_p50": 0.13425,
+  "cost_total": 14.44,
+  "wall_s": 101.2
+ },
+ "rows": [
+  {
+   "goal": "the best noise-cancelling earbuds under $200",
+   "ok": true,
+   "s": 25.1,
+   "model": "muse-wonder-1.0",
+   "searches": 6,
+   "cost": 0.1181,
+   "summary": "If noise cancelling is your top priority under 200 dollars, buy the Soundcore Liberty 5 Pro for about 170 dollars, unless you use an iPhone. For iPhone users, the AirPods Pro 3 are now appearing at 199 dollars on sale, while the Sony WF-C710N is the cheaper strong-silence pick at about 130 dollars.",
+   "details_chars": 595
+  },
+  {
+   "goal": "which Seattle libraries are open late on Fridays",
+   "ok": true,
+   "s": 27.3,
+   "model": "muse-wonder-1.0",
+   "searches": 8,
+   "cost": 0.1478,
+   "summary": "No Seattle Public Library branch is open late on Friday evenings; the open branches close at 6 p.m. For an 8 p.m. closing, go Tuesday, Wednesday, or Thursday instead, depending on the branch.",
+   "details_chars": 317
+  },
+  {
+   "goal": "the cheapest way to get from SFO to downtown San Francisco",
+   "ok": true,
+   "s": 40.4,
+   "model": "muse-wonder-1.0",
+   "searches": 9,
+   "cost": 0.1178,
+   "summary": "The cheapest way is the SamTrans Route 292 bus, at $2.05 with Clipper or $2.25 cash, taking about an hour to downtown. If you want much faster, BART is about $11.80 and takes around 30 minutes.",
+   "details_chars": 478
+  },
+  {
+   "goal": "beginner-friendly day hikes within an hour of Seattle",
+   "ok": true,
+   "s": 31.5,
+   "model": "muse-wonder-1.0",
+   "searches": 11,
+   "cost": 0.1345,
+   "summary": "For a beginner today, start with Discovery Park in Seattle for the easiest walk, or drive to Twin Falls or Franklin Falls for a short waterfall hike. It is Wednesday, November 4, so plan for an early start and rain gear, since sunset in Seattle is around 4:48 p.m.",
+   "details_chars": 875
+  },
+  {
+   "goal": "whether a US citizen needs a visa for a week in Japan",
+   "ok": true,
+   "s": 21.3,
+   "model": "muse-wonder-1.0",
+   "searches": 4,
+   "cost": 0.0845,
+   "summary": "No, you do not need a visa for a one-week trip to Japan as a U.S. citizen. You can enter visa-free, but make sure your passport is valid for your entire stay and you can show a return or onward ticket.",
+   "details_chars": 480
+  },
+  {
+   "goal": "free kid-friendly museums in Chicago on weekdays",
+   "ok": true,
+   "s": 30.0,
+   "model": "muse-wonder-1.0",
+   "searches": 11,
+   "cost": 0.1973,
+   "summary": "For a Seattle family, your best truly free weekday bets are the National Museum of Mexican Art and the Chicago Cultural Center, plus Lincoln Park Zoo, which is free for everyone every day. Be careful: many advertised Chicago free days, like Field Museum Wednesdays, are for Illinois residents only.",
+   "details_chars": 944
+  },
+  {
+   "goal": "how to recycle old phone batteries in Seattle",
+   "ok": true,
+   "s": 36.4,
+   "model": "muse-wonder-1.0",
+   "searches": 8,
+   "cost": 0.14,
+   "summary": "Do not put old phone batteries in the garbage or curbside recycling in Seattle. Tape the terminals and take them free to a household hazardous waste site or transfer station, or call Seattle Public Utilities for your one free annual battery pickup.",
+   "details_chars": 1165
+  },
+  {
+   "goal": "vegetarian restaurants near Pike Place Market open after 9 pm",
+   "ok": true,
+   "s": 55.6,
+   "model": "muse-wonder-1.0",
+   "searches": 12,
+   "cost": 0.1661,
+   "summary": "Your best bet tonight is El Borracho at Pike Place, a fully plant-based Mexican spot open Wednesdays until 10 p.m. If you need food later than that, the Alibi Room nearby serves its kitchen until 1 a.m. and has vegetarian and vegan pizzas.",
+   "details_chars": 809
+  },
+  {
+   "goal": "the best time of year to visit Lisbon on a budget",
+   "ok": true,
+   "s": 23.4,
+   "model": "muse-wonder-1.0",
+   "searches": 4,
+   "cost": 0.0787,
+   "summary": "For the lowest cost, go to Lisbon in late January or February, but expect some rain and cooler days. If you want a better mix of savings and pleasant weather, choose late September through October or April through May instead.",
+   "details_chars": 1245
+  },
+  {
+   "goal": "compact strollers that fold with one hand under $300",
+   "ok": true,
+   "s": 36.0,
+   "model": "muse-wonder-1.0",
+   "searches": 7,
+   "cost": 0.1004,
+   "summary": "Start with the Colugo Compact Stroller Plus at about one hundred ninety-nine dollars, since it folds one-handed, weighs about sixteen pounds, and includes a rain cover that suits Seattle.  The Mompush Lithe V2 at about one hundred eighty dollars and the Chicco Presto at roughly one hundred fifty to two hundred thirty dollars are solid cheaper backups.",
+   "details_chars": 933
+  },
+  {
+   "goal": "how to get a refund for a delayed Amtrak train",
+   "ok": true,
+   "s": 27.7,
+   "model": "muse-wonder-1.0",
+   "searches": 5,
+   "cost": 0.101,
+   "summary": "Call Amtrak Customer Relations at 1-800-872-7245 and ask for a refund or compensation for the affected segment, giving your reservation and train details. A delay by itself does not guarantee a cash refund if you completed the trip, but Amtrak may offer points, a voucher, or a segment refund depending on the disruption.",
+   "details_chars": 1229
+  },
+  {
+   "goal": "electric toothbrushes dentists recommend under $100",
+   "ok": true,
+   "s": 25.1,
+   "model": "muse-wonder-1.0",
+   "searches": 4,
+   "cost": 0.0611,
+   "summary": "Get the Oral-B Pro 1000 for about fifty dollars if you want the safest dentist-backed pick under one hundred. Choose the Philips Sonicare 4100 instead if your gums are sensitive, or the Oral-B iO Series 2 for a quieter brush.",
+   "details_chars": 519
+  },
+  {
+   "goal": "the easiest houseplants for a dark apartment",
+   "ok": true,
+   "s": 35.8,
+   "model": "muse-wonder-1.0",
+   "searches": 3,
+   "cost": 0.0561,
+   "summary": "Start with a ZZ plant or snake plant, since both handle a dark Seattle apartment and weeks without watering. Add a pothos if you want something trailing and fast-growing, but remember low light still means some indirect light, not complete darkness.",
+   "details_chars": 981
+  },
+  {
+   "goal": "what documents I need to renew a US passport by mail",
+   "ok": true,
+   "s": 51.2,
+   "model": "muse-wonder-1.0",
+   "searches": 7,
+   "cost": 0.1384,
+   "summary": "To renew by mail, send Form DS-82, your most recent passport, one new passport photo, and payment by check or money order. You can use mail renewal only if that passport is undamaged, was issued within the last 15 years when you were 16 or older, and is in your current name or you include proof of a name change.",
+   "details_chars": 899
+  },
+  {
+   "goal": "budget weekend trips from Seattle by train",
+   "ok": true,
+   "s": 33.0,
+   "model": "muse-wonder-1.0",
+   "searches": 8,
+   "cost": 0.1117,
+   "summary": "Portland is your best budget weekend by train, about three and a half hours away with coach fares sometimes starting in the high twenties each way. Vancouver is the other big option if you have a passport, and Leavenworth or Tacoma work if you want something shorter or cheaper.",
+   "details_chars": 1667
+  },
+  {
+   "goal": "running shoes for flat feet under $150",
+   "ok": true,
+   "s": 39.2,
+   "model": "muse-wonder-1.0",
+   "searches": 7,
+   "cost": 0.0862,
+   "summary": "For flat feet under $150, start with the Saucony Guide 18 or New Balance 860v15 at about $140 to $150 for everyday stability. In Seattle, get fitted free at Road Runner Sports in Green Lake before buying, because the right width matters as much as the support.",
+   "details_chars": 892
+  },
+  {
+   "goal": "setting up mesh Wi-Fi for a three-bedroom house",
+   "ok": true,
+   "s": 39.2,
+   "model": "muse-wonder-1.0",
+   "searches": 5,
+   "cost": 0.0884,
+   "summary": "For a typical three-bedroom house, get a three-pack mesh system and put one node on each busy level or end of the home. Start with the TP-Link Deco BE63 for value, or the eero 6+ if you want the simplest budget setup, then place the extra nodes halfway toward the dead zones, not inside them.",
+   "details_chars": 1573
+  },
+  {
+   "goal": "the rules for bringing a dog on Washington State Ferries",
+   "ok": true,
+   "s": 44.0,
+   "model": "muse-wonder-1.0",
+   "searches": 7,
+   "cost": 0.1156,
+   "summary": "Yes, you can bring your dog on a Washington State Ferry, with the new rules in effect since July 1, 2026. Keep your dog harnessed or crated and under control, and stay on the vehicle deck, in outdoor areas, or in the marked pet area inside the cabin at the opposite end from the galley.",
+   "details_chars": 626
+  },
+  {
+   "goal": "the best free apps for learning Spanish",
+   "ok": true,
+   "s": 26.4,
+   "model": "muse-wonder-1.0",
+   "searches": 5,
+   "cost": 0.0776,
+   "summary": "Start with Duolingo for a free daily Spanish habit, and add Language Transfer when you want to understand grammar by listening and speaking aloud. In Seattle, your library card can also unlock Mango Languages for free, which is an easy extra option at home or on the go.",
+   "details_chars": 1234
+  },
+  {
+   "goal": "where to see fall colors near Portland this week",
+   "ok": true,
+   "s": 36.1,
+   "model": "muse-wonder-1.0",
+   "searches": 9,
+   "cost": 0.2139,
+   "summary": "Go this week \u2014 Portland is forecast at peak color November 4th to 10th, and your best bet is Washington Park. Start at the Portland Japanese Garden for red maples, then walk to free Hoyt Arboretum next door for maples, golden larches, and orange dawn redwoods.",
+   "details_chars": 1212
+  },
+  {
+   "goal": "the best carry-on suitcases under $250",
+   "ok": true,
+   "s": 39.9,
+   "model": "muse-wonder-1.0",
+   "searches": 9,
+   "cost": 0.1618,
+   "summary": "For most trips, get the Travelpro Maxlite 5 21-inch at about $150, since it is very light and well under budget. If you prefer a hard shell, the Samsonite Freeform is the best value, and the Quince Small Carry-On is the closest stylish option for Alaska's size limit.",
+   "details_chars": 922
+  },
+  {
+   "goal": "how to get from Heathrow to central London cheaply",
+   "ok": true,
+   "s": 24.1,
+   "model": "muse-wonder-1.0",
+   "searches": 5,
+   "cost": 0.134,
+   "summary": "Take the Piccadilly line Tube for the cheapest ride from Heathrow to central London, about five pounds ninety and roughly fifty minutes. Just tap a contactless card or phone, and choose the faster Elizabeth line only if saving time matters more than saving money.",
+   "details_chars": 940
+  },
+  {
+   "goal": "kid-friendly hikes near Portland",
+   "ok": true,
+   "s": 26.9,
+   "model": "muse-wonder-1.0",
+   "searches": 7,
+   "cost": 0.1237,
+   "summary": "For kids near Portland, start with Tryon Creek for an easy forest walk and nature center, or Hoyt Arboretum and Forest Park for short trails right in the city. From Seattle it is about 174 miles and roughly three hours each way, so plan on an early start or an overnight.",
+   "details_chars": 1391
+  },
+  {
+   "goal": "whether Pike Place Market is open on Thanksgiving",
+   "ok": true,
+   "s": 25.5,
+   "model": "muse-wonder-1.0",
+   "searches": 4,
+   "cost": 0.0762,
+   "summary": "No, Pike Place Market is closed on Thanksgiving Day, Thursday, November 26, 2026. Plan to visit the day before or after instead, when most of the Market is usually active from 9 a.m. to 5 p.m.",
+   "details_chars": 213
+  },
+  {
+   "goal": "the quietest dishwashers under $800",
+   "ok": true,
+   "s": 28.8,
+   "model": "muse-wonder-1.0",
+   "searches": 9,
+   "cost": 0.1817,
+   "summary": "The quietest option I found under eight hundred dollars is a Whirlpool at forty-one decibels for seven ninety-nine, with a Frigidaire Gallery at forty-two decibels for roughly five to six hundred thirty dollars as the better value. In Seattle, confirm stock before buying, because tax and installation will push the Whirlpool over eight hundred total.",
+   "details_chars": 906
+  },
+  {
+   "goal": "how to renew a Washington driver's license online",
+   "ok": true,
+   "s": 32.1,
+   "model": "muse-wonder-1.0",
+   "searches": 5,
+   "cost": 0.0657,
+   "summary": "You can renew a Washington driver's license online through the state Department of Licensing if you are under 70 and did not renew online last time. Update your address first if it has changed, then complete the renewal and pay $61 for six years or $81 for eight years.",
+   "details_chars": 762
+  },
+  {
+   "goal": "gluten-free bakeries in Capitol Hill, Seattle",
+   "ok": true,
+   "s": 43.6,
+   "model": "muse-wonder-1.0",
+   "searches": 10,
+   "cost": 0.1447,
+   "summary": "Head to Nuflours Bakery on 15th Avenue East in Capitol Hill, a dedicated bakery where everything is gluten-free, so it's your safest and best first stop this Wednesday morning. If you want a second allergen-free option nearby, Askatu Bakery opens at ten in Belltown.",
+   "details_chars": 1045
+  },
+  {
+   "goal": "the best budget mechanical keyboards",
+   "ok": true,
+   "s": 25.7,
+   "model": "muse-wonder-1.0",
+   "searches": 4,
+   "cost": 0.0959,
+   "summary": "For most people, buy the Aula F75 for about sixty-five dollars; it sounds and feels like a much pricier keyboard with wireless and a volume knob. If you mainly type or code and want deeper customization, spend a little more on a Keychron instead.",
+   "details_chars": 856
+  },
+  {
+   "goal": "rules for flying with a power bank",
+   "ok": true,
+   "s": 27.2,
+   "model": "muse-wonder-1.0",
+   "searches": 7,
+   "cost": 0.1594,
+   "summary": "Yes, you can fly with a power bank, but keep it in your carry-on or personal item, never in checked luggage. Most standard power banks under 100 watt-hours are fine without approval, so check the watt-hour label before you leave.",
+   "details_chars": 946
+  },
+  {
+   "goal": "free museum days in Seattle this month",
+   "ok": true,
+   "s": 28.0,
+   "model": "muse-wonder-1.0",
+   "searches": 10,
+   "cost": 0.1375,
+   "summary": "Tomorrow, Thursday November 5th, is Seattle's big Free First Thursday, with free entry at the Seattle Art Museum, the Burke, the National Nordic Museum, and evening hours at MOHAI and the Museum of Flight. If you miss tomorrow, the Frye and several other spots are free all month long.",
+   "details_chars": 1072
+  },
+  {
+   "goal": "how to get a library card at Seattle Public Library",
+   "ok": true,
+   "s": 41.2,
+   "model": "muse-wonder-1.0",
+   "searches": 9,
+   "cost": 0.1349,
+   "summary": "Since you're in Seattle, you can get a free Seattle Public Library card online or at any branch. For fastest access, go in person with a valid ID and you'll get instant access to physical and digital materials.",
+   "details_chars": 805
+  },
+  {
+   "goal": "the best rain jackets for cycling",
+   "ok": true,
+   "s": 30.3,
+   "model": "muse-wonder-1.0",
+   "searches": 8,
+   "cost": 0.2148,
+   "summary": "For Seattle cycling right now, buy a durable, vented commuter shell first, not a featherweight race shell. The POC Motion and Showers Pass jackets are the most practical for daily wet rides, while the MAAP Atmos is the best pick if your rides are fast road rides.",
+   "details_chars": 1506
+  },
+  {
+   "goal": "dog-friendly cafes in Ballard",
+   "ok": true,
+   "s": 25.3,
+   "model": "muse-wonder-1.0",
+   "searches": 7,
+   "cost": 0.0933,
+   "summary": "For a dog-friendly cafe in Ballard right now, start with Pico Cafe for its back patio and garden, or Anchored Ship Coffee Bar on Ballard Avenue for outdoor seating. Most Ballard options welcome dogs outside rather than at indoor tables, so plan on patio seating.",
+   "details_chars": 758
+  },
+  {
+   "goal": "how to recycle electronics in King County",
+   "ok": true,
+   "s": 39.4,
+   "model": "muse-wonder-1.0",
+   "searches": 14,
+   "cost": 0.3322,
+   "summary": "In Seattle, take TVs, computers, monitors, laptops, and tablets to an E-Cycle Washington site for free recycling, and do not put them in the garbage. Friendly Earth in Sodo and RE-PC are good options open today, or Seattle Public Utilities can pick small electronics up from home.",
+   "details_chars": 1436
+  },
+  {
+   "goal": "the cheapest way to send a parcel to Canada",
+   "ok": true,
+   "s": 35.7,
+   "model": "muse-wonder-1.0",
+   "searches": 13,
+   "cost": 0.2299,
+   "summary": "For most small parcels from Seattle, the cheapest option is usually an online Pirate Ship Simple Export Rate label, which is designed for international parcels up to twenty pounds. If it is a gift, or you prefer a walk-in post office, use USPS First-Class Package International instead.",
+   "details_chars": 1260
+  },
+  {
+   "goal": "beginner yoga studios near downtown Seattle",
+   "ok": true,
+   "s": 29.9,
+   "model": "muse-wonder-1.0",
+   "searches": 8,
+   "cost": 0.1838,
+   "summary": "Start with Mind Body Hum near the downtown waterfront, which offers new students 30 days of unlimited classes for $60 and a mix of gentler and warm-flow options. If you want a truly structured first step, 8 Limbs runs a four-week Intro to Yoga series for brand-new beginners, though its listed locations are outside downtown.",
+   "details_chars": 1492
+  },
+  {
+   "goal": "the best e-readers for reading in sunlight",
+   "ok": true,
+   "s": 32.5,
+   "model": "muse-wonder-1.0",
+   "searches": 8,
+   "cost": 0.1815,
+   "summary": "For direct sunlight, buy a black-and-white E Ink reader, and the new Kindle Paperwhite is the best default for most people. If you mainly borrow Seattle-area library books, the Kobo Clara BW is the cheaper and simpler pick.",
+   "details_chars": 963
+  },
+  {
+   "goal": "Seattle's ferry schedule to Bainbridge on weekends",
+   "ok": true,
+   "s": 36.3,
+   "model": "muse-wonder-1.0",
+   "searches": 6,
+   "cost": 0.1514,
+   "summary": "On weekends, ferries leave Seattle for Bainbridge from 6:10 in the morning until 2:10 the next morning, roughly every 45 to 105 minutes. The crossing takes about 35 minutes, so plan for the return boats from Bainbridge between 5:20 in the morning and 1:25 the next morning.",
+   "details_chars": 850
+  },
+  {
+   "goal": "how to dispute a parking ticket in Seattle",
+   "ok": true,
+   "s": 54.3,
+   "model": "muse-wonder-1.0",
+   "searches": 12,
+   "cost": 0.1637,
+   "summary": "To dispute a Seattle parking ticket, request a contested hearing from Seattle Municipal Court within 30 days of it being placed on your car, or 33 days if it arrived by mail. You can do it online, by phone, or by returning the form on the back of the ticket. If you were actually at fault but want the fine lowered, request a mitigation hearing instead.",
+   "details_chars": 1291
+  },
+  {
+   "goal": "vegetarian meal kits that deliver to Seattle",
+   "ok": true,
+   "s": 29.7,
+   "model": "muse-wonder-1.0",
+   "searches": 7,
+   "cost": 0.1447,
+   "summary": "Several strong vegetarian meal kits deliver to Seattle, led by HelloFresh for variety, Purple Carrot if you want fully vegan, and EveryPlate for the lowest price. All three ship to all Seattle ZIP codes, so the main choice is budget and how strictly plant-based you want to eat.",
+   "details_chars": 1243
+  },
+  {
+   "goal": "the best travel adapters for Europe",
+   "ok": true,
+   "s": 26.8,
+   "model": "muse-wonder-1.0",
+   "searches": 6,
+   "cost": 0.1171,
+   "summary": "For most trips from Seattle, buy an Epicka universal adapter because it covers continental Europe and the U.K. in one unit. If you only need a phone charger it is plenty, but choose a 65-watt USB-C model if you want it to charge a laptop too.",
+   "details_chars": 1259
+  },
+  {
+   "goal": "how to get a TSA PreCheck appointment",
+   "ok": true,
+   "s": 36.2,
+   "model": "muse-wonder-1.0",
+   "searches": 13,
+   "cost": 0.2455,
+   "summary": "Start at tsa.gov/precheck, pick CLEAR, IDEMIA, or Telos, pre-enroll online in about five minutes, then book a ten-minute in-person visit near Seattle for fingerprints, photo, documents, and payment. Walk-ins are also accepted, and at Sea-Tac the CLEAR kiosks take enrollments with no appointment necessary.",
+   "details_chars": 1452
+  },
+  {
+   "goal": "affordable piano lessons for adults in Seattle",
+   "ok": true,
+   "s": 26.1,
+   "model": "muse-wonder-1.0",
+   "searches": 8,
+   "cost": 0.1376,
+   "summary": "The best value I found is a beginner group piano lab in Belltown at about sixteen dollars an hour, with community-college and nonprofit options also well below typical private rates. If cost is the main concern, start with a group class and ask about tuition assistance before paying for weekly private lessons.",
+   "details_chars": 989
+  },
+  {
+   "goal": "the best indoor plants that are safe for cats",
+   "ok": true,
+   "s": 38.6,
+   "model": "muse-wonder-1.0",
+   "searches": 5,
+   "cost": 0.0846,
+   "summary": "The safest easy starters for a cat home are spider plant, parlor palm, peperomia, Boston fern, and calathea. For Seattle's grey light, start with a parlor palm or peperomia, and always double-check the exact variety before you buy.",
+   "details_chars": 1291
+  },
+  {
+   "goal": "how long the Space Needle's lines are on weekends",
+   "ok": true,
+   "s": 30.5,
+   "model": "muse-wonder-1.0",
+   "searches": 4,
+   "cost": 0.0876,
+   "summary": "On weekends, plan on about thirty to sixty minutes from entry to the top, and over an hour at busy midday times in peak season. Booking a timed ticket ahead and going early in the morning or later in the evening should keep your wait closer to thirty minutes.",
+   "details_chars": 516
+  },
+  {
+   "goal": "the best noise machines for sleep",
+   "ok": true,
+   "s": 20.4,
+   "model": "muse-wonder-1.0",
+   "searches": 5,
+   "cost": 0.0817,
+   "summary": "For most people, start with the LectroFan EVO for the best masking and sound choice, or the Yogasleep Dohm Classic if you prefer a real fan sound. Keep it across the room and just loud enough to cover outside noise, not blasting by your pillow.",
+   "details_chars": 787
+  },
+  {
+   "goal": "how to get to Mount Rainier without a car",
+   "ok": true,
+   "s": 33.3,
+   "model": "muse-wonder-1.0",
+   "searches": 12,
+   "cost": 0.2549,
+   "summary": "There is no public bus or train from Seattle to Mount Rainier, so your easiest car-free option is a guided day tour with downtown Seattle pickup. In November, book a winter tour for a Friday through Monday and confirm that morning that the Paradise road is open.",
+   "details_chars": 1409
+  },
+  {
+   "goal": "farmers markets open in Seattle in November",
+   "ok": true,
+   "s": 21.6,
+   "model": "muse-wonder-1.0",
+   "searches": 6,
+   "cost": 0.1156,
+   "summary": "Yes, several Seattle farmers markets are open in November, mainly on weekends. Your year-round options are University District and Lake City on Saturdays, plus Ballard, West Seattle, and Capitol Hill on Sundays, with extra pre-Thanksgiving markets on November 20th and 21st.",
+   "details_chars": 621
+  },
+  {
+   "goal": "the safest booster seats for kids",
+   "ok": true,
+   "s": 22.7,
+   "model": "muse-wonder-1.0",
+   "searches": 7,
+   "cost": 0.1882,
+   "summary": "The safest pick for most kids is the Chicco KidFit Zip Plus, an IIHS Best Bet in both highback and backless modes. For less money, choose the Evenflo GoTime LX, and for taller kids, the Britax Highpoint highback.",
+   "details_chars": 1270
+  },
+  {
+   "goal": "how to apply for a Washington State Parks Discover Pass",
+   "ok": true,
+   "s": 33.6,
+   "model": "muse-wonder-1.0",
+   "searches": 9,
+   "cost": 0.1563,
+   "summary": "You buy a Discover Pass rather than applying for approval, and the fastest option from Seattle is to buy it online and print a temporary pass to use immediately. It costs $45 for a year or $10 for one day, plus any transaction or vendor fees.",
+   "details_chars": 1119
+  },
+  {
+   "goal": "the best budget standing desks",
+   "ok": true,
+   "s": 25.9,
+   "model": "muse-wonder-1.0",
+   "searches": 7,
+   "cost": 0.1547,
+   "summary": "For most people on a budget, get the FlexiSpot EN1, which is around one hundred ten dollars and has a one-piece top. If you can spend closer to two hundred dollars, a dual-motor FEZIBO will feel steadier and is worth the upgrade.",
+   "details_chars": 964
+  },
+  {
+   "goal": "Seattle neighborhoods with good coffee shops for working",
+   "ok": true,
+   "s": 27.6,
+   "model": "muse-wonder-1.0",
+   "searches": 7,
+   "cost": 0.1249,
+   "summary": "Start with Capitol Hill for the densest choice of laptop-friendly coffee shops, especially around Victrola and Espresso Vivace. For a quieter work session, try Fremont or Ballard, and use Pioneer Square or South Lake Union on a weekday.",
+   "details_chars": 1185
+  },
+  {
+   "goal": "how to set up two-factor authentication on Gmail",
+   "ok": true,
+   "s": 17.0,
+   "model": "muse-wonder-1.0",
+   "searches": 2,
+   "cost": 0.0362,
+   "summary": "To set up two-factor authentication for Gmail, open your Google Account, go to Security and sign-in, and turn on 2-Step Verification under how you sign in to Google. Then follow the on-screen steps and choose a second step, ideally a Google prompt, passkey, or authenticator app.",
+   "details_chars": 665
+  },
+  {
+   "goal": "the best running routes around Green Lake",
+   "ok": true,
+   "s": 22.5,
+   "model": "muse-wonder-1.0",
+   "searches": 6,
+   "cost": 0.0912,
+   "summary": "The classic choice is Green Lake's flat 2.8-mile paved inner loop, best for an easy, scenic run right by the water. If you want fewer people, take the roughly 3.1-mile outer loop instead, and add Woodland Park to the south for more miles.",
+   "details_chars": 1051
+  },
+  {
+   "goal": "where to donate used clothes in Seattle",
+   "ok": true,
+   "s": 26.8,
+   "model": "muse-wonder-1.0",
+   "searches": 10,
+   "cost": 0.1524,
+   "summary": "The easiest Seattle drop-off today is Evergreen Goodwill, with donation hours starting at 10 a.m., or Mary's Place in South Seattle, which is already open this morning. For worn-out clothes that can't be worn again, use the same Goodwill drop-off through Threadcycle instead of the trash.",
+   "details_chars": 1724
+  },
+  {
+   "goal": "the best rice cookers under $150",
+   "ok": true,
+   "s": 38.9,
+   "model": "muse-wonder-1.0",
+   "searches": 12,
+   "cost": 0.2507,
+   "summary": "For most people under $150, get the Cuckoo CR-0655F for the best mix of fuzzy-logic cooking and customization. If you want the best value instead, the Hamilton Beach Programmable is much cheaper and still cooks excellent rice fast.",
+   "details_chars": 1491
+  },
+  {
+   "goal": "how to get a passport photo taken near Seattle",
+   "ok": true,
+   "s": 28.6,
+   "model": "muse-wonder-1.0",
+   "searches": 8,
+   "cost": 0.1707,
+   "summary": "The easiest option in Seattle is to walk into a Walgreens or FedEx Office this morning and have a compliant two-by-two passport photo taken in minutes. Walgreens charges $16.99, FedEx about $15.95, while Walmart is cheapest at about $7.64 and USPS charges $15 by appointment.",
+   "details_chars": 1148
+  },
+  {
+   "goal": "late-night pharmacies in Seattle",
+   "ok": true,
+   "s": 47.3,
+   "model": "muse-wonder-1.0",
+   "searches": 16,
+   "cost": 0.4258,
+   "summary": "I could not verify a true 24-hour prescription pharmacy inside Seattle today, so plan on nine or ten p.m. for prescriptions. For the latest nearby option, the Bellevue Walgreens pharmacy is open until ten tonight, while its store stays open until midnight for over-the-counter items.",
+   "details_chars": 950
+  },
+  {
+   "goal": "the best bike locks for city commuting",
+   "ok": true,
+   "s": 23.6,
+   "model": "muse-wonder-1.0",
+   "searches": 9,
+   "cost": 0.1697,
+   "summary": "For Seattle commuting, get the Kryptonite Evolution Mini-7 if you want the best balance of security, weight, and price, or step up to the angle-grinder-resistant Litelok X1 if your bike is expensive or parked downtown for hours. Always lock the frame and a wheel to a proper rack, because no lock alone is theft-proof.",
+   "details_chars": 1292
+  },
+  {
+   "goal": "how to transfer a phone number to a new carrier",
+   "ok": true,
+   "s": 21.7,
+   "model": "muse-wonder-1.0",
+   "searches": 4,
+   "cost": 0.0899,
+   "summary": "To keep your number, start the switch with the new carrier first and give them your current account number and a temporary transfer PIN from your old carrier. Do not cancel your old service first, because the transfer should close that line once it finishes.",
+   "details_chars": 1238
+  },
+  {
+   "goal": "family board games for ages 8 and up",
+   "ok": true,
+   "s": 21.7,
+   "model": "muse-wonder-1.0",
+   "searches": 5,
+   "cost": 0.1119,
+   "summary": "Start with Ticket to Ride \u2014 it\u2019s easy to learn, fun for kids and adults, and usually takes under an hour. For a shorter game, try Azul or Kingdomino, and if you\u2019re in Seattle, test games first at Mox Boarding House in Ballard.",
+   "details_chars": 654
+  },
+  {
+   "goal": "how to check Seattle air quality today",
+   "ok": true,
+   "s": 31.2,
+   "model": "muse-wonder-1.0",
+   "searches": 8,
+   "cost": 0.1046,
+   "summary": "Seattle's air is borderline good to moderate this morning, around AQI 50 to the mid-50s, with fine particles as the main pollutant. Most people can be outdoors normally, but if you're unusually sensitive to air pollution, take it a bit easier and check again before a hard workout.",
+   "details_chars": 1479
+  },
+  {
+   "goal": "the best water bottles that keep drinks cold",
+   "ok": true,
+   "s": 37.7,
+   "model": "muse-wonder-1.0",
+   "searches": 12,
+   "cost": 0.2385,
+   "summary": "For the coldest all-day choice, get the Hydro Flask Wide Mouth Travel Bottle in 32 ounces; it kept ice intact for a full 24 hours in testing and offers both straw and chug lids. If you want easier one-handed sipping for less money, choose the Owala FreeSip, while the YETI Rambler is the tougher pick for rough use.",
+   "details_chars": 1590
+  },
+  {
+   "goal": "cheap parking near Lumen Field on game days",
+   "ok": true,
+   "s": 28.4,
+   "model": "muse-wonder-1.0",
+   "searches": 8,
+   "cost": 0.1564,
+   "summary": "The cheapest reliable play is free park-and-ride parking at a Link station, then light rail to Stadium Station, instead of driving into SoDo. If you must drive, book ahead on SpotHero or ParkWhiz 15 to 20 minutes away in Pioneer Square or the International District, where game-day deals can start around $10 to $25, versus roughly $20 to $75 closer in.",
+   "details_chars": 1201
+  },
+  {
+   "goal": "how to clean a cast iron pan",
+   "ok": true,
+   "s": 20.0,
+   "model": "muse-wonder-1.0",
+   "searches": 3,
+   "cost": 0.0546,
+   "summary": "Wash the pan by hand with warm water and a little mild soap if needed, then dry it completely and wipe on a very thin layer of oil. For stuck food, simmer water in it for three to five minutes and scrape it loose, rather than soaking it or putting it in the dishwasher.",
+   "details_chars": 581
+  },
+  {
+   "goal": "the best headphones for open-plan offices",
+   "ok": true,
+   "s": 32.5,
+   "model": "muse-wonder-1.0",
+   "searches": 7,
+   "cost": 0.1812,
+   "summary": "Buy the Sony WH-1000XM6 first; it is the best all-around pick for an open office, with strong chatter reduction, a capable microphone, two-device Bluetooth, and a 30-hour battery claim with noise cancelling on. Choose Bose instead if all-day comfort matters most, or a work headset if you spend most of the day on calls.",
+   "details_chars": 970
+  },
+  {
+   "goal": "sledding spots within two hours of Seattle",
+   "ok": true,
+   "s": 32.9,
+   "model": "muse-wonder-1.0",
+   "searches": 8,
+   "cost": 0.1277,
+   "summary": "Your best bet within two hours of Seattle is Snoqualmie Pass, about an hour away, but plan for later in November because sledding is not open yet today. Hyak Sno-Park is the bring-your-own-sled option once snow is sufficient, while Summit Tubing is the easiest ticketed option when it opens.",
+   "details_chars": 1185
+  },
+  {
+   "goal": "how to book a campsite at Deception Pass",
+   "ok": true,
+   "s": 28.5,
+   "model": "muse-wonder-1.0",
+   "searches": 9,
+   "cost": 0.1994,
+   "summary": "Book Deception Pass through Washington State Parks\u2019 Going to Camp system online, or by calling 888-CAMPOUT. You can reserve up to nine months ahead, and same-day campsite reservations are accepted until 2 p.m.",
+   "details_chars": 936
+  },
+  {
+   "goal": "the best portable chargers for phones",
+   "ok": true,
+   "s": 30.2,
+   "model": "muse-wonder-1.0",
+   "searches": 5,
+   "cost": 0.0939,
+   "summary": "For most people in Seattle, get the INIU 10,000mAh 45W power bank for about $22 \u2014 it's compact, fast, and cheap enough to toss in a bag. If you have a MagSafe iPhone, the Anker MagGo Slim 10K at around $80 is the more convenient snap-on pick.",
+   "details_chars": 776
+  },
+  {
+   "goal": "how to report a pothole in Seattle",
+   "ok": true,
+   "s": 20.7,
+   "model": "muse-wonder-1.0",
+   "searches": 4,
+   "cost": 0.0715,
+   "summary": "In Seattle, report a pothole through the Find It, Fix It app, Seattle\u2019s online form, or by calling 206-684-ROAD. Include the address or cross-streets, and add a photo if you can.",
+   "details_chars": 407
+  },
+  {
+   "goal": "the best compact umbrellas",
+   "ok": true,
+   "s": 22.8,
+   "model": "muse-wonder-1.0",
+   "searches": 6,
+   "cost": 0.0973,
+   "summary": "For Seattle, get the Repel Windproof Travel umbrella if you want the best value, or the Davek Solo if you want something tougher that should last for years. The Repel is light, compact, and good enough for windy commutes, while the Davek costs much more but has a stronger frame and a lifetime guarantee.",
+   "details_chars": 1225
+  },
+  {
+   "goal": "how to freeze fresh herbs",
+   "ok": true,
+   "s": 16.6,
+   "model": "muse-wonder-1.0",
+   "searches": 3,
+   "cost": 0.0522,
+   "summary": "The easiest way is to wash and thoroughly dry the herbs, chop them, pack them into ice cube trays, and cover them with water or olive oil before freezing. Once solid, pop out the cubes into a labelled freezer bag and drop them straight into soups, sauces, or saut\u00e9s as needed.",
+   "details_chars": 771
+  },
+  {
+   "goal": "the best laptop backpacks for commuting by bike",
+   "ok": true,
+   "s": 34.1,
+   "model": "muse-wonder-1.0",
+   "searches": 7,
+   "cost": 0.0906,
+   "summary": "For Seattle rain, get the Ortlieb Commuter-Daypack first, because it is genuinely waterproof and light, with a padded laptop compartment. If you would rather keep weight off your back, choose the Ortlieb Vario, which converts between a backpack and a bike-rack pannier.",
+   "details_chars": 740
+  },
+  {
+   "goal": "Seattle libraries with study rooms you can book",
+   "ok": true,
+   "s": 33.3,
+   "model": "muse-wonder-1.0",
+   "searches": 9,
+   "cost": 0.1204,
+   "summary": "Seattle Public Library has free study rooms at 17 branches, but most are first-come or same-day by phone, not booked online in advance. If you need a true advance reservation, nearby King County libraries let you book online up to a week ahead for up to two hours.",
+   "details_chars": 1488
+  },
+  {
+   "goal": "how to get a refund from Ticketmaster",
+   "ok": true,
+   "s": 48.7,
+   "model": "muse-wonder-1.0",
+   "searches": 9,
+   "cost": 0.1443,
+   "summary": "You can usually get a Ticketmaster refund only if the event organizer authorizes one, most often after a cancellation or date change. Sign in, open My Tickets, and tap Request Refund if that button appears; the money goes back to your original payment method within about five to seven business days.",
+   "details_chars": 743
+  },
+  {
+   "goal": "the best air purifiers for wildfire smoke",
+   "ok": true,
+   "s": 25.4,
+   "model": "muse-wonder-1.0",
+   "searches": 5,
+   "cost": 0.124,
+   "summary": "For most Seattle homes, get the Coway Airmega Mighty AP-1512HH \u2014 it's the reliable all-rounder for wildfire smoke, with a smoke CADR of 233 for rooms up to about 360 square feet. If your living room is bigger, step up to the Blueair Blue Pure 211i Max instead.",
+   "details_chars": 1677
+  },
+  {
+   "goal": "how to winterize a balcony garden",
+   "ok": true,
+   "s": 25.6,
+   "model": "muse-wonder-1.0",
+   "searches": 6,
+   "cost": 0.0938,
+   "summary": "Start this week, before Seattle's mid-November first frost, by bringing tender plants inside and clustering hardy pots against a sheltered wall. Wrap the pots, mulch the soil, and water dry plants before a hard freeze.",
+   "details_chars": 1243
+  },
+  {
+   "goal": "the best kids' rain boots",
+   "ok": true,
+   "s": 41.5,
+   "model": "muse-wonder-1.0",
+   "searches": 13,
+   "cost": 0.3407,
+   "summary": "For Seattle\u2019s cold, wet months, get the Muck Boots Kids\u2019 Element if you can spend about ninety dollars; they\u2019re the best-tested all-rounder for rain, mud and slush. If they\u2019re too pricey or your child has wider feet, the Bogs York is the easier-on alternative, and Lone Cone is the solid budget pick.",
+   "details_chars": 896
+  },
+  {
+   "goal": "how to find a notary in Seattle",
+   "ok": true,
+   "s": 37.8,
+   "model": "muse-wonder-1.0",
+   "searches": 9,
+   "cost": 0.1551,
+   "summary": "The easiest option in Seattle is a UPS Store or your own bank or credit union, but call first to confirm a notary is on staff today. Washington caps most in-person notarizations at fifteen dollars per act, and you should bring a current government photo ID and sign the document in front of the notary.",
+   "details_chars": 802
+  },
+  {
+   "goal": "the best budget webcams for video calls",
+   "ok": true,
+   "s": 20.7,
+   "model": "muse-wonder-1.0",
+   "searches": 4,
+   "cost": 0.0717,
+   "summary": "For most video calls, buy the Logitech Brio 101 if you want the cheapest reliable option, or the Anker PowerConf C200 if you can spend a little more for a sharper picture. The C200 is the better all-round pick for regular work calls.",
+   "details_chars": 763
+  },
+  {
+   "goal": "where to see the northern lights near Seattle this week",
+   "ok": true,
+   "s": 45.2,
+   "model": "muse-wonder-1.0",
+   "searches": 8,
+   "cost": 0.1808,
+   "summary": "The northern lights are unlikely near Seattle this week, so I would not make a special trip. If you still want to try, your least-bad chances are late Wednesday night or next Monday night from a dark spot east or north of the city, but clouds and weak activity make the odds poor.",
+   "details_chars": 1562
+  },
+  {
+   "goal": "how to back up an iPhone to a Mac",
+   "ok": true,
+   "s": 24.7,
+   "model": "muse-wonder-1.0",
+   "searches": 4,
+   "cost": 0.0699,
+   "summary": "Connect your iPhone to your Mac with a cable, open Finder, select the iPhone, and click Back Up Now. For a fuller backup, turn on Encrypt local backup first and keep that password somewhere safe.",
+   "details_chars": 394
+  },
+  {
+   "goal": "the best electric kettles",
+   "ok": true,
+   "s": 30.0,
+   "model": "muse-wonder-1.0",
+   "searches": 9,
+   "cost": 0.2297,
+   "summary": "For most people, buy the Cuisinart PerfecTemp CPK-17 \u2014 it is 1.7 liters, has six temperature presets, and keeps water warm for 30 minutes. If you mainly make pour-over coffee, get the Fellow Stagg EKG Pro instead, and if you only boil water, save money with the Hamilton Beach 40880.",
+   "details_chars": 1006
+  },
+  {
+   "goal": "how to get to Snoqualmie Pass by bus",
+   "ok": true,
+   "s": 39.8,
+   "model": "muse-wonder-1.0",
+   "searches": 13,
+   "cost": 0.2407,
+   "summary": "Take the direct FlixBus from Seattle to Snoqualmie Pass; it takes about an hour and fifteen minutes and drops you at Central Summit. As it's already after nine this morning, check for the remaining departures before the early-afternoon last bus, and book your return at the same time.",
+   "details_chars": 826
+  },
+  {
+   "goal": "the best meal-prep containers",
+   "ok": true,
+   "s": 28.7,
+   "model": "muse-wonder-1.0",
+   "searches": 7,
+   "cost": 0.1079,
+   "summary": "Start with IKEA 365+ glass containers, which offer the best value and reheating performance for most meal prep. If you carry soup or commute with liquids, choose Rubbermaid Brilliance instead because its lids are designed to be fully leakproof.",
+   "details_chars": 1046
+  },
+  {
+   "goal": "how to sign up for Seattle City Light budget billing",
+   "ok": true,
+   "s": 20.2,
+   "model": "muse-wonder-1.0",
+   "searches": 5,
+   "cost": 0.0782,
+   "summary": "You can sign up for Seattle City Light Budget Billing online through your utility account, or by calling 206-684-3000. You\u2019ll need 12 months of City Light billing history at your current address and a zero account balance.",
+   "details_chars": 874
+  },
+  {
+   "goal": "the best gloves for using a phone in the cold",
+   "ok": true,
+   "s": 27.1,
+   "model": "muse-wonder-1.0",
+   "searches": 6,
+   "cost": 0.155,
+   "summary": "For Seattle, start with the Smartwool Active Fleece Insulated Glove for the most reliable phone use in the cold. If you want a cheaper everyday pair, the Outdoor Research Flurry Sensor is the other strong pick, just know neither is fully waterproof for steady rain.",
+   "details_chars": 777
+  },
+  {
+   "goal": "kid-friendly restaurants in Fremont, Seattle",
+   "ok": true,
+   "s": 39.6,
+   "model": "muse-wonder-1.0",
+   "searches": 14,
+   "cost": 0.229,
+   "summary": "For an easy kid-friendly meal in Fremont today, start with Uneeda Burger or Pecado Bueno for dedicated kids' menus, or Kayava for a ramen kids' combo. Fremont Brewing is the most relaxed backup if you want space for kids to move around and to bring or order in food.",
+   "details_chars": 1304
+  },
+  {
+   "goal": "how to set up a new router",
+   "ok": true,
+   "s": 17.8,
+   "model": "muse-wonder-1.0",
+   "searches": 2,
+   "cost": 0.0383,
+   "summary": "Set up your new router by placing it centrally, connecting its Internet or WAN port to your modem, powering the modem on first and then the router, and using the maker's app or setup page to create your Wi-Fi name and strong password. Then change the admin password, use WPA3 or WPA2, and update the firmware before testing coverage around your Seattle home.",
+   "details_chars": 619
+  },
+  {
+   "goal": "the best walking shoes for travel",
+   "ok": true,
+   "s": 26.7,
+   "model": "muse-wonder-1.0",
+   "searches": 10,
+   "cost": 0.1949,
+   "summary": "For most travelers, get the Hoka Transport 2 GTX \u2014 it's cushioned, city-friendly, and waterproof enough for Seattle rain. If you want maximum softness for very long walking days instead, choose the Hoka Clifton 10.",
+   "details_chars": 1298
+  },
+  {
+   "goal": "how to recycle styrofoam in Seattle",
+   "ok": true,
+   "s": 28.3,
+   "model": "muse-wonder-1.0",
+   "searches": 10,
+   "cost": 0.2657,
+   "summary": "In Seattle, don't put Styrofoam in your curbside recycling cart; instead, schedule a free city pickup for clean foam blocks, or drop it off free in Kent. Remove tape and labels first, and note that packing peanuts and food trays aren't accepted for the city pickup.",
+   "details_chars": 1084
+  },
+  {
+   "goal": "the best cordless vacuums under $300",
+   "ok": true,
+   "s": 28.9,
+   "model": "muse-wonder-1.0",
+   "searches": 11,
+   "cost": 0.2804,
+   "summary": "Start with the Eureka ReactiSense 440 at about $180 for the strongest value under $300, especially on carpet. If you want a lighter, simpler apartment pick, get the Levoit LVAC-200 at $200, and only buy the stronger LVAC-300 when it is on sale below $300.",
+   "details_chars": 1014
+  },
+  {
+   "goal": "how to replace a lost Orca card",
+   "ok": true,
+   "s": 28.2,
+   "model": "muse-wonder-1.0",
+   "searches": 10,
+   "cost": 0.23,
+   "summary": "If your card is linked to myORCA, lock it right away in the app or online, then choose Replace Card to block it permanently and move your balance and passes to a new card for $3. Mailed replacements take 7 to 10 business days, while the Seattle Pass Sales Office can usually replace one during your visit.",
+   "details_chars": 1156
+  },
+  {
+   "goal": "the best books for learning to cook",
+   "ok": true,
+   "s": 29.7,
+   "model": "muse-wonder-1.0",
+   "searches": 8,
+   "cost": 0.0962,
+   "summary": "Start with Salt, Fat, Acid, Heat if you want to understand why food tastes good, or How to Cook Everything if you want one huge recipe reference. For a more step-by-step course, pick America's Test Kitchen's New Cooking School Cookbook.",
+   "details_chars": 1054
+  },
+  {
+   "goal": "how to get a fishing license in Washington",
+   "ok": true,
+   "s": 19.3,
+   "model": "muse-wonder-1.0",
+   "searches": 5,
+   "cost": 0.1222,
+   "summary": "In Seattle, the easiest way is to buy your Washington fishing license online from WDFW, through the MyWDFW or Fish Washington app, or at a local license dealer. For Puget Sound and local lakes, most people age 16 or older want the annual resident combination license, which is $74.37 and covers freshwater, saltwater, and shellfish.",
+   "details_chars": 1407
+  },
+  {
+   "goal": "the best sunrise viewpoints in Seattle",
+   "ok": true,
+   "s": 23.7,
+   "model": "muse-wonder-1.0",
+   "searches": 6,
+   "cost": 0.1215,
+   "summary": "For tomorrow, head to Seacrest Park or the Alki waterfront in West Seattle for the classic sunrise, with the sky lighting up behind the Cascades and glowing across downtown. If you want to watch the sun itself crest the mountains, Louisa Boren Lookout facing Lake Washington is the more direct pick, so aim to arrive around six thirty.",
+   "details_chars": 1561
+  },
+  {
+   "goal": "how to make a reservation at the Seattle Aquarium",
+   "ok": true,
+   "s": 40.7,
+   "model": "muse-wonder-1.0",
+   "searches": 9,
+   "cost": 0.2444,
+   "summary": "Reserve online through the Seattle Aquarium\u2019s tickets page by choosing your date and timed entry, then checking out for a QR-code ticket. Booking ahead is recommended because walk-up tickets are limited, and tickets cost less when bought at least one day in advance.",
+   "details_chars": 1169
+  },
+  {
+   "goal": "the best travel pillows for long flights",
+   "ok": true,
+   "s": 24.0,
+   "model": "muse-wonder-1.0",
+   "searches": 7,
+   "cost": 0.1247,
+   "summary": "For most long flights, buy the Cabeau Evolution S3, because its memory foam, raised sides, and headrest strap help stop your head pitching forward or sideways. If you pack light or lean to one side, choose the lighter Trtl Pillow Plus instead.",
+   "details_chars": 782
+  },
+  {
+   "goal": "how to file a lost item claim with Sound Transit",
+   "ok": true,
+   "s": 19.3,
+   "model": "muse-wonder-1.0",
+   "searches": 3,
+   "cost": 0.0582,
+   "summary": "File with the operator for the vehicle you rode, not Sound Transit directly. For Seattle Link light rail, use King County Metro\u2019s online form anytime, call them, or visit the King Street Center, and items are held for 30 days.",
+   "details_chars": 993
+  },
+  {
+   "goal": "the best headlamps for winter running",
+   "ok": true,
+   "s": 25.3,
+   "model": "muse-wonder-1.0",
+   "searches": 8,
+   "cost": 0.1611,
+   "summary": "For Seattle winter running, get the Black Diamond Distance LT 1100 \u2014 it's bright, stable, and properly waterproof for rain. If that's too pricey, the Nitecore NU25 MCT is the best budget pick, at about forty dollars.",
+   "details_chars": 1210
+  }
+ ]
+}

@@ -24,6 +24,11 @@ All 18 of 18 trials passed: 3 trials of each judge prompt against https://earsho
 **Other checks:**
 - **Cold start:** from fully stopped, the page loads in 5.7 s and the first word comes 2.6 s after asking (3 trials; see section 10).
 - **Out of credit:** if the Meta key is refused (401, 402, 403 or 404), typed questions fall back to Muse Spark Open. Speech recognition still needs a working Meta key. When it refuses three times in a row, the page now says so ("Earshot can't hear you right now… You can still type"), instead of a microphone that silently hears nothing.
+- **Out of credit, for real.** The hackathon's Meta credit ran out during these tests, at 9:37 AM PT on Nov 4; the key now gets HTTP 402, "Billing verification failed". Measured on the live server after that:
+  - typed questions went to Muse Spark Open, though Fireworks itself answered some calls with 503 "overloaded", so the fallback now retries 3 times;
+  - a photo question was still answered correctly from the image, without SAM 3.1's outline;
+  - speech recognition accepted each session, then closed it (1008). The relay now counts a session as working only once it sends something, and the page shows its "can't hear you" notice 2.7 s after a hands-free session starts;
+  - all spoken prompts failed until credit is added.
 - **Speech recognition:** a transcript arrives 0.17 to 0.30 s after speech ends.
 - **History:** resending the conversation, instead of chaining with `previous_response_id`, cut the answer after a tool from 7.3 s to 2.1 s (`scripts/probe.py`).
 - **Unit tests:** 99, all using fake models and fake speech recognition.
@@ -106,6 +111,14 @@ Three Meta screeners, all with the shipped prompt, then screened all 2,155 once 
 - **The shipped screener has the best recall,** clearly better than Spark 1.3's, the newer model. It's also the fastest, by 2 to 2.5 times, and 7 times cheaper than Wonder. For a cue that has to come while the moment is still happening, that settles it.
 - **Every screener's false offers are mostly the same kind.** Of 46 to 59 false offers each, 35 to 41 were plans that belong to other people. A bigger model doesn't fix that, because the text alone doesn't say whose plan it is. Knowing who is speaking would; section 8 measures that Muse Voice Transcribe's diarization can.
 - **The test cost about $45 of Meta credit:** $25 of screening, and the rest for Muse Wonder writing and judging. The Fireworks fallback was left out of this run because it's slow (16 s a call), and it doesn't run on Meta credit; on the 431-snippet pilot it scored 92.1% precision and 98.1% recall.
+
+**Checked by a second judge (`scripts/eval_judge2.py`).** A different model, Muse Spark 1.3 at medium effort, judged all 2,400 snippets with the same question.
+- It agreed with Muse Wonder's judge on 2,030 (85%).
+- Both judges and the category agreed on 1,865.
+- On those 1,865 cleanest labels, the result holds. Precision ties: 89.6% shipped, 91.7% Spark 1.3, 90.9% Wonder, with overlapping 95% intervals. The shipped screener keeps the best recall, 99.2%.
+- Its false offers are nearly the same snippets as before, 39 of 57 of them other people's plans. So they're real mistakes, not label noise.
+- The judges disagreed most about requests to look something up (121) and requests to the listener (90).
+- The second judge cost $13.44.
 
 All the snippets, judgments and screenings are in `server/eval/hard2/`; the pilot's are in `server/eval/hard/`.
 
@@ -341,7 +354,7 @@ Muse Spark 1.3 translated the 40 labeled snippets from section 2, and the user's
 | Precision | 90.5% | 84.7% | 87.5% | 91.3% | 87.5% |
 | Recall | 100% | 100% | 100% | 100% | 100% |
 
-Every real moment was still caught in every language. Translation cost 0 to 6 points of precision, and the extra false offers were again mostly other people's plans (`eval/results/headsup-hard-languages-2026-11-04.json`).
+Every real moment was still caught in every language. Translation cost 0 to 6 points of precision, and the extra false offers were again mostly other people's plans (`eval/results/headsup-hard-languages-2026-11-04.json`). The same test in the other 20 languages was cut short when the Meta credit ran out, after 1,599 of its 5,000 translations.
 
 ### Diarization: who said what?
 
@@ -416,11 +429,28 @@ This is where someone with low vision most needs the help. Muse Image made 60 mo
 
 The 8th session was turned away by the limit of 8 open sessions per network address, since another session was already open from the same address. The 512 MB machine didn't slow down.
 
-**Research beyond one demo (`scripts/eval_research.py`).** 20 varied "look into it" jobs ran through Earshot's own Muse Wonder path, in background mode, 10 at a time. Among them: earbuds under $200, the cheapest way from SFO to downtown, dogs on Washington State Ferries, renewing a passport by mail.
-- All 20 reported back.
-- A job took 29 s at the median and 44 s at most.
-- The median job ran 6.5 web searches and cost $0.12.
+**Research beyond one demo (`scripts/eval_research.py`).** 100 varied "look into it" jobs ran through Earshot's own Muse Wonder path, in background mode, 10 at a time. Among them: earbuds under $200, the cheapest way from SFO to downtown, dogs on Washington State Ferries, renewing a passport by mail, sledding near Seattle, a lost Orca card.
+- **All 100 reported back,** every one on Muse Wonder.
+- A job took 29 s at the median, 41 s at p90 and 56 s at most.
+- The median job ran 7 web searches (753 in all) and cost $0.13 ($14.44 in all).
 - The summaries answered with specifics: named products and prices, a $2.05 bus fare, a ferry policy that took effect July 1, 2026.
+- An earlier run of the first 20 gave the same picture: 20 of 20, 29 s, $0.12.
+
+**Were the reports right? (`scripts/eval_research_check.py`)** Muse Spark 1.3, at high effort and with web search, fact-checked each spoken summary claim by claim. This is a model checking a model, not a human review.
+
+| Verdict | Claims |
+|---|---|
+| Supported | 541 of 554 (97.7%) |
+| Contradicted | 6 (1.1%), one each in 6 of the 100 reports |
+| Couldn't verify | 7 |
+
+The contradictions were near misses:
+- the SFO bus is "about an hour", where sources say 75 to 80 minutes;
+- a Bellevue pharmacy "open until ten" closes at nine;
+- a carry-on "within Alaska's limit" is a quarter-inch over it;
+- a farmers market called year-round is seasonal.
+
+The check cost $3.96.
 
 **An hour in a pocket (`scripts/eval_soak.py`).** One iPhone-style session stayed open for 70 minutes, against a local server, with the brain on Muse Spark Open: Meta's hosted models 404 from that Mac, but its speech recognition works. Every 5 minutes it was asked "Hey Earshot, what time is it?"
 - 13 of 14 were answered, including both after speech recognition's 60-minute session cap.

@@ -41,7 +41,8 @@ class AsrRelay:
         self.underruns = 0
         self.sessions = 0
         self.stalls = 0  # sessions the watchdog closed because Meta stopped answering
-        self.failures = 0  # attempts in a row that never opened a session (a refused key, no credit, an outage)
+        self.failures = 0  # sessions in a row that never listened (a refused key, no credit, an outage)
+        self.healthy = False
         self.last_heard = 0.0
         self.closes: list[tuple[int | None, str]] = []  # (code, reason) per ended session, for spike S6
         self.session_id: str | None = None
@@ -88,18 +89,22 @@ class AsrRelay:
     async def run(self) -> None:
         backoff = 0.5
         while not self._stop.is_set():
+            self.healthy, error = False, "the speech service closed the stream"
             try:
                 await self._session()
-                backoff = 0.5
             except (OSError, ConnectionClosed, InvalidHandshake, TimeoutError, RuntimeError) as e:
                 log.warning("asr session ended: %r", e)
-                self.failures += 1
-                if self.failures == 3:  # tell the user once, instead of a microphone that silently hears nothing
-                    await self.on_event({"type": "relayDown", "error": f"{type(e).__name__}: {e}"[:200]})
+                error = f"{type(e).__name__}: {e}"[:200]
             except Exception:  # anything unexpected must not leave the session deaf: log it and reconnect
                 log.exception("asr session crashed")
             if self._stop.is_set():
                 break
+            if self.healthy:
+                backoff = 0.5
+            else:  # it never really listened: a refused key, no credit, an outage
+                self.failures += 1
+                if self.failures == 3:  # tell the user once, instead of a microphone that silently hears nothing
+                    await self.on_event({"type": "relayDown", "error": error})
             try:
                 await asyncio.wait_for(self._stop.wait(), backoff)
             except TimeoutError:
@@ -116,9 +121,6 @@ class AsrRelay:
                 raise RuntimeError(f"ASR handshake rejected: {ack}")
             self.session_id = ack["sessionId"]
             self.sessions += 1
-            if self.failures >= 3:
-                await self.on_event({"type": "relayUp"})
-            self.failures = 0
             log.info("asr session %s open", self.session_id)
             self.last_heard = time.monotonic()
             sender = asyncio.create_task(self._send_loop(ws))
@@ -129,6 +131,13 @@ class AsrRelay:
                         continue
                     self.last_heard = time.monotonic()
                     evt = json.loads(raw)
+                    # A key without credit is accepted, then closed (1008 "Billing verification failed"), so a session
+                    # counts as working only once it sends something.
+                    if not self.healthy and evt.get("type") != "error":
+                        self.healthy = True
+                        if self.failures >= 3:
+                            await self.on_event({"type": "relayUp"})
+                        self.failures = 0
                     if evt.get("type") == "audioProgress":
                         continue  # proof the stream is alive, not news for the session
                     if evt.get("type") == "error":

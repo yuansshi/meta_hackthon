@@ -1,0 +1,3585 @@
+{
+ "at": "2026-11-04T17:27:41",
+ "summary": {
+  "reports": 100,
+  "checked": 100,
+  "claims": 554,
+  "supported": 541,
+  "contradicted": 6,
+  "unverifiable": 7,
+  "reports_with_a_contradiction": 6,
+  "cost_usd": 3.957
+ },
+ "rows": [
+  {
+   "goal": "whether a US citizen needs a visa for a week in Japan",
+   "claims": [
+    {
+     "claim": "U.S. citizens do not need a visa for a one-week trip to Japan",
+     "verdict": "supported",
+     "note": "US exempt for short stays under 90 days tourism/business"
+    },
+    {
+     "claim": "U.S. citizens can enter Japan visa-free",
+     "verdict": "supported",
+     "note": "Same as above, 90-day Temporary Visitor visa waiver"
+    },
+    {
+     "claim": "Passport must be valid for your entire stay",
+     "verdict": "supported",
+     "note": "No 6-month rule, but must cover whole stay"
+    },
+    {
+     "claim": "You must be able to show a return or onward ticket",
+     "verdict": "supported",
+     "note": "State Dept says should have proof, may be requested"
+    }
+   ],
+   "searches": 2,
+   "cost": 0.0184,
+   "s": 11.4
+  },
+  {
+   "goal": "the best time of year to visit Lisbon on a budget",
+   "claims": [
+    {
+     "claim": "Late January or February is the lowest-cost time to visit Lisbon.",
+     "verdict": "supported",
+     "note": "Multiple guides call Jan and Feb the cheapest months."
+    },
+    {
+     "claim": "Late January/February in Lisbon brings some rain and cooler days.",
+     "verdict": "supported",
+     "note": "Jan ~15C high, 104mm over 10 wet days; Feb ~16C."
+    },
+    {
+     "claim": "Late September through October offers a better mix of savings and pleasant weather.",
+     "verdict": "supported",
+     "note": "Mid-Sep to late Oct pairs warm sunny weather with lower rates."
+    },
+    {
+     "claim": "April through May offers a better mix of savings and pleasant weather.",
+     "verdict": "supported",
+     "note": "Apr-May shoulder season 20-30% below peak with good weather."
+    }
+   ],
+   "searches": 3,
+   "cost": 0.0252,
+   "s": 13.5
+  },
+  {
+   "goal": "the best noise-cancelling earbuds under $200",
+   "claims": [
+    {
+     "claim": "Soundcore Liberty 5 Pro is a real product",
+     "verdict": "supported",
+     "note": "Listed by Soundcore/retailers at $169.99"
+    },
+    {
+     "claim": "Soundcore Liberty 5 Pro costs about $170",
+     "verdict": "supported",
+     "note": "Multiple listings show $169.99"
+    },
+    {
+     "claim": "AirPods Pro 3 exists and is on sale for $199",
+     "verdict": "supported",
+     "note": "$249 list marked down to $199 on Nov 4 2026"
+    },
+    {
+     "claim": "Sony WF-C710N is a real product",
+     "verdict": "supported",
+     "note": "Listed by Best Buy, Macy's, Sony retailers"
+    },
+    {
+     "claim": "Sony WF-C710N costs about $130",
+     "verdict": "supported",
+     "note": "List $119.99-$129.99, street price now ~$98"
+    }
+   ],
+   "searches": 4,
+   "cost": 0.0286,
+   "s": 17.4
+  },
+  {
+   "goal": "which Seattle libraries are open late on Fridays",
+   "claims": [
+    {
+     "claim": "No Seattle Public Library branch is open late on Friday evenings",
+     "verdict": "supported",
+     "note": "All branches list Fri 10-6 or closed, none past 6pm "
+    },
+    {
+     "claim": "The open branches close at 6 p.m. on Fridays",
+     "verdict": "supported",
+     "note": "Open branches list Fri 10 a.m.-6 p.m., e.g. Central, Ballard "
+    },
+    {
+     "claim": "For an 8 p.m. closing, go Tuesday, Wednesday, or Thursday instead, depending on the branch",
+     "verdict": "supported",
+     "note": "Central Tue-Thu 10-8; others vary e.g. Beacon Hill Wed-Thu 12-8 "
+    }
+   ],
+   "searches": 2,
+   "cost": 0.0291,
+   "s": 18.1
+  },
+  {
+   "goal": "free kid-friendly museums in Chicago on weekdays",
+   "claims": [
+    {
+     "claim": "National Museum of Mexican Art is truly free",
+     "verdict": "supported",
+     "note": "Admission is always free per museum site "
+    },
+    {
+     "claim": "Chicago Cultural Center is truly free",
+     "verdict": "supported",
+     "note": "Admission is free, no tickets required "
+    },
+    {
+     "claim": "Lincoln Park Zoo is free for everyone every day",
+     "verdict": "supported",
+     "note": "Admission free every day, no reservation needed "
+    },
+    {
+     "claim": "Field Museum Wednesday free days are for Illinois residents only",
+     "verdict": "supported",
+     "note": "Wednesdays free for Illinois residents only "
+    }
+   ],
+   "searches": 4,
+   "cost": 0.0288,
+   "s": 16.1
+  },
+  {
+   "goal": "beginner-friendly day hikes within an hour of Seattle",
+   "claims": [
+    {
+     "claim": "Discovery Park is in Seattle and is an easy walk",
+     "verdict": "supported",
+     "note": "Seattle's largest park in Magnolia, easy loop trails."
+    },
+    {
+     "claim": "Twin Falls is a short waterfall hike within an hour of Seattle",
+     "verdict": "supported",
+     "note": "2.5-3 miles RT, 35-45 min east of Seattle."
+    },
+    {
+     "claim": "Franklin Falls is a short waterfall hike within an hour of Seattle",
+     "verdict": "supported",
+     "note": "2-mile RT easy trail, about 1 hour drive."
+    },
+    {
+     "claim": "November 4, 2026 is a Wednesday",
+     "verdict": "supported",
+     "note": "Calendars confirm Nov 4, 2026 is Wednesday."
+    },
+    {
+     "claim": "Sunset in Seattle on Nov 4 is around 4:48 p.m.",
+     "verdict": "supported",
+     "note": "Listings show 4:46-4:48 p.m. PST."
+    }
+   ],
+   "searches": 6,
+   "cost": 0.0452,
+   "s": 14.6
+  },
+  {
+   "goal": "compact strollers that fold with one hand under $300",
+   "claims": [
+    {
+     "claim": "Colugo Compact Stroller Plus is a real product",
+     "verdict": "supported",
+     "note": "Listed as The Compact Stroller+ by Colugo."
+    },
+    {
+     "claim": "Colugo Compact Stroller Plus costs about $199",
+     "verdict": "supported",
+     "note": "Current price $199, was $299."
+    },
+    {
+     "claim": "Colugo Compact Stroller Plus folds one-handed",
+     "verdict": "supported",
+     "note": "One-hand auto-fold, no latch needed."
+    },
+    {
+     "claim": "Colugo Compact Stroller Plus weighs about 16 pounds",
+     "verdict": "supported",
+     "note": "Listed at 16.18 lbs / 16.2 lb."
+    },
+    {
+     "claim": "Colugo Compact Stroller Plus includes a rain cover",
+     "verdict": "supported",
+     "note": "Carry Bag, Rain Cover, Cupholder included."
+    },
+    {
+     "claim": "Mompush Lithe V2 costs about $180",
+     "verdict": "supported",
+     "note": "Listed at $179.99."
+    },
+    {
+     "claim": "Mompush Lithe V2 is compact and folds with one hand",
+     "verdict": "supported",
+     "note": "One-Second One-Hand Fold, compact foldable."
+    },
+    {
+     "claim": "Chicco Presto costs roughly $150 to $230",
+     "verdict": "supported",
+     "note": "Seen at $149.22 and $229.99."
+    },
+    {
+     "claim": "Chicco Presto is compact and self-folds",
+     "verdict": "supported",
+     "note": "One-second auto-fold to compact standing fold."
+    }
+   ],
+   "searches": 3,
+   "cost": 0.0253,
+   "s": 17.0
+  },
+  {
+   "goal": "how to recycle old phone batteries in Seattle",
+   "claims": [
+    {
+     "claim": "Do not put old phone batteries in the garbage in Seattle.",
+     "verdict": "supported",
+     "note": "SPU Rule SW-404 bans batteries in garbage cans/containers"
+    },
+    {
+     "claim": "Do not put old phone batteries in curbside recycling in Seattle.",
+     "verdict": "supported",
+     "note": "Ban includes any residential garbage or recycling can or container"
+    },
+    {
+     "claim": "Tape the terminals/ends of batteries before disposal.",
+     "verdict": "supported",
+     "note": "Seattle guide: tape ends of individual household batteries"
+    },
+    {
+     "claim": "Take batteries free to a household hazardous waste site or transfer station.",
+     "verdict": "supported",
+     "note": "Seattle lists free drop-off at HHW facilities and transfer stations"
+    },
+    {
+     "claim": "Call Seattle Public Utilities for your one free annual battery pickup.",
+     "verdict": "supported",
+     "note": "From Apr 1 2026 one free battery pickup annually, order by calling 206-684-3000"
+    }
+   ],
+   "searches": 3,
+   "cost": 0.0254,
+   "s": 18.7
+  },
+  {
+   "goal": "the cheapest way to get from SFO to downtown San Francisco",
+   "claims": [
+    {
+     "claim": "The cheapest way from SFO to downtown is SamTrans Route 292 bus",
+     "verdict": "supported",
+     "note": "Listed as cheapest option vs BART $11+ "
+    },
+    {
+     "claim": "SamTrans fare is $2.05 with Clipper",
+     "verdict": "supported",
+     "note": "Adult local $2.05 Clipper in fare table "
+    },
+    {
+     "claim": "SamTrans fare is $2.25 cash",
+     "verdict": "supported",
+     "note": "Adult local $2.25 cash in fare table "
+    },
+    {
+     "claim": "SamTrans Route 292 takes about an hour to downtown",
+     "verdict": "contradicted",
+     "note": "Sources list 75min and 80min, ~25-33% longer "
+    },
+    {
+     "claim": "BART is about $11.80 to downtown",
+     "verdict": "supported",
+     "note": "$11.80 to Embarcadero/Montgomery/Powell as of 2026 "
+    },
+    {
+     "claim": "BART takes around 30 minutes to downtown",
+     "verdict": "supported",
+     "note": "~30 min SFO-downtown, also 28-40 min / 32 min "
+    }
+   ],
+   "searches": 6,
+   "cost": 0.0488,
+   "s": 24.5
+  },
+  {
+   "goal": "electric toothbrushes dentists recommend under $100",
+   "claims": [
+    {
+     "claim": "Oral-B Pro 1000 electric toothbrush exists",
+     "verdict": "supported",
+     "note": "Listed on Oral-B site at $49.99 "
+    },
+    {
+     "claim": "Oral-B Pro 1000 costs about fifty dollars",
+     "verdict": "supported",
+     "note": "Oral-B lists Pro 1000 at $49.99, retailers $49.94 "
+    },
+    {
+     "claim": "Oral-B Pro 1000 is a dentist-backed pick under $100",
+     "verdict": "supported",
+     "note": "Called gold standard top position, ADA accepted highly recommended "
+    },
+    {
+     "claim": "Philips Sonicare 4100 electric toothbrush exists and is under $100",
+     "verdict": "supported",
+     "note": "Listed at $49.96 / $39.96 "
+    },
+    {
+     "claim": "Philips Sonicare 4100 is suitable for sensitive gums",
+     "verdict": "supported",
+     "note": "Pressure sensor and settings protect sensitive gums "
+    },
+    {
+     "claim": "Oral-B iO Series 2 exists and is under $100",
+     "verdict": "supported",
+     "note": "CVS lists iO Series 2 at 49.99 USD "
+    },
+    {
+     "claim": "Oral-B iO Series 2 is a quieter brush",
+     "verdict": "supported",
+     "note": "iO handles generally quieter than non-iO Oral-B models "
+    }
+   ],
+   "searches": 4,
+   "cost": 0.0342,
+   "s": 18.7
+  },
+  {
+   "goal": "how to get a refund for a delayed Amtrak train",
+   "claims": [
+    {
+     "claim": "Call Amtrak Customer Relations at 1-800-872-7245",
+     "verdict": "supported",
+     "note": "Amtrak lists 1-800-872-7245 for Customer Relations"
+    },
+    {
+     "claim": "Ask for a refund or compensation for the affected segment, giving reservation and train details",
+     "verdict": "supported",
+     "note": "Amtrak directs delayed customers to call 1-800-872-7245; compensation includes refund for affected segment"
+    },
+    {
+     "claim": "A delay by itself does not guarantee a cash refund if you completed the trip",
+     "verdict": "supported",
+     "note": "No US law requires delay pay; Amtrak does not guarantee arrival times"
+    },
+    {
+     "claim": "Amtrak may offer points, a voucher, or a segment refund depending on the disruption",
+     "verdict": "supported",
+     "note": "Official pledge lists points, Transportation Voucher and/or refund for affected segment"
+    }
+   ],
+   "searches": 3,
+   "cost": 0.0315,
+   "s": 15.4
+  },
+  {
+   "goal": "vegetarian restaurants near Pike Place Market open after 9 pm",
+   "claims": [
+    {
+     "claim": "El Borracho is at Pike Place",
+     "verdict": "supported",
+     "note": "Listed at 1521 1st Ave at Pike Place Market"
+    },
+    {
+     "claim": "El Borracho is a fully plant-based Mexican spot",
+     "verdict": "supported",
+     "note": "Described as 100% plant-based / fully vegan Mexican"
+    },
+    {
+     "claim": "El Borracho is open Wednesdays until 10 p.m.",
+     "verdict": "supported",
+     "note": "Recent listing: Wednesday 11AM-10PM updated Oct 19 2026"
+    },
+    {
+     "claim": "The Alibi Room is nearby Pike Place Market",
+     "verdict": "supported",
+     "note": "At 85 Pike St, alley adjacent to Pike Place"
+    },
+    {
+     "claim": "The Alibi Room serves its kitchen until 1 a.m.",
+     "verdict": "supported",
+     "note": "Kitchen Open Until 1am Everyday"
+    },
+    {
+     "claim": "The Alibi Room has vegetarian and vegan pizzas",
+     "verdict": "supported",
+     "note": "Menu lists Vegan Pie and Spinach, Mushroom & Feta Pizza"
+    }
+   ],
+   "searches": 6,
+   "cost": 0.0498,
+   "s": 21.0
+  },
+  {
+   "goal": "the easiest houseplants for a dark apartment",
+   "claims": [
+    {
+     "claim": "ZZ plant handles a dark / low-light apartment",
+     "verdict": "supported",
+     "note": "Thrives in low to bright indirect light, tolerates shade"
+    },
+    {
+     "claim": "ZZ plant can go weeks without watering",
+     "verdict": "supported",
+     "note": "Stores water, can go weeks without watering"
+    },
+    {
+     "claim": "Snake plant handles a dark / low-light apartment",
+     "verdict": "supported",
+     "note": "Tolerates very low light, ideal for dim corners"
+    },
+    {
+     "claim": "Snake plant can go weeks without watering",
+     "verdict": "supported",
+     "note": "Survives 2-4 weeks, up to 6-8 weeks in low light"
+    },
+    {
+     "claim": "Pothos is trailing",
+     "verdict": "supported",
+     "note": "Described as trailing plant with cascading vines"
+    },
+    {
+     "claim": "Pothos is fast-growing",
+     "verdict": "supported",
+     "note": "Described as forgiving, fast growing"
+    },
+    {
+     "claim": "Low light still means some indirect light, not complete darkness",
+     "verdict": "supported",
+     "note": "Low light should not be interpreted as complete darkness"
+    }
+   ],
+   "searches": 4,
+   "cost": 0.0313,
+   "s": 15.3
+  },
+  {
+   "goal": "budget weekend trips from Seattle by train",
+   "claims": [
+    {
+     "claim": "Seattle to Portland train takes about three and a half hours",
+     "verdict": "supported",
+     "note": "Usually 3h31m, fastest 3h25m "
+    },
+    {
+     "claim": "Seattle-Portland coach fares sometimes start in the high twenties each way",
+     "verdict": "supported",
+     "note": "From $29 found, $27 seen recently "
+    },
+    {
+     "claim": "Vancouver is reachable by train from Seattle",
+     "verdict": "supported",
+     "note": "Cascades runs Vancouver BC-Eugene via Seattle-Portland "
+    },
+    {
+     "claim": "Passport is needed for Seattle-Vancouver train",
+     "verdict": "supported",
+     "note": "Valid passport or EDLD required "
+    },
+    {
+     "claim": "Leavenworth is reachable by train from Seattle",
+     "verdict": "supported",
+     "note": "Amtrak to Icicle Station once daily, 3h22m "
+    },
+    {
+     "claim": "Tacoma is reachable by train and is shorter/cheaper than Portland",
+     "verdict": "supported",
+     "note": "32m avg, from $10 vs Portland ~3.5h/$29 "
+    },
+    {
+     "claim": "Leavenworth by train is shorter or cheaper than Portland",
+     "verdict": "contradicted",
+     "note": "3h22m similar time but $70-120, not cheaper "
+    }
+   ],
+   "searches": 7,
+   "cost": 0.0567,
+   "s": 22.0
+  },
+  {
+   "goal": "the best free apps for learning Spanish",
+   "claims": [
+    {
+     "claim": "Duolingo provides a free option for a daily Spanish habit",
+     "verdict": "supported",
+     "note": "Free version includes every lesson with ads"
+    },
+    {
+     "claim": "Language Transfer teaches grammar by listening and speaking aloud",
+     "verdict": "supported",
+     "note": "Pause, build sentences and answer out loud; builds grammar intuition"
+    },
+    {
+     "claim": "In Seattle, a library card unlocks Mango Languages for free",
+     "verdict": "supported",
+     "note": "Free with Seattle Public Library card"
+    },
+    {
+     "claim": "Mango Languages can be used at home or on the go",
+     "verdict": "supported",
+     "note": "Learn anywhere anytime with on-the-go offline app"
+    }
+   ],
+   "searches": 4,
+   "cost": 0.0286,
+   "s": 15.7
+  },
+  {
+   "goal": "running shoes for flat feet under $150",
+   "claims": [
+    {
+     "claim": "Saucony Guide 18 is an everyday stability shoe for flat feet",
+     "verdict": "supported",
+     "note": "Listed as stability daily trainer, mild stability $140 "
+    },
+    {
+     "claim": "New Balance 860v15 is an everyday stability shoe for flat feet",
+     "verdict": "supported",
+     "note": "Described as maximal moderate stability daily trainer $149.95 "
+    },
+    {
+     "claim": "Saucony Guide 18 costs about $140 to $150",
+     "verdict": "supported",
+     "note": "Listed at $140 and $150 MSRP "
+    },
+    {
+     "claim": "New Balance 860v15 costs about $140 to $150",
+     "verdict": "supported",
+     "note": "$149.99 stability, $150 at New Balance "
+    },
+    {
+     "claim": "Road Runner Sports has a Green Lake location in Seattle",
+     "verdict": "supported",
+     "note": "Seattle Green Lake Village at 7020 Woodlawn Ave NE "
+    },
+    {
+     "claim": "Road Runner Sports offers free in-store fitting",
+     "verdict": "supported",
+     "note": "Free expert-level fitting when you shop in-store "
+    }
+   ],
+   "searches": 4,
+   "cost": 0.0285,
+   "s": 15.6
+  },
+  {
+   "goal": "setting up mesh Wi-Fi for a three-bedroom house",
+   "claims": [
+    {
+     "claim": "TP-Link Deco BE63 is a real mesh system",
+     "verdict": "supported",
+     "note": "Wi-Fi 7 tri-band mesh sold in 1/2/3-packs"
+    },
+    {
+     "claim": "eero 6+ is a real mesh system",
+     "verdict": "supported",
+     "note": "Wi-Fi 6 dual-band mesh sold in 1/2/3-packs"
+    },
+    {
+     "claim": "A three-pack is suitable for a typical three-bedroom house",
+     "verdict": "supported",
+     "note": "3-packs rated for 3-4 bed homes up to ~4500 sq ft"
+    },
+    {
+     "claim": "Deco BE63 is a value pick and eero 6+ is simplest budget pick",
+     "verdict": "supported",
+     "note": "Reviews call BE63 value and eero 6+ easy/budget"
+    },
+    {
+     "claim": "Put one node per busy level/end, extra nodes halfway to dead zones not inside them",
+     "verdict": "supported",
+     "note": "Placement guides recommend halfway, not inside dead zone"
+    }
+   ],
+   "searches": 5,
+   "cost": 0.047,
+   "s": 15.0
+  },
+  {
+   "goal": "what documents I need to renew a US passport by mail",
+   "claims": [
+    {
+     "claim": "To renew by mail, send Form DS-82",
+     "verdict": "supported",
+     "note": "State Dept says use Form DS-82 for mail renewal "
+    },
+    {
+     "claim": "include your most recent passport",
+     "verdict": "supported",
+     "note": "Must submit most recent passport with application "
+    },
+    {
+     "claim": "include one new passport photo",
+     "verdict": "supported",
+     "note": "Must provide one photo with application "
+    },
+    {
+     "claim": "pay by check or money order",
+     "verdict": "supported",
+     "note": "Pay using personal check or money order, no cash "
+    },
+    {
+     "claim": "passport must be undamaged",
+     "verdict": "supported",
+     "note": "Must be not damaged other than normal wear "
+    },
+    {
+     "claim": "passport was issued within the last 15 years",
+     "verdict": "supported",
+     "note": "Requires issuance within last 15 years "
+    },
+    {
+     "claim": "passport was issued when you were 16 or older",
+     "verdict": "supported",
+     "note": "Requires issuance at age 16 or older "
+    },
+    {
+     "claim": "passport is in your current name or you include proof of name change",
+     "verdict": "supported",
+     "note": "Requires current name or name-change document "
+    }
+   ],
+   "searches": 3,
+   "cost": 0.0376,
+   "s": 14.2
+  },
+  {
+   "goal": "how to get from Heathrow to central London cheaply",
+   "claims": [
+    {
+     "claim": "Piccadilly line Tube is the cheapest ride from Heathrow to central London",
+     "verdict": "supported",
+     "note": "2026 guides call it cheapest at \u00a35.90"
+    },
+    {
+     "claim": "Piccadilly line fare is about \u00a35.90",
+     "verdict": "supported",
+     "note": "Listed as \u00a35.90 contactless, 50-60 min"
+    },
+    {
+     "claim": "Piccadilly line takes roughly 50 minutes to central London",
+     "verdict": "supported",
+     "note": "About 50 min to central London"
+    },
+    {
+     "claim": "You can pay by tapping a contactless card or phone",
+     "verdict": "supported",
+     "note": "TfL accepts contactless across Tube network"
+    },
+    {
+     "claim": "Elizabeth line is faster than Piccadilly but costs more",
+     "verdict": "supported",
+     "note": "\u00a315.50 and 28 min to Paddington vs \u00a35.90 50 min"
+    }
+   ],
+   "searches": 4,
+   "cost": 0.0306,
+   "s": 13.1
+  },
+  {
+   "goal": "the rules for bringing a dog on Washington State Ferries",
+   "claims": [
+    {
+     "claim": "You can bring your dog on a Washington State Ferry",
+     "verdict": "supported",
+     "note": "WSF allows pets including dogs inside cabin with caveats"
+    },
+    {
+     "claim": "New rules in effect since July 1, 2026",
+     "verdict": "supported",
+     "note": "WSF says new rules take effect on July 1 after education period"
+    },
+    {
+     "claim": "Keep your dog harnessed or crated",
+     "verdict": "supported",
+     "note": "WSF official: dogs must be in a harness or a crate"
+    },
+    {
+     "claim": "Keep your dog under control",
+     "verdict": "supported",
+     "note": "Crew may move pet if not under control"
+    },
+    {
+     "claim": "Stay on the vehicle deck, in outdoor areas",
+     "verdict": "supported",
+     "note": "Pets allowed on vehicle decks and outdoor areas"
+    },
+    {
+     "claim": "Stay in marked pet area inside cabin at opposite end from galley",
+     "verdict": "supported",
+     "note": "Allowed in marked areas inside cabins opposite galley"
+    }
+   ],
+   "searches": 5,
+   "cost": 0.0559,
+   "s": 20.4
+  },
+  {
+   "goal": "where to see fall colors near Portland this week",
+   "claims": [
+    {
+     "claim": "Portland is forecast at peak color November 4th to 10th",
+     "verdict": "supported",
+     "note": "2026 map forecasts Portland peak Nov 4-10 "
+    },
+    {
+     "claim": "Washington Park is near Portland and your best bet",
+     "verdict": "supported",
+     "note": "Washington Park complex in Portland hosts both sites "
+    },
+    {
+     "claim": "Portland Japanese Garden is in Washington Park",
+     "verdict": "supported",
+     "note": "Garden occupies 12.5 acres in Washington Park "
+    },
+    {
+     "claim": "Portland Japanese Garden has red maples in fall",
+     "verdict": "supported",
+     "note": "Japanese/vine maples turn flame red, crimson-orange-yellow "
+    },
+    {
+     "claim": "Hoyt Arboretum is next door to Japanese Garden and walkable",
+     "verdict": "supported",
+     "note": "Hoyt straddles ridge above Japanese Garden, ~11 min walk "
+    },
+    {
+     "claim": "Hoyt Arboretum is free",
+     "verdict": "supported",
+     "note": "No admission fee, open daily "
+    },
+    {
+     "claim": "Hoyt Arboretum has maples, golden larches, and orange dawn redwoods",
+     "verdict": "supported",
+     "note": "Maple Collection dazzling; larches yellow, dawn redwoods red/bronze-copper "
+    }
+   ],
+   "searches": 6,
+   "cost": 0.0511,
+   "s": 20.3
+  },
+  {
+   "goal": "kid-friendly hikes near Portland",
+   "claims": [
+    {
+     "claim": "Tryon Creek near Portland offers an easy forest walk",
+     "verdict": "supported",
+     "note": "Described as easy-to-moderate wooded trails, easy family loops"
+    },
+    {
+     "claim": "Tryon Creek has a nature center",
+     "verdict": "supported",
+     "note": "Listed with a nature center and trails around Nature Center"
+    },
+    {
+     "claim": "Hoyt Arboretum offers short trails right in the city",
+     "verdict": "supported",
+     "note": "190-acre arboretum in Portland's Washington Park with 0.5-mi 30-min loop"
+    },
+    {
+     "claim": "Forest Park offers short trails right in the city",
+     "verdict": "supported",
+     "note": "One of largest urban forests, wilderness escape without leaving city"
+    },
+    {
+     "claim": "Seattle to Portland is about 174 miles",
+     "verdict": "supported",
+     "note": "About 174-175 miles via I-5, 174 miles direct"
+    },
+    {
+     "claim": "Seattle to Portland drive is roughly three hours each way",
+     "verdict": "supported",
+     "note": "Usually ~3 hours in good traffic, 3-3.5 hrs dependent"
+    }
+   ],
+   "searches": 3,
+   "cost": 0.0264,
+   "s": 15.0
+  },
+  {
+   "goal": "whether Pike Place Market is open on Thanksgiving",
+   "claims": [
+    {
+     "claim": "Pike Place Market is closed on Thanksgiving Day",
+     "verdict": "supported",
+     "note": "Open daily, only closed Thanksgiving and Christmas Day "
+    },
+    {
+     "claim": "Thanksgiving Day in 2026 is Thursday, November 26, 2026",
+     "verdict": "supported",
+     "note": "Thanksgiving 2026 is Thursday, November 26 "
+    },
+    {
+     "claim": "most of the Market is usually active from 9 a.m. to 5 p.m.",
+     "verdict": "supported",
+     "note": "Most of the Market is active from about 9 am to 5 pm "
+    }
+   ],
+   "searches": 3,
+   "cost": 0.0216,
+   "s": 10.2
+  },
+  {
+   "goal": "the best carry-on suitcases under $250",
+   "claims": [
+    {
+     "claim": "Travelpro Maxlite 5 21-inch costs about $150",
+     "verdict": "supported",
+     "note": "Listed at $148-$160 "
+    },
+    {
+     "claim": "Travelpro Maxlite 5 21-inch is very light and well under $250",
+     "verdict": "supported",
+     "note": "5.4 lbs described as featherlight "
+    },
+    {
+     "claim": "Samsonite Freeform is a hard-shell carry-on available under $250",
+     "verdict": "supported",
+     "note": "Hardside Carry-On 21-Inch at $129.97 "
+    },
+    {
+     "claim": "Quince Small Carry-On exists and costs under $250",
+     "verdict": "supported",
+     "note": "$139.90 for Small Carry-On "
+    },
+    {
+     "claim": "Quince Small Carry-On fits within Alaska's 22x14x9-in limit",
+     "verdict": "contradicted",
+     "note": "Quince is 22.24x14.1x9.65  vs Alaska 22x14x9 "
+    }
+   ],
+   "searches": 4,
+   "cost": 0.0387,
+   "s": 28.9
+  },
+  {
+   "goal": "the quietest dishwashers under $800",
+   "claims": [
+    {
+     "claim": "Whirlpool dishwasher at 41 decibels is the quietest option under $800",
+     "verdict": "supported",
+     "note": "41 dBA Whirlpool listed; quieter 38-39 dBA Bosch models cost $1000+."
+    },
+    {
+     "claim": "Whirlpool 41-dB model costs $799",
+     "verdict": "supported",
+     "note": "Multiple retailers list WDPS7024RV at $799.00."
+    },
+    {
+     "claim": "Frigidaire Gallery dishwasher is rated at 42 decibels",
+     "verdict": "supported",
+     "note": "Model GDPH4525AF listed at 42 dB."
+    },
+    {
+     "claim": "Frigidaire Gallery costs roughly $500 to $630",
+     "verdict": "supported",
+     "note": "Listings show $498-$629, within 10% of range."
+    },
+    {
+     "claim": "In Seattle tax and installation will push the $799 Whirlpool over $800 total",
+     "verdict": "supported",
+     "note": "Seattle tax ~10.55% alone adds ~$84; install typically $99-$200 extra."
+    }
+   ],
+   "searches": 6,
+   "cost": 0.0623,
+   "s": 19.9
+  },
+  {
+   "goal": "how to renew a Washington driver's license online",
+   "claims": [
+    {
+     "claim": "You can renew a Washington driver's license online through the state Department of Licensing",
+     "verdict": "supported",
+     "note": "DOL page frames online as default option "
+    },
+    {
+     "claim": "Must be under 70 for online renewal",
+     "verdict": "supported",
+     "note": "Must renew in person if 70+ years old "
+    },
+    {
+     "claim": "Did not renew online last time",
+     "verdict": "supported",
+     "note": "Must renew in person if renewed online on last expiration "
+    },
+    {
+     "claim": "Update your address before renewing if it has changed",
+     "verdict": "supported",
+     "note": "If address changed, update before you renew "
+    },
+    {
+     "claim": "Renewal costs $61 for six years",
+     "verdict": "supported",
+     "note": "Standard renewal 6 years ($61) "
+    },
+    {
+     "claim": "Renewal costs $81 for eight years",
+     "verdict": "supported",
+     "note": "Standard renewal 8 years ($81) "
+    }
+   ],
+   "searches": 4,
+   "cost": 0.0386,
+   "s": 13.9
+  },
+  {
+   "goal": "the best budget mechanical keyboards",
+   "claims": [
+    {
+     "claim": "The Aula F75 is a real budget mechanical keyboard",
+     "verdict": "supported",
+     "note": "Widely listed as 75% wireless hot-swappable mechanical keyboard."
+    },
+    {
+     "claim": "The Aula F75 costs about sixty-five dollars",
+     "verdict": "supported",
+     "note": "Multiple US listings at $64.59-$65.99 via Amazon."
+    },
+    {
+     "claim": "The Aula F75 has wireless connectivity",
+     "verdict": "supported",
+     "note": "Listed as BT/2.4GHz/USB-C tri-mode wireless."
+    },
+    {
+     "claim": "The Aula F75 has a volume knob",
+     "verdict": "supported",
+     "note": "Listings describe multifunction knob for volume/media control."
+    },
+    {
+     "claim": "The Aula F75 sounds and feels like a much pricier keyboard",
+     "verdict": "supported",
+     "note": "Reviews say it sounds better than price suggests, punches above weight."
+    },
+    {
+     "claim": "Keychron is a real alternative brand costing a little more with deeper customization for typing/coding",
+     "verdict": "supported",
+     "note": "Keychron V3 Max ~$85-95, QMK/VIA support, rated best for coding."
+    }
+   ],
+   "searches": 4,
+   "cost": 0.0376,
+   "s": 14.9
+  },
+  {
+   "goal": "rules for flying with a power bank",
+   "claims": [
+    {
+     "claim": "You can fly with a power bank",
+     "verdict": "supported",
+     "note": "FAA allows power banks on passenger aircraft in cabin "
+    },
+    {
+     "claim": "Power bank must be kept in carry-on or personal item",
+     "verdict": "supported",
+     "note": "TSA/FAA: carry-on yes, spare batteries must be carried on "
+    },
+    {
+     "claim": "Power banks are never allowed in checked luggage",
+     "verdict": "supported",
+     "note": "TSA lists power banks allowed in carry-on, not in checked bags "
+    },
+    {
+     "claim": "Standard power banks under 100 watt-hours are fine without approval",
+     "verdict": "supported",
+     "note": "0-100 Wh allowed, 101-160 Wh needs airline approval "
+    }
+   ],
+   "searches": 2,
+   "cost": 0.0215,
+   "s": 14.3
+  },
+  {
+   "goal": "free museum days in Seattle this month",
+   "claims": [
+    {
+     "claim": "Tomorrow is Thursday November 5th (Nov 5, 2026 is Thursday)",
+     "verdict": "supported",
+     "note": "Nov 5 2026 is Thursday, day after Nov 4."
+    },
+    {
+     "claim": "November 5th is Seattle's Free First Thursday",
+     "verdict": "supported",
+     "note": "First Thursday monthly is official Seattle free museum day; Nov 5 listed as Free First Thursday."
+    },
+    {
+     "claim": "Seattle Art Museum has free entry on Free First Thursday",
+     "verdict": "supported",
+     "note": "SAM offers free admission first Thursday, 10am-8pm."
+    },
+    {
+     "claim": "The Burke Museum has free entry on Free First Thursday",
+     "verdict": "supported",
+     "note": "Burke is free first Thursday 10am-8pm."
+    },
+    {
+     "claim": "National Nordic Museum has free entry on Free First Thursday",
+     "verdict": "supported",
+     "note": "Nordic Museum free general admission first Thursday, 10am-8pm."
+    },
+    {
+     "claim": "MOHAI has evening hours on Free First Thursday",
+     "verdict": "supported",
+     "note": "MOHAI free core exhibits 5-8pm first Thursday."
+    },
+    {
+     "claim": "Museum of Flight has evening hours on Free First Thursday",
+     "verdict": "supported",
+     "note": "Museum of Flight free 5-9pm first Thursday, Nov 5 listed."
+    },
+    {
+     "claim": "The Frye is free all month long",
+     "verdict": "supported",
+     "note": "Frye admission is always free."
+    },
+    {
+     "claim": "Several other spots are free all month long",
+     "verdict": "supported",
+     "note": "Olympic Sculpture Park and others always free daily."
+    }
+   ],
+   "searches": 9,
+   "cost": 0.0701,
+   "s": 23.2
+  },
+  {
+   "goal": "dog-friendly cafes in Ballard",
+   "claims": [
+    {
+     "claim": "Pico Cafe is a dog-friendly cafe in Ballard",
+     "verdict": "supported",
+     "note": "Listed at 6415 32nd Ave NW Seattle and described as dog-friendly outside/garden"
+    },
+    {
+     "claim": "Pico Cafe has a back patio and garden",
+     "verdict": "supported",
+     "note": "Reviews describe huge outdoor seating behind with covered courtyard and garden feel"
+    },
+    {
+     "claim": "Anchored Ship Coffee Bar is on Ballard Avenue",
+     "verdict": "supported",
+     "note": "Listed as 5306/5308 Ballard Ave NW in Ballard"
+    },
+    {
+     "claim": "Anchored Ship Coffee Bar has outdoor seating",
+     "verdict": "supported",
+     "note": "Described as having larger outdoor patio / street-side patio on Ballard Ave"
+    },
+    {
+     "claim": "Anchored Ship Coffee Bar welcomes dogs outside",
+     "verdict": "supported",
+     "note": "Listings say Dogs allowed outside with dog treats and patio"
+    },
+    {
+     "claim": "Most Ballard options welcome dogs outside rather than at indoor tables, so plan on patio seating",
+     "verdict": "supported",
+     "note": "Both cafes list dogs outside/patio only, matching typical outdoor-only rule"
+    }
+   ],
+   "searches": 4,
+   "cost": 0.0282,
+   "s": 15.3
+  },
+  {
+   "goal": "the best rain jackets for cycling",
+   "claims": [
+    {
+     "claim": "POC Motion is a real cycling rain jacket (Motion Rain)",
+     "verdict": "supported",
+     "note": "Listed as Motion Rain 52323, durable waterproof for commute/trail/road "
+    },
+    {
+     "claim": "POC Motion is a durable, vented commuter-style shell",
+     "verdict": "supported",
+     "note": "3-layer ripstop nylon with helmet hood and ventilation, for daily/commuting use "
+    },
+    {
+     "claim": "Showers Pass makes cycling rain jackets practical for wet commutes",
+     "verdict": "supported",
+     "note": "Syncline CC 10K waterproof with cross-core vents; Transit CC super-practical commuting hardshell "
+    },
+    {
+     "claim": "MAAP Atmos is a real cycling rain jacket",
+     "verdict": "supported",
+     "note": "MAAP Atmos Rain Jacket best overall, lightweight packable Pertex Shield "
+    },
+    {
+     "claim": "MAAP Atmos is a featherweight race shell for fast road rides",
+     "verdict": "supported",
+     "note": "Ultra-light 68gsm Pertex Shield 20K, 120-125g packable for high-output riding "
+    }
+   ],
+   "searches": 3,
+   "cost": 0.0293,
+   "s": 27.2
+  },
+  {
+   "goal": "gluten-free bakeries in Capitol Hill, Seattle",
+   "claims": [
+    {
+     "claim": "Nuflours Bakery is on 15th Avenue East in Capitol Hill",
+     "verdict": "supported",
+     "note": "Address is 518 15th Ave E in Capitol Hill."
+    },
+    {
+     "claim": "Nuflours is a dedicated bakery where everything is gluten-free",
+     "verdict": "supported",
+     "note": "Listed as dedicated 100% gluten-free facility."
+    },
+    {
+     "claim": "Nuflours is open Wednesday morning",
+     "verdict": "supported",
+     "note": "Wednesday hours listed as 8AM-5PM."
+    },
+    {
+     "claim": "Askatu Bakery is in Belltown",
+     "verdict": "supported",
+     "note": "Address 2209 4th Ave in Belltown."
+    },
+    {
+     "claim": "Askatu Bakery opens at ten",
+     "verdict": "supported",
+     "note": "Wednesday hours are 10AM-3PM."
+    },
+    {
+     "claim": "Askatu Bakery is an allergen-free option",
+     "verdict": "supported",
+     "note": "Described as 100% gluten-free, top-allergen-free bakery."
+    }
+   ],
+   "searches": 4,
+   "cost": 0.0379,
+   "s": 20.0
+  },
+  {
+   "goal": "how to get a library card at Seattle Public Library",
+   "claims": [
+    {
+     "claim": "Seattle Public Library card is free",
+     "verdict": "supported",
+     "note": "Free for most who live, work or go to school in Seattle "
+    },
+    {
+     "claim": "You can get a Seattle Public Library card online",
+     "verdict": "supported",
+     "note": "Complete online form to apply; full access once address verified "
+    },
+    {
+     "claim": "You can get a Seattle Public Library card at any branch",
+     "verdict": "supported",
+     "note": "Sign up at any one of 27 locations / any location "
+    },
+    {
+     "claim": "In-person signup requires a valid ID",
+     "verdict": "supported",
+     "note": "Stop by any Library location with a valid ID "
+    },
+    {
+     "claim": "In-person signup is fastest with instant access to physical and digital materials",
+     "verdict": "supported",
+     "note": "Instant access in person vs card number in 2-5 days online "
+    }
+   ],
+   "searches": 4,
+   "cost": 0.0373,
+   "s": 15.7
+  },
+  {
+   "goal": "how to recycle electronics in King County",
+   "claims": [
+    {
+     "claim": "TVs, computers, monitors, laptops, and tablets can be recycled for free at an E-Cycle Washington site",
+     "verdict": "supported",
+     "note": "E-Cycle lists all five as free items"
+    },
+    {
+     "claim": "Do not put those electronics in the garbage in Seattle",
+     "verdict": "supported",
+     "note": "Banned from Seattle garbage since Jan 2024"
+    },
+    {
+     "claim": "Friendly Earth in Sodo and RE-PC are E-Cycle recycling options",
+     "verdict": "supported",
+     "note": "Both named as SODO E-Cycle options"
+    },
+    {
+     "claim": "Friendly Earth and RE-PC are open today (Wednesday, Nov 4, 2026)",
+     "verdict": "supported",
+     "note": "Friendly Earth Wed 9-5 and RE-PC Wed 10-7"
+    },
+    {
+     "claim": "Seattle Public Utilities can pick small electronics up from home",
+     "verdict": "supported",
+     "note": "SPU Special Item Pickup covers small electronics"
+    }
+   ],
+   "searches": 6,
+   "cost": 0.055,
+   "s": 21.1
+  },
+  {
+   "goal": "the cheapest way to send a parcel to Canada",
+   "claims": [
+    {
+     "claim": "Pirate Ship offers Simple Export Rate as an online-only label exclusive to Pirate Ship",
+     "verdict": "supported",
+     "note": "Exclusive service only available through Pirate Ship"
+    },
+    {
+     "claim": "Simple Export Rate is designed for international parcels up to twenty pounds",
+     "verdict": "supported",
+     "note": "Max Weight: 20 pounds, up to 20 lbs internationally"
+    },
+    {
+     "claim": "Simple Export Rate is usually the cheapest option for small parcels to Canada",
+     "verdict": "supported",
+     "note": "Cheapest pricing for packages up to 20 pounds internationally"
+    },
+    {
+     "claim": "USPS First-Class Package International (Service) is an available product",
+     "verdict": "supported",
+     "note": "International service kept its name after 2023 change"
+    },
+    {
+     "claim": "If parcel is a gift, use USPS First-Class Package International because Simple Export Rate does not support Gift",
+     "verdict": "supported",
+     "note": "Gifts not supported, recommend USPS First Class Package International"
+    },
+    {
+     "claim": "USPS First-Class Package International can be bought at a walk-in post office retail counter",
+     "verdict": "supported",
+     "note": "Retail prices start at $19.40, bring package to Post Office"
+    }
+   ],
+   "searches": 5,
+   "cost": 0.0466,
+   "s": 21.2
+  },
+  {
+   "goal": "beginner yoga studios near downtown Seattle",
+   "claims": [
+    {
+     "claim": "Mind.Body.Hum is near the downtown waterfront",
+     "verdict": "supported",
+     "note": "905 Western Ave, near Pioneer Square at Seattle Waterfront \u30103400806445428790965\u2020L9-L10\u3011"
+    },
+    {
+     "claim": "Mind.Body.Hum offers new students 30 days unlimited for $60",
+     "verdict": "supported",
+     "note": "Site says 'first 30 days unlimited for $60' \u30103322027502941786463\u2020L5\u3011"
+    },
+    {
+     "claim": "Mind.Body.Hum offers gentler and warm-flow options",
+     "verdict": "supported",
+     "note": "Lists Warm Vinyasa, Yin, Restorative, Nidra \u30109175965388917720752\u2020L7-L10\u3011"
+    },
+    {
+     "claim": "8 Limbs runs a four-week Intro to Yoga series for brand-new beginners",
+     "verdict": "supported",
+     "note": "4-Week Beginner Series for new students, foundational \u30102875239693766550109\u2020L5-L10\u3011"
+    },
+    {
+     "claim": "8 Limbs listed locations are outside downtown",
+     "verdict": "supported",
+     "note": "Lists Capitol Hill, Phinney Ridge, Wedgwood, West Seattle, none downtown-waterfront \u30108761549449058095724\u2020L40-L46\u3011"
+    }
+   ],
+   "searches": 7,
+   "cost": 0.0643,
+   "s": 19.0
+  },
+  {
+   "goal": "the best e-readers for reading in sunlight",
+   "claims": [
+    {
+     "claim": "Black-and-white E Ink readers are readable in direct sunlight",
+     "verdict": "supported",
+     "note": "E Ink uses ambient light, readable even in bright sunlight"
+    },
+    {
+     "claim": "A new Kindle Paperwhite model exists",
+     "verdict": "supported",
+     "note": "2026 Paperwhite $199.99, shipping since Oct 28"
+    },
+    {
+     "claim": "Kindle Paperwhite is the best default for most people",
+     "verdict": "supported",
+     "note": "Described as most balanced package / default pick for most readers"
+    },
+    {
+     "claim": "Kobo Clara BW exists as a product",
+     "verdict": "supported",
+     "note": "Kobo lists Clara BW at $159.99 USD"
+    },
+    {
+     "claim": "Kobo Clara BW is cheaper than Kindle Paperwhite",
+     "verdict": "supported",
+     "note": "$159.99 vs $199.99 Paperwhite, costs meaningfully less"
+    },
+    {
+     "claim": "Kobo Clara BW is simpler for Seattle-area library borrowing",
+     "verdict": "supported",
+     "note": "SPL supports Kindle and Kobo via OverDrive/Libby; Kobo borrows directly on-device"
+    }
+   ],
+   "searches": 5,
+   "cost": 0.0376,
+   "s": 22.4
+  },
+  {
+   "goal": "Seattle's ferry schedule to Bainbridge on weekends",
+   "claims": [
+    {
+     "claim": "On weekends, ferries leave Seattle for Bainbridge from 6:10 AM until 2:10 AM the next morning",
+     "verdict": "supported",
+     "note": "Timetable lists 6:10 AM first and 2:10 AM last Sat/Sun"
+    },
+    {
+     "claim": "Weekend Seattle-Bainbridge ferries run roughly every 45 to 105 minutes",
+     "verdict": "supported",
+     "note": "Sat listed as 45-85 min frequency, timetable shows 105-min opening gap"
+    },
+    {
+     "claim": "The crossing takes about 35 minutes",
+     "verdict": "supported",
+     "note": "Listed as ~35 min crossing, ~34 min FAQ"
+    },
+    {
+     "claim": "Return boats from Bainbridge run between 5:20 AM and 1:25 AM the next morning",
+     "verdict": "supported",
+     "note": "Timetable lists 5:20 AM first and 1:25 AM last Sat/Sun"
+    }
+   ],
+   "searches": 5,
+   "cost": 0.0599,
+   "s": 26.6
+  },
+  {
+   "goal": "vegetarian meal kits that deliver to Seattle",
+   "claims": [
+    {
+     "claim": "HelloFresh delivers vegetarian meal kits to Seattle",
+     "verdict": "supported",
+     "note": "HelloFresh Seattle page lists veggie plans, up to six recipes/week "
+    },
+    {
+     "claim": "Purple Carrot is fully vegan",
+     "verdict": "supported",
+     "note": "Described as 100% plant-based, every recipe vegan "
+    },
+    {
+     "claim": "EveryPlate is the lowest-price option among the three",
+     "verdict": "supported",
+     "note": "$5.99-$6.99/serving called lowest-price mainstream kit to Seattle "
+    },
+    {
+     "claim": "All three ship to all Seattle ZIP codes",
+     "verdict": "supported",
+     "note": "Source states all three deliver to every Seattle ZIP "
+    },
+    {
+     "claim": "HelloFresh leads for variety",
+     "verdict": "unverifiable",
+     "note": "Variety leadership is subjective, no objective ranking cited "
+    }
+   ],
+   "searches": 4,
+   "cost": 0.0318,
+   "s": 22.2
+  },
+  {
+   "goal": "the best travel adapters for Europe",
+   "claims": [
+    {
+     "claim": "Epicka sells a universal adapter covering continental Europe in one unit",
+     "verdict": "supported",
+     "note": "Listed as Type C for most of Europe incl. France, Germany, Italy, Spain "
+    },
+    {
+     "claim": "Epicka universal adapter covers the U.K. in one unit",
+     "verdict": "supported",
+     "note": "Listed as Type G for UK, Ireland alongside EU types "
+    },
+    {
+     "claim": "Epicka offers a 65-watt USB-C model that can charge a laptop",
+     "verdict": "supported",
+     "note": "Pulse Duo USB-C2 delivers 65W, charges 65W laptop to 50% in 30 min "
+    }
+   ],
+   "searches": 2,
+   "cost": 0.0217,
+   "s": 14.7
+  },
+  {
+   "goal": "affordable piano lessons for adults in Seattle",
+   "claims": [
+    {
+     "claim": "There is a beginner group piano lab in Belltown",
+     "verdict": "supported",
+     "note": "Cornish+ Piano Lab is 10x2hrs in Belltown, beginner-friendly for adults"
+    },
+    {
+     "claim": "It costs about sixteen dollars an hour",
+     "verdict": "supported",
+     "note": "$320 for 10 x 2 hours = $16/hr, at 1000 Lenora St"
+    },
+    {
+     "claim": "Typical private piano rates in Seattle are higher than the group rate",
+     "verdict": "supported",
+     "note": "Seattle averages $54/hr and typically $73-$115/hr, avg $86"
+    },
+    {
+     "claim": "Community-college options are well below typical private rates",
+     "verdict": "unverifiable",
+     "note": "No school/price named; Seattle Colleges says costs vary by class"
+    },
+    {
+     "claim": "Nonprofit options are well below private rates and offer tuition assistance",
+     "verdict": "supported",
+     "note": "Nonprofit $110-$115/mo weekly half-hour and lists discounts/scholarships/assistance"
+    }
+   ],
+   "searches": 6,
+   "cost": 0.0705,
+   "s": 36.9
+  },
+  {
+   "goal": "the best noise machines for sleep",
+   "claims": [
+    {
+     "claim": "LectroFan EVO is a sleep sound machine with wide sound choice / masking",
+     "verdict": "supported",
+     "note": "Listed as compact sleep machine with 22 non-looping fan/white-noise/ocean sounds"
+    },
+    {
+     "claim": "Yogasleep Dohm Classic exists and uses a real fan sound",
+     "verdict": "supported",
+     "note": "Uses a real fan to create continuous sound, not a recording"
+    },
+    {
+     "claim": "Keep machine across the room, just loud enough, not blasting by pillow",
+     "verdict": "supported",
+     "note": "Guide: across room not beside ear/under pillow; distance lowers exposure"
+    }
+   ],
+   "searches": 3,
+   "cost": 0.025,
+   "s": 15.5
+  },
+  {
+   "goal": "how to get a TSA PreCheck appointment",
+   "claims": [
+    {
+     "claim": "TSA PreCheck enrollment starts at tsa.gov/precheck",
+     "verdict": "supported",
+     "note": "TSA directs applicants to tsa.gov/precheck to select provider."
+    },
+    {
+     "claim": "CLEAR, IDEMIA, or Telos are the enrollment providers to pick from",
+     "verdict": "supported",
+     "note": "TSA lists three authorized providers: CLEAR, IDEMIA and Telos."
+    },
+    {
+     "claim": "Pre-enroll online in about five minutes",
+     "verdict": "supported",
+     "note": "TSA says online application takes five minutes / as little as 5 minutes."
+    },
+    {
+     "claim": "In-person visit takes about ten minutes for fingerprints, photo, documents, and payment",
+     "verdict": "supported",
+     "note": "TSA says in-person takes 10 minutes for fingerprints, photo, documents, payment."
+    },
+    {
+     "claim": "Walk-ins are also accepted",
+     "verdict": "supported",
+     "note": "TSA says you can pre-enroll and make appointment or walk-in without appointment."
+    },
+    {
+     "claim": "At Sea-Tac the CLEAR kiosks take enrollments with no appointment necessary",
+     "verdict": "supported",
+     "note": "Port of Seattle says CLEAR kiosks at SEA do enrollments/renewals with no appointment."
+    }
+   ],
+   "searches": 4,
+   "cost": 0.0281,
+   "s": 14.1
+  },
+  {
+   "goal": "how long the Space Needle's lines are on weekends",
+   "claims": [
+    {
+     "claim": "On weekends, plan on about thirty to sixty minutes from entry to the top",
+     "verdict": "supported",
+     "note": "Weekends reported as 40-60 min and up to an hour wait "
+    },
+    {
+     "claim": "Wait can be over an hour at busy midday times in peak season",
+     "verdict": "supported",
+     "note": "Peak waits up to an hour or more; high season on-site over an hour "
+    },
+    {
+     "claim": "Booking a timed ticket ahead reduces wait",
+     "verdict": "supported",
+     "note": "Timed tickets minimize wait; booking in advance minimizes wait "
+    },
+    {
+     "claim": "Going early in the morning or later in the evening keeps wait closer to thirty minutes",
+     "verdict": "supported",
+     "note": "Early morning or late evening avoids heaviest crowds, fewer crowds "
+    }
+   ],
+   "searches": 3,
+   "cost": 0.0227,
+   "s": 11.7
+  },
+  {
+   "goal": "how to dispute a parking ticket in Seattle",
+   "claims": [
+    {
+     "claim": "To dispute a Seattle parking ticket, request a contested hearing from Seattle Municipal Court",
+     "verdict": "supported",
+     "note": "City lists contested hearing as option"
+    },
+    {
+     "claim": "Deadline is within 30 days of ticket being placed on your car",
+     "verdict": "supported",
+     "note": "City: 30 days if placed on car"
+    },
+    {
+     "claim": "Deadline is 33 days if ticket arrived by mail",
+     "verdict": "supported",
+     "note": "City: 33 days if mailed"
+    },
+    {
+     "claim": "You can request hearing online",
+     "verdict": "supported",
+     "note": "City: request via online form"
+    },
+    {
+     "claim": "You can request hearing by phone",
+     "verdict": "supported",
+     "note": "City: call (206) 684-5600"
+    },
+    {
+     "claim": "You can request hearing by returning the form on the back of the ticket",
+     "verdict": "supported",
+     "note": "City: check box on back, bring/mail it"
+    },
+    {
+     "claim": "If at fault but want fine lowered, request mitigation hearing instead",
+     "verdict": "supported",
+     "note": "Mitigation if agree you broke rule"
+    }
+   ],
+   "searches": 5,
+   "cost": 0.0428,
+   "s": 13.2
+  },
+  {
+   "goal": "farmers markets open in Seattle in November",
+   "claims": [
+    {
+     "claim": "several Seattle farmers markets are open in November",
+     "verdict": "supported",
+     "note": "Multiple markets listed open in Nov, e.g. Oct-Dec Sat markets"
+    },
+    {
+     "claim": "markets are mainly on weekends",
+     "verdict": "supported",
+     "note": "Year-round listings are Saturday U-District and Sunday Ballard/Capitol Hill/West Seattle"
+    },
+    {
+     "claim": "University District is a year-round Saturday option",
+     "verdict": "supported",
+     "note": "Open Saturdays 9am-2pm, year-round"
+    },
+    {
+     "claim": "Lake City is a year-round Saturday option",
+     "verdict": "contradicted",
+     "note": "Lake City Sat only Oct 3-Dec 19, Thu in summer; year-round are U-District/West Seattle/Capitol Hill"
+    },
+    {
+     "claim": "Ballard is open on Sundays",
+     "verdict": "supported",
+     "note": "Open Sundays 9am-2pm, year-round"
+    },
+    {
+     "claim": "West Seattle is open on Sundays year-round",
+     "verdict": "supported",
+     "note": "West Seattle Sundays 10am-2pm year-round"
+    },
+    {
+     "claim": "Capitol Hill is open on Sundays year-round",
+     "verdict": "supported",
+     "note": "Capitol Hill Sundays 11am-3pm year-round"
+    },
+    {
+     "claim": "extra pre-Thanksgiving markets on November 20th and 21st",
+     "verdict": "supported",
+     "note": "Phinney Nov 20 Fri and Magnolia Nov 21 Sat harvest markets"
+    }
+   ],
+   "searches": 4,
+   "cost": 0.0346,
+   "s": 25.5
+  },
+  {
+   "goal": "the safest booster seats for kids",
+   "claims": [
+    {
+     "claim": "Chicco KidFit Zip Plus is an IIHS Best Bet in both highback and backless modes",
+     "verdict": "supported",
+     "note": "Listed Best Bet highback and backless Jan 2024"
+    },
+    {
+     "claim": "Evenflo GoTime LX is a real booster seat product",
+     "verdict": "supported",
+     "note": "Evenflo lists GoTime LX 40-120 lb high-back/no-back"
+    },
+    {
+     "claim": "Evenflo GoTime LX costs less than Chicco KidFit Zip Plus",
+     "verdict": "supported",
+     "note": "Target lists Evenflo ~$44.99 vs Chicco ~$159.99"
+    },
+    {
+     "claim": "Evenflo GoTime LX is IIHS Best Bet",
+     "verdict": "supported",
+     "note": "Listed Best Bet highback and backless Jan 2024"
+    },
+    {
+     "claim": "Britax Highpoint highback is a real product and IIHS Best Bet",
+     "verdict": "supported",
+     "note": "Best Bet highback; Check Fit backless Jan 2024"
+    },
+    {
+     "claim": "Britax Highpoint fits taller kids",
+     "verdict": "supported",
+     "note": "Highback for 44-63 in, up to 63 in tall"
+    },
+    {
+     "claim": "Chicco KidFit Zip Plus is the safest pick for most kids",
+     "verdict": "unverifiable",
+     "note": "IIHS rates belt fit not crash, no single safest"
+    }
+   ],
+   "searches": 6,
+   "cost": 0.0565,
+   "s": 31.8
+  },
+  {
+   "goal": "the best indoor plants that are safe for cats",
+   "claims": [
+    {
+     "claim": "Spider plant is safe for cats",
+     "verdict": "supported",
+     "note": "ASPCA lists Chlorophytum comosum as non-toxic to cats"
+    },
+    {
+     "claim": "Parlor palm is safe for cats",
+     "verdict": "supported",
+     "note": "ASPCA lists Chamaedorea elegans as non-toxic to cats and dogs"
+    },
+    {
+     "claim": "Peperomia is safe for cats",
+     "verdict": "supported",
+     "note": "ASPCA lists Peperomia spp. as non-toxic, listed species by species"
+    },
+    {
+     "claim": "Boston fern is safe for cats",
+     "verdict": "supported",
+     "note": "ASPCA lists Nephrolepis exaltata as non-toxic to cats and dogs"
+    },
+    {
+     "claim": "Calathea is safe for cats",
+     "verdict": "supported",
+     "note": "ASPCA Calathea entry reads Non-Toxic to cats, dogs"
+    },
+    {
+     "claim": "Parlor palm and peperomia suit Seattle grey / low light",
+     "verdict": "supported",
+     "note": "Both listed among houseplants that don't need direct sun"
+    },
+    {
+     "claim": "Should double-check exact variety before buying",
+     "verdict": "supported",
+     "note": "ASPCA lists peperomia by species; baby rubber plant safe, rubber tree not"
+    }
+   ],
+   "searches": 6,
+   "cost": 0.0438,
+   "s": 19.5
+  },
+  {
+   "goal": "how to get to Mount Rainier without a car",
+   "claims": [
+    {
+     "claim": "There is no public bus or train from Seattle to Mount Rainier",
+     "verdict": "supported",
+     "note": "No public buses/trains into park; must book tour/shuttle"
+    },
+    {
+     "claim": "your easiest car-free option is a guided day tour with downtown Seattle pickup",
+     "verdict": "supported",
+     "note": "Day tours offer downtown pickup/transit included"
+    },
+    {
+     "claim": "In November, book a winter tour for a Friday through Monday",
+     "verdict": "supported",
+     "note": "Oct-Apr tours run Fri-Mon only; Paradise winter access Fri-Mon from Nov 12"
+    },
+    {
+     "claim": "confirm that morning that the Paradise road is open",
+     "verdict": "supported",
+     "note": "Paradise Road assessed each morning before gate reopens"
+    }
+   ],
+   "searches": 4,
+   "cost": 0.0302,
+   "s": 14.2
+  },
+  {
+   "goal": "how to set up two-factor authentication on Gmail",
+   "claims": [
+    {
+     "claim": "Gmail two-factor authentication is set up via Google Account 2-Step Verification",
+     "verdict": "supported",
+     "note": "Google says 2-Step Verification is two-factor auth"
+    },
+    {
+     "claim": "Open your Google Account, go to Security / Security and sign-in",
+     "verdict": "supported",
+     "note": "Steps: Open Google Account, tap Security & sign-in"
+    },
+    {
+     "claim": "Turn on 2-Step Verification under 'How you sign in to Google'",
+     "verdict": "supported",
+     "note": "Select Turn on 2-Step Verification there"
+    },
+    {
+     "claim": "Follow the on-screen steps",
+     "verdict": "supported",
+     "note": "Step 4 is Follow the on-screen steps"
+    },
+    {
+     "claim": "Choose a second step such as Google prompt, passkey, or authenticator app",
+     "verdict": "supported",
+     "note": "Google lists prompts, passkeys, Authenticator as options"
+    }
+   ],
+   "searches": 3,
+   "cost": 0.0272,
+   "s": 14.9
+  },
+  {
+   "goal": "the best budget standing desks",
+   "claims": [
+    {
+     "claim": "FlexiSpot EN1 is a real budget standing-desk model",
+     "verdict": "supported",
+     "note": "Listed as FLEXISPOT EN1 One-Piece Standing Desk 48x24"
+    },
+    {
+     "claim": "FlexiSpot EN1 costs around $110",
+     "verdict": "supported",
+     "note": "Current price $109.99 vs $159.99 MRP in Oct 2026"
+    },
+    {
+     "claim": "FlexiSpot EN1 has a one-piece top",
+     "verdict": "supported",
+     "note": "Titled One-Piece / whole-piece seamless desktop"
+    },
+    {
+     "claim": "FEZIBO sells dual-motor standing desks starting near $200",
+     "verdict": "supported",
+     "note": "Dual-motor desks from $199-$259"
+    },
+    {
+     "claim": "A dual-motor FEZIBO feels steadier than the EN1",
+     "verdict": "unverifiable",
+     "note": "Subjective stability comparison with no test cited"
+    }
+   ],
+   "searches": 4,
+   "cost": 0.0422,
+   "s": 21.4
+  },
+  {
+   "goal": "how to apply for a Washington State Parks Discover Pass",
+   "claims": [
+    {
+     "claim": "You buy a Discover Pass rather than applying for approval",
+     "verdict": "supported",
+     "note": "Official site says passes are purchased many ways "
+    },
+    {
+     "claim": "the fastest option from Seattle is to buy it online",
+     "verdict": "unverifiable",
+     "note": "Online is immediate but no source ranks fastest from Seattle"
+    },
+    {
+     "claim": "buy it online and print a temporary pass to use immediately",
+     "verdict": "supported",
+     "note": "Buy online and print temporary pass to use immediately "
+    },
+    {
+     "claim": "It costs $45 for a year",
+     "verdict": "supported",
+     "note": "Annual increase from $30 to $45 starting Oct 1, 2025 "
+    },
+    {
+     "claim": "It costs $10 for one day",
+     "verdict": "supported",
+     "note": "Day use fee will remain $10 "
+    },
+    {
+     "claim": "plus any transaction or vendor fees",
+     "verdict": "supported",
+     "note": "Annual $35 and one-day $11.50 with fees if vendor/phone/online "
+    }
+   ],
+   "searches": 6,
+   "cost": 0.0558,
+   "s": 32.1
+  },
+  {
+   "goal": "Seattle neighborhoods with good coffee shops for working",
+   "claims": [
+    {
+     "claim": "Capitol Hill has the densest choice of laptop-friendly coffee shops in Seattle",
+     "verdict": "supported",
+     "note": "Called densest concentration including Espresso Vivace etc."
+    },
+    {
+     "claim": "Victrola is in/around Capitol Hill",
+     "verdict": "supported",
+     "note": "Two Capitol Hill sites, original on 15th Ave and Pike St"
+    },
+    {
+     "claim": "Espresso Vivace is in/around Capitol Hill",
+     "verdict": "supported",
+     "note": "Listed at 532 Broadway E, Broadway / Capitol Hill"
+    },
+    {
+     "claim": "Victrola and Espresso Vivace are laptop-friendly for working",
+     "verdict": "supported",
+     "note": "Victrola listed good for working on laptop; Vivace haven for laptop workers"
+    },
+    {
+     "claim": "Fremont is a Seattle neighborhood",
+     "verdict": "supported",
+     "note": "Fremont listed among well-known neighborhoods north of Ship Canal"
+    },
+    {
+     "claim": "Ballard is a Seattle neighborhood",
+     "verdict": "supported",
+     "note": "Ballard anchor of northwest Seattle, in Northwest Seattle list"
+    },
+    {
+     "claim": "Pioneer Square is a Seattle neighborhood/district",
+     "verdict": "supported",
+     "note": "Pioneer Square district directly south of Downtown, oldest neighborhood"
+    },
+    {
+     "claim": "South Lake Union is a Seattle neighborhood",
+     "verdict": "supported",
+     "note": "South Lake Union on east side of Seattle Center, a destination"
+    },
+    {
+     "claim": "Fremont/Ballard are quieter and Pioneer Square/South Lake Union are best on a weekday for working",
+     "verdict": "unverifiable",
+     "note": "Subjective work-vibe/weekday advice, no measurable rule found"
+    }
+   ],
+   "searches": 4,
+   "cost": 0.0337,
+   "s": 22.1
+  },
+  {
+   "goal": "the best running routes around Green Lake",
+   "claims": [
+    {
+     "claim": "Green Lake has a flat 2.8-mile paved inner loop",
+     "verdict": "supported",
+     "note": "Seattle lists 2.8-mile paved inner loop, WTA calls it flat paved "
+    },
+    {
+     "claim": "Inner loop is a scenic run right by the water",
+     "verdict": "supported",
+     "note": "Described with lake views along entire loop "
+    },
+    {
+     "claim": "There is a roughly 3.1-mile outer loop",
+     "verdict": "supported",
+     "note": "Sources list 3.1-mile outer loop, some say 3.2 miles - within 10% "
+    },
+    {
+     "claim": "Outer loop has fewer people than inner loop",
+     "verdict": "supported",
+     "note": "Outer sees less use, inner much more crowded "
+    },
+    {
+     "claim": "Woodland Park is to the south and adds more miles",
+     "verdict": "supported",
+     "note": "On Green Lake's southern shore, just south with pathways and contiguous "
+    }
+   ],
+   "searches": 3,
+   "cost": 0.0277,
+   "s": 17.2
+  },
+  {
+   "goal": "where to donate used clothes in Seattle",
+   "claims": [
+    {
+     "claim": "Evergreen Goodwill offers a Seattle drop-off for used clothes",
+     "verdict": "supported",
+     "note": "Flagship at 1400 S Lane St, Seattle"
+    },
+    {
+     "claim": "Evergreen Goodwill donation hours start at 10 a.m.",
+     "verdict": "supported",
+     "note": "Seattle Goodwill daily 10 a.m.-7 p.m."
+    },
+    {
+     "claim": "Mary's Place has a location in South Seattle",
+     "verdict": "supported",
+     "note": "Allen Family Center in South Seattle at 3190 S MLK Jr Way"
+    },
+    {
+     "claim": "Mary's Place South Seattle is already open in the morning on Wednesday Nov 4",
+     "verdict": "supported",
+     "note": "Open 9 am to 4:30 pm Monday-Friday"
+    },
+    {
+     "claim": "Worn-out unwearable clothes can use the same Goodwill drop-off through Threadcycle instead of trash",
+     "verdict": "supported",
+     "note": "Evergreen Goodwill Threadcycle partner to keep clothes out of landfills; accepts torn/stained in any condition except wet"
+    }
+   ],
+   "searches": 3,
+   "cost": 0.0284,
+   "s": 22.3
+  },
+  {
+   "goal": "the best bike locks for city commuting",
+   "claims": [
+    {
+     "claim": "Kryptonite Evolution Mini-7 is a real bike lock model",
+     "verdict": "supported",
+     "note": "Listed as 13mm U-lock with cable and bracket "
+    },
+    {
+     "claim": "Litelok X1 is a real bike lock model",
+     "verdict": "supported",
+     "note": "Listed as Best Bike Lock Overall "
+    },
+    {
+     "claim": "Litelok X1 is angle-grinder-resistant",
+     "verdict": "supported",
+     "note": "Barronium armour repels grinder attacks, 5x more resistant "
+    },
+    {
+     "claim": "Evolution Mini-7 is the best balance of security, weight and price",
+     "verdict": "unverifiable",
+     "note": "Subjective best-pick opinion, not measurable fact"
+    },
+    {
+     "claim": "You should lock frame and a wheel to a proper rack",
+     "verdict": "supported",
+     "note": "Guides describe locking wheel and frame to a rack "
+    },
+    {
+     "claim": "No lock alone is theft-proof",
+     "verdict": "supported",
+     "note": "Maker states all locks can be cut with time/tools "
+    }
+   ],
+   "searches": 6,
+   "cost": 0.0717,
+   "s": 23.9
+  },
+  {
+   "goal": "how to transfer a phone number to a new carrier",
+   "claims": [
+    {
+     "claim": "To keep your number, start the switch with the new carrier first",
+     "verdict": "supported",
+     "note": "New carrier handles transfer, contact new provider first "
+    },
+    {
+     "claim": "Give new carrier your current account number from old carrier",
+     "verdict": "supported",
+     "note": "Provide account number to new carrier during activation "
+    },
+    {
+     "claim": "Give new carrier a temporary transfer PIN from old carrier",
+     "verdict": "supported",
+     "note": "Provide transfer PIN; PINs expire so generate close to switch "
+    },
+    {
+     "claim": "Do not cancel your old service first",
+     "verdict": "supported",
+     "note": "Key rule is not to cancel old service first, keep line active "
+    },
+    {
+     "claim": "The transfer should close that old line once it finishes",
+     "verdict": "supported",
+     "note": "Old line closes automatically when port completes "
+    }
+   ],
+   "searches": 2,
+   "cost": 0.0198,
+   "s": 12.4
+  },
+  {
+   "goal": "how to get a passport photo taken near Seattle",
+   "claims": [
+    {
+     "claim": "Walgreens in Seattle offers walk-in passport photos without appointment",
+     "verdict": "supported",
+     "note": "Walk-ins, no appointment, Seattle locations listed "
+    },
+    {
+     "claim": "FedEx Office in Seattle offers walk-in passport photos without appointment",
+     "verdict": "supported",
+     "note": "No appointment needed - just stop by in Seattle "
+    },
+    {
+     "claim": "Compliant passport photo is two-by-two inches",
+     "verdict": "supported",
+     "note": "Must be 2-by-2-inch color image "
+    },
+    {
+     "claim": "Passport photos taken in minutes",
+     "verdict": "supported",
+     "note": "Ready in 5-10 minutes in Seattle "
+    },
+    {
+     "claim": "Walgreens charges $16.99",
+     "verdict": "supported",
+     "note": "Price is $16.99 for two 2x2 prints "
+    },
+    {
+     "claim": "FedEx charges about $15.95",
+     "verdict": "supported",
+     "note": "Get photos (printed or digital) for $15.95 "
+    },
+    {
+     "claim": "Walmart is cheapest at about $7.64",
+     "verdict": "supported",
+     "note": "Walmart is cheapest at $7.64 for two prints "
+    },
+    {
+     "claim": "USPS charges $15 by appointment",
+     "verdict": "supported",
+     "note": "$15 photo fee, by appointment at participating offices "
+    }
+   ],
+   "searches": 6,
+   "cost": 0.0568,
+   "s": 19.4
+  },
+  {
+   "goal": "family board games for ages 8 and up",
+   "claims": [
+    {
+     "claim": "Ticket to Ride is fun for kids and adults and suitable for ages 8 and up",
+     "verdict": "supported",
+     "note": "Listed as Ages 8+, Kids & Adults, 2-5 players"
+    },
+    {
+     "claim": "Ticket to Ride usually takes under an hour",
+     "verdict": "supported",
+     "note": "Publisher time 30-60 minutes"
+    },
+    {
+     "claim": "Azul is a shorter game suitable for ages 8 and up",
+     "verdict": "supported",
+     "note": "Ages 8+, 30-45 minutes"
+    },
+    {
+     "claim": "Kingdomino is a shorter game suitable for ages 8 and up",
+     "verdict": "supported",
+     "note": "Ages 8+, 15-20 minutes"
+    },
+    {
+     "claim": "Mox Boarding House is in Ballard, Seattle",
+     "verdict": "supported",
+     "note": "5105 Leary Ave NW in Ballard"
+    },
+    {
+     "claim": "You can test games first at Mox Boarding House",
+     "verdict": "supported",
+     "note": "Free-to-use library, try before purchase"
+    }
+   ],
+   "searches": 4,
+   "cost": 0.0308,
+   "s": 18.2
+  },
+  {
+   "goal": "the best rice cookers under $150",
+   "claims": [
+    {
+     "claim": "Cuckoo CR-0655F is a real rice cooker model",
+     "verdict": "supported",
+     "note": "Listed by Walmart/Amazon as 6-cup uncooked / 12-cup cooked model"
+    },
+    {
+     "claim": "Cuckoo CR-0655F costs under $150",
+     "verdict": "supported",
+     "note": "Found at $64.99-$79.99 and $139.99, both under $150"
+    },
+    {
+     "claim": "Cuckoo CR-0655F has fuzzy-logic cooking",
+     "verdict": "supported",
+     "note": "Described as Fuzzy Logic / Micom with auto-adjust cooking"
+    },
+    {
+     "claim": "Cuckoo CR-0655F offers customization",
+     "verdict": "supported",
+     "note": "Has My Mode texture control and 12 menu modes"
+    },
+    {
+     "claim": "Hamilton Beach Programmable rice cooker exists and is under $150",
+     "verdict": "supported",
+     "note": "Listed models at $22-$76, well under $150"
+    },
+    {
+     "claim": "Hamilton Beach Programmable is much cheaper",
+     "verdict": "supported",
+     "note": "Small 8-cup version ~$24-$40 vs Cuckoo ~$65-$140"
+    },
+    {
+     "claim": "Hamilton Beach Programmable cooks excellent rice fast",
+     "verdict": "supported",
+     "note": "Reviews note fluffy results and ~30-min quick-cook, faster than most"
+    }
+   ],
+   "searches": 4,
+   "cost": 0.0416,
+   "s": 18.2
+  },
+  {
+   "goal": "how to clean a cast iron pan",
+   "claims": [
+    {
+     "claim": "Wash the pan by hand with warm water and a little mild soap if needed",
+     "verdict": "supported",
+     "note": "Lodge advises hand wash with warm water, small mild soap"
+    },
+    {
+     "claim": "then dry it completely",
+     "verdict": "supported",
+     "note": "Manufacturers stress prompt thorough drying to prevent rust"
+    },
+    {
+     "claim": "wipe on a very thin layer of oil",
+     "verdict": "supported",
+     "note": "Standard wash-dry-oil routine uses light coat after every wash"
+    },
+    {
+     "claim": "For stuck food, simmer water in it for three to five minutes and scrape it loose",
+     "verdict": "supported",
+     "note": "Lodge recommends simmer 3-5 min then scraper for stubborn food"
+    },
+    {
+     "claim": "rather than soaking it or putting it in the dishwasher",
+     "verdict": "supported",
+     "note": "Guides warn never soak or dishwasher due to rust/seasoning loss"
+    }
+   ],
+   "searches": 3,
+   "cost": 0.0251,
+   "s": 12.5
+  },
+  {
+   "goal": "how to check Seattle air quality today",
+   "claims": [
+    {
+     "claim": "Seattle's air was borderline good to moderate on the morning of Nov 4, 2026",
+     "verdict": "supported",
+     "note": "51 AQI Moderate reported that morning "
+    },
+    {
+     "claim": "AQI was around 50 to mid-50s",
+     "verdict": "supported",
+     "note": "49-55 AQI across Seattle stations, plus 58 report "
+    },
+    {
+     "claim": "Fine particles were the main pollutant",
+     "verdict": "supported",
+     "note": "Dominant pollutant: PM2.5 "
+    },
+    {
+     "claim": "Most people can be outdoors normally",
+     "verdict": "supported",
+     "note": "Moderate: good day to be active outside for everyone else "
+    },
+    {
+     "claim": "Unusually sensitive people should take it easier and check before hard workout",
+     "verdict": "supported",
+     "note": "Unusually sensitive should reduce prolonged/heavy exertion "
+    }
+   ],
+   "searches": 3,
+   "cost": 0.0248,
+   "s": 14.3
+  },
+  {
+   "goal": "cheap parking near Lumen Field on game days",
+   "claims": [
+    {
+     "claim": "Free park-and-ride parking is available at a Link station",
+     "verdict": "supported",
+     "note": "Sound Transit lists free parking at several Link stations."
+    },
+    {
+     "claim": "Light rail serves Stadium Station as alternative to driving into SoDo for Lumen Field",
+     "verdict": "supported",
+     "note": "Stadium Station is a 1 Line station adjacent to Lumen Field in SoDo."
+    },
+    {
+     "claim": "You can book ahead on SpotHero or ParkWhiz",
+     "verdict": "supported",
+     "note": "Both are listed as advance-booking parking apps for Seattle venues."
+    },
+    {
+     "claim": "Pioneer Square or the International District are 15 to 20 minutes away",
+     "verdict": "supported",
+     "note": "Described as walking distance / 2 stops from Stadium Station."
+    },
+    {
+     "claim": "Game-day deals in Pioneer Square / International District can start around $10 to $25",
+     "verdict": "supported",
+     "note": "Listings show $10-$25 and $15-$25 starting event parking."
+    },
+    {
+     "claim": "Closer-in parking is roughly $20 to $75",
+     "verdict": "supported",
+     "note": "SpotHero lists $25-$75 event parking; guides cite $20-$75 range."
+    }
+   ],
+   "searches": 5,
+   "cost": 0.0456,
+   "s": 20.0
+  },
+  {
+   "goal": "late-night pharmacies in Seattle",
+   "claims": [
+    {
+     "claim": "I could not verify a true 24-hour prescription pharmacy inside Seattle today",
+     "verdict": "supported",
+     "note": "Official Walgreens shows Ballard store/pharmacy closed overnight, pharmacy 8AM-9PM weekdays not 24h"
+    },
+    {
+     "claim": "plan on nine or ten p.m. for prescriptions",
+     "verdict": "supported",
+     "note": "Seattle Walgreens pharmacies list Mon-Fri 9am-9pm, Sat-Sun 10am-6pm"
+    },
+    {
+     "claim": "the Bellevue Walgreens pharmacy is open until ten tonight",
+     "verdict": "contradicted",
+     "note": "Bellevue Walgreens pharmacy listed Mon-Fri 9am-9pm, not 10pm"
+    },
+    {
+     "claim": "its store stays open until midnight for over-the-counter items",
+     "verdict": "supported",
+     "note": "647 140th Ave NE hours Wed Nov 04: 08:00-00:00, Open until 12am"
+    }
+   ],
+   "searches": 9,
+   "cost": 0.1015,
+   "s": 36.1
+  },
+  {
+   "goal": "the best water bottles that keep drinks cold",
+   "claims": [
+    {
+     "claim": "Hydro Flask Wide Mouth Travel Bottle comes in 32 ounces",
+     "verdict": "supported",
+     "note": "32 oz Wide Mouth Travel Bottle with Flex Straw Cap listed "
+    },
+    {
+     "claim": "Hydro Flask 32 oz kept ice intact for a full 24 hours in testing",
+     "verdict": "contradicted",
+     "note": "test found ice melted in just 24 hours, drink still cold past 24h ; maker claims cold up to 24h "
+    },
+    {
+     "claim": "Hydro Flask Wide Mouth Travel Bottle offers both straw and chug lids",
+     "verdict": "supported",
+     "note": "flexible straw-or-chug lid system, fits all Wide Mouth caps "
+    },
+    {
+     "claim": "Owala FreeSip allows easier one-handed sipping",
+     "verdict": "supported",
+     "note": "one-handed operation is standout, button release flips lid open "
+    },
+    {
+     "claim": "Owala FreeSip costs less money than Hydro Flask",
+     "verdict": "supported",
+     "note": "32oz $34.99 vs $44.95; 24oz $20-35 undercuts ~$40 "
+    },
+    {
+     "claim": "YETI Rambler is the tougher pick for rough use",
+     "verdict": "supported",
+     "note": "most durable bottle owned; trust it more when things get rough "
+    }
+   ],
+   "searches": 4,
+   "cost": 0.0327,
+   "s": 15.4
+  },
+  {
+   "goal": "how to book a campsite at Deception Pass",
+   "claims": [
+    {
+     "claim": "Book Deception Pass through Washington State Parks' Going to Camp system online",
+     "verdict": "supported",
+     "note": "Official system is washington.goingtocamp.com"
+    },
+    {
+     "claim": "Book Deception Pass by calling 888-CAMPOUT",
+     "verdict": "supported",
+     "note": "Official phone is 888-CAMPOUT / 888-226-7688"
+    },
+    {
+     "claim": "You can reserve up to nine months ahead",
+     "verdict": "supported",
+     "note": "Window is up to nine months in advance"
+    },
+    {
+     "claim": "Same-day campsite reservations are accepted until 2 p.m.",
+     "verdict": "supported",
+     "note": "Campsite cutoff is 2 p.m. arrival day"
+    }
+   ],
+   "searches": 4,
+   "cost": 0.0256,
+   "s": 10.4
+  },
+  {
+   "goal": "how to report a pothole in Seattle",
+   "claims": [
+    {
+     "claim": "Report a pothole through the Find It, Fix It app",
+     "verdict": "supported",
+     "note": "City lists the app as a reporting way "
+    },
+    {
+     "claim": "Report via Seattle's online form",
+     "verdict": "supported",
+     "note": "City lists fill out an online form "
+    },
+    {
+     "claim": "Report by calling 206-684-ROAD",
+     "verdict": "supported",
+     "note": "City lists Call us at (206) 684-ROAD (7623) "
+    },
+    {
+     "claim": "Include the address or cross-streets",
+     "verdict": "supported",
+     "note": "City says helpful to know address or cross-streets "
+    },
+    {
+     "claim": "Add a photo if you can",
+     "verdict": "supported",
+     "note": "City says pictures are great too "
+    }
+   ],
+   "searches": 3,
+   "cost": 0.0277,
+   "s": 13.6
+  },
+  {
+   "goal": "the best headphones for open-plan offices",
+   "claims": [
+    {
+     "claim": "Sony WH-1000XM6 is a real headphone model",
+     "verdict": "supported",
+     "note": "Sony lists WH-1000XM6, launched May 15 2025"
+    },
+    {
+     "claim": "WH-1000XM6 has strong chatter reduction for open offices",
+     "verdict": "supported",
+     "note": "12-mic ANC praised for office chatter isolation"
+    },
+    {
+     "claim": "WH-1000XM6 has a capable microphone for calls",
+     "verdict": "supported",
+     "note": "6 beamforming mics with AI noise reduction"
+    },
+    {
+     "claim": "WH-1000XM6 supports two-device Bluetooth multipoint",
+     "verdict": "supported",
+     "note": "Multipoint allows 2 devices simultaneously"
+    },
+    {
+     "claim": "WH-1000XM6 has 30-hour battery claim with noise cancelling on",
+     "verdict": "supported",
+     "note": "Rated up to 30h ANC on, 40h off"
+    }
+   ],
+   "searches": 3,
+   "cost": 0.0248,
+   "s": 13.5
+  },
+  {
+   "goal": "how to freeze fresh herbs",
+   "claims": [
+    {
+     "claim": "wash and thoroughly dry the herbs before freezing",
+     "verdict": "supported",
+     "note": "Standard first step in freezing guides "
+    },
+    {
+     "claim": "chop the herbs",
+     "verdict": "supported",
+     "note": "Guides instruct to chop or remove leaves from stems "
+    },
+    {
+     "claim": "pack them into ice cube trays",
+     "verdict": "supported",
+     "note": "Ice-cube trays are standard portioning method "
+    },
+    {
+     "claim": "cover them with water or olive oil before freezing",
+     "verdict": "supported",
+     "note": "Both water and oil methods widely described "
+    },
+    {
+     "claim": "once solid, pop out the cubes into a labelled freezer bag",
+     "verdict": "supported",
+     "note": "Freeze solid then transfer to labelled bag "
+    },
+    {
+     "claim": "drop them straight into soups, sauces, or saut\u00e9s as needed",
+     "verdict": "supported",
+     "note": "Cubes can go directly into simmering dishes "
+    }
+   ],
+   "searches": 2,
+   "cost": 0.0214,
+   "s": 13.9
+  },
+  {
+   "goal": "sledding spots within two hours of Seattle",
+   "claims": [
+    {
+     "claim": "Snoqualmie Pass is about an hour away from Seattle (within two hours)",
+     "verdict": "supported",
+     "note": "54 miles ~56 min, described as 1-hour drive"
+    },
+    {
+     "claim": "sledding is not open yet today (Nov 4, 2026), plan for later in November",
+     "verdict": "supported",
+     "note": "Tubing Park scheduled to open Nov 21, 2026, currently closed"
+    },
+    {
+     "claim": "Hyak Sno-Park is the bring-your-own-sled option once snow is sufficient",
+     "verdict": "supported",
+     "note": "Free bring-your-own-sled hill, no rentals; call to check if enough snow"
+    },
+    {
+     "claim": "Summit Tubing is the ticketed option when it opens",
+     "verdict": "supported",
+     "note": "Valid ticket required, tickets must be purchased online"
+    }
+   ],
+   "searches": 4,
+   "cost": 0.0318,
+   "s": 16.9
+  },
+  {
+   "goal": "the best portable chargers for phones",
+   "claims": [
+    {
+     "claim": "INIU 10,000mAh 45W power bank exists",
+     "verdict": "supported",
+     "note": "Amazon lists INIU Slimmest 10000mAh 45W PD Fast Charging Portable Charger "
+    },
+    {
+     "claim": "INIU 10,000mAh 45W costs about $22",
+     "verdict": "supported",
+     "note": "Listed at $22.49 and $21.99 on Amazon "
+    },
+    {
+     "claim": "INIU 10,000mAh 45W is compact and fast",
+     "verdict": "supported",
+     "note": "Described as credit-card-sized with 10,000mAh and 45W fast charging "
+    },
+    {
+     "claim": "Anker MagGo Slim 10K exists",
+     "verdict": "supported",
+     "note": "Anker lists MagGo Power Bank (10K, Slim) "
+    },
+    {
+     "claim": "Anker MagGo Slim 10K costs around $80",
+     "verdict": "supported",
+     "note": "Listed at $79.86 USD / $79.99 "
+    },
+    {
+     "claim": "Anker MagGo Slim 10K is a snap-on MagSafe pick for iPhone",
+     "verdict": "supported",
+     "note": "For MagSafe-Compatible Devices, attaches securely to MagSafe iPhones "
+    }
+   ],
+   "searches": 3,
+   "cost": 0.0317,
+   "s": 17.4
+  },
+  {
+   "goal": "the best compact umbrellas",
+   "claims": [
+    {
+     "claim": "Repel Windproof Travel umbrella is a real named product",
+     "verdict": "supported",
+     "note": "Listed as Repel Windproof Travel Umbrella compact model"
+    },
+    {
+     "claim": "Davek Solo is a real named product",
+     "verdict": "supported",
+     "note": "Sold as Davek Solo Umbrella windproof travel model"
+    },
+    {
+     "claim": "Repel is light and compact",
+     "verdict": "supported",
+     "note": "Folds to 11.5 in and weighs 15 oz / under 1 lb"
+    },
+    {
+     "claim": "Repel is wind-resistant / good for windy commutes",
+     "verdict": "supported",
+     "note": "9-rib fiberglass frame provides superior wind resistance"
+    },
+    {
+     "claim": "Davek Solo costs much more than Repel",
+     "verdict": "supported",
+     "note": "Repel $26.99 vs Davek Solo $115"
+    },
+    {
+     "claim": "Davek Solo has a stronger / reinforced frame",
+     "verdict": "supported",
+     "note": "Steel shaft, fiberglass ribs, zinc alloy joints to resist bending"
+    },
+    {
+     "claim": "Davek Solo has a lifetime guarantee",
+     "verdict": "supported",
+     "note": "Unconditional lifetime guarantee, repair or replace"
+    }
+   ],
+   "searches": 3,
+   "cost": 0.0253,
+   "s": 16.3
+  },
+  {
+   "goal": "the best budget webcams for video calls",
+   "claims": [
+    {
+     "claim": "Logitech Brio 101 is a real product, a Full HD 1080p webcam for meetings",
+     "verdict": "supported",
+     "note": "Listed as Full HD 1080p webcam for meetings/streaming"
+    },
+    {
+     "claim": "Anker PowerConf C200 is a real product, a 2K webcam",
+     "verdict": "supported",
+     "note": "Listed as 2K webcam with 2K video capture"
+    },
+    {
+     "claim": "Brio 101 is cheaper than C200 (cheapest option vs spend a little more)",
+     "verdict": "supported",
+     "note": "Brio 101 ~$36 vs C200 ~$49-$70"
+    },
+    {
+     "claim": "C200 gives a sharper picture than Brio 101",
+     "verdict": "supported",
+     "note": "C200 is 2K 1440p vs Brio 101 1080p, a clear step up"
+    },
+    {
+     "claim": "C200 is the better all-round pick for regular work calls",
+     "verdict": "supported",
+     "note": "Described as editor's choice and best under $50"
+    }
+   ],
+   "searches": 3,
+   "cost": 0.0264,
+   "s": 15.4
+  },
+  {
+   "goal": "how to back up an iPhone to a Mac",
+   "claims": [
+    {
+     "claim": "Connect your iPhone to your Mac with a cable",
+     "verdict": "supported",
+     "note": "Apple step 1 says connect with a cable"
+    },
+    {
+     "claim": "open Finder",
+     "verdict": "supported",
+     "note": "Apple step 3 for macOS Catalina 10.15 or later says Open the Finder"
+    },
+    {
+     "claim": "select the iPhone",
+     "verdict": "supported",
+     "note": "Apple says in Finder sidebar, select your device"
+    },
+    {
+     "claim": "click Back Up Now",
+     "verdict": "supported",
+     "note": "Apple step 11 says Click Back Up Now"
+    },
+    {
+     "claim": "For a fuller backup, turn on Encrypt local backup first",
+     "verdict": "supported",
+     "note": "Apple says select Encrypt local backup to save Health and Activity data"
+    },
+    {
+     "claim": "keep that password somewhere safe",
+     "verdict": "supported",
+     "note": "Apple says you can't recover backup without this password"
+    }
+   ],
+   "searches": 3,
+   "cost": 0.032,
+   "s": 15.3
+  },
+  {
+   "goal": "the best air purifiers for wildfire smoke",
+   "claims": [
+    {
+     "claim": "Coway Airmega Mighty AP-1512HH is a real product name",
+     "verdict": "supported",
+     "note": "Listed as AP-1512HH Mighty with CADR specs "
+    },
+    {
+     "claim": "Coway AP-1512HH has a smoke CADR of 233",
+     "verdict": "supported",
+     "note": "CADR: 233 smoke, 246 dust, 240 pollen "
+    },
+    {
+     "claim": "Coway AP-1512HH is for rooms up to about 360 square feet",
+     "verdict": "supported",
+     "note": "AHAM-rated 361 sq ft, covers most bedrooms/living rooms "
+    },
+    {
+     "claim": "Coway AP-1512HH is a reliable all-rounder for wildfire smoke / most homes",
+     "verdict": "supported",
+     "note": "Called Best All-Rounder and best for most homes in 2026 "
+    },
+    {
+     "claim": "Blueair Blue Pure 211i Max is a real product",
+     "verdict": "supported",
+     "note": "Blue Pure 211i Max purifier with 410 CFM airflow listed "
+    },
+    {
+     "claim": "Blue Pure 211i Max is the step-up for bigger living rooms",
+     "verdict": "supported",
+     "note": "Described as big-room upgrade beyond ~450 sq ft, up to 750 sq ft "
+    }
+   ],
+   "searches": 4,
+   "cost": 0.0357,
+   "s": 15.4
+  },
+  {
+   "goal": "how to winterize a balcony garden",
+   "claims": [
+    {
+     "claim": "Seattle's first frost is in mid-November",
+     "verdict": "supported",
+     "note": "Average first frost Nov 11-20 "
+    },
+    {
+     "claim": "Starting this week (Nov 4) is before Seattle's first frost",
+     "verdict": "supported",
+     "note": "Nov 4 precedes Nov 11-20 average window "
+    }
+   ],
+   "searches": 2,
+   "cost": 0.0221,
+   "s": 16.9
+  },
+  {
+   "goal": "Seattle libraries with study rooms you can book",
+   "claims": [
+    {
+     "claim": "Seattle Public Library has free study rooms",
+     "verdict": "supported",
+     "note": "SPL says use of study rooms is free."
+    },
+    {
+     "claim": "Study rooms are at 17 SPL branches",
+     "verdict": "supported",
+     "note": "SPL study-room map lists 17 branches."
+    },
+    {
+     "claim": "Most SPL study rooms are first-come or same-day by phone, not booked online in advance",
+     "verdict": "supported",
+     "note": "SPL says call location, first-come basis; no online booking."
+    },
+    {
+     "claim": "Nearby King County libraries let you book study rooms online",
+     "verdict": "supported",
+     "note": "KCLS allows one online reservation per week."
+    },
+    {
+     "claim": "KCLS study rooms can be reserved up to a week ahead",
+     "verdict": "supported",
+     "note": "KCLS reservation window is 1 week in advance."
+    },
+    {
+     "claim": "KCLS study rooms can be used for up to two hours",
+     "verdict": "supported",
+     "note": "KCLS time limit is up to 2 hours at a time."
+    }
+   ],
+   "searches": 5,
+   "cost": 0.0633,
+   "s": 17.7
+  },
+  {
+   "goal": "the best laptop backpacks for commuting by bike",
+   "claims": [
+    {
+     "claim": "Ortlieb Commuter-Daypack is a real product",
+     "verdict": "supported",
+     "note": "Sold as Commuter-Daypack 21L/27L with specs "
+    },
+    {
+     "claim": "Ortlieb Commuter-Daypack is genuinely waterproof",
+     "verdict": "supported",
+     "note": "Waterproof to IP64 with roll closure "
+    },
+    {
+     "claim": "Ortlieb Commuter-Daypack is light",
+     "verdict": "supported",
+     "note": "Described as lightweight at 750g "
+    },
+    {
+     "claim": "Ortlieb Commuter-Daypack has a padded laptop compartment",
+     "verdict": "supported",
+     "note": "Padded sleeve 39x27x2.5cm, up to 15.4in "
+    },
+    {
+     "claim": "Ortlieb Vario is a real product",
+     "verdict": "supported",
+     "note": "Listed as Vario 26L hybrid bag by Ortlieb "
+    },
+    {
+     "claim": "Ortlieb Vario converts between backpack and bike-rack pannier",
+     "verdict": "supported",
+     "note": "Converts from backpack to pannier in seconds "
+    }
+   ],
+   "searches": 3,
+   "cost": 0.0282,
+   "s": 15.6
+  },
+  {
+   "goal": "how to find a notary in Seattle",
+   "claims": [
+    {
+     "claim": "UPS Store locations in Seattle offer notary services",
+     "verdict": "supported",
+     "note": "Multiple Seattle UPS Stores list a commissioned notary on staff"
+    },
+    {
+     "claim": "Your own bank or credit union can notarize documents",
+     "verdict": "supported",
+     "note": "Banks/credit unions notarize, often free for members"
+    },
+    {
+     "claim": "Call first to confirm a notary is on staff/available",
+     "verdict": "supported",
+     "note": "Branches advise call ahead to confirm availability"
+    },
+    {
+     "claim": "Washington caps most in-person notarizations at $15 per act",
+     "verdict": "supported",
+     "note": "Max is $15 per in-person act per WAC 308-30-220"
+    },
+    {
+     "claim": "Bring a current government photo ID",
+     "verdict": "supported",
+     "note": "Bring complete unsigned doc plus current government photo ID"
+    },
+    {
+     "claim": "Sign the document in front of the notary",
+     "verdict": "supported",
+     "note": "Documents must be signed in presence; bring unsigned"
+    }
+   ],
+   "searches": 4,
+   "cost": 0.0399,
+   "s": 16.8
+  },
+  {
+   "goal": "the best kids' rain boots",
+   "claims": [
+    {
+     "claim": "Muck Boots Kids' Element exists as a kids' boot.",
+     "verdict": "supported",
+     "note": "Listed as Kids' Element Boot $90 USD "
+    },
+    {
+     "claim": "Muck Boots Kids' Element costs about ninety dollars.",
+     "verdict": "supported",
+     "note": "List price $90, also $84.99-$90 "
+    },
+    {
+     "claim": "Muck Boots Kids' Element is the best-tested all-rounder for rain, mud and slush.",
+     "verdict": "supported",
+     "note": "Called best all-around rain boot, handles rain and slush "
+    },
+    {
+     "claim": "Bogs York exists as a kids' rain boot.",
+     "verdict": "supported",
+     "note": "Bogs Kids' York Seamless Waterproof Rain Boot $80 "
+    },
+    {
+     "claim": "Bogs York is an easier-on alternative suitable for wider feet and cheaper than $90.",
+     "verdict": "supported",
+     "note": "Easy on handles, perfect for wide feet, $65 vs $90 "
+    },
+    {
+     "claim": "Lone Cone is a solid budget kids' rain boot pick.",
+     "verdict": "supported",
+     "note": "Priced at just $21.99, described as affordable "
+    },
+    {
+     "claim": "Seattle has cold, wet months in November.",
+     "verdict": "supported",
+     "note": "November avg 50F/42F, wettest month, rain dominates "
+    }
+   ],
+   "searches": 7,
+   "cost": 0.0562,
+   "s": 21.7
+  },
+  {
+   "goal": "where to see the northern lights near Seattle this week",
+   "claims": [
+    {
+     "claim": "The northern lights are unlikely near Seattle this week",
+     "verdict": "supported",
+     "note": "Seattle needs Kp 5-7+, forecast peaks only Kp 3.67"
+    },
+    {
+     "claim": "Least-bad chance is late Wednesday night",
+     "verdict": "supported",
+     "note": "Peak Kp 3.67 on Thu, Thu 06 UTC = late Wed Seattle time"
+    },
+    {
+     "claim": "Least-bad chance is next Monday night (Nov 9)",
+     "verdict": "supported",
+     "note": "Nov 9 Kp 4 active, next lower-level opportunity"
+    },
+    {
+     "claim": "Try from a dark spot east or north of the city",
+     "verdict": "supported",
+     "note": "Clear dark skies and north-facing horizon required"
+    },
+    {
+     "claim": "Clouds make odds poor",
+     "verdict": "supported",
+     "note": "Seattle forecast Cloud 99%, overcast/drizzle"
+    },
+    {
+     "claim": "Weak activity makes odds poor",
+     "verdict": "supported",
+     "note": "Greatest expected Kp 3.67, no G1 storm expected"
+    }
+   ],
+   "searches": 4,
+   "cost": 0.0431,
+   "s": 21.5
+  },
+  {
+   "goal": "how to sign up for Seattle City Light budget billing",
+   "claims": [
+    {
+     "claim": "You can sign up for Seattle City Light Budget Billing online through your utility account",
+     "verdict": "supported",
+     "note": "Official page says Apply online "
+    },
+    {
+     "claim": "You can sign up by calling 206-684-3000",
+     "verdict": "supported",
+     "note": "Official page says call (206) 684-3000 "
+    },
+    {
+     "claim": "You need 12 months of City Light billing history at your current address",
+     "verdict": "supported",
+     "note": "Requires billing history at current address for past 12 months "
+    },
+    {
+     "claim": "You need a zero account balance",
+     "verdict": "supported",
+     "note": "Requires currently zero balance on account "
+    }
+   ],
+   "searches": 2,
+   "cost": 0.0228,
+   "s": 11.5
+  },
+  {
+   "goal": "how to get a refund from Ticketmaster",
+   "claims": [
+    {
+     "claim": "You can usually get a Ticketmaster refund only if the event organizer authorizes one",
+     "verdict": "supported",
+     "note": "Help center says refunds only while organizer authorizes them "
+    },
+    {
+     "claim": "Refunds most often after a cancellation or date change",
+     "verdict": "supported",
+     "note": "Refunds only for canceled, postponed, rescheduled events "
+    },
+    {
+     "claim": "Sign in, open My Tickets, and tap Request Refund if that button appears",
+     "verdict": "supported",
+     "note": "Find order under My Tickets; Request Refund button appears if offered "
+    },
+    {
+     "claim": "The money goes back to your original payment method",
+     "verdict": "supported",
+     "note": "Processed to original method of payment used at purchase "
+    },
+    {
+     "claim": "Refund arrives within about five to seven business days",
+     "verdict": "supported",
+     "note": "Should appear within 5-7 business days per bank processing "
+    }
+   ],
+   "searches": 4,
+   "cost": 0.0306,
+   "s": 16.5
+  },
+  {
+   "goal": "the best electric kettles",
+   "claims": [
+    {
+     "claim": "Cuisinart PerfecTemp CPK-17 is 1.7 liters",
+     "verdict": "supported",
+     "note": "Listings specify 1.7-liter capacity."
+    },
+    {
+     "claim": "Cuisinart PerfecTemp CPK-17 has six temperature presets",
+     "verdict": "supported",
+     "note": "Specs list 6 preset temperatures."
+    },
+    {
+     "claim": "Cuisinart PerfecTemp CPK-17 keeps water warm for 30 minutes",
+     "verdict": "supported",
+     "note": "Manual and listings state 30-minute Keep Warm."
+    },
+    {
+     "claim": "Fellow Stagg EKG Pro is an electric kettle product",
+     "verdict": "supported",
+     "note": "Sold as 0.9L electric kettle."
+    },
+    {
+     "claim": "Fellow Stagg EKG Pro is for pour-over coffee",
+     "verdict": "supported",
+     "note": "Described as electric pour-over kettle with gooseneck."
+    },
+    {
+     "claim": "Hamilton Beach 40880 is a budget boil-only kettle that saves money",
+     "verdict": "supported",
+     "note": "1.7L basic kettle around $34, cheaper than variable-temp models."
+    }
+   ],
+   "searches": 3,
+   "cost": 0.0267,
+   "s": 14.5
+  },
+  {
+   "goal": "the best meal-prep containers",
+   "claims": [
+    {
+     "claim": "IKEA 365+ glass containers exist as a product",
+     "verdict": "supported",
+     "note": "IKEA lists 365+ glass containers in multiple sizes "
+    },
+    {
+     "claim": "IKEA 365+ offers the best value and reheating performance for meal prep",
+     "verdict": "supported",
+     "note": "Rated best-value glass pick, oven/microwave-safe glass "
+    },
+    {
+     "claim": "Rubbermaid Brilliance containers exist as a product",
+     "verdict": "supported",
+     "note": "Rubbermaid Brilliance Glass/Plastic sets listed for sale "
+    },
+    {
+     "claim": "Rubbermaid Brilliance lids are designed to be fully leakproof",
+     "verdict": "supported",
+     "note": "Latches guarantee 100% leak-proof airtight seal "
+    }
+   ],
+   "searches": 3,
+   "cost": 0.0259,
+   "s": 15.8
+  },
+  {
+   "goal": "how to set up a new router",
+   "claims": [
+    {
+     "claim": "Place new router centrally",
+     "verdict": "supported",
+     "note": "Manuals advise central location for optimal coverage"
+    },
+    {
+     "claim": "Connect router's Internet or WAN port to modem",
+     "verdict": "supported",
+     "note": "Guides say modem Ethernet to router WAN/Internet port"
+    },
+    {
+     "claim": "Power the modem on first and then the router",
+     "verdict": "supported",
+     "note": "Power on modem first, then router after boot"
+    },
+    {
+     "claim": "Use maker's app or setup page to create Wi-Fi name and strong password",
+     "verdict": "supported",
+     "note": "Setup via app: name network and set strong password"
+    },
+    {
+     "claim": "Change the admin password",
+     "verdict": "supported",
+     "note": "Change default admin password to secure router"
+    },
+    {
+     "claim": "Use WPA3 or WPA2",
+     "verdict": "supported",
+     "note": "Use WPA3 if supported, otherwise WPA2"
+    },
+    {
+     "claim": "Update the firmware",
+     "verdict": "supported",
+     "note": "Check admin panel/app and install firmware updates"
+    }
+   ],
+   "searches": 3,
+   "cost": 0.0293,
+   "s": 18.1
+  },
+  {
+   "goal": "the best gloves for using a phone in the cold",
+   "claims": [
+    {
+     "claim": "Smartwool Active Fleece Insulated Glove is a real product name",
+     "verdict": "supported",
+     "note": "Listed on Smartwool official store "
+    },
+    {
+     "claim": "Smartwool Active Fleece Insulated Glove offers reliable phone/touchscreen use",
+     "verdict": "supported",
+     "note": "Touchscreen thumb/fingertips; named Best Touchscreen Ability "
+    },
+    {
+     "claim": "Outdoor Research Flurry Sensor is a real product name",
+     "verdict": "supported",
+     "note": "Listed as Flurry Sensor Gloves $45 "
+    },
+    {
+     "claim": "Outdoor Research Flurry Sensor offers phone/touchscreen use",
+     "verdict": "supported",
+     "note": "Touch-Screen Compatible thumb/index fingertip "
+    },
+    {
+     "claim": "Outdoor Research Flurry Sensor is cheaper than the Smartwool glove",
+     "verdict": "supported",
+     "note": "OR $45 vs Smartwool $68 MSRP "
+    },
+    {
+     "claim": "Smartwool Active Fleece Insulated Glove is not fully waterproof",
+     "verdict": "supported",
+     "note": "Spec is windproof overlay only, no waterproof claim "
+    },
+    {
+     "claim": "Outdoor Research Flurry Sensor is not fully waterproof for steady rain",
+     "verdict": "supported",
+     "note": "Waterproof?: No, not fully waterproof "
+    }
+   ],
+   "searches": 7,
+   "cost": 0.0807,
+   "s": 24.0
+  },
+  {
+   "goal": "how to get to Snoqualmie Pass by bus",
+   "claims": [
+    {
+     "claim": "Direct FlixBus runs from Seattle to Snoqualmie Pass",
+     "verdict": "supported",
+     "note": "FlixBus US connects the cities with multiple daily buses, all direct"
+    },
+    {
+     "claim": "Trip takes about an hour and fifteen minutes",
+     "verdict": "supported",
+     "note": "Usually takes around 1h15m, fastest 1h5m"
+    },
+    {
+     "claim": "Bus drops at Central Summit",
+     "verdict": "supported",
+     "note": "Main arrival station is Central Summit"
+    },
+    {
+     "claim": "Last outbound bus is early-afternoon, so after 9am there are still remaining departures",
+     "verdict": "supported",
+     "note": "First 7am and last 1pm, 3 per day"
+    },
+    {
+     "claim": "A return bus can be booked for same day",
+     "verdict": "supported",
+     "note": "3 buses/day Snoqualmie to Seattle, first 9am last 5pm"
+    }
+   ],
+   "searches": 6,
+   "cost": 0.058,
+   "s": 20.7
+  },
+  {
+   "goal": "the best walking shoes for travel",
+   "claims": [
+    {
+     "claim": "Hoka Transport 2 GTX exists as a current Hoka model",
+     "verdict": "supported",
+     "note": "Listed by Hoka, REI and Nordstrom at ~$175"
+    },
+    {
+     "claim": "Hoka Transport 2 GTX is cushioned",
+     "verdict": "supported",
+     "note": "Described as cushy responsive with thicker more cushioned midsole"
+    },
+    {
+     "claim": "Hoka Transport 2 GTX is city-friendly with subtle styling",
+     "verdict": "supported",
+     "note": "Marketed as daily staple for town and beyond, city streets"
+    },
+    {
+     "claim": "Hoka Transport 2 GTX is waterproof enough for Seattle rain",
+     "verdict": "supported",
+     "note": "Has GORE-TEX Invisible Fit membrane protecting against rain/puddles"
+    },
+    {
+     "claim": "Hoka Clifton 10 exists as a current Hoka model",
+     "verdict": "supported",
+     "note": "Listed by Hoka and major retailers as 10th Clifton iteration"
+    },
+    {
+     "claim": "Hoka Clifton 10 offers maximum softness for very long walking days",
+     "verdict": "supported",
+     "note": "Described as maximally cushioned, soft plush ride for long walks"
+    }
+   ],
+   "searches": 4,
+   "cost": 0.0353,
+   "s": 12.9
+  },
+  {
+   "goal": "how to get a fishing license in Washington",
+   "claims": [
+    {
+     "claim": "Washington fishing license can be bought online from WDFW",
+     "verdict": "supported",
+     "note": "WDFW lists online licensing system, phone and dealers"
+    },
+    {
+     "claim": "License can be bought through MyWDFW or Fish Washington app",
+     "verdict": "supported",
+     "note": "New for 2026 mobile licensing via MyWDFW and Fish Washington app"
+    },
+    {
+     "claim": "License can be bought at a local license dealer",
+     "verdict": "supported",
+     "note": "WDFW lists hundreds of license dealers statewide"
+    },
+    {
+     "claim": "Most people age 16 or older need a Washington fishing license",
+     "verdict": "supported",
+     "note": "All fishers age 16 and older need a fishing license"
+    },
+    {
+     "claim": "Annual resident combination license is $74.37",
+     "verdict": "supported",
+     "note": "Table shows Combination $74.37 for Resident Aged 16-69"
+    },
+    {
+     "claim": "Combination license covers freshwater, saltwater and shellfish",
+     "verdict": "supported",
+     "note": "Combination allows freshwater and saltwater, and harvest shellfish"
+    }
+   ],
+   "searches": 7,
+   "cost": 0.096,
+   "s": 24.0
+  },
+  {
+   "goal": "how to recycle styrofoam in Seattle",
+   "claims": [
+    {
+     "claim": "Don't put Styrofoam in your curbside recycling cart in Seattle",
+     "verdict": "supported",
+     "note": "Seattle says foam containers cannot go in curbside carts"
+    },
+    {
+     "claim": "Schedule a free city pickup for clean foam blocks",
+     "verdict": "supported",
+     "note": "SPU lists Foam Blocks FREE up to two 32-gal bags"
+    },
+    {
+     "claim": "Drop it off free in Kent",
+     "verdict": "supported",
+     "note": "Styro Recycle Kent offers free public drop-off"
+    },
+    {
+     "claim": "Remove tape and labels first",
+     "verdict": "supported",
+     "note": "Requires clean foam free of tape and labels"
+    },
+    {
+     "claim": "Packing peanuts and food trays aren't accepted for the city pickup",
+     "verdict": "supported",
+     "note": "City pickup is blocks/forms only, no peanuts or food trays"
+    }
+   ],
+   "searches": 11,
+   "cost": 0.0961,
+   "s": 21.3
+  },
+  {
+   "goal": "kid-friendly restaurants in Fremont, Seattle",
+   "claims": [
+    {
+     "claim": "Uneeda Burger is in Fremont, Seattle",
+     "verdict": "supported",
+     "note": "Listed at 4302 Fremont Ave N in Fremont since 2010."
+    },
+    {
+     "claim": "Uneeda Burger has a dedicated kids' menu",
+     "verdict": "supported",
+     "note": "Kids Menu lists Plain Jane Burger, grilled cheese, chicken strips, hot dog."
+    },
+    {
+     "claim": "Pecado Bueno is in Fremont, Seattle",
+     "verdict": "supported",
+     "note": "Fremont location at 4307 Fremont Ave N, Seattle."
+    },
+    {
+     "claim": "Pecado Bueno has a dedicated kids' menu",
+     "verdict": "supported",
+     "note": "Kids Menu lists kids quesadilla, kids nachos, bean and cheese burrito."
+    },
+    {
+     "claim": "Kayava is a ramen shop in Fremont, Seattle",
+     "verdict": "supported",
+     "note": "KAYAVA.FREMONT at 704 N 34th St, Fremont ramen shop."
+    },
+    {
+     "claim": "Kayava offers a ramen kids' combo / kids menu",
+     "verdict": "supported",
+     "note": "Described as kids menu combo with choice of ramen, high chairs available."
+    },
+    {
+     "claim": "Fremont Brewing is kid-friendly with space for kids to move around",
+     "verdict": "supported",
+     "note": "Described as kid-friendly Urban Beer Garden with outdoor seating, games, bocce."
+    },
+    {
+     "claim": "Fremont Brewing lets you bring or order in food",
+     "verdict": "supported",
+     "note": "No full kitchen; allows outside food, takeout/delivery or on-site sandwiches."
+    }
+   ],
+   "searches": 7,
+   "cost": 0.075,
+   "s": 24.8
+  },
+  {
+   "goal": "the best cordless vacuums under $300",
+   "claims": [
+    {
+     "claim": "Eureka ReactiSense 440 costs about $180",
+     "verdict": "supported",
+     "note": "Listed at $179.99-$180 at multiple retailers"
+    },
+    {
+     "claim": "Eureka ReactiSense 440 is the strongest value under $300, especially on carpet",
+     "verdict": "supported",
+     "note": "Ranked Best Overall & Value with 96% pickup and carpet suction award"
+    },
+    {
+     "claim": "Levoit LVAC-200 costs $200",
+     "verdict": "supported",
+     "note": "List price $199.99, now on sale around $140"
+    },
+    {
+     "claim": "Levoit LVAC-200 is a lighter, simpler apartment pick",
+     "verdict": "supported",
+     "note": "Described as 3.2-lb ultra-lightweight best for small spaces/apartments"
+    },
+    {
+     "claim": "Levoit LVAC-300 is stronger than LVAC-200",
+     "verdict": "supported",
+     "note": "94 vs 82 inches sealed suction, 90AW vs 70AW"
+    },
+    {
+     "claim": "Levoit LVAC-300 is available on sale below $300",
+     "verdict": "supported",
+     "note": "List $349.99, sale $230-$260"
+    }
+   ],
+   "searches": 5,
+   "cost": 0.0421,
+   "s": 15.4
+  },
+  {
+   "goal": "how to replace a lost Orca card",
+   "claims": [
+    {
+     "claim": "If your card is linked to myORCA, you can lock it right away in the app or online",
+     "verdict": "supported",
+     "note": "Registered card enables lock via account/app. "
+    },
+    {
+     "claim": "Choosing Replace Card blocks the old card permanently",
+     "verdict": "supported",
+     "note": "Replacement permanently blocks current card. "
+    },
+    {
+     "claim": "Balance and passes move to a new card for $3",
+     "verdict": "supported",
+     "note": "E-purse/passes auto-transfer; adult $3 new/$3 replacement.  "
+    },
+    {
+     "claim": "Mailed replacements take 7 to 10 business days",
+     "verdict": "supported",
+     "note": "Allow 7-10 business days by mail. "
+    },
+    {
+     "claim": "The Seattle Pass Sales Office can usually replace one during your visit",
+     "verdict": "supported",
+     "note": "Most in-person replacements provided at time of visit. "
+    }
+   ],
+   "searches": 6,
+   "cost": 0.06,
+   "s": 18.7
+  },
+  {
+   "goal": "the best sunrise viewpoints in Seattle",
+   "claims": [
+    {
+     "claim": "Seacrest Park is in West Seattle",
+     "verdict": "supported",
+     "note": "Located at 1660 Harbor Ave SW in West Seattle"
+    },
+    {
+     "claim": "Alki waterfront is in West Seattle",
+     "verdict": "supported",
+     "note": "Alki Beach Park located in West Seattle with downtown view"
+    },
+    {
+     "claim": "Seacrest / Alki offers classic sunrise with sky behind Cascades glowing across downtown",
+     "verdict": "supported",
+     "note": "Seattle skyline from Seacrest during sunrise dawn; Alki sunrise views"
+    },
+    {
+     "claim": "Louisa Boren Lookout faces Lake Washington to the east",
+     "verdict": "supported",
+     "note": "Lookout with views east over Lake Washington"
+    },
+    {
+     "claim": "From Louisa Boren you can watch sun crest mountains to east",
+     "verdict": "supported",
+     "note": "East-facing lake view matches Nov 5 sunrise azimuth 113 SE"
+    },
+    {
+     "claim": "Arrive around 6:30 for sunrise tomorrow (Nov 5, 2026)",
+     "verdict": "supported",
+     "note": "Sunrise Nov 5 is 6:59am PST, so 6:30 is ~30 min early"
+    }
+   ],
+   "searches": 5,
+   "cost": 0.0366,
+   "s": 19.8
+  },
+  {
+   "goal": "the best books for learning to cook",
+   "claims": [
+    {
+     "claim": "Salt, Fat, Acid, Heat is about understanding why food tastes good",
+     "verdict": "supported",
+     "note": "Nosrat book covers 4 elements that determine flavor"
+    },
+    {
+     "claim": "How to Cook Everything is one huge recipe reference",
+     "verdict": "supported",
+     "note": "Bittman book has 2000 recipes, ~1000 pages"
+    },
+    {
+     "claim": "America's Test Kitchen's New Cooking School Cookbook is a step-by-step course",
+     "verdict": "supported",
+     "note": "ATK book uses 2500 photos for step-by-step instruction"
+    }
+   ],
+   "searches": 3,
+   "cost": 0.0227,
+   "s": 11.1
+  },
+  {
+   "goal": "how to file a lost item claim with Sound Transit",
+   "claims": [
+    {
+     "claim": "File with the operator for the vehicle you rode, not Sound Transit directly.",
+     "verdict": "supported",
+     "note": "Sound Transit says contact the agency that operated the bus you rode."
+    },
+    {
+     "claim": "Seattle Link light rail lost-and-found is handled by King County Metro.",
+     "verdict": "supported",
+     "note": "Sound Transit lists 1 and 2 Line light rail under King County Metro."
+    },
+    {
+     "claim": "You can report via King County Metro online form anytime, by phone, or by visiting King Street Center.",
+     "verdict": "supported",
+     "note": "Three ways listed: form 24 hours/day, phone, in-person visit."
+    },
+    {
+     "claim": "Items are held for 30 days.",
+     "verdict": "supported",
+     "note": "King County Metro holds 1/2 Line items for 30 days."
+    },
+    {
+     "claim": "King Street Center is the storage/visit location.",
+     "verdict": "supported",
+     "note": "Listed as 201 S. Jackson St., Seattle."
+    }
+   ],
+   "searches": 4,
+   "cost": 0.0371,
+   "s": 13.0
+  },
+  {
+   "goal": "the best travel pillows for long flights",
+   "claims": [
+    {
+     "claim": "Cabeau Evolution S3 is a real travel pillow product",
+     "verdict": "supported",
+     "note": "Listed by Cabeau and multiple retailers "
+    },
+    {
+     "claim": "Trtl Pillow Plus is a real travel pillow product",
+     "verdict": "supported",
+     "note": "Listed in comparison tables and reviews "
+    },
+    {
+     "claim": "Cabeau Evolution S3 uses memory foam",
+     "verdict": "supported",
+     "note": "Material 100% polyurethane memory foam "
+    },
+    {
+     "claim": "Cabeau Evolution S3 has raised sides / raised side supports",
+     "verdict": "supported",
+     "note": "Raised side support for optimum support "
+    },
+    {
+     "claim": "Cabeau Evolution S3 has a headrest strap / Seat Strap System",
+     "verdict": "supported",
+     "note": "Strap attaches to seat wings/headrest "
+    },
+    {
+     "claim": "Cabeau Evolution S3 helps stop head pitching forward or sideways",
+     "verdict": "supported",
+     "note": "Described as preventing head falling forward/sideways "
+    },
+    {
+     "claim": "Trtl Pillow Plus is lighter than Cabeau Evolution S3",
+     "verdict": "supported",
+     "note": "e.g. 7.2 oz vs 12 oz, 130g vs 285g "
+    },
+    {
+     "claim": "Trtl Pillow Plus suits pack-light travelers and side-leaners/side sleepers",
+     "verdict": "supported",
+     "note": "Best for side sleepers, packs flat/light "
+    }
+   ],
+   "searches": 4,
+   "cost": 0.0293,
+   "s": 13.4
+  },
+  {
+   "goal": "the best headlamps for winter running",
+   "claims": [
+    {
+     "claim": "Black Diamond Distance LT 1100 is a real headlamp model",
+     "verdict": "supported",
+     "note": "Listed by Black Diamond as Distance LT 1100 Headlamp"
+    },
+    {
+     "claim": "Black Diamond Distance LT 1100 is bright (up to 1100 lumens)",
+     "verdict": "supported",
+     "note": "Specs: 1100 lumens PowerTap, 125m beam"
+    },
+    {
+     "claim": "Black Diamond Distance LT 1100 is properly waterproof for rain",
+     "verdict": "supported",
+     "note": "Rated IP67 waterproof/dustproof to 1m for 30 min"
+    },
+    {
+     "claim": "Nitecore NU25 MCT is a real headlamp model",
+     "verdict": "supported",
+     "note": "Listed as 400 Lumen USB-C rechargeable headlamp"
+    },
+    {
+     "claim": "Nitecore NU25 MCT costs about forty dollars",
+     "verdict": "supported",
+     "note": "US price $39.95, also $36.95 variant"
+    }
+   ],
+   "searches": 3,
+   "cost": 0.0332,
+   "s": 18.8
+  },
+  {
+   "goal": "how to make a reservation at the Seattle Aquarium",
+   "claims": [
+    {
+     "claim": "Reserve online through the Seattle Aquarium's tickets page",
+     "verdict": "supported",
+     "note": "Official site has tickets page for online purchase"
+    },
+    {
+     "claim": "choosing your date and timed entry",
+     "verdict": "supported",
+     "note": "Tickets are timed for selected date and entry time"
+    },
+    {
+     "claim": "then checking out for a QR-code ticket",
+     "verdict": "supported",
+     "note": "Smartphone/QR ticket scanned at entrances"
+    },
+    {
+     "claim": "Booking ahead is recommended because walk-up tickets are limited",
+     "verdict": "supported",
+     "note": "Advance booking recommended; walk-ups very limited"
+    },
+    {
+     "claim": "tickets cost less when bought at least one day in advance",
+     "verdict": "supported",
+     "note": "FAQ states all tickets cost less 1+ day ahead"
+    }
+   ],
+   "searches": 5,
+   "cost": 0.0412,
+   "s": 12.9
+  }
+ ]
+}

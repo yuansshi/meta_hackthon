@@ -88,5 +88,81 @@
    }
   }
  },
- "note": "Muse Spark Open on Fireworks was stopped early: it's slow (16 s a call) and not Meta credit."
+ "note": "Muse Spark Open on Fireworks was stopped early: it's slow (16 s a call) and not Meta credit.",
+ "second_judge": {
+  "model": "muse-spark-1.3, medium",
+  "judges_agree": "2030/2400",
+  "agrees_with_category": "1911/2400",
+  "all_three_agree": 1865,
+  "cost_usd": 13.44,
+  "screeners_on_all_three_agree": {
+   "Muse Spark 1.2, minimal (shipped)": {
+    "screened": 1865,
+    "precision": 0.896,
+    "precision_95": [
+     0.868,
+     0.919
+    ],
+    "recall": 0.992,
+    "recall_95": [
+     0.979,
+     0.997
+    ],
+    "false_offers": 57,
+    "false_offers_by_category": {
+     "smalltalk": 3,
+     "media": 3,
+     "past": 5,
+     "others": 39,
+     "store": 3,
+     "irrelevant": 4
+    }
+   },
+   "Muse Spark 1.3, minimal": {
+    "screened": 1865,
+    "precision": 0.917,
+    "precision_95": [
+     0.891,
+     0.938
+    ],
+    "recall": 0.982,
+    "recall_95": [
+     0.966,
+     0.99
+    ],
+    "false_offers": 44,
+    "false_offers_by_category": {
+     "smalltalk": 1,
+     "media": 4,
+     "others": 33,
+     "past": 2,
+     "store": 3,
+     "irrelevant": 1
+    }
+   },
+   "Muse Wonder 1.0, low": {
+    "screened": 1865,
+    "precision": 0.909,
+    "precision_95": [
+     0.882,
+     0.93
+    ],
+    "recall": 0.986,
+    "recall_95": [
+     0.971,
+     0.993
+    ],
+    "false_offers": 49,
+    "false_offers_by_category": {
+     "smalltalk": 3,
+     "media": 2,
+     "vague": 1,
+     "past": 4,
+     "others": 35,
+     "irrelevant": 3,
+     "store": 1
+    }
+   }
+  }
+ }
 }

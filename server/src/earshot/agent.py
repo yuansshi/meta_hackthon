@@ -269,8 +269,10 @@ class Agent:
 
     def client(self, m: dict) -> AsyncOpenAI:
         if m["provider"] not in self.clients:
+            # The fallback is the last resort, so it retries harder: Fireworks can answer 503 "overloaded" in bursts.
+            retries = 3 if m["provider"] == self.cfg.get("fallback_provider", "fireworks") else 1
             self.clients[m["provider"]] = AsyncOpenAI(api_key=api_key(m["api_key_env"]), base_url=m["base_url"],
-                                                      timeout=60, max_retries=1)
+                                                      timeout=60, max_retries=retries)
         return self.clients[m["provider"]]
 
     def instructions(self, m: dict) -> str:

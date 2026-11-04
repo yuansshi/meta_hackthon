@@ -111,8 +111,11 @@ async def test_a_refused_speech_service_is_reported_once_and_then_its_return():
     async def on_event(evt):
         events.append(evt)
 
-    refused = [FakeWS([{"type": "error", "message": "insufficient credit"}]) for _ in range(3)]
-    r = AsrRelay(fast_cfg(), "k", on_event, connect=FakeConnect([*refused, FakeWS([{"sessionId": "s4"}])]))
+    refused = [FakeWS([{"type": "error", "message": "insufficient credit"}]),
+               FakeWS([{"sessionId": "s2"}, CLOSE]),  # accepted, then closed: 1008 "Billing verification failed"
+               FakeWS([{"sessionId": "s3"}, CLOSE])]
+    working = FakeWS([{"sessionId": "s4"}, {"type": "audioProgress", "audioProcessedMs": 80}])
+    r = AsrRelay(fast_cfg(), "k", on_event, connect=FakeConnect([*refused, working]))
     task = asyncio.create_task(r.run())
     await asyncio.sleep(4.5)  # backoff 0.5 + 1 + 2 s between the refusals
     kinds = [e["type"] for e in events]

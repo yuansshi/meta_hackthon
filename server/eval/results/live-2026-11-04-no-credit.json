@@ -1,0 +1,61 @@
+{
+ "at": "2026-11-04T09:51:04",
+ "url": "wss://earshot-yuansshi.fly.dev/ws",
+ "rows": [
+  {
+   "scenario": "Wake word + weather (spoken)",
+   "ok": false,
+   "error": "TimeoutError: ",
+   "first_s": null,
+   "total_s": null,
+   "cost": 0
+  },
+  {
+   "scenario": "Look + Find it (sample photo)",
+   "attempt": 2,
+   "first_s": 7.88,
+   "total_s": 8.53,
+   "cost": 0.00222,
+   "tools": [],
+   "said": "The nineteen oh five to Harbor Quarter is on platform three, on time. I'll outline the departures board for you now, it's the third row down on the board on the right. ",
+   "ok": false,
+   "platform_right": true
+  },
+  {
+   "scenario": "Remember where I parked",
+   "ok": false,
+   "error": "TimeoutError: ",
+   "first_s": null,
+   "total_s": null,
+   "cost": 0
+  },
+  {
+   "scenario": "Rewind (spoken)",
+   "ok": false,
+   "error": "TimeoutError: ",
+   "first_s": null,
+   "total_s": null,
+   "cost": 0
+  },
+  {
+   "scenario": "Heads-up (spoken)",
+   "ok": false,
+   "error": "TimeoutError: ",
+   "first_s": null,
+   "total_s": null,
+   "cost": 0
+  },
+  {
+   "scenario": "Muse Wonder e-bike research",
+   "attempt": 3,
+   "ok": false,
+   "total_s": 32.7,
+   "cost": 0.0,
+   "searches": 0,
+   "tools": [
+    "research"
+   ],
+   "first_s": null
+  }
+ ]
+}
