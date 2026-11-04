@@ -21,6 +21,7 @@ final class AgentSession {
         var text: String
         var meta = ""
         var photo: UIImage?
+        var found: [CGRect] = []  // Find it: where SAM 3.1 found the thing, as fractions of the photo
     }
 
     struct Receipt: Identifiable {
@@ -61,6 +62,13 @@ final class AgentSession {
     }
     var voiceProcessing = true
     var testSpeech = false
+    /// Heads-up: Earshot speaks up when it overhears something you'll want, and asks first. Hands-free only.
+    var headsUp = UserDefaults.standard.bool(forKey: "headsUp") {
+        didSet {
+            UserDefaults.standard.set(headsUp, forKey: "headsUp")
+            if running { socket.send(["type": "heads_up", "on": headsUp]) }
+        }
+    }
     var muted = false {
         didSet { if running { socket.send(["type": "mute", "on": muted]); updateGate() } }
     }
@@ -246,6 +254,7 @@ final class AgentSession {
         socket.send([
             "type": "hello", "client": "ios", "device_id": deviceID, "tz": TimeZone.current.identifier,
             "sample_rate": 16000, "tools": ["get_location", "create_reminder"], "mode": mode.rawValue,
+            "heads_up": headsUp, "language": Locale.preferredLanguages.first ?? "en-US",
         ])
         updateGate()
     }
@@ -290,6 +299,7 @@ final class AgentSession {
             }
         case "say":
             guard let text = msg["text"] as? String, !text.isEmpty, let turn = msg["turn"] as? String else { return }
+            if turn.hasPrefix("h"), bubbleForTurn[turn] == nil { audio.chime() }  // a Heads-up offer starts
             appendAgent(turn: turn, text: text)
             speech.speak(text)
         case "tool_call":
@@ -307,6 +317,14 @@ final class AgentSession {
         case "photo_used":
             if let i = messages.lastIndex(where: { $0.fromUser }) { messages[i].photo = stagedPhoto }
             stagedPhoto = nil
+        case "highlight":
+            guard let boxes = msg["boxes"] as? [[String: Any]],
+                  let i = messages.lastIndex(where: { $0.photo != nil }) else { return }
+            messages[i].found = boxes.compactMap { b in
+                guard let x1 = b["x1"] as? Double, let y1 = b["y1"] as? Double,
+                      let x2 = b["x2"] as? Double, let y2 = b["y2"] as? Double else { return nil }
+                return CGRect(x: x1, y: y1, width: x2 - x1, height: y2 - y1)
+            }
         case "report":  // a Muse Wonder job finished; its summary follows as `say` events
             audio.chime()
             note("research report: \(msg["goal"] as? String ?? "")")
@@ -316,7 +334,8 @@ final class AgentSession {
             guard let turn = msg["turn"] as? String, let bubble = bubbleForTurn[turn],
                   let i = messages.firstIndex(where: { $0.id == bubble }) else { return }
             let background = (msg["total_ms"] as? Double).map { String(format: "%.0f s in the background", $0 / 1000) }
-            let first = msg["background"] as? Bool == true ? background ?? "in the background"
+            let first = msg["heads_up"] as? Bool == true ? "Heads-up"
+                : msg["background"] as? Bool == true ? background ?? "in the background"
                 : (msg["first_say_ms"] as? Double).map { String(format: "%.1f s to first word", $0 / 1000) } ?? "no reply"
             let model = (msg["model"] as? String ?? "").split(separator: "/").last.map(String.init) ?? ""
             let fallback = msg["fallback_from"] is String ? " (fallback)" : ""
@@ -325,6 +344,10 @@ final class AgentSession {
         case "error":
             lastError = msg["message"] as? String ?? "error"
             note("server: \(lastError)")
+        case "asr":  // speech recognition stopped answering (say, no credit), or came back
+            let ok = msg["ok"] as? Bool ?? true
+            lastError = ok ? "" : (msg["message"] as? String ?? "Earshot can't hear you right now.")
+            note(ok ? "speech recognition is back" : "speech recognition unavailable")
         default:
             break
         }

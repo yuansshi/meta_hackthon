@@ -24,7 +24,8 @@ log = logging.getLogger("earshot")
 CFG = load_config()
 BUDGET = Budget(CFG["budget"]["daily_usd"], DATA_DIR / "spend.json")
 OPEN: Counter[str] = Counter()  # live sessions per client IP
-RESEARCHER = Researcher(CFG, BUDGET)  # shared: research jobs outlive the connection that started them
+# Shared: research jobs outlive the connection that started them, and (kept on disk) the server process too.
+RESEARCHER = Researcher(CFG, BUDGET, store=DATA_DIR / "research")
 BRAIN_CHECK_S = 300
 
 
@@ -47,7 +48,10 @@ async def watch_brain() -> None:
 @asynccontextmanager
 async def lifespan(_: FastAPI):
     watcher = asyncio.create_task(watch_brain())
+    if n := RESEARCHER.resume():
+        log.info("resumed %d research job(s) from before the restart", n)
     yield
+    RESEARCHER.shutting_down = True  # jobs in flight keep running at Meta; the next start collects them
     watcher.cancel()
 
 
@@ -95,6 +99,7 @@ async def device_socket(ws: WebSocket) -> None:
 
     writer_task = asyncio.create_task(writer())
     session = Session(cfg=CFG, budget=BUDGET, send=send, researcher=RESEARCHER)
+    clean = False  # a clean close forgets the conversation; a dropped one keeps it for the reconnect
     try:
         await session.start(await ws.receive_json())
         deadline = time.monotonic() + CFG["budget"]["web_session_minutes"] * 60 if session.client == "web" else None
@@ -102,6 +107,7 @@ async def device_socket(ws: WebSocket) -> None:
         while True:
             msg = await ws.receive()
             if msg["type"] == "websocket.disconnect":
+                clean = msg.get("code") in (1000, 1001)  # the page closed or changed language
                 break
             if msg.get("bytes") is not None:
                 session.handle_audio(msg["bytes"])
@@ -110,11 +116,12 @@ async def device_socket(ws: WebSocket) -> None:
             if deadline and time.monotonic() > deadline:
                 await session.expire()
                 await asyncio.sleep(0.5)  # let the writer deliver the goodbye
+                clean = True
                 break
     except (WebSocketDisconnect, json.JSONDecodeError, RuntimeError) as e:
         log.info("session ended: %r", e)
     finally:
-        await session.close()
+        await session.close(clean=clean)
         writer_task.cancel()
         OPEN[ip] -= 1
         try:

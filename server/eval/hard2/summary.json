@@ -1,0 +1,92 @@
+{
+ "snippets": 2400,
+ "judge_agreed": 2155,
+ "positives": 782,
+ "judge_disagreed_by_category": {
+  "detail": 128,
+  "ask": 37,
+  "plan": 3,
+  "lookup": 43,
+  "announce": 7,
+  "past": 1,
+  "others": 23,
+  "irrelevant": 2,
+  "store": 1
+ },
+ "screeners": {
+  "Muse Spark 1.2, minimal (shipped)": {
+   "screened": 2155,
+   "precision": 0.929,
+   "precision_95": [
+    0.91,
+    0.945
+   ],
+   "recall": 0.994,
+   "recall_95": [
+    0.985,
+    0.997
+   ],
+   "false_offer_rate": 0.043,
+   "p50_s": 1.33,
+   "cost_per_screen": 0.00131,
+   "false_offers_by_category": {
+    "smalltalk": 3,
+    "media": 3,
+    "past": 5,
+    "others": 41,
+    "store": 3,
+    "irrelevant": 4
+   }
+  },
+  "Muse Spark 1.3, minimal": {
+   "screened": 2155,
+   "precision": 0.943,
+   "precision_95": [
+    0.925,
+    0.957
+   ],
+   "recall": 0.974,
+   "recall_95": [
+    0.961,
+    0.983
+   ],
+   "false_offer_rate": 0.034,
+   "p50_s": 3.34,
+   "cost_per_screen": 0.00148,
+   "false_offers_by_category": {
+    "smalltalk": 1,
+    "media": 4,
+    "others": 35,
+    "past": 2,
+    "store": 3,
+    "irrelevant": 1
+   }
+  },
+  "Muse Wonder 1.0, low": {
+   "screened": 2155,
+   "precision": 0.937,
+   "precision_95": [
+    0.918,
+    0.952
+   ],
+   "recall": 0.99,
+   "recall_95": [
+    0.98,
+    0.995
+   ],
+   "false_offer_rate": 0.038,
+   "p50_s": 2.74,
+   "cost_per_screen": 0.00886,
+   "false_offers_by_category": {
+    "smalltalk": 3,
+    "media": 2,
+    "vague": 1,
+    "past": 4,
+    "others": 38,
+    "irrelevant": 3,
+    "store": 1
+   }
+  }
+ },
+ "note": "Muse Spark Open on Fireworks was stopped early: it's slow (16 s a call) and not Meta credit."
+}

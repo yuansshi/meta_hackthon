@@ -24,6 +24,7 @@ from openai import AsyncOpenAI
 from .actions import ActionLog
 from .budget import Budget, token_cost
 from .config import api_key, model_cfg
+from .languages import ENGLISH, Language, remind_question, resolve
 from .tools import Tool
 
 log = logging.getLogger(__name__)
@@ -41,18 +42,39 @@ the way people say them.
 create_reminder for reminders, rewind for anything said nearby in the last few minutes.{search}
 - The app already says "On it" when a tool starts, so never announce that you're about to use one; \
 after it runs, say what happened in a few words, like "Done, coffee filters at six."
-- When the user shares a photo, answer about what's in it, and read any text in it that helps.
+- When the user shares a photo, answer about what's in it, and read any text in it that helps. If they ask \
+where something is in it, or to show them, use find_in_photo and say where.
 - If a request is ambiguous, ask one short question.
-It is {now} for the user ({tz}). They are using the {client} app."""
+It is {now} for the user ({tz}). They are using the {client} app.{language}"""
 SEARCH = " Use web search for news, opening hours, scores and anything else that changes."
 NO_SEARCH = " You can't browse the web right now; say so briefly if a question needs live information."
+
+# A model at minimal effort sometimes writes its plan, or our instructions, as the reply (seen live in Hebrew:
+# "Need location then weather - but must not announce tool?"). Such a sentence is never spoken.
+LEAK = re.compile(r"\b(developer|system prompt|the user|tool ?calls?|function ?calls?|announce (the |a )?tools?|"
+                  r"never announce|one to three short sentences|one-three short sentences|minimal effort|"
+                  r"my instructions|instructions say)\b", re.I)
+NON_LATIN = {"ar", "bn", "he", "hi", "ja", "kn", "ko", "mr", "ta", "te", "th", "zh"}
+
+
+def leaked(sentence: str, lang_code: str) -> bool:
+    """Text the model wrote to itself rather than to the listener."""
+    if LEAK.search(sentence):
+        return True
+    if lang_code in NON_LATIN:  # a long sentence in English when the user speaks, say, Hebrew
+        letters = [c for c in sentence if c.isalpha()]
+        return len(letters) >= 20 and sum(c.isascii() for c in letters) / len(letters) > 0.9
+    return False
+
 
 THINK = re.compile(r"\b(think (about|hard|carefully|it through)|take your time)\b", re.I)
 ACK = {"function_call": "On it.", "web_search_call": "Let me check."}
 FRESH_AFTER_S = 15 * 60  # start a new conversation after this much idle time (keeps chained context cheap)
 SKIP_AFTER_404_S = 600  # a model the API says doesn't exist for this key is skipped this long
-FALLBACK_ERRORS = (openai.NotFoundError, openai.InternalServerError, openai.APIConnectionError,
-                   openai.APITimeoutError, openai.RateLimitError, openai.PermissionDeniedError)
+# Any API failure falls back: an outage, a timeout, and also a key or account problem (401, 402 when credits run
+# out, 403, 404), so the demo keeps answering. A bad request from our side (400) is a bug, so it is raised.
+FALLBACK_ERRORS = (openai.APIStatusError, openai.APIConnectionError, openai.APITimeoutError)
+ACCOUNT_ERRORS = {401, 402, 403, 404}  # remembered for a while: retrying the same model won't help
 UNAVAILABLE: dict[str, float] = {}  # model key -> monotonic time until which we go straight to the fallback
 MAX_HISTORY = 40  # resent items per conversation; older whole turns are dropped
 
@@ -62,6 +84,18 @@ def user_now(tz: str | None) -> datetime:
         return datetime.now(ZoneInfo(tz or "UTC"))
     except (KeyError, ValueError):
         return datetime.now(ZoneInfo("UTC"))
+
+
+def _no_photos(item):
+    """A copy of a history item with any photo replaced by a note, so saved history never holds images."""
+    if not isinstance(item, dict) or not isinstance(item.get("content"), list):
+        return item
+    parts = []
+    for p in item["content"]:
+        if isinstance(p, dict) and p.get("type") in ("input_image", "image_url"):
+            p = {"type": "input_text" if p["type"] == "input_image" else "text", "text": "(a photo the user shared)"}
+        parts.append(p)
+    return {**item, "content": parts}
 
 
 def say_when(due: str | None, tz: str | None) -> str:
@@ -88,8 +122,15 @@ ACTION_VERBS = {"buy", "call", "pick", "take", "send", "email", "pay", "book", "
                 "pack", "plan", "reply", "follow"}
 
 
-def confirm_question(name: str, args: dict, tz: str | None) -> str:
-    """The yes/no question spoken before a side-effect tool runs."""
+def confirm_question(name: str, args: dict, tz: str | None, lang: Language = ENGLISH) -> str:
+    """The yes/no question spoken before a side-effect tool runs, built from the tool's own arguments."""
+    if name == "create_reminder" and lang.code != "en":
+        try:
+            when = datetime.fromisoformat(str(args["due"])) if args.get("due") else None
+        except ValueError:
+            when = None
+        title = str(args.get("title") or "").strip().rstrip(".。")
+        return remind_question(lang, title, when, user_now(tz).date())
     if name == "create_reminder":
         title = str(args.get("title") or "that").strip().rstrip(".")
         first = title.split()[0].lower() if title.split() else ""
@@ -142,9 +183,9 @@ async def check_model(cfg: dict, key: str) -> bool | None:
             await client.responses.create(model=m["id"], input="ping", max_output_tokens=16,
                                           reasoning={"effort": m.get("reasoning_effort", "minimal")})
         return True
-    except (openai.NotFoundError, openai.PermissionDeniedError):
-        return False
-    except Exception:  # network trouble or a 5xx says nothing about access
+    except openai.APIStatusError as e:  # refused (bad key, no credit, no access) vs. a 5xx that says nothing
+        return False if e.status_code in ACCOUNT_ERRORS else None
+    except Exception:  # network trouble says nothing about access
         return None
 
 
@@ -179,6 +220,7 @@ class TurnStats:
     cost_usd: float = 0.0
     rounds: int = 0
     says: int = 0
+    leaks: int = 0
     searches: int = 0
     fallback_from: str | None = None
     tools: list[str] = field(default_factory=list)
@@ -191,13 +233,34 @@ class Agent:
         self.budget = budget
         self.tools = tools
         self.actions = actions
-        self.context = context  # tz, client
+        self.context = context  # tz, client, language
+        self.lang = resolve(context.get("language"))
         self.clients = clients if clients is not None else {}  # provider -> AsyncOpenAI (tests inject fakes)
         self.prev_id: str | None = None  # Responses chaining
         self.items: list[dict] = []  # stateless Responses input items
         self.messages: list[dict] = []  # Chat Completions history
         self.last_turn_at = 0.0
         self.confirm: Confirm | None = None  # the session asks the user before side-effect tools run
+        self.preapproved = 0  # side-effect calls the user already said yes to, in a Heads-up offer
+
+    def take_preapproval(self) -> bool:
+        if self.preapproved > 0:
+            self.preapproved -= 1
+            return True
+        return False
+
+    def snapshot(self) -> dict:
+        """The conversation without its photos, so a reconnect after a server restart can pick it up."""
+        return {"at": time.time(), "items": [_no_photos(i) for i in self.items],
+                "messages": [_no_photos(m) for m in self.messages]}
+
+    def restore(self, snap: dict) -> bool:
+        age = time.time() - float(snap.get("at", 0))
+        if age > FRESH_AFTER_S:
+            return False
+        self.items, self.messages = list(snap.get("items") or []), list(snap.get("messages") or [])
+        self.last_turn_at = time.monotonic() - age
+        return True
 
     def remember_report(self, text: str) -> None:
         """A finished background report joins the conversation, so follow-up questions about it work."""
@@ -218,7 +281,11 @@ class Agent:
             tz, now = "UTC", datetime.now(ZoneInfo("UTC"))
         return SYSTEM.format(now=now.strftime("%A %B %-d, %Y, %-I:%M %p"), tz=tz,
                              search=SEARCH if m.get("web_search") else NO_SEARCH,
-                             client={"ios": "iPhone", "web": "web"}.get(self.context.get("client"), "web"))
+                             client={"ios": "iPhone", "web": "web"}.get(self.context.get("client"), "web"),
+                             language="" if self.lang.code == "en" else
+                             f"\nThe user speaks {self.lang.name}. Always reply in {self.lang.name}, even when a tool "
+                             "result or the web is in English. Give temperatures in the unit speakers of "
+                             f"{self.lang.name} usually use, and write reminder titles in {self.lang.name}.")
 
     def model_for(self, text: str) -> dict:
         m = model_cfg(self.cfg, self.cfg["think"] if THINK.search(text) else self.cfg["brain"])
@@ -236,6 +303,10 @@ class Agent:
         t0 = time.perf_counter()
 
         async def say(sentence: str) -> None:
+            if leaked(sentence, self.lang.code):
+                stats.leaks += 1
+                log.warning("not speaking a sentence the model wrote to itself: %r", sentence[:160])
+                return
             if stats.first_say_s is None:
                 stats.first_say_s = time.perf_counter() - t0
             stats.says += 1
@@ -247,11 +318,20 @@ class Agent:
         saved = list(self.items), list(self.messages)
         try:
             await self._turn(m, text, image, say, emit, device_call, stats)
+            if stats.leaks and stats.says == said_before:
+                # All it wrote was to itself. Try once more, with room to think first.
+                self.items, self.messages = saved
+                stats.leaks = 0
+                await self._turn({**m, "reasoning_effort": "low"}, text, image, say, emit, device_call, stats)
+        except asyncio.CancelledError:  # the session restarted this turn (more of the sentence arrived)
+            self.items, self.messages = saved
+            raise
         except FALLBACK_ERRORS as e:
             fb = self.cfg.get("fallback")
-            if not fb or fb == m["key"] or stats.says > said_before:
-                raise  # nowhere to go, or the user already heard part of this answer
-            if isinstance(e, openai.NotFoundError | openai.PermissionDeniedError):
+            status = getattr(e, "status_code", None)
+            if not fb or fb == m["key"] or stats.says > said_before or status == 400:
+                raise  # nowhere to go, the user already heard part of this answer, or our own bad request
+            if status in ACCOUNT_ERRORS:
                 UNAVAILABLE[m["key"]] = time.monotonic() + SKIP_AFTER_404_S
             log.warning("%s failed (%s: %s); retrying the turn on %s", m["id"], type(e).__name__, e, fb)
             self.items, self.messages = saved  # drop the failed attempt's half-turn from the history
@@ -340,7 +420,7 @@ class Agent:
             else:
                 self.items += results
                 pending = self.items
-        await say("Sorry, that took too many steps.")
+        await say("Sorry, that took too many steps." if self.lang.code == "en" else self.lang.say("went_wrong"))
 
     async def _chat_turn(self, m, text, image, say, emit, device_call, stats) -> None:
         tools = [t.spec("chat") for t in self.tools.values()]
@@ -401,7 +481,7 @@ class Agent:
             for c in calls.values():
                 out = await self._run_tool(c["name"], c["arguments"], emit, device_call, stats)
                 self.messages.append({"role": "tool", "tool_call_id": c["id"], "content": out})
-        await say("Sorry, that took too many steps.")
+        await say("Sorry, that took too many steps." if self.lang.code == "en" else self.lang.say("went_wrong"))
 
     def _account(self, m: dict, final, stats: TurnStats) -> None:
         u = final.usage
@@ -421,7 +501,9 @@ class Agent:
 
     def ack(self, kind: str, name: str | None = None) -> str:
         """What the user hears when a tool starts. "Okay." leads into the "Should I…?" question instead."""
-        return "Okay." if self.asks_first(name) else ACK[kind]
+        if self.asks_first(name) and not self.preapproved:
+            return self.lang.say("okay")
+        return self.lang.say({"function_call": "on_it", "web_search_call": "check"}[kind])
 
     async def _run_tool(self, name: str, arguments: str, emit: Emit, device_call: DeviceCall,
                         stats: TurnStats) -> str:
@@ -436,7 +518,8 @@ class Agent:
         try:
             if tool is None:
                 result = {"error": f"unknown tool {name!r}"}
-            elif self.asks_first(name) and not await self.confirm(confirm_question(name, args, self.context.get("tz"))):
+            elif (self.asks_first(name) and not self.take_preapproval()
+                  and not await self.confirm(confirm_question(name, args, self.context.get("tz"), self.lang))):
                 result = {"cancelled": True, "reason": "the user didn't say yes, so nothing was changed"}
             elif tool.where == "server":
                 result = await tool.run(**args)

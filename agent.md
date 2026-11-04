@@ -28,13 +28,32 @@ The phone or browser speaks each answer into the headset. Architecture and the c
   - `tools.py`: server and device tools.
   - `memory.py`: per-device `remember`/`recall` notes.
   - `rewind.py`: the Rewind buffer, the last `rewind_s` of speech not meant for the agent. It's held in memory only, and its receipts keep a line count, never the words.
+  - `headsup.py`: Heads-up. A fast screener (Muse Spark 1.2, chosen by `scripts/eval_headsup.py`) reads the Rewind buffer and offers one yes/no; a yes runs the agent with that approval already given.
+  - `find.py`: Find it. SAM 3.1 locates what the user asked about in their photo; the result is spoken as a position and sent as `highlight` boxes.
+  - `languages.py`: the 25 languages Muse Voice Transcribe is validated for. From the hello's `language` tag it sets the ASR `languageBias` (the language plus English, for "Earshot"), the reply language, the fixed phrases, yes/no words and the reminder question. `spaced()` splits CJK and Thai transcripts so the wake word is found.
   - `research.py`: Muse Wonder background jobs. Reports are spoken into the device's open session, or held until it reconnects.
-  - `actions.py`: receipts.
+  - `actions.py`: hash-chained receipts (`verify` finds the first broken line).
   - `budget.py`: the daily demo spend cap.
+- `server/eval/`: the labeled Heads-up set and committed results. Scripts:
+  - `eval_headsup.py`: the screener comparison. Run it on the server, since Meta's API 404s from this Mac.
+  - `eval_live.py`: the judge prompts against a live server.
+  - `privacy_check.py`: Muse Image plus SAM 3.1 faces.
+  - `eval_languages.py`: ASR language bias in 23 languages. ASR works from this Mac.
+  - `eval_live_languages.py`: spoken weather and reminder in each language, against the live server.
+  - `eval_headsup_languages.py`: Heads-up on translated snippets. Run it on the server.
+  - `eval_find.py`: Find it on Muse Image scenes. Run it on the server.
+  - `eval_load.py`: 1, 4 and 8 sessions at once.
+  - `eval_cold_start.py`: stops the machine, then times a first visit.
+  - `eval_research.py`: 20 Muse Wonder research jobs. Run it on the server.
+  - `eval_headsup_more.py`: Muse Wonder writes 120 harder snippets, and the screener prompt before and after is compared. Run it on the server.
+  - `eval_soak.py`: one session held past the ASR's 60-minute cap.
+  - `eval_headsup_hard.py`: 480 Wonder-written snippets, judged by a second Wonder pass, then 4 screeners compared. Run it on the server; it resumes across restarts. Data is in `server/eval/hard/`.
+  - Trial machines stop every 5 minutes, and their rootfs resets. Server-side scripts write to `$EARSHOT_DATA_DIR` (the volume), or the results are copied there before the stop.
+- `EVALUATION.md`: every measured number, with the trade-offs.
 - `server/config/models.yaml`: the single source of truth for model ids, prices, and ASR, turn and budget settings.
 - `server/scripts/probe.py`: latency spike S1; writes `server/results/probe-*.json`.
 - `server/tests/`: pytest; doubles in `fakes.py`.
-- `web/`: the judge-facing web client (no build step).
+- `web/`: the judge-facing web client (no build step). `web/media/earshot-demo.mp4` is the 82 s demo video (720p, about 2 MB), served by the app and linked from the page and README.
 - `ios/`: the SwiftUI iPhone app in `Earshot.xcodeproj`. Files in `ios/Earshot/` are picked up automatically through a synchronized folder.
   - `AudioPipeline`: HFP mic → 16 kHz PCM, a silent Now Playing loop so headset taps arrive, and the chime.
   - `AgentSocket`, `SpeechOut`.
@@ -59,5 +78,15 @@ The phone or browser speaks each answer into the headset. Architecture and the c
 - iOS can't start the mic from the background. Start the session in the foreground and keep the audio engine running.
 - The corporate network re-signs TLS; `config.py` injects `truststore` so outbound calls trust the OS keychain.
 - From this Mac's network, Meta's model endpoints return 404 (speech-to-text works). Locally the agent falls back to Muse Spark Open.
-  Measure Meta from the Fly machine: `fly machine exec <id> "..." -a earshot-yuansshi`. The exec API times out after about 60 s, so run long jobs in the background there.
+  Measure Meta from the Fly machine instead.
+  - Short commands: `fly machine exec <id> "..." -a earshot-yuansshi`. It has a short deadline, and background jobs it starts get killed.
+  - Long jobs: `fly ssh console -a earshot-yuansshi -C "sh -c '...'"`. Upload a script by piping it through `base64 -d`.
+  - The machine has 512 MB: create one API client per provider, never one per call, or the job is killed for lack of memory.
 - The Fly account is on a trial: machines stop after 5 minutes until a card is added at https://fly.io/trial.
+- `EARSHOT_DATA_DIR` is `/data/earshot` on the `earshot_data` volume (1 GB, sjc), so the daily spend, notes and receipts survive restarts and deploys. The machine is pinned to that volume's host.
+- Restarts are expected (the trial stops the machine every 5 minutes). So the volume also holds:
+  - each device's conversation (`history/`, without photos). It's deleted on a clean close (codes 1000/1001), and ignored and deleted after 15 minutes.
+  - research in flight (`research/pending/`, the Wonder response id), which `RESEARCHER.resume()` polls again at startup.
+  - undelivered reports (`research/inbox/`).
+- The web page resends a question that got no reply at all before a reconnect.
+- The relay reports `relayDown` after 3 refused attempts in a row, and the page shows "can't hear you".

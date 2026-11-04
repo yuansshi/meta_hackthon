@@ -42,6 +42,8 @@
     .lede { padding-bottom: 16px; }
     .lede p { margin: 0; max-width: 820px; color: var(--muted); }
     .lede strong { color: var(--ink); }
+    .lede .watch { display: inline-block; margin-top: 8px; margin-right: 18px; color: var(--accent); font-weight: 600; text-decoration: none; }
+    .lede .watch:hover { text-decoration: underline; }
     main { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 20px; padding-bottom: 24px; }
     main > * { min-width: 0; } /* grid items otherwise grow to their widest child and scroll the page sideways */
     .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); }
@@ -50,6 +52,10 @@
     .modes { display: inline-flex; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 3px; }
     .modes button { border: 0; background: none; color: var(--muted); font: inherit; font-weight: 600; font-size: 13px; padding: 6px 12px; border-radius: 8px; cursor: pointer; }
     .modes button[aria-pressed="true"] { background: var(--card); color: var(--ink); box-shadow: var(--shadow); }
+    .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+    .toggle { border: 1px solid var(--line); background: var(--bg); color: var(--muted); font: inherit; font-weight: 600; font-size: 13px; padding: 7px 12px; border-radius: 10px; cursor: pointer; }
+    .toggle[aria-pressed="true"] { background: var(--soft); color: var(--accent); border-color: var(--accent); }
+    .toggle:focus-visible { outline: 3px solid color-mix(in srgb, var(--accent) 45%, transparent); outline-offset: 2px; }
     .models { display: flex; flex-wrap: wrap; gap: 6px; }
     .badge { font-size: 12px; padding: 3px 9px; border-radius: 999px; background: var(--soft); color: var(--ink); white-space: nowrap; }
     .badge b { color: var(--muted); font-weight: 600; margin-right: 4px; }
@@ -99,6 +105,10 @@
     #staged span { flex: 1; min-width: 0; }
     #staged button { flex: none; border: 0; background: none; color: var(--muted); font-size: 20px; line-height: 1; cursor: pointer; padding: 4px 8px; }
     .msg .thumb { display: block; max-width: 180px; max-height: 140px; border-radius: 10px; margin-bottom: 6px; }
+    .thumb-wrap { position: relative; display: block; width: fit-content; margin-bottom: 6px; }
+    .thumb-wrap .thumb { margin-bottom: 0; }
+    .thumb-wrap.found .thumb { max-width: min(100%, 360px); max-height: 260px; }
+    .hl { position: absolute; border: 2px solid #5b8dff; border-radius: 6px; box-shadow: 0 0 0 2px rgba(255,255,255,.7); pointer-events: none; }
     input[type=text] { flex: 1; min-width: 0; border: 1px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 10px; padding: 10px 12px; font: inherit; }
     .btn { border: 0; background: var(--accent); color: var(--accent-ink); border-radius: 10px; padding: 10px 16px; font: inherit; font-weight: 600; cursor: pointer; }
     .settings { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 13px; color: var(--muted); }
@@ -156,15 +166,21 @@
   </header>
 
   <section class="lede">
-    <p><strong>A Meta AI agent for the Bluetooth glasses or earbuds you already own.</strong> Earshot hears through your headset, thinks with Meta's Muse models, and acts on your phone. On iPhone it runs with the phone locked in your pocket. Here you can try the same agent with any microphone or headset.</p>
+    <p><strong>A Meta AI agent for the Bluetooth glasses or earbuds you already own, for when your hands are full.</strong> Earshot hears through your headset, thinks with Meta's Muse models, acts on your phone, and with Heads-up on, notices what you'll want before you ask. On iPhone it runs with the phone in your pocket. Here you can try the same agent with any microphone or headset, or just type.</p>
+    <a class="watch" href="/media/earshot-demo.mp4" target="_blank" rel="noopener">▶ Watch the 82-second demo</a>
+    <a class="watch" href="/media/earshot-languages.mp4" target="_blank" rel="noopener">▶ In Spanish, Japanese and Hindi</a>
   </section>
 
   <main>
     <section class="card talk-card" aria-label="Conversation">
       <div class="toprow">
-        <div class="modes" role="group" aria-label="Listening mode">
-          <button type="button" data-mode="ptt" aria-pressed="true">Push to talk</button>
-          <button type="button" data-mode="wake" aria-pressed="false">Hands-free</button>
+        <div class="controls">
+          <div class="modes" role="group" aria-label="Listening mode">
+            <button type="button" data-mode="ptt" aria-pressed="true">Push to talk</button>
+            <button type="button" data-mode="wake" aria-pressed="false">Hands-free</button>
+          </div>
+          <button type="button" id="headsup" class="toggle" aria-pressed="false"
+                  title="Hands-free only. Earshot speaks up when it overhears something you'll want, like a time or an address, and asks before doing anything.">Heads-up</button>
         </div>
         <div class="models">
           <span class="badge"><b>Ears</b><span id="ears">Muse Voice Transcribe</span></span>
@@ -192,6 +208,8 @@
         <button class="chip" type="button">Remember I parked on level 3, spot 42</button>
         <button class="chip" type="button">Look into the best e-bikes under $1,500 and get back to me</button>
         <button class="chip" type="button" data-action="photo">Ask about a photo…</button>
+        <button class="chip" type="button" data-action="sample"
+                title="A synthetic photo made with Muse Image. Its faces were blurred by SAM 3.1.">Sample photo: which platform is the 19:05? Show me where.</button>
       </div>
       <div id="staged" hidden>
         <img id="staged-img" alt="Photo to ask about">
@@ -207,6 +225,7 @@
         <button class="btn" type="submit">Send</button>
       </form>
       <div class="settings">
+        <label>Language <select id="lang" title="Earshot hears you and answers in this language"></select></label>
         <label>Microphone <select id="mic"><option value="">Default</option></select></label>
         <label>Voice <select id="voice"></select></label>
       </div>
@@ -233,9 +252,12 @@
         <h3>How it works</h3>
         <ul class="how">
           <li><b>Muse Voice Transcribe</b> hears you in real time and marks where each turn ends, about 0.2 s after you stop talking.</li>
+          <li>It speaks 25 languages: pick yours under Language, below the conversation. Earshot then hears it and answers in it.</li>
           <li><b>Muse Spark</b> reasons at minimal effort for voice speed, searches the web, and calls tools.</li>
           <li>Tools run where they belong: weather on the server; location and reminders on your device.</li>
-          <li>Attach a photo and ask about it. Muse Spark answers from the image itself.</li>
+          <li>Attach a photo and ask about it. Muse Spark answers from the image itself. Ask where something is, and <b>SAM 3.1</b> finds it and outlines it.</li>
+          <li><b>Heads-up</b> (Hands-free): <b>Muse Spark 1.2</b> screens what Earshot overhears and offers help, like a reminder for a plan someone mentioned. It acts only on your yes.</li>
+          <li><b>Rewind</b>: ask about anything said near you in the last 3 minutes. It's kept in memory only, never stored.</li>
           <li>For bigger jobs ("look into…"), <b>Muse Wonder</b> researches in the background and speaks up when it's done.</li>
           <li>It remembers what you ask it to, and asks before it changes anything, like adding a reminder.</li>
           <li>Answers are spoken a sentence at a time into whatever headset you use.</li>

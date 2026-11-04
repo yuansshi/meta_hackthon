@@ -51,6 +51,7 @@ def summarize_forecast(d: dict, place: str | None) -> dict:
     cur, hourly, daily = d["current"], d["hourly"], d["daily"]
     start = next((i for i, t in enumerate(hourly["time"]) if t >= cur["time"][:13]), 0)
     next_hours = [{"time": hourly["time"][i][11:16], "temp_f": round(hourly["temperature_2m"][i]),
+                   "temp_c": _c(hourly["temperature_2m"][i]),
                    "rain_chance_pct": hourly["precipitation_probability"][i],
                    "sky": WMO.get(hourly["weather_code"][i], "unknown")}
                   for i in range(start, min(start + 13, len(hourly["time"])), 3)]

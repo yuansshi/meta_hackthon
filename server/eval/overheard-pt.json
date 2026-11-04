@@ -1,0 +1,398 @@
+[
+ {
+  "id": "dinner",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Não esquece, o jantar é lá em casa sexta-feira às sete.",
+   "É na Rua Pine, mil quatrocentos e vinte, apartamento três."
+  ],
+  "notes": []
+ },
+ {
+  "id": "oat-milk",
+  "expect": "offer",
+  "kinds": [
+   "reminder",
+   "note"
+  ],
+  "heard": [
+   "Dá pra pegar leite de aveia na volta pra casa?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "dentist",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "O dentista ligou, mudaram sua limpeza pra quinta às dez e meia."
+  ],
+  "notes": []
+ },
+ {
+  "id": "phone-number",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Meu número é quatro um cinco, cinco cinco cinco, zero um três quatro, me manda mensagem quando você pousar."
+  ],
+  "notes": []
+ },
+ {
+  "id": "parking",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Tá, a gente estacionou no piso quatro, fileira G."
+  ],
+  "notes": []
+ },
+ {
+  "id": "gate-change",
+  "expect": "offer",
+  "kinds": [
+   "alert",
+   "note"
+  ],
+  "notes": [
+   "voando no UA oito um dois para Denver hoje à tarde"
+  ],
+  "heard": [
+   "Atenção, por favor, o voo oito um dois da United para Denver vai embarcar agora no portão bê vinte e dois."
+  ]
+ },
+ {
+  "id": "platform-change",
+  "expect": "offer",
+  "kinds": [
+   "alert",
+   "note"
+  ],
+  "notes": [
+   "Eu pego o trem das cinco e quinze para Fremont depois do trabalho."
+  ],
+  "heard": [
+   "Atenção, passageiros, o trem das cinco e quinze para Fremont vai partir agora da plataforma cinco."
+  ]
+ },
+ {
+  "id": "meeting-moved",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Só pra avisar, a reunião com a Priya foi adiada pra amanhã às 3 da tarde."
+  ],
+  "notes": []
+ },
+ {
+  "id": "passport",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Traz seu passaporte pra consulta na segunda-feira às nove."
+  ],
+  "notes": []
+ },
+ {
+  "id": "name",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Essa é a Dana Whitfield, ela chefia a equipe de design.",
+   "Vocês dois deviam conversar sobre o lançamento."
+  ],
+  "notes": []
+ },
+ {
+  "id": "rent",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "O aluguel vence dia primeiro, não atrasa de novo."
+  ],
+  "notes": []
+ },
+ {
+  "id": "prescription",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "A farmácia disse que a sua receita fica pronta depois das quatro hoje."
+  ],
+  "notes": []
+ },
+ {
+  "id": "soccer",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "O treino de futebol é no Lincoln Park nesse sábado às 8 da manhã.",
+   "Você consegue dirigir essa semana?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "wifi",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "A senha do Wi-Fi é otter blue quarenta e dois, tudo em minúsculas."
+  ],
+  "notes": []
+ },
+ {
+  "id": "birthday",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "O almoço de aniversário da mamãe é domingo ao meio-dia, no tailandês da Quinta."
+  ],
+  "notes": []
+ },
+ {
+  "id": "museum",
+  "expect": "offer",
+  "kinds": [
+   "lookup",
+   "research"
+  ],
+  "heard": [
+   "Você consegue ver se o museu abre na segunda-feira?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "plumber",
+  "expect": "offer",
+  "kinds": [
+   "research",
+   "lookup"
+  ],
+  "heard": [
+   "A gente tá precisando muito de um encanador que consiga vir aqui essa semana.",
+   "Você consegue dar uma olhada nisso pra gente?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "package",
+  "expect": "offer",
+  "kinds": [
+   "reminder",
+   "note"
+  ],
+  "heard": [
+   "Seu pacote chega amanhã entre as duas e as quatro da tarde, alguém tem que assinar pra receber."
+  ],
+  "notes": []
+ },
+ {
+  "id": "kids",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Dá pra você buscar as crianças hoje às três e quinze? Tô preso no trabalho."
+  ],
+  "notes": []
+ },
+ {
+  "id": "locker",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Seu armário é o número duzentos e dezoito, e o código é quatro sete um nove."
+  ],
+  "notes": []
+ },
+ {
+  "id": "weather-chat",
+  "expect": "none",
+  "heard": [
+   "Tá um tempo bom hoje, né?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "game",
+  "expect": "none",
+  "heard": [
+   "Nem acredito naquele jogo de ontem à noite, que final foi aquele."
+  ],
+  "notes": []
+ },
+ {
+  "id": "vague-dinner",
+  "expect": "none",
+  "heard": [
+   "A gente tinha que marcar um jantar qualquer dia desses."
+  ],
+  "notes": []
+ },
+ {
+  "id": "trailer",
+  "expect": "none",
+  "heard": [
+   "Você viu o trailer novo? Tá incrível."
+  ],
+  "notes": []
+ },
+ {
+  "id": "tv",
+  "expect": "none",
+  "heard": [
+   "Sejam bem-vindos de volta ao programa. Depois do intervalo, a gente vai falar sobre a economia."
+  ],
+  "notes": []
+ },
+ {
+  "id": "coffee",
+  "expect": "none",
+  "heard": [
+   "Esse café tá quente demais."
+  ],
+  "notes": []
+ },
+ {
+  "id": "agreeing",
+  "expect": "none",
+  "heard": [
+   "É, não, eu também acho."
+  ],
+  "notes": []
+ },
+ {
+  "id": "tahoe",
+  "expect": "none",
+  "heard": [
+   "Lembra quando a gente foi pra Tahoe no inverno passado? Foi muito legal."
+  ],
+  "notes": []
+ },
+ {
+  "id": "other-train",
+  "expect": "none",
+  "notes": [
+   "Eu pego o das cinco e quinze pra Fremont depois do trabalho"
+  ],
+  "heard": [
+   "Atenção passageiros, o das seis e quarenta pra San Jose tá embarcando agora na plataforma dois."
+  ]
+ },
+ {
+  "id": "radio-ad",
+  "expect": "none",
+  "heard": [
+   "Compre um, leve dois em todos os colchões neste fim de semana na Sleep World!"
+  ],
+  "notes": []
+ },
+ {
+  "id": "blue-one",
+  "expect": "none",
+  "heard": [
+   "Acho que o azul fica melhor em você."
+  ],
+  "notes": []
+ },
+ {
+  "id": "traffic",
+  "expect": "none",
+  "heard": [
+   "Aff, o trânsito tava terrível hoje de manhã."
+  ],
+  "notes": []
+ },
+ {
+  "id": "anyway",
+  "expect": "none",
+  "heard": [
+   "Enfim, ele disse que ia pensar sobre isso."
+  ],
+  "notes": []
+ },
+ {
+  "id": "eggs",
+  "expect": "none",
+  "heard": [
+   "Você acredita como o ovo tá caro agora?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "laugh",
+  "expect": "none",
+  "heard": [
+   "Haha, isso é muito engraçado."
+  ],
+  "notes": []
+ },
+ {
+  "id": "puppy",
+  "expect": "none",
+  "heard": [
+   "Minha irmã acabou de pegar um cachorrinho novo, ele é muito fofinho."
+  ],
+  "notes": []
+ },
+ {
+  "id": "lunch-yesterday",
+  "expect": "none",
+  "heard": [
+   "A gente comeu pizza no almoço ontem, tava bom."
+  ],
+  "notes": []
+ },
+ {
+  "id": "tired",
+  "expect": "none",
+  "heard": [
+   "Tô muito cansado, mal dormi ontem à noite."
+  ],
+  "notes": []
+ },
+ {
+  "id": "store-pa",
+  "expect": "none",
+  "heard": [
+   "Limpeza no corredor cinco, por favor."
+  ],
+  "notes": []
+ },
+ {
+  "id": "next-stop",
+  "expect": "none",
+  "heard": [
+   "A próxima parada é Powell Street."
+  ],
+  "notes": []
+ }
+]

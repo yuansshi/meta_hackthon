@@ -1,0 +1,234 @@
+{
+ "at": "2026-11-04T02:36:33",
+ "url": "wss://earshot-yuansshi.fly.dev/ws",
+ "rows": [
+  {
+   "scenario": "Wake word + weather (spoken)",
+   "attempt": 1,
+   "first_s": 2.29,
+   "total_s": 6.71,
+   "cost": 0.00831,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "On it. No, it should stay dry this afternoon, just overcast and around fifty five degrees. ",
+   "ok": true
+  },
+  {
+   "scenario": "Wake word + weather (spoken)",
+   "attempt": 1,
+   "first_s": 2.29,
+   "total_s": 7.55,
+   "cost": 0.00856,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "On it. No, this afternoon in downtown Seattle should stay dry and overcast around fifty five degrees, with only about a two percent chance of rain. ",
+   "ok": true
+  },
+  {
+   "scenario": "Wake word + weather (spoken)",
+   "attempt": 1,
+   "first_s": 1.97,
+   "total_s": 6.37,
+   "cost": 0.00566,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "On it. No, it should stay dry this afternoon in downtown Seattle, just overcast around fifty five degrees. ",
+   "ok": true
+  },
+  {
+   "scenario": "Look + Find it (sample photo)",
+   "attempt": 1,
+   "first_s": 3.02,
+   "total_s": 6.99,
+   "cost": 0.00595,
+   "tools": [
+    "find_in_photo"
+   ],
+   "said": "On it. The nineteen oh five to Harbor Quarter is platform three, on time. It's the third row down on the board on the right. ",
+   "ok": true,
+   "platform_right": true
+  },
+  {
+   "scenario": "Look + Find it (sample photo)",
+   "attempt": 1,
+   "first_s": 3.49,
+   "total_s": 7.25,
+   "cost": 0.00274,
+   "tools": [
+    "find_in_photo"
+   ],
+   "said": "On it. The nineteen oh five to Harbor Quarter is Platform three, on time. It's the third row down on the departures board on the right. ",
+   "ok": true,
+   "platform_right": true
+  },
+  {
+   "scenario": "Look + Find it (sample photo)",
+   "attempt": 1,
+   "first_s": 4.44,
+   "total_s": 7.81,
+   "cost": 0.0065,
+   "tools": [
+    "find_in_photo"
+   ],
+   "said": "On it. The seven oh five to Harbor Quarter is Platform three, on time. I've outlined it in the middle of the board on the right. ",
+   "ok": true,
+   "platform_right": true
+  },
+  {
+   "scenario": "Remember where I parked",
+   "attempt": 1,
+   "first_s": 1.15,
+   "total_s": 2.59,
+   "cost": 0.0041,
+   "tools": [
+    "recall"
+   ],
+   "said": "On it. You parked on level three, spot forty two. ",
+   "ok": true
+  },
+  {
+   "scenario": "Remember where I parked",
+   "attempt": 1,
+   "first_s": 1.25,
+   "total_s": 2.58,
+   "cost": 0.00165,
+   "tools": [
+    "recall"
+   ],
+   "said": "On it. You're on level three spot forty two. ",
+   "ok": true
+  },
+  {
+   "scenario": "Remember where I parked",
+   "attempt": 1,
+   "first_s": 1.19,
+   "total_s": 2.41,
+   "cost": 0.00163,
+   "tools": [
+    "recall"
+   ],
+   "said": "On it. Level three, spot forty two. ",
+   "ok": true
+  },
+  {
+   "scenario": "Rewind (spoken)",
+   "attempt": 1,
+   "first_s": 2.08,
+   "total_s": 3.93,
+   "cost": 0.00663,
+   "tools": [
+    "rewind"
+   ],
+   "said": "On it. She said fourteen twenty Pine Street, Unit three, at seven tonight. ",
+   "ok": true
+  },
+  {
+   "scenario": "Rewind (spoken)",
+   "attempt": 1,
+   "first_s": 2.55,
+   "total_s": 4.77,
+   "cost": 0.00401,
+   "tools": [
+    "rewind"
+   ],
+   "said": "On it. She said fourteen twenty Pine Street, unit three, at seven tonight. ",
+   "ok": true
+  },
+  {
+   "scenario": "Rewind (spoken)",
+   "attempt": 1,
+   "first_s": 1.8,
+   "total_s": 3.85,
+   "cost": 0.00376,
+   "tools": [
+    "rewind"
+   ],
+   "said": "On it. She said fourteen twenty Pine Street, Unit three, at seven tonight. ",
+   "ok": true
+  },
+  {
+   "scenario": "Heads-up (spoken)",
+   "attempt": 1,
+   "first_s": 2.82,
+   "total_s": 4.55,
+   "cost": 0.00887,
+   "tools": [
+    "create_reminder",
+    "heads_up"
+   ],
+   "said": " On it. Done, dinner at fourteen twenty Pine Street unit three Friday at seven. ",
+   "offer_s": 3.4,
+   "ok": true
+  },
+  {
+   "scenario": "Heads-up (spoken)",
+   "attempt": 1,
+   "first_s": 2.99,
+   "total_s": 4.7,
+   "cost": 0.00591,
+   "tools": [
+    "create_reminder",
+    "heads_up"
+   ],
+   "said": " On it. Done, dinner Friday at seven at fourteen twenty Pine Street unit three. ",
+   "offer_s": 4.47,
+   "ok": true
+  },
+  {
+   "scenario": "Heads-up (spoken)",
+   "attempt": 1,
+   "first_s": 2.93,
+   "total_s": 6.06,
+   "cost": 0.00603,
+   "tools": [
+    "create_reminder",
+    "heads_up"
+   ],
+   "said": " On it. Done, dinner at fourteen twenty Pine Street unit three Friday at seven. ",
+   "offer_s": 3.74,
+   "ok": true
+  },
+  {
+   "scenario": "Muse Wonder e-bike research",
+   "attempt": 1,
+   "ok": true,
+   "total_s": 48.4,
+   "cost": 0.05869,
+   "searches": 3,
+   "tools": [
+    "research"
+   ],
+   "first_s": null
+  },
+  {
+   "scenario": "Muse Wonder e-bike research",
+   "attempt": 1,
+   "ok": true,
+   "total_s": 38.0,
+   "cost": 0.12564,
+   "searches": 6,
+   "tools": [
+    "research"
+   ],
+   "first_s": null
+  },
+  {
+   "scenario": "Muse Wonder e-bike research",
+   "attempt": 1,
+   "ok": true,
+   "total_s": 48.3,
+   "cost": 0.18391,
+   "searches": 7,
+   "tools": [
+    "research"
+   ],
+   "first_s": null
+  }
+ ]
+}

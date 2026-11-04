@@ -26,9 +26,11 @@ class Memory:
         if not note:
             return {"error": "nothing to remember"}
         self.notes = [*self.notes, {"note": note[:500], "saved": time.strftime("%Y-%m-%dT%H:%M")}][-MAX_NOTES:]
-        if self.path:
+        if self.path:  # write a temp file, then swap it in: a crash mid-write never leaves half a file
             self.path.parent.mkdir(parents=True, exist_ok=True)
-            self.path.write_text(json.dumps(self.notes))
+            tmp = self.path.with_suffix(".tmp")
+            tmp.write_text(json.dumps(self.notes, separators=(",", ":")))
+            tmp.replace(self.path)
         return {"ok": True, "saved": note, "notes": len(self.notes)}
 
     async def recall(self, query: str | None = None) -> dict:

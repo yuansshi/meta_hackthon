@@ -7,11 +7,16 @@ final class SpeechOut: NSObject, @unchecked Sendable, AVSpeechSynthesizerDelegat
     var onEnd: (@Sendable (String) -> Void)?
 
     private let synth = AVSpeechSynthesizer()
+    /// The best installed voice for the phone's language, which is also the language Earshot hears and answers in.
     private lazy var voice: AVSpeechSynthesisVoice? = {
-        let english = AVSpeechSynthesisVoice.speechVoices().filter {
-            $0.language == "en-US" && !$0.voiceTraits.contains(.isNoveltyVoice)
+        let tag = Locale.preferredLanguages.first ?? "en-US"
+        let code = String(tag.prefix { $0 != "-" })
+        let voices = AVSpeechSynthesisVoice.speechVoices().filter {
+            $0.language.hasPrefix(code) && !$0.voiceTraits.contains(.isNoveltyVoice)
         }
-        return english.max { $0.quality.rawValue < $1.quality.rawValue } ?? AVSpeechSynthesisVoice(language: "en-US")
+        let exact = voices.filter { $0.language == tag }
+        return (exact.isEmpty ? voices : exact).max { $0.quality.rawValue < $1.quality.rawValue }
+            ?? AVSpeechSynthesisVoice(language: tag) ?? AVSpeechSynthesisVoice(language: "en-US")
     }()
 
     override init() {

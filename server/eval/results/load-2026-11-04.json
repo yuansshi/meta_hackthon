@@ -1,0 +1,323 @@
+{
+ "at": "2026-11-04T04:38:09",
+ "url": "wss://earshot-yuansshi.fly.dev/ws",
+ "levels": {
+  "8": {
+   "sessions": 8,
+   "turns": 28,
+   "ok": 28,
+   "session_errors": [
+    "InvalidStatus: server rejected WebSocket connection: HTTP 403"
+   ],
+   "first_word_p50_s": 1.71,
+   "first_word_p90_s": 3.77,
+   "turn_p50_s": 5.85,
+   "turn_p90_s": 9.1,
+   "cost_usd": 0.1358,
+   "wall_s": 40.1,
+   "rows": [
+    {
+     "prompt": "Will it rain this afternoon?",
+     "first_s": 2.16,
+     "total_s": 6.38,
+     "cost": 0.00329,
+     "tools": [
+      "get_location",
+      "get_weather"
+     ],
+     "said": "On it. No, it should stay dry this afternoon, just cloudy with a high around fifty six. ",
+     "ok": true
+    },
+    {
+     "prompt": "Remember I parked on level 2, spot 17.",
+     "first_s": 1.71,
+     "total_s": 3.35,
+     "cost": 0.00223,
+     "tools": [
+      "remember"
+     ],
+     "said": "On it. Got it, level two spot seventeen saved. ",
+     "ok": true
+    },
+    {
+     "prompt": "Where did I park?",
+     "first_s": 2.95,
+     "total_s": 5.16,
+     "cost": 0.00255,
+     "tools": [
+      "recall"
+     ],
+     "said": "On it. Level two, spot seventeen. ",
+     "ok": true
+    },
+    {
+     "prompt": "What's the latest news about Meta's Muse models?",
+     "first_s": 5.77,
+     "total_s": 9.1,
+     "cost": 0.00855,
+     "tools": [],
+     "said": "Let me check. In mid October Meta launched Muse Wonder and Wonder Full as its new frontier models, plus an open weight Muse Spark Open with eight hundred sixteen billion parameters. Then in late October Nvidia and Meta expanded their work on Muse models to improve training and inference performance.",
+     "ok": true
+    },
+    {
+     "prompt": "Will it rain this afternoon?",
+     "first_s": 1.7,
+     "total_s": 6.71,
+     "cost": 0.00571,
+     "tools": [
+      "get_location",
+      "get_weather"
+     ],
+     "said": "On it. No, you should stay dry this afternoon in Seattle. Expect overcast skies with just a tiny chance of rain and a high around fifty six. ",
+     "ok": true
+    },
+    {
+     "prompt": "Remember I parked on level 2, spot 17.",
+     "first_s": 1.43,
+     "total_s": 2.55,
+     "cost": 0.00205,
+     "tools": [
+      "remember"
+     ],
+     "said": "On it. Got it, level two spot seventeen saved. ",
+     "ok": true
+    },
+    {
+     "prompt": "Where did I park?",
+     "first_s": 3.77,
+     "total_s": 9.36,
+     "cost": 0.00194,
+     "tools": [
+      "recall"
+     ],
+     "said": "On it. You parked on level two, spot seventeen. ",
+     "ok": true
+    },
+    {
+     "prompt": "What's the latest news about Meta's Muse models?",
+     "first_s": 1.46,
+     "total_s": 5.69,
+     "cost": 0.00958,
+     "tools": [],
+     "said": "Let me check. The big news is Muse Wonder and Muse Wonder Full launched October twelfth as Meta's frontier class models. Then on October twenty seventh Nvidia and Meta said they'll expand work on Muse to improve speed and training. Meta also released Muse Spark Open weights October fifteenth with ei",
+     "ok": true
+    },
+    {
+     "prompt": "Will it rain this afternoon?",
+     "first_s": 1.55,
+     "total_s": 5.35,
+     "cost": 0.00549,
+     "tools": [
+      "get_location",
+      "get_weather"
+     ],
+     "said": "On it. No, it should stay dry this afternoon in Seattle, just overcast with a high around fifty six. ",
+     "ok": true
+    },
+    {
+     "prompt": "Remember I parked on level 2, spot 17.",
+     "first_s": 1.47,
+     "total_s": 2.68,
+     "cost": 0.00236,
+     "tools": [
+      "remember"
+     ],
+     "said": "On it. Got it, level two spot seventeen is saved. ",
+     "ok": true
+    },
+    {
+     "prompt": "Where did I park?",
+     "first_s": 1.28,
+     "total_s": 6.31,
+     "cost": 0.00253,
+     "tools": [
+      "recall"
+     ],
+     "said": "On it. You're on level two, spot seventeen. ",
+     "ok": true
+    },
+    {
+     "prompt": "What's the latest news about Meta's Muse models?",
+     "first_s": 1.37,
+     "total_s": 5.04,
+     "cost": 0.01132,
+     "tools": [],
+     "said": "Let me check. Meta launched its frontier class Muse Wonder models on October twelfth, then released open weight Muse Spark Open on October fifteenth. On October twenty seventh Nvidia and Meta expanded their work on Muse to boost performance. ",
+     "ok": true
+    },
+    {
+     "prompt": "Will it rain this afternoon?",
+     "first_s": 1.69,
+     "total_s": 5.9,
+     "cost": 0.00561,
+     "tools": [
+      "get_location",
+      "get_weather"
+     ],
+     "said": "On it. No, you should stay dry this afternoon with just clouds and around fifty six degrees for a high. ",
+     "ok": true
+    },
+    {
+     "prompt": "Remember I parked on level 2, spot 17.",
+     "first_s": 1.37,
+     "total_s": 4.4,
+     "cost": 0.00224,
+     "tools": [
+      "remember"
+     ],
+     "said": "On it. Saved, you're on level two spot seventeen. ",
+     "ok": true
+    },
+    {
+     "prompt": "Where did I park?",
+     "first_s": 1.24,
+     "total_s": 2.81,
+     "cost": 0.00227,
+     "tools": [
+      "recall"
+     ],
+     "said": "On it. You're on level two, spot seventeen. ",
+     "ok": true
+    },
+    {
+     "prompt": "What's the latest news about Meta's Muse models?",
+     "first_s": 3.02,
+     "total_s": 7.85,
+     "cost": 0.01233,
+     "tools": [],
+     "said": "Let me check. Meta launched Muse Wonder and Muse Wonder Full on October twelfth as its new frontier models, then opened Muse Spark Open weights in mid October with eight hundred sixteen billion parameters. Late in October Meta also expanded its Nvidia partnership around Muse. ",
+     "ok": true
+    },
+    {
+     "prompt": "Will it rain this afternoon?",
+     "first_s": 1.73,
+     "total_s": 5.85,
+     "cost": 0.00583,
+     "tools": [
+      "get_location",
+      "get_weather"
+     ],
+     "said": "On it. No, it should stay dry this afternoon downtown, just cloudy with highs around fifty six dropping to the low fifties. ",
+     "ok": true
+    },
+    {
+     "prompt": "Remember I parked on level 2, spot 17.",
+     "first_s": 2.11,
+     "total_s": 4.24,
+     "cost": 0.00167,
+     "tools": [
+      "remember"
+     ],
+     "said": "On it. Got it, level two spot seventeen is saved. ",
+     "ok": true
+    },
+    {
+     "prompt": "Where did I park?",
+     "first_s": 3.07,
+     "total_s": 8.54,
+     "cost": 0.00237,
+     "tools": [
+      "recall"
+     ],
+     "said": "On it. Level two, spot seventeen. ",
+     "ok": true
+    },
+    {
+     "prompt": "What's the latest news about Meta's Muse models?",
+     "first_s": 1.78,
+     "total_s": 7.99,
+     "cost": 0.00885,
+     "tools": [],
+     "said": "Let me check. Meta launched its Wonder and Wonder Full models on October twelfth, claiming frontier level scores, then partnered with Nvidia on October twenty seventh to speed up training and inference. It also released an open weight eight hundred sixteen billion parameter version on October fiftee",
+     "ok": true
+    },
+    {
+     "prompt": "Will it rain this afternoon?",
+     "first_s": 1.66,
+     "total_s": 5.32,
+     "cost": 0.00571,
+     "tools": [
+      "get_location",
+      "get_weather"
+     ],
+     "said": "On it. No, you should stay dry this afternoon, just cloudy with a high around fifty six. ",
+     "ok": true
+    },
+    {
+     "prompt": "Remember I parked on level 2, spot 17.",
+     "first_s": 1.19,
+     "total_s": 4.33,
+     "cost": 0.00217,
+     "tools": [
+      "remember"
+     ],
+     "said": "On it. Got it, level two spot seventeen is saved. ",
+     "ok": true
+    },
+    {
+     "prompt": "Where did I park?",
+     "first_s": 2.04,
+     "total_s": 8.93,
+     "cost": 0.00181,
+     "tools": [
+      "recall"
+     ],
+     "said": "On it. Level two, spot seventeen. ",
+     "ok": true
+    },
+    {
+     "prompt": "What's the latest news about Meta's Muse models?",
+     "first_s": 3.6,
+     "total_s": 9.1,
+     "cost": 0.00933,
+     "tools": [],
+     "said": "Let me check. Meta launched its frontier Muse Wonder models on October twelfth and then expanded its Nvidia partnership on October twenty seventh to speed up training and inference. Third party testing puts Muse Wonder Full at fifty six, just ahead of GPT six Astra at fifty three. ",
+     "ok": true
+    },
+    {
+     "prompt": "Will it rain this afternoon?",
+     "first_s": 2.57,
+     "total_s": 6.96,
+     "cost": 0.00575,
+     "tools": [
+      "get_location",
+      "get_weather"
+     ],
+     "said": "On it. No, it should stay dry this afternoon in downtown Seattle, just cloudy and around fifty six degrees. ",
+     "ok": true
+    },
+    {
+     "prompt": "Remember I parked on level 2, spot 17.",
+     "first_s": 1.18,
+     "total_s": 3.51,
+     "cost": 0.00222,
+     "tools": [
+      "remember"
+     ],
+     "said": "On it. Got it, level two spot seventeen saved. ",
+     "ok": true
+    },
+    {
+     "prompt": "Where did I park?",
+     "first_s": 4.62,
+     "total_s": 5.92,
+     "cost": 0.00249,
+     "tools": [
+      "recall"
+     ],
+     "said": "On it. You're on level two, spot seventeen. ",
+     "ok": true
+    },
+    {
+     "prompt": "What's the latest news about Meta's Muse models?",
+     "first_s": 1.7,
+     "total_s": 3.97,
+     "cost": 0.00751,
+     "tools": [],
+     "said": "Let me check. Meta launched Muse Wonder and Muse Wonder Full on October twelfth, calling them frontier class for agent tasks. Then on October fifteenth it released Muse Spark Open weights with eight hundred sixteen billion parameters. ",
+     "ok": true
+    }
+   ]
+  }
+ }
+}

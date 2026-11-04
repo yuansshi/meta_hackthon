@@ -1,0 +1,38 @@
+{
+ "at": "2026-11-04T06:30:27",
+ "summary": {
+  "trials": 3,
+  "remembered": 2,
+  "report_after_restart": 2,
+  "reconnect_s": [
+   41.16709341702517,
+   45.11299312498886
+  ]
+ },
+ "rows": [
+  {
+   "trial": 0,
+   "error": "InvalidStatus: server rejected WebSocket connection: HTTP 503"
+  },
+  {
+   "trial": 1,
+   "stop_s": 18.6,
+   "reconnect_s": 41.16709341702517,
+   "answer": "Your name is Priya.",
+   "remembered": true,
+   "report": " the Repel Windproof Travel Umbrella \u2014 it\u2019s compact, light, and the best value for gusts. If you want a buy-it-for-years upgrade, choose the Weatherman Trek or Blunt Metro instead. Your name is Priya.",
+   "report_after_restart": true,
+   "report_s_after_stop": 59.7
+  },
+  {
+   "trial": 2,
+   "stop_s": 8.7,
+   "reconnect_s": 45.11299312498886,
+   "answer": "On it. Your name is Priya. I looked into the best umbrellas for windy cities. Priya, for a windy Seattle weekend get the compact Repel Windproof Travel Umbrella if you can find it quickly, because it is small, light, and built for gusts without costing much. If you want a tougher premium option and can spend more, look at the Blunt Metro or Weatherman instead.",
+   "remembered": true,
+   "report": "f you can find it quickly, because it is small, light, and built for gusts without costing much. If you want a tougher premium option and can spend more, look at the Blunt Metro or Weatherman instead.",
+   "report_after_restart": true,
+   "report_s_after_stop": 58.7
+  }
+ ]
+}

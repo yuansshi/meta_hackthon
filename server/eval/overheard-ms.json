@@ -1,0 +1,398 @@
+[
+ {
+  "id": "dinner",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Jangan lupa, makan malam hari Jumaat ni pukul tujuh dekat rumah saya.",
+   "Satu empat dua kosong Pine Street, unit tiga."
+  ],
+  "notes": []
+ },
+ {
+  "id": "oat-milk",
+  "expect": "offer",
+  "kinds": [
+   "reminder",
+   "note"
+  ],
+  "heard": [
+   "Boleh belikan susu oat masa balik nanti?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "dentist",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Doktor gigi telefon tadi, dia tukar cuci gigi kau ke hari Khamis pukul 10.30 pagi."
+  ],
+  "notes": []
+ },
+ {
+  "id": "phone-number",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Nombor saya empat satu lima lima lima lima kosong satu tiga empat, mesej saya bila awak dah sampai."
+  ],
+  "notes": []
+ },
+ {
+  "id": "parking",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Okey, kita parking kat level empat, row G."
+  ],
+  "notes": []
+ },
+ {
+  "id": "gate-change",
+  "expect": "offer",
+  "kinds": [
+   "alert",
+   "note"
+  ],
+  "notes": [
+   "naik U A lapan satu dua ke Denver petang ni"
+  ],
+  "heard": [
+   "Perhatian, penerbangan United lapan satu dua ke Denver dah boleh naik di pintu B dua dua."
+  ]
+ },
+ {
+  "id": "platform-change",
+  "expect": "offer",
+  "kinds": [
+   "alert",
+   "note"
+  ],
+  "notes": [
+   "Saya naik tren jam 5:15 ke Fremont lepas kerja"
+  ],
+  "heard": [
+   "Perhatian kepada para penumpang, tren ke Fremont jam 5:15 akan berlepas dari platform 5."
+  ]
+ },
+ {
+  "id": "meeting-moved",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Nak bagitau awal-awal, meeting dengan Priya ditunda ke pukul 3 petang esok."
+  ],
+  "notes": []
+ },
+ {
+  "id": "passport",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Bawa pasport awak untuk temu janji hari Isnin pukul sembilan."
+  ],
+  "notes": []
+ },
+ {
+  "id": "name",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Ni Dana Whitfield, dia yang ketua pasukan design.",
+   "Korang berdua patut bincang pasal pelancaran tu."
+  ],
+  "notes": []
+ },
+ {
+  "id": "rent",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Sewa bayar 1 haribulan, jangan lambat lagi."
+  ],
+  "notes": []
+ },
+ {
+  "id": "prescription",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Farmasi cakap ubat awak akan siap lepas pukul 4 hari ni."
+  ],
+  "notes": []
+ },
+ {
+  "id": "soccer",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Latihan bola hari Sabtu ni pukul 8 pagi dekat Lincoln Park.",
+   "Minggu ni boleh drive tak?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "wifi",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Password Wi-Fi ialah otter blue empat dua, semua huruf kecil."
+  ],
+  "notes": []
+ },
+ {
+  "id": "birthday",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Lunch birthday Mak hari Ahad pukul 12 tengah hari, kat kedai Thai kat Fifth."
+  ],
+  "notes": []
+ },
+ {
+  "id": "museum",
+  "expect": "offer",
+  "kinds": [
+   "lookup",
+   "research"
+  ],
+  "heard": [
+   "Tolong tengokkan muzium buka ke tak hari Isnin?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "plumber",
+  "expect": "offer",
+  "kinds": [
+   "research",
+   "lookup"
+  ],
+  "heard": [
+   "Kita betul-betul kena cari tukang paip yang boleh datang minggu ni.",
+   "Boleh tolong tengokkan?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "package",
+  "expect": "offer",
+  "kinds": [
+   "reminder",
+   "note"
+  ],
+  "heard": [
+   "Parcel awak sampai esok antara pukul 2 sampai 4, kena ada orang sign."
+  ],
+  "notes": []
+ },
+ {
+  "id": "kids",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Boleh tolong ambikkan budak-budak pukul tiga suku petang ni? Saya tersangkut kat kerja."
+  ],
+  "notes": []
+ },
+ {
+  "id": "locker",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Loker awak nombor dua ratus lapan belas, dan kod dia empat tujuh satu sembilan."
+  ],
+  "notes": []
+ },
+ {
+  "id": "weather-chat",
+  "expect": "none",
+  "heard": [
+   "Cuaca cantik hari ni, kan?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "game",
+  "expect": "none",
+  "heard": [
+   "Aku tak percaya game malam tadi, gila betul ending dia."
+  ],
+  "notes": []
+ },
+ {
+  "id": "vague-dinner",
+  "expect": "none",
+  "heard": [
+   "Jom kita makan malam sama-sama bila-bila nanti."
+  ],
+  "notes": []
+ },
+ {
+  "id": "trailer",
+  "expect": "none",
+  "heard": [
+   "Dah tengok trailer baru tu? Gempak gila."
+  ],
+  "notes": []
+ },
+ {
+  "id": "tv",
+  "expect": "none",
+  "heard": [
+   "Selamat kembali ke rancangan. Lepas rehat nanti, kita akan bincang pasal ekonomi."
+  ],
+  "notes": []
+ },
+ {
+  "id": "coffee",
+  "expect": "none",
+  "heard": [
+   "Kopi ni panas sangat."
+  ],
+  "notes": []
+ },
+ {
+  "id": "agreeing",
+  "expect": "none",
+  "heard": [
+   "Ya, tak, saya pun rasa macam tu jugak."
+  ],
+  "notes": []
+ },
+ {
+  "id": "tahoe",
+  "expect": "none",
+  "heard": [
+   "Ingat tak masa kita pergi Tahoe musim sejuk lepas? Seronok sangat masa tu."
+  ],
+  "notes": []
+ },
+ {
+  "id": "other-train",
+  "expect": "none",
+  "notes": [
+   "Lepas kerja saya naik tren pukul lima lima belas ke Fremont."
+  ],
+  "heard": [
+   "Perhatian para penumpang, tren ke San Jose pukul enam empat puluh sekarang sedang menaiki penumpang di platform dua."
+  ]
+ },
+ {
+  "id": "radio-ad",
+  "expect": "none",
+  "heard": [
+   "Beli satu dapat satu percuma untuk semua tilam hujung minggu ni dekat Sleep World!"
+  ],
+  "notes": []
+ },
+ {
+  "id": "blue-one",
+  "expect": "none",
+  "heard": [
+   "Rasa yang biru tu lagi cantik kat awak."
+  ],
+  "notes": []
+ },
+ {
+  "id": "traffic",
+  "expect": "none",
+  "heard": [
+   "Aduh, jem teruk gila pagi tadi."
+  ],
+  "notes": []
+ },
+ {
+  "id": "anyway",
+  "expect": "none",
+  "heard": [
+   "Jadi macam tulah, dia cakap dia nak fikir dulu."
+  ],
+  "notes": []
+ },
+ {
+  "id": "eggs",
+  "expect": "none",
+  "heard": [
+   "Weh, mahal gila telur sekarang ni kan?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "laugh",
+  "expect": "none",
+  "heard": [
+   "Haha, kelakar gila."
+  ],
+  "notes": []
+ },
+ {
+  "id": "puppy",
+  "expect": "none",
+  "heard": [
+   "Kakak aku baru dapat anak anjing baru, comel gila."
+  ],
+  "notes": []
+ },
+ {
+  "id": "lunch-yesterday",
+  "expect": "none",
+  "heard": [
+   "Semalam lunch makan pizza, ok je."
+  ],
+  "notes": []
+ },
+ {
+  "id": "tired",
+  "expect": "none",
+  "heard": [
+   "Saya penat sangat, malam tadi saya hampir tak tidur langsung."
+  ],
+  "notes": []
+ },
+ {
+  "id": "store-pa",
+  "expect": "none",
+  "heard": [
+   "Tolong bersihkan lorong lima."
+  ],
+  "notes": []
+ },
+ {
+  "id": "next-stop",
+  "expect": "none",
+  "heard": [
+   "Perhentian seterusnya ialah Powell Street."
+  ],
+  "notes": []
+ }
+]

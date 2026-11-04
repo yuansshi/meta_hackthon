@@ -1,0 +1,218 @@
+{
+ "at": "2026-11-04T13:09:55",
+ "summary": {
+  "jobs": 20,
+  "reported": 20,
+  "models": [
+   "muse-wonder-1.0"
+  ],
+  "seconds_p50": 28.65,
+  "seconds_max": 43.5,
+  "searches_p50": 6.5,
+  "cost_p50": 0.12425,
+  "cost_total": 2.663,
+  "wall_s": 83.6
+ },
+ "rows": [
+  {
+   "goal": "the best noise-cancelling earbuds under $200",
+   "ok": true,
+   "s": 28.5,
+   "model": "muse-wonder-1.0",
+   "searches": 3,
+   "cost": 0.0537,
+   "summary": "If you want the best noise-cancelling earbuds under two hundred dollars, get the Soundcore Liberty 5 Pro for about one seventy. If they are sold out, the Sony WF-1000XM5 at about two hundred dollars is the stronger noise-cancelling step-up, and it fits your budget on sale.",
+   "details_chars": 547
+  },
+  {
+   "goal": "which Seattle libraries are open late on Fridays",
+   "ok": true,
+   "s": 34.1,
+   "model": "muse-wonder-1.0",
+   "searches": 7,
+   "cost": 0.1326,
+   "summary": "No Seattle Public Library branch is open late on Fridays, as the open branches close at 6 p.m. For evening library hours, plan on Tuesday through Thursday instead, when many branches stay open until 8 p.m.",
+   "details_chars": 273
+  },
+  {
+   "goal": "the cheapest way to get from SFO to downtown San Francisco",
+   "ok": true,
+   "s": 28.8,
+   "model": "muse-wonder-1.0",
+   "searches": 6,
+   "cost": 0.1135,
+   "summary": "The cheapest way is the SamTrans Route 292 bus, at two dollars and five cents with Clipper, or two twenty-five in cash. It takes about an hour to downtown, while BART is roughly thirty minutes but costs about eleven dollars.",
+   "details_chars": 620
+  },
+  {
+   "goal": "beginner-friendly day hikes within an hour of Seattle",
+   "ok": true,
+   "s": 27.7,
+   "model": "muse-wonder-1.0",
+   "searches": 6,
+   "cost": 0.1291,
+   "summary": "For a true beginner today, start with Snoqualmie Falls or Discovery Park, both easy and close to Seattle. Go this morning if you can, since it should be partly sunny near 56 degrees with rain more likely after about 5 p.m.",
+   "details_chars": 967
+  },
+  {
+   "goal": "whether a US citizen needs a visa for a week in Japan",
+   "ok": true,
+   "s": 25.5,
+   "model": "muse-wonder-1.0",
+   "searches": 6,
+   "cost": 0.1176,
+   "summary": "No, as a U.S. citizen you do not need a visa for a one-week tourist trip to Japan. Just make sure your passport stays valid for your whole stay.",
+   "details_chars": 847
+  },
+  {
+   "goal": "free kid-friendly museums in Chicago on weekdays",
+   "ok": true,
+   "s": 34.9,
+   "model": "muse-wonder-1.0",
+   "searches": 13,
+   "cost": 0.2474,
+   "summary": "For a Seattle family, your surest weekday bets are the always-free National Museum of Mexican Art, Chicago Cultural Center, and the Federal Reserve's Money Museum. Many headline free days at the big museums are for Illinois residents only, so do not count on those with Washington ID.",
+   "details_chars": 739
+  },
+  {
+   "goal": "how to recycle old phone batteries in Seattle",
+   "ok": true,
+   "s": 34.2,
+   "model": "muse-wonder-1.0",
+   "searches": 10,
+   "cost": 0.2279,
+   "summary": "Do not put old phone batteries in the garbage or curbside recycling in Seattle, because batteries are banned from the garbage there.  Tape the terminals, keep them separate from the phone if removable, then drop them free at a Seattle transfer station or household hazardous-waste site, or arrange Seattle Public Utilities\u2019 battery pickup.  If a battery is swollen, cracked, hot, or otherwise damaged, take it free to a household hazardous-waste facility instead of using a retail bin or pickup.",
+   "details_chars": 1370
+  },
+  {
+   "goal": "vegetarian restaurants near Pike Place Market open after 9 pm",
+   "ok": true,
+   "s": 34.7,
+   "model": "muse-wonder-1.0",
+   "searches": 10,
+   "cost": 0.209,
+   "summary": "Your best bet tonight is El Borracho in Pike Place Market, a fully plant-based Mexican spot open Wednesdays until 10 p.m. If you need something much later, the Alibi Room nearby is vegetarian-friendly and open Wednesdays until 2 a.m.",
+   "details_chars": 791
+  },
+  {
+   "goal": "the best time of year to visit Lisbon on a budget",
+   "ok": true,
+   "s": 26.9,
+   "model": "muse-wonder-1.0",
+   "searches": 3,
+   "cost": 0.0542,
+   "summary": "Go in late January or February for the lowest prices from Seattle, with March as the nicer-weather value pick. You'll trade some rain and 59-degree highs for flights and hotels often 40 to 50 percent cheaper than summer.",
+   "details_chars": 854
+  },
+  {
+   "goal": "compact strollers that fold with one hand under $300",
+   "ok": true,
+   "s": 42.4,
+   "model": "muse-wonder-1.0",
+   "searches": 10,
+   "cost": 0.1928,
+   "summary": "Start with the Graco Ready2Jet if you want the lightest true one-hand fold under budget, at about thirteen pounds and one hundred ninety dollars. Choose the Colugo Compact Plus instead if Seattle rain matters most, because it includes a rain cover and carry bag for about one hundred ninety-nine dollars on sale.",
+   "details_chars": 928
+  },
+  {
+   "goal": "how to get a refund for a delayed Amtrak train",
+   "ok": true,
+   "s": 29.5,
+   "model": "muse-wonder-1.0",
+   "searches": 6,
+   "cost": 0.1037,
+   "summary": "If your Amtrak train was delayed, contact Customer Relations and ask for delay compensation or a refund for the affected segment; there is no automatic cash refund just because a train arrived late. If you have not departed yet, cancel or change the trip before departure through Amtrak and specifically ask an agent to treat it as a service disruption.",
+   "details_chars": 1212
+  },
+  {
+   "goal": "electric toothbrushes dentists recommend under $100",
+   "ok": true,
+   "s": 28.5,
+   "model": "muse-wonder-1.0",
+   "searches": 7,
+   "cost": 0.1515,
+   "summary": "Start with the Oral-B Pro 1000 at about fifty dollars, the safest dentist-backed pick under one hundred dollars. If you prefer a gentler sonic feel, choose the Philips Sonicare 4100 at a similar price. Both provide a two-minute timer and a pressure sensor.",
+   "details_chars": 712
+  },
+  {
+   "goal": "the easiest houseplants for a dark apartment",
+   "ok": true,
+   "s": 22.2,
+   "model": "muse-wonder-1.0",
+   "searches": 3,
+   "cost": 0.058,
+   "summary": "Start with a ZZ plant or snake plant, since both tolerate dim Seattle light and missed waterings better than almost anything else. If you want something trailing, add a pothos, but remember that truly dark means slow growth, so a small grow light helps a lot in winter.",
+   "details_chars": 1218
+  },
+  {
+   "goal": "what documents I need to renew a US passport by mail",
+   "ok": true,
+   "s": 23.8,
+   "model": "muse-wonder-1.0",
+   "searches": 4,
+   "cost": 0.0772,
+   "summary": "To renew by mail, send a signed Form DS-82, your most recent passport, one passport photo, and a check or money order for the fee. Add a certified name-change document only if your name has changed.",
+   "details_chars": 1089
+  },
+  {
+   "goal": "budget weekend trips from Seattle by train",
+   "ok": true,
+   "s": 43.5,
+   "model": "muse-wonder-1.0",
+   "searches": 9,
+   "cost": 0.1788,
+   "summary": "For the best budget weekend by train from Seattle, choose Portland for the most choice, or Bellingham for the cheapest short hop. Vancouver, B.C. is also doable if you have a passport, while Leavenworth is scenic but limited to one train a day.",
+   "details_chars": 1928
+  },
+  {
+   "goal": "running shoes for flat feet under $150",
+   "ok": true,
+   "s": 27.9,
+   "model": "muse-wonder-1.0",
+   "searches": 8,
+   "cost": 0.1403,
+   "summary": "Start with the Brooks Adrenaline GTS 25, currently $124.95 on sale and built to control excess inward rolling. In Seattle, get fitted at Road Runner Sports in Green Lake, where they offer video gait analysis and a 3D arch scan before you buy.",
+   "details_chars": 938
+  },
+  {
+   "goal": "setting up mesh Wi-Fi for a three-bedroom house",
+   "ok": true,
+   "s": 17.4,
+   "model": "muse-wonder-1.0",
+   "searches": 3,
+   "cost": 0.0577,
+   "summary": "For most three-bedroom homes, start with a two- or three-node mesh kit and add a third node only if a room stays weak. Put the main node by your modem centrally, place satellites halfway to the dead zones at about waist height in the open, then walk the house and test each room.",
+   "details_chars": 951
+  },
+  {
+   "goal": "the rules for bringing a dog on Washington State Ferries",
+   "ok": true,
+   "s": 30.9,
+   "model": "muse-wonder-1.0",
+   "searches": 9,
+   "cost": 0.1194,
+   "summary": "Yes, you can bring your dog on Washington State Ferries under the updated policy that took effect July 1, 2026. Keep it harnessed or leashed and under control, stay in the vehicle deck, outdoor areas, or the marked cabin area away from the galley, and keep it off seats and tables.",
+   "details_chars": 776
+  },
+  {
+   "goal": "the best free apps for learning Spanish",
+   "ok": true,
+   "s": 26.0,
+   "model": "muse-wonder-1.0",
+   "searches": 5,
+   "cost": 0.0846,
+   "summary": "Start with Duolingo for a free daily Spanish habit, and add Language Transfer for grammar and listening. If you have a Seattle library card, Mango Languages is another strong free option through the library.",
+   "details_chars": 1075
+  },
+  {
+   "goal": "where to see fall colors near Portland this week",
+   "ok": true,
+   "s": 40.9,
+   "model": "muse-wonder-1.0",
+   "searches": 10,
+   "cost": 0.2142,
+   "summary": "Go to Washington Park first, because Portland is forecast to hit peak color November 4 to 10 and Hoyt Arboretum\u2019s larches are just starting to turn yellow this week. Pair the free arboretum with the nearby Portland Japanese Garden for the strongest maples, and go early in the week before rain and leaf drop thin things out.",
+   "details_chars": 1074
+  }
+ ]
+}

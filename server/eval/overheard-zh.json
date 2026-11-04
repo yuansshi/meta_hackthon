@@ -1,0 +1,398 @@
+[
+ {
+  "id": "dinner",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "别忘了，周五晚上七点在我家吃晚饭。",
+   "地址是松树街一四二零号，三单元。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "oat-milk",
+  "expect": "offer",
+  "kinds": [
+   "reminder",
+   "note"
+  ],
+  "heard": [
+   "你回家的路上能顺便买点燕麦奶吗？"
+  ],
+  "notes": []
+ },
+ {
+  "id": "dentist",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "牙医打电话来了，你的洗牙改到周四上午十点半了。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "phone-number",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "我的号码是四一五 五五五 零一三四，你落地后给我发个短信。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "parking",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "好了，我们停在四楼G排。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "gate-change",
+  "expect": "offer",
+  "kinds": [
+   "alert",
+   "note"
+  ],
+  "notes": [
+   "今天下午坐美联航八一二去丹佛"
+  ],
+  "heard": [
+   "请大家注意一下，美联航八一二飞往丹佛的航班，现在在B二十二登机口开始登机。"
+  ]
+ },
+ {
+  "id": "platform-change",
+  "expect": "offer",
+  "kinds": [
+   "alert",
+   "note"
+  ],
+  "notes": [
+   "我下班坐那趟下午五点十五去弗里蒙特的车"
+  ],
+  "heard": [
+   "各位乘客请注意，开往弗里蒙特的下午五点十五那趟车，现在改在五号站台发车。"
+  ]
+ },
+ {
+  "id": "meeting-moved",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "跟你说一声，跟 Priya 的会推到明天下午三点了。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "passport",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "星期一早上九点的预约，记得带上护照。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "name",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "这是 Dana Whitfield，她带设计团队的。",
+   "你们俩聊聊发布的事吧。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "rent",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "房租一号就到期了，别再交晚了。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "prescription",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "药房说你的药今天下午四点之后才能取。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "soccer",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "这周六早上8点在林肯公园有足球训练。",
+   "这周你能开车吗？"
+  ],
+  "notes": []
+ },
+ {
+  "id": "wifi",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Wi-Fi 密码是 otter blue 四二，全小写。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "birthday",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "妈妈生日午饭是周日中午，在五街那家泰国餐厅。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "museum",
+  "expect": "offer",
+  "kinds": [
+   "lookup",
+   "research"
+  ],
+  "heard": [
+   "麻烦帮我问一下，博物馆星期一开门吗？"
+  ],
+  "notes": []
+ },
+ {
+  "id": "plumber",
+  "expect": "offer",
+  "kinds": [
+   "research",
+   "lookup"
+  ],
+  "heard": [
+   "我们这周真的急需一个能上门的水管工。",
+   "你能帮忙问一下吗？"
+  ],
+  "notes": []
+ },
+ {
+  "id": "package",
+  "expect": "offer",
+  "kinds": [
+   "reminder",
+   "note"
+  ],
+  "heard": [
+   "你的快递明天，下午两点到四点之间到，得有人签收。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "kids",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "你今天下午三点十五能去接一下孩子们吗？我还被困在公司走不开。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "locker",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "你的储物柜是二一八号，密码是四、七、一、九。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "weather-chat",
+  "expect": "none",
+  "heard": [
+   "今天天气不错，是吧？"
+  ],
+  "notes": []
+ },
+ {
+  "id": "game",
+  "expect": "none",
+  "heard": [
+   "不敢相信昨晚那场比赛，最后那个结尾也太绝了。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "vague-dinner",
+  "expect": "none",
+  "heard": [
+   "咱们改天一起吃个饭吧。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "trailer",
+  "expect": "none",
+  "heard": [
+   "你看新预告片了吗？看起来太棒了。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "tv",
+  "expect": "none",
+  "heard": [
+   "欢迎回来，休息一下，待会儿咱们聊聊经济。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "coffee",
+  "expect": "none",
+  "heard": [
+   "这咖啡也太烫了吧。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "agreeing",
+  "expect": "none",
+  "heard": [
+   "对啊，我也是这么想的。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "tahoe",
+  "expect": "none",
+  "heard": [
+   "还记得去年冬天咱们去太浩湖那次吗？那次真是太好玩了。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "other-train",
+  "expect": "none",
+  "notes": [
+   "下班以后我坐五点十五去弗里蒙特的那趟车"
+  ],
+  "heard": [
+   "各位乘客请注意，开往圣何塞六点四十的那趟车，现在在二号站台开始检票上车。"
+  ]
+ },
+ {
+  "id": "radio-ad",
+  "expect": "none",
+  "heard": [
+   "这个周末在Sleep World买所有床垫买一送一!"
+  ],
+  "notes": []
+ },
+ {
+  "id": "blue-one",
+  "expect": "none",
+  "heard": [
+   "我觉得蓝色那件你穿更好看。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "traffic",
+  "expect": "none",
+  "heard": [
+   "唉，今天早上堵车太严重了。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "anyway",
+  "expect": "none",
+  "heard": [
+   "总之，他说他再想想。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "eggs",
+  "expect": "none",
+  "heard": [
+   "现在鸡蛋怎么这么贵啊？"
+  ],
+  "notes": []
+ },
+ {
+  "id": "laugh",
+  "expect": "none",
+  "heard": [
+   "哈哈，太好笑了。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "puppy",
+  "expect": "none",
+  "heard": [
+   "我姐刚养了只小狗，特别可爱。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "lunch-yesterday",
+  "expect": "none",
+  "heard": [
+   "昨天中午我们吃了披萨，还行。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "tired",
+  "expect": "none",
+  "heard": [
+   "我累死了，昨晚都没怎么睡。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "store-pa",
+  "expect": "none",
+  "heard": [
+   "五号过道麻烦清理一下。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "next-stop",
+  "expect": "none",
+  "heard": [
+   "下一站是鲍威尔街。"
+  ],
+  "notes": []
+ }
+]

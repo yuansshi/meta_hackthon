@@ -1,0 +1,61 @@
+{
+ "at": "2026-11-04T04:48:16",
+ "median": {
+  "cold_page_s": 5.68,
+  "cold_ready_s": 0.32,
+  "cold_first_word_s": 2.63,
+  "warm_page_s": 0.21,
+  "warm_ready_s": 0.24,
+  "warm_first_word_s": 2.5
+ },
+ "rows": [
+  {
+   "cold": {
+    "page_s": 5.68,
+    "ready_s": 0.32,
+    "first_word_s": 3.25,
+    "turn_s": 8.45,
+    "page_to_first_word_s": 14.44
+   },
+   "warm": {
+    "page_s": 0.21,
+    "ready_s": 0.21,
+    "first_word_s": 2.5,
+    "turn_s": 7.8,
+    "page_to_first_word_s": 8.22
+   }
+  },
+  {
+   "cold": {
+    "page_s": 5.85,
+    "ready_s": 0.68,
+    "first_word_s": 2.63,
+    "turn_s": 12.64,
+    "page_to_first_word_s": 19.17
+   },
+   "warm": {
+    "page_s": 0.3,
+    "ready_s": 0.45,
+    "first_word_s": 2.27,
+    "turn_s": 7.46,
+    "page_to_first_word_s": 8.21
+   }
+  },
+  {
+   "cold": {
+    "page_s": 5.38,
+    "ready_s": 0.19,
+    "first_word_s": 1.96,
+    "turn_s": 7.19,
+    "page_to_first_word_s": 12.76
+   },
+   "warm": {
+    "page_s": 0.19,
+    "ready_s": 0.24,
+    "first_word_s": 3.05,
+    "turn_s": 8.27,
+    "page_to_first_word_s": 8.7
+   }
+  }
+ ]
+}

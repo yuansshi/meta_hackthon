@@ -1,6 +1,7 @@
 # Fly.io: the Earshot server + web client from the repo-root Dockerfile. Secrets: META_API_KEY, FIREWORKS_API_KEY.
-# One always-on machine: sessions, the budget and per-IP limits live in process memory, and judges
-# must never hit a cold start.
+# One always-on machine: sessions and per-IP limits live in process memory, and judges must never hit a
+# cold start. The daily spend, notes and receipts live on the earshot_data volume, so they survive restarts
+# (fly volumes create earshot_data --region sjc --size 1).
 app = "earshot-yuansshi"
 primary_region = "sjc"
 
@@ -9,7 +10,11 @@ primary_region = "sjc"
 
 [env]
   PORT = "8000"
-  EARSHOT_DATA_DIR = "/tmp/earshot"
+  EARSHOT_DATA_DIR = "/data/earshot"
+
+[mounts]
+  source = "earshot_data"
+  destination = "/data"
 
 [http_service]
   internal_port = 8000

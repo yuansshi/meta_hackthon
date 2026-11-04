@@ -1,0 +1,508 @@
+{
+ "at": "2026-11-04T05:49:38",
+ "url": "wss://earshot-yuansshi.fly.dev/ws",
+ "total": {
+  "weather": "13/15",
+  "reminder": "10/15",
+  "cost_usd": 0.197,
+  "minutes": 6.6
+ },
+ "by_language": {
+  "tr": {
+   "weather": "3/3",
+   "wake": "3/3",
+   "answered_in_language": "3/3",
+   "reminder_with_spoken_yes": "3/3",
+   "first_word_p50_s": 2.41
+  },
+  "ja": {
+   "weather": "3/3",
+   "wake": "3/3",
+   "answered_in_language": "3/3",
+   "reminder_with_spoken_yes": "0/3",
+   "first_word_p50_s": 3.0
+  },
+  "zh": {
+   "weather": "3/3",
+   "wake": "3/3",
+   "answered_in_language": "3/3",
+   "reminder_with_spoken_yes": "3/3",
+   "first_word_p50_s": 2.85
+  },
+  "bn": {
+   "weather": "3/3",
+   "wake": "3/3",
+   "answered_in_language": "3/3",
+   "reminder_with_spoken_yes": "1/3",
+   "first_word_p50_s": 2.38
+  },
+  "he": {
+   "weather": "1/3",
+   "wake": "3/3",
+   "answered_in_language": "1/3",
+   "reminder_with_spoken_yes": "3/3",
+   "first_word_p50_s": 2.54
+  }
+ },
+ "rows": [
+  {
+   "language": "tr",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 3.86,
+   "total_s": 9.2,
+   "cost": 0.00572,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Hemen bakıyorum. Hayır, öğleden sonra yağmur beklenmiyor, hava kapalı olacak ve yaklaşık on üç derece civarında seyredecek. ",
+   "heard": "Hey earshot. Bu öğleden sonra yağmur yağacak mı?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "tr",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.98,
+   "total_s": 7.73,
+   "cost": 0.00706,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Tamam. “Kahve al” için bugün saat 6:00 hatırlatayım mı? Tamam, saat altıda kahve al diye kaydettim. ",
+   "question": "“Kahve al” için bugün saat 6:00 hatırlatayım mı?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ja",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 3.16,
+   "total_s": 9.61,
+   "cost": 0.00835,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "了解です。 今日の午後は雨はほぼ降らない予報ですよ。夕方も曇りで最高気温は十三度くらいです。 ",
+   "heard": "Hey earshot. 今日の午後は雨が降りますか？",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ja",
+   "scenario": "reminder",
+   "ok": false,
+   "error": "TimeoutError:  | heard: にリマインドして。 | said: ",
+   "first_s": null,
+   "cost": 0
+  },
+  {
+   "language": "zh",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.85,
+   "total_s": 9.99,
+   "cost": 0.00794,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "好的。 今天下午应该不会下雨，只是多云，最高大概十三度左右。 ",
+   "heard": "Hey Earshot, 今天下午会下雨吗?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "zh",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.99,
+   "total_s": 6.81,
+   "cost": 0.00682,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "好。 要我今天18:00提醒你「买咖啡」吗？ 好了，下午六点买咖啡已经记好了。 ",
+   "question": "要我今天18:00提醒你「买咖啡」吗？",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "bn",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 4.17,
+   "total_s": 10.45,
+   "cost": 0.00839,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "এখনই দেখছি। আজ বিকেলে সিয়াটলে বৃষ্টির সম্ভাবনা খুব কম, মাত্র বারো শতাংশ, আকাশ মেঘলা থাকবে আর তাপমাত্রা দশ ডিগ্রি সেলসিয়াসের মতো থাকবে। ",
+   "heard": "Hey, Earshot. আজ বিকেলে কি বৃষ্টি হবে?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "bn",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.97,
+   "total_s": 7.24,
+   "cost": 0.00473,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "ঠিক আছে। আপনাকে কি আজ 18:00-এ “কফি কিনো” মনে করিয়ে দেব? হয়ে গেছে, সন্ধ্যা ছটায় কফি কেনার কথা মনে করিয়ে দেবো। ",
+   "question": "আপনাকে কি আজ 18:00-এ “কফি কিনো” মনে করিয়ে দেব?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "he",
+   "scenario": "weather",
+   "attempt": 2,
+   "first_s": 2.41,
+   "total_s": 9.3,
+   "cost": 0.0082,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Need location then weather - but must not announce tool? Developer says never announce that you're about to use one. So just call tools. We need to call get_location. לא, אחר הצהריים אמור להישאר יבש ומעונן עם כשלוש עשרה מעלות וסיכוי קטן לגשם. ",
+   "heard": "Hey earshot. האם ירד גשם אחר הצהריים?",
+   "wake": true,
+   "in_language": false,
+   "ok": false
+  },
+  {
+   "language": "he",
+   "scenario": "reminder",
+   "attempt": 2,
+   "first_s": 3.22,
+   "total_s": 7.29,
+   "cost": 0.00718,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "בסדר. להזכיר לך „לקנות קפה” היום ב-18:00? בוצע, תזכורת לקנות קפה בשש בערב. ",
+   "question": "להזכיר לך „לקנות קפה” היום ב-18:00?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "tr",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.01,
+   "total_s": 7.26,
+   "cost": 0.00838,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Hemen bakıyorum. Hayır, öğleden sonra Seattle'da yağmur beklenmiyor, sıcaklık on üç derece civarı olacak ama hava kapalı. ",
+   "heard": "Hey earshot. Bu öğleden sonra yağmur yağacak mı?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "tr",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 3.18,
+   "total_s": 8.35,
+   "cost": 0.00442,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Tamam. “Kahve al” için bugün saat 18:00 hatırlatayım mı? Tamam, akşam altıda kahve alman için hatırlatma kurdum. ",
+   "question": "“Kahve al” için bugün saat 18:00 hatırlatayım mı?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ja",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 3.0,
+   "total_s": 8.73,
+   "cost": 0.01052,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "了解です。 午後の雨はほぼ心配ないですよ。二時ごろも五時ごろも曇りで、最高は十三度くらいです。 ",
+   "heard": "今日の午後は雨が降りますか?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ja",
+   "scenario": "reminder",
+   "ok": false,
+   "error": "TimeoutError:  | heard: ようにリマインドして。 | said: ",
+   "first_s": null,
+   "cost": 0
+  },
+  {
+   "language": "zh",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.04,
+   "total_s": 6.85,
+   "cost": 0.00808,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "好的。 今天下午应该不会下雨，两点左右多云十三度，降雨概率只有百分之二。 ",
+   "heard": "Hey earshot, 今天下午会下雨吗?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "zh",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.83,
+   "total_s": 6.01,
+   "cost": 0.00684,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "好。 要我今天18:00提醒你「买咖啡」吗？ 好了，下午六点提醒你买咖啡。 ",
+   "question": "要我今天18:00提醒你「买咖啡」吗？",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "bn",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.13,
+   "total_s": 6.6,
+   "cost": 0.0086,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "এখনই দেখছি। আজ বিকেলে বৃষ্টির সম্ভাবনা প্রায় নেই, আকাশ মেঘলা থাকবে আর তাপমাত্রা তেরো ডিগ্রির মতো থাকবে। ",
+   "heard": "Hey earshot, আজ বিকেলে কি বৃষ্টি হবে,",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "bn",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 4.61,
+   "total_s": 11.11,
+   "cost": 0.00804,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "ঠিক আছে। আপনাকে কি আজ 18:00-এ “মাকে কফি কিনতে মনে করিয়ে দাও” মনে করিয়ে দেব? রিমাইন্ডারটা সেট হয়নি, অনুমতি পাইনি। সন্ধ্যা ছটার জন্য আবার কনফার্ম করবে? ",
+   "question": "আপনাকে কি আজ 18:00-এ “মাকে কফি কিনতে মনে করিয়ে দাও” মনে করিয়ে দেব?",
+   "question_in_language": true,
+   "ok": false
+  },
+  {
+   "language": "he",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.54,
+   "total_s": 8.37,
+   "cost": 0.00814,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "אני על זה. לא, מחר בצהריים לא צפוי גשם בסיאטל, רק מעונן עם סיכוי נמוך של חמש עשרה אחוז. ",
+   "heard": "Hey, Earshot. האם ירד גשם מחר הצהריים?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "he",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.79,
+   "total_s": 7.26,
+   "cost": 0.00688,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "בסדר. להזכיר לך „לקנות כפפה” היום ב-18:00? נשמר, אזכיר לך לקנות כפפה בשש בערב. ",
+   "question": "להזכיר לך „לקנות כפפה” היום ב-18:00?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "tr",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.41,
+   "total_s": 12.71,
+   "cost": 0.00541,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Hemen bakıyorum. Hayır, öğleden sonra Seattle'da yağmur beklenmiyor, hava bulutlu ve on üç derece civarında olacak. ",
+   "heard": "Bu öğleden sonra yağmur yağacak mı?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "tr",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.49,
+   "total_s": 6.88,
+   "cost": 0.00666,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Tamam. “Kahve al” için bugün saat 18:00 hatırlatayım mı? Tamam, akşam altıda kahve almanı hatırlatacağım. ",
+   "question": "“Kahve al” için bugün saat 18:00 hatırlatayım mı?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ja",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 1.71,
+   "total_s": 8.83,
+   "cost": 0.00852,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "了解です。 午後のシアトルは曇りで雨はほぼ降りませんよ。夕方五時ごろに少しだけ降る可能性が一割ほどあります。 ",
+   "heard": "Hey, Earshot, 今日の午後は雨が降りますか?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ja",
+   "scenario": "reminder",
+   "ok": false,
+   "error": "TimeoutError:  | heard: Hey, earshot. / ようにリマインドして。 | said: 了解です。 何をリマインドしましょうか。",
+   "first_s": null,
+   "cost": 0
+  },
+  {
+   "language": "zh",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.93,
+   "total_s": 7.39,
+   "cost": 0.0085,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "好的。 今天下午应该不会下雨，多云，最高十三度左右，傍晚出门带件外套就行。 ",
+   "heard": "今天下午会下雨吗？",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "zh",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 4.13,
+   "total_s": 8.92,
+   "cost": 0.00464,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "好。 要我今天18:00提醒你「买咖啡」吗？ 好了，下午六点买咖啡。 ",
+   "question": "要我今天18:00提醒你「买咖啡」吗？",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "bn",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.38,
+   "total_s": 7.02,
+   "cost": 0.00831,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "এখনই দেখছি। আজ বিকেলে বৃষ্টির সম্ভাবনা খুব কম, মাত্র বারো শতাংশের মতো। আকাশ মেঘলা থাকবে আর তাপমাত্রা দশ ডিগ্রির আশেপাশে থাকবে। ",
+   "heard": "Hey, earshot. আজ বিকেলে কি বৃষ্টি হবে?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "bn",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 4.06,
+   "total_s": 9.61,
+   "cost": 0.00746,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "ঠিক আছে। আপনাকে কি আজ 18:00-এ “কফি কিনুন” মনে করিয়ে দেব? হয়ে নি, ফোনে অনুমতি চেয়েছিল তাই বাতিল হয়ে গেছে। তুমি হ্যাঁ বললে আবার সন্ধ্যা ছটায় বসিয়ে দিচ্ছি। ",
+   "question": "আপনাকে কি আজ 18:00-এ “কফি কিনুন” মনে করিয়ে দেব?",
+   "question_in_language": true,
+   "ok": false
+  },
+  {
+   "language": "he",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.69,
+   "total_s": 8.08,
+   "cost": 0.00836,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Need location to check rain, but only one-three short sentences Hebrew, no announcement? The instruction says never announce that you're about to use one. The app already says \"On it\". So we should just call tool without text? Actually we need to emit tool call. Probably no commentary text allowed? ",
+   "heard": "Hey earshot, האם ירד גשם מחר הצהריים?",
+   "wake": true,
+   "in_language": false,
+   "ok": false
+  },
+  {
+   "language": "he",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.24,
+   "total_s": 7.75,
+   "cost": 0.00454,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "בסדר. להזכיר לך „לקנות קפה” היום ב-18:00? בוצע, תזכורת לקנות קפה בשש בערב. ",
+   "question": "להזכיר לך „לקנות קפה” היום ב-18:00?",
+   "question_in_language": true,
+   "ok": true
+  }
+ ]
+}

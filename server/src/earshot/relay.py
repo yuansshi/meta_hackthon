@@ -40,6 +40,9 @@ class AsrRelay:
         self.dropped_s = 0.0
         self.underruns = 0
         self.sessions = 0
+        self.stalls = 0  # sessions the watchdog closed because Meta stopped answering
+        self.failures = 0  # attempts in a row that never opened a session (a refused key, no credit, an outage)
+        self.last_heard = 0.0
         self.closes: list[tuple[int | None, str]] = []  # (code, reason) per ended session, for spike S6
         self.session_id: str | None = None
         self._ws = None
@@ -61,7 +64,7 @@ class AsrRelay:
             "model": c["model"],
             "mode": c["mode"],
             "partialMode": "CUMULATIVE",
-            "emitAudioProgress": False,
+            "emitAudioProgress": True,  # many a second: the heartbeat the stall watchdog listens for
             "languageBias": c["languages"],
             "keywords": c["keywords"],
         }
@@ -90,6 +93,9 @@ class AsrRelay:
                 backoff = 0.5
             except (OSError, ConnectionClosed, InvalidHandshake, TimeoutError, RuntimeError) as e:
                 log.warning("asr session ended: %r", e)
+                self.failures += 1
+                if self.failures == 3:  # tell the user once, instead of a microphone that silently hears nothing
+                    await self.on_event({"type": "relayDown", "error": f"{type(e).__name__}: {e}"[:200]})
             except Exception:  # anything unexpected must not leave the session deaf: log it and reconnect
                 log.exception("asr session crashed")
             if self._stop.is_set():
@@ -110,21 +116,42 @@ class AsrRelay:
                 raise RuntimeError(f"ASR handshake rejected: {ack}")
             self.session_id = ack["sessionId"]
             self.sessions += 1
+            if self.failures >= 3:
+                await self.on_event({"type": "relayUp"})
+            self.failures = 0
             log.info("asr session %s open", self.session_id)
+            self.last_heard = time.monotonic()
             sender = asyncio.create_task(self._send_loop(ws))
+            watchdog = asyncio.create_task(self._watch(ws))
             try:
                 async for raw in ws:
                     if isinstance(raw, bytes):
                         continue
+                    self.last_heard = time.monotonic()
                     evt = json.loads(raw)
+                    if evt.get("type") == "audioProgress":
+                        continue  # proof the stream is alive, not news for the session
                     if evt.get("type") == "error":
                         log.warning("asr error: %s", evt.get("message"))
                     await self.on_event(evt)
             finally:
                 sender.cancel()
+                watchdog.cancel()
                 self.closes.append((ws.close_code, ws.close_reason or ""))
                 self._ws = None
                 log.info("asr session %s closed: %s %s", self.session_id, ws.close_code, ws.close_reason)
+
+    async def _watch(self, ws) -> None:
+        """A stream can stay open yet stop answering (seen in a 70-minute soak). Meta sends audioProgress many times
+        a second, so a quiet stream has stalled: close it, and run() reconnects."""
+        stall = self.cfg.get("stall_s", 5.0)
+        while True:
+            await asyncio.sleep(min(1.0, stall / 3))
+            if time.monotonic() - self.last_heard > stall:
+                self.stalls += 1
+                log.warning("asr session %s heard nothing for %.0f s; reconnecting", self.session_id, stall)
+                await ws.close(code=4000, reason="stalled")
+                return
 
     async def _send_loop(self, ws) -> None:
         tick = self.cfg["frame_ms"] / 1000

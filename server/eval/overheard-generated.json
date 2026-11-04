@@ -1,0 +1,1398 @@
+[
+ {
+  "id": "plan-0",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Hey, are we still good for Saturday morning?",
+   "I booked us a table at Blue Fig Cafe at 9:30, right after your run."
+  ],
+  "notes": []
+ },
+ {
+  "id": "plan-1",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Don't let me forget \u2014 I'm picking you up from Willow Street station on Tuesday at 6:15.",
+   "Then we're heading straight to Aunt Priya's for dinner."
+  ],
+  "notes": [
+   "Train gets in at 5:58pm on Tuesday"
+  ]
+ },
+ {
+  "id": "plan-2",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Yeah, he knows. We're taking him to Dr. Ellman's office on Monday, he just needs to be ready to leave by nine."
+  ],
+  "notes": []
+ },
+ {
+  "id": "plan-3",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Movie night is still on, right? Leo got us tickets for Thursday at 7:40 at the Starlight Cinema on 5th."
+  ],
+  "notes": [
+   "Leo owes me $12"
+  ]
+ },
+ {
+  "id": "plan-4",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Mom said to tell you Sunday lunch is moved to Grandma Rosa's house at one instead of noon."
+  ],
+  "notes": []
+ },
+ {
+  "id": "plan-5",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "So, picnic plan: you, me, and Carla at Riverside Park this Sunday around 4.",
+   "I'll bring the blanket if you grab sandwiches from Northgate Market on the way."
+  ],
+  "notes": []
+ },
+ {
+  "id": "plan-6",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Quick reminder, cousin duty tomorrow \u2014 we're helping Uncle Ben move the couch at 5:45.",
+   "His new place is the blue house on Fern Road, number 214."
+  ],
+  "notes": [
+   "Uncle Ben's old address: 18 Cedar Close"
+  ]
+ },
+ {
+  "id": "plan-7",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Are you riding with us to the Lakeside trailhead on Saturday?",
+   "We want to be there by 8am, so pickup from your place is like 7:15."
+  ],
+  "notes": []
+ },
+ {
+  "id": "plan-8",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "She said she's meeting him there too \u2014 all three of us at Maplewood Library, Wednesday at lunch, to work on the presentation."
+  ],
+  "notes": []
+ },
+ {
+  "id": "plan-9",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Final plan for Friday, love: dinner at that little place on Harbor Lane at six, then we're meeting Jess and Tom\u00e1s for bowling at nine."
+  ],
+  "notes": [
+   "Jess is vegetarian"
+  ]
+ },
+ {
+  "id": "ask-0",
+  "expect": "offer",
+  "kinds": [
+   "reminder",
+   "note"
+  ],
+  "heard": [
+   "Hey, can you grab two cartons of oat milk and a bag of coffee beans when you're at Northgate Market?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "ask-1",
+  "expect": "offer",
+  "kinds": [
+   "reminder",
+   "note"
+  ],
+  "heard": [
+   "Priya, don't forget \u2014 you're bringing the projector cable to Room 204 tomorrow morning.",
+   "Last time nobody could connect their laptop."
+  ],
+  "notes": []
+ },
+ {
+  "id": "ask-2",
+  "expect": "offer",
+  "kinds": [
+   "reminder",
+   "note"
+  ],
+  "heard": [
+   "Would you mind calling Dr. Ellis's office after 9 to move my checkup to Thursday?",
+   "The number's on the card on the fridge."
+  ],
+  "notes": [
+   "Dentist moved once already"
+  ]
+ },
+ {
+  "id": "ask-3",
+  "expect": "offer",
+  "kinds": [
+   "reminder",
+   "note"
+  ],
+  "heard": [
+   "If you're heading past Willow Lane anyway, could you drop this parcel at number 18 for me?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "ask-4",
+  "expect": "offer",
+  "kinds": [
+   "reminder",
+   "note"
+  ],
+  "heard": [
+   "Please remember the locker code is 4819 \u2014 you'll need it after swimming on Tuesday."
+  ],
+  "notes": []
+ },
+ {
+  "id": "ask-5",
+  "expect": "offer",
+  "kinds": [
+   "reminder",
+   "note"
+  ],
+  "heard": [
+   "Love, when you go out, buy a birthday card for Uncle Ravi, would you?",
+   "Something funny, not soppy. He turns 60 on Sunday."
+  ],
+  "notes": []
+ },
+ {
+  "id": "ask-6",
+  "expect": "offer",
+  "kinds": [
+   "reminder",
+   "note"
+  ],
+  "heard": [
+   "Can you set a reminder for us? Bin day's changed to Friday this week because of the holiday."
+  ],
+  "notes": [
+   "Bins usually Wednesday"
+  ]
+ },
+ {
+  "id": "ask-7",
+  "expect": "offer",
+  "kinds": [
+   "reminder",
+   "note"
+  ],
+  "heard": [
+   "Mate, do me a favour and bring your spare charger to the workshop tomorrow.",
+   "Mine's completely dead and I've got calls all afternoon."
+  ],
+  "notes": []
+ },
+ {
+  "id": "ask-8",
+  "expect": "offer",
+  "kinds": [
+   "reminder",
+   "note"
+  ],
+  "heard": [
+   "Just so you don't forget at the shop \u2014 we need AA batteries, four of them, for the smoke alarm."
+  ],
+  "notes": []
+ },
+ {
+  "id": "ask-9",
+  "expect": "offer",
+  "kinds": [
+   "reminder",
+   "note"
+  ],
+  "heard": [
+   "Could you book the 7:40 train to Millbrook for Saturday? Two adults, please, and aisle seats if they have them."
+  ],
+  "notes": [
+   "Visiting Sofia in Millbrook"
+  ]
+ },
+ {
+  "id": "detail-0",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Okay, save Marta Ellison's number \u2014 she's the plumber. It's 555-014-2287."
+  ],
+  "notes": []
+ },
+ {
+  "id": "detail-1",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "The side gate code is 4819, then press the star key.",
+   "It changes next month though."
+  ],
+  "notes": []
+ },
+ {
+  "id": "detail-2",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "If you get lost, my locker is B-114, right across from the science lab.",
+   "The blue one with the dent."
+  ],
+  "notes": []
+ },
+ {
+  "id": "detail-3",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "I'm Tomas \u2014 T-O-M-A-S, no H \u2014 Rivera.",
+   "Everyone always adds the H."
+  ],
+  "notes": [
+   "Tomas Rivera"
+  ]
+ },
+ {
+  "id": "detail-4",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "I left the spare key under the terracotta pot by the back steps, not the front ones."
+  ],
+  "notes": []
+ },
+ {
+  "id": "detail-5",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Gate 27B, but boarding starts at 6:40, not 7:15 like the email said.",
+   "They moved us because of the crew change."
+  ],
+  "notes": []
+ },
+ {
+  "id": "detail-6",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Just tell the front desk you're here for Dr. Patel's office \u2014 Suite 309, third floor, elevator on the left."
+  ],
+  "notes": []
+ },
+ {
+  "id": "detail-7",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "The Wi-Fi at the cabin is PineHollow Guest and the password is riverstone42, all lowercase."
+  ],
+  "notes": []
+ },
+ {
+  "id": "detail-8",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "For pickup, it's bay four behind the warehouse on Kepler Street.",
+   "Ask for Jonah, he has the paperwork in a yellow envelope."
+  ],
+  "notes": []
+ },
+ {
+  "id": "detail-9",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Mom's new address is 118 Willow Bend, apartment 5C \u2014 the buzzer is 052."
+  ],
+  "notes": [
+   "Willow Bend 5C"
+  ]
+ },
+ {
+  "id": "announce-0",
+  "expect": "offer",
+  "kinds": [
+   "alert"
+  ],
+  "heard": [
+   "Attention passengers: the 09:14 service to Northwick, calling at Pellston and Arden Vale, will now depart from Platform 7.",
+   "This train is delayed by approximately 25 minutes."
+  ],
+  "notes": [
+   "9:14 train to Northwick from Platform 3",
+   "Meet Rosa outside station at 10:30"
+  ]
+ },
+ {
+  "id": "announce-1",
+  "expect": "offer",
+  "kinds": [
+   "alert"
+  ],
+  "heard": [
+   "Final boarding call for Flight TK482 to Kelmar. All remaining passengers please proceed immediately to Gate C19."
+  ],
+  "notes": [
+   "Flight TK482 to Kelmar",
+   "Boarding 17:40 at Gate B12",
+   "Seat 14A"
+  ]
+ },
+ {
+  "id": "announce-2",
+  "expect": "offer",
+  "kinds": [
+   "alert"
+  ],
+  "heard": [
+   "Good afternoon. Today's keynote, 'Designing Resilient Cities', will no longer be held in Hall A.",
+   "Please make your way to the Riverside Auditorium, where the session will begin at 2:00 p.m."
+  ],
+  "notes": [
+   "2:30pm keynote - Designing Resilient Cities",
+   "Hall A, Level 1",
+   "Sit near front for Q&A"
+  ]
+ },
+ {
+  "id": "announce-3",
+  "expect": "offer",
+  "kinds": [
+   "alert"
+  ],
+  "heard": [
+   "Passengers intending to travel on the 15:05 sailing to Isla Brava should now check in at Desk 2."
+  ],
+  "notes": [
+   "Ferry to Isla Brava departs 15:05",
+   "Check in Desk 5, bring booking ref FB-8841"
+  ]
+ },
+ {
+  "id": "announce-4",
+  "expect": "offer",
+  "kinds": [
+   "alert"
+  ],
+  "heard": [
+   "Service update: the 6:42 p.m. bus to Westmere via Hollowbrook has been cancelled.",
+   "The next departure will be at 7:30 p.m. from Stand D."
+  ],
+  "notes": [
+   "Catch 18:42 bus from Stand F to Westmere",
+   "Dinner with Priya at 19:30"
+  ]
+ },
+ {
+  "id": "announce-5",
+  "expect": "offer",
+  "kinds": [
+   "alert"
+  ],
+  "heard": [
+   "Will visitors attending the 11 a.m. guided tour of the Maritime Collection please note the meeting point has moved to the Clock Tower entrance."
+  ],
+  "notes": [
+   "11am Maritime Collection tour",
+   "Meet guide at main atrium desk"
+  ]
+ },
+ {
+  "id": "announce-6",
+  "expect": "offer",
+  "kinds": [
+   "alert"
+  ],
+  "heard": [
+   "This is a platform alteration. The 12:27 train to East Calder, first stop Millfield, will arrive at Platform 1 instead of Platform 4."
+  ],
+  "notes": [
+   "12:27 East Calder train, Platform 4",
+   "Change at Millfield for bus to cottage"
+  ]
+ },
+ {
+  "id": "announce-7",
+  "expect": "offer",
+  "kinds": [
+   "alert"
+  ],
+  "heard": [
+   "Ladies and gentlemen, due to high winds, this evening's performance on the Lakeside Stage will take place indoors in the Granville Theatre.",
+   "Doors open at 7 p.m. as planned."
+  ],
+  "notes": [
+   "Tickets: evening show, Lakeside Stage, 7:30pm",
+   "Bring blanket, outdoor seating"
+  ]
+ },
+ {
+  "id": "announce-8",
+  "expect": "offer",
+  "kinds": [
+   "alert"
+  ],
+  "heard": [
+   "Flight HM109 to Port Sable: departure time has been revised to 08:05. Gate information will be displayed at 07:15."
+  ],
+  "notes": [
+   "HM109 to Port Sable departs 06:50 from Terminal 2",
+   "Taxi booked for 05:30",
+   "Gate closes 06:20"
+  ]
+ },
+ {
+  "id": "announce-9",
+  "expect": "offer",
+  "kinds": [
+   "alert"
+  ],
+  "heard": [
+   "Supporters with tickets for Block N should now enter through Gate 12 on Hartley Road, as Gate 9 is closed."
+  ],
+  "notes": [
+   "Match ticket Block N, Row 8",
+   "Enter via Gate 9, arrive by 19:00"
+  ]
+ },
+ {
+  "id": "lookup-0",
+  "expect": "offer",
+  "kinds": [
+   "lookup",
+   "research"
+  ],
+  "heard": [
+   "Hey, can you find out what time the pharmacy on Bell Street closes tonight?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "lookup-1",
+  "expect": "offer",
+  "kinds": [
+   "lookup",
+   "research"
+  ],
+  "heard": [
+   "Nico, would you mind looking up whether the 8:40 train to Dunmore is still running on Sunday?",
+   "We need to know before we book the taxi."
+  ],
+  "notes": []
+ },
+ {
+  "id": "lookup-2",
+  "expect": "offer",
+  "kinds": [
+   "lookup",
+   "research"
+  ],
+  "heard": [
+   "When you get a sec, could you check how much a replacement filter costs for the Aquapure 300?",
+   "Mine's started flashing red."
+  ],
+  "notes": [
+   "Filter last changed in March"
+  ]
+ },
+ {
+  "id": "lookup-3",
+  "expect": "offer",
+  "kinds": [
+   "lookup",
+   "research"
+  ],
+  "heard": [
+   "Can you see if Dr. Latham's office moved?",
+   "The address on this letter says 14 Kestrel Lane, but Google showed something else last time."
+  ],
+  "notes": []
+ },
+ {
+  "id": "lookup-4",
+  "expect": "offer",
+  "kinds": [
+   "lookup",
+   "research"
+  ],
+  "heard": [
+   "Love, just look into flights to Porto for the 17th, yeah?",
+   "Nothing too early, we can't get to the airport before seven."
+  ],
+  "notes": []
+ },
+ {
+  "id": "lookup-5",
+  "expect": "offer",
+  "kinds": [
+   "lookup",
+   "research"
+  ],
+  "heard": [
+   "I was wondering \u2014 could you quietly find out if Jenna's bringing her dog to the cabin weekend?",
+   "Only because of Milo's allergy, I don't want to make a thing of it."
+  ],
+  "notes": [
+   "Milo allergic to dogs"
+  ]
+ },
+ {
+  "id": "lookup-6",
+  "expect": "offer",
+  "kinds": [
+   "lookup",
+   "research"
+  ],
+  "heard": [
+   "Ask around at work tomorrow and see if anyone knows a good plumber near Wexford, will you?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "lookup-7",
+  "expect": "offer",
+  "kinds": [
+   "lookup",
+   "research"
+  ],
+  "heard": [
+   "Could you check what ingredients are in that saffron rice kit from Marigold Market?",
+   "I need to know if it's got almonds in it before Friday."
+  ],
+  "notes": []
+ },
+ {
+  "id": "lookup-8",
+  "expect": "offer",
+  "kinds": [
+   "lookup",
+   "research"
+  ],
+  "heard": [
+   "Hey Priya \u2014 sorry, not you, sorry.",
+   "Sam, can you look up the parking rules at Hollowbrook Stadium for Saturday's game? I heard it's changed."
+  ],
+  "notes": []
+ },
+ {
+  "id": "lookup-9",
+  "expect": "offer",
+  "kinds": [
+   "lookup",
+   "research"
+  ],
+  "heard": [
+   "No rush at all, but sometime this week could you find out when our council tax direct debit actually leaves the account?",
+   "I thought it was the 1st but it came out on the 28th last month."
+  ],
+  "notes": [
+   "Direct debit seemed early in May"
+  ]
+ },
+ {
+  "id": "smalltalk-0",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Morning, Elena, did you sleep well?",
+   "Pretty well, thanks \u2014 the roosters over at Willow Creek Farm had other ideas around six."
+  ],
+  "notes": []
+ },
+ {
+  "id": "smalltalk-1",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "I tried that new bakery on Maple Row yesterday.",
+   "Oh, the almond croissants are lovely, aren't they?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "smalltalk-2",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Hard to believe it's already mid-October, the leaves on Alder Street turned overnight."
+  ],
+  "notes": []
+ },
+ {
+  "id": "smalltalk-3",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Your tomatoes are looking wonderful this year, Marcus.",
+   "Thank you! I think it's all that sunshine we had in August."
+  ],
+  "notes": []
+ },
+ {
+  "id": "smalltalk-4",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "We bumped into Priya and Jonah at the lakeside market on Saturday.",
+   "No way, how are they settling into the place on Cedar Lane?",
+   "Really well, they said the neighbours have been so welcoming."
+  ],
+  "notes": []
+ },
+ {
+  "id": "smalltalk-5",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "That shade of green really suits you, Sofia."
+  ],
+  "notes": []
+ },
+ {
+  "id": "smalltalk-6",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "My grandad used to tell that exact same story about fishing at Harrow Lake.",
+   "He'd always add a bigger fish every time he told it, too."
+  ],
+  "notes": []
+ },
+ {
+  "id": "smalltalk-7",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "The school play last night was sweet, wasn't it? Leo remembered all his lines.",
+   "He did, I was so proud I nearly cried during the second song."
+  ],
+  "notes": []
+ },
+ {
+  "id": "smalltalk-8",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Lovely evening for a stroll, isn't it?",
+   "It really is, just cool enough for a light jacket."
+  ],
+  "notes": []
+ },
+ {
+  "id": "smalltalk-9",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "I do love this time of day when the light hits the hills behind Portwell.",
+   "Mm, it makes everything look golden for about ten minutes."
+  ],
+  "notes": []
+ },
+ {
+  "id": "media-0",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "This weekend only at Bramble Auto on Route 19 in Kestrel Falls, get zero down and 2.9 percent financing on every new Crosswind SUV!",
+   "Offer ends Sunday, so come on down and ask for Dale!"
+  ],
+  "notes": []
+ },
+ {
+  "id": "media-1",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Now, gently fold in the egg whites, you don't want to knock all that air out.",
+   "See? Nice and glossy. We'll pop this in at 350 for about twenty-five minutes."
+  ],
+  "notes": []
+ },
+ {
+  "id": "media-2",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Please, you have to help me, he's right behind me!",
+   "Call Detective Lawson, tell him I'm at the old depot on Marlowe Street!"
+  ],
+  "notes": []
+ },
+ {
+  "id": "media-3",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "And looking at your seven-day forecast for the Riverbend area, highs near 68 tomorrow with scattered showers moving in after 4 p.m."
+  ],
+  "notes": []
+ },
+ {
+  "id": "media-4",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Are you tired of tossing and turning all night? Try Somniva tonight and wake up refreshed!",
+   "Call 1-800-555-0147 in the next ten minutes and we'll double your order, absolutely free!"
+  ],
+  "notes": []
+ },
+ {
+  "id": "media-5",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Oh no, Captain Sprinkles, the Rainbow Bridge is disappearing!",
+   "Quick, everybody sing the Friendship Song together!"
+  ],
+  "notes": [
+   "kids watching tablet in kitchen"
+  ]
+ },
+ {
+  "id": "media-6",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Martinez at the line, two seconds on the clock, he shoots... and it's off the rim! What a finish here in Port Halston Arena!"
+  ],
+  "notes": []
+ },
+ {
+  "id": "media-7",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Hungry, Juniper City? Two large pepperoni pies from Tony Zito's for just 19.99, tonight only when you order online!"
+  ],
+  "notes": []
+ },
+ {
+  "id": "media-8",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "By 1912, the expedition had reached Lake Verano, unaware that the coming winter would be the harshest in recorded history."
+  ],
+  "notes": []
+ },
+ {
+  "id": "media-9",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "If this fixed your leaking faucet, drop your questions in the comments below and don't forget to subscribe for a new tutorial every Tuesday."
+  ],
+  "notes": []
+ },
+ {
+  "id": "vague-0",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "We should get dinner sometime, Maya. It's been ages."
+  ],
+  "notes": []
+ },
+ {
+  "id": "vague-1",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Jonah: We really ought to catch up properly one of these days.",
+   "Priya: Yeah, definitely. Let me know."
+  ],
+  "notes": []
+ },
+ {
+  "id": "vague-2",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "We should try that new noodle place at some point."
+  ],
+  "notes": [
+   "Groceries: eggs, spinach"
+  ]
+ },
+ {
+  "id": "vague-3",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "At some point I'd love for us all to do a weekend away together."
+  ],
+  "notes": []
+ },
+ {
+  "id": "vague-4",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Tom, we keep saying we'll play tennis again. We should actually do it sometime."
+  ],
+  "notes": []
+ },
+ {
+  "id": "vague-5",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Maybe we could have Lena and Carlos over for dinner sometime soon.",
+   "Yeah, that would be nice."
+  ],
+  "notes": [
+   "Call dentist"
+  ]
+ },
+ {
+  "id": "vague-6",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "We should go back to that trail again one day, it was so pretty last time."
+  ],
+  "notes": []
+ },
+ {
+  "id": "vague-7",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "I'd like to take the kids to see Grandma Rosa again before too long."
+  ],
+  "notes": []
+ },
+ {
+  "id": "vague-8",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "We never did get that coffee, did we?",
+   "No, we should sort something out sometime, Sam."
+  ],
+  "notes": [
+   "Book club is Thursdays"
+  ]
+ },
+ {
+  "id": "vague-9",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "One of these evenings we should finally watch that film you mentioned."
+  ],
+  "notes": []
+ },
+ {
+  "id": "past-0",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Did you hear? Marco finally sold his old truck last Tuesday.",
+   "Got almost nine grand for it, way more than he expected."
+  ],
+  "notes": []
+ },
+ {
+  "id": "past-1",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "We went to that little bakery on Harbor Lane yesterday morning.",
+   "The cardamom buns were already sold out by ten."
+  ],
+  "notes": [
+   "Groceries: eggs, spinach"
+  ]
+ },
+ {
+  "id": "past-2",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "She told me the presentation went really well on Friday."
+  ],
+  "notes": []
+ },
+ {
+  "id": "past-3",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "I swear, the train was delayed for like forty minutes last night.",
+   "We didn't get into Millbrook until almost midnight, it was ridiculous."
+  ],
+  "notes": []
+ },
+ {
+  "id": "past-4",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Priya mentioned she already tried calling the landlord about the leak.",
+   "Apparently he sent someone out on Sunday and it's fixed now."
+  ],
+  "notes": [
+   "Rent due on the 1st"
+  ]
+ },
+ {
+  "id": "past-5",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Last summer we hiked up to Cedar Ridge and got completely lost.",
+   "Ended up following that creek all the way back down."
+  ],
+  "notes": []
+ },
+ {
+  "id": "past-6",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "He finished the marathon in three hours and twelve minutes, can you believe it?"
+  ],
+  "notes": [
+   "Call dentist sometime"
+  ]
+ },
+ {
+  "id": "past-7",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "At the meeting this morning, Jonah said the client already signed off.",
+   "So that whole redesign from last month is officially done."
+  ],
+  "notes": []
+ },
+ {
+  "id": "past-8",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "My sister visited that museum in Ashford when she was here in April.",
+   "She said the photography exhibit closed the week after."
+  ],
+  "notes": [
+   "Ashford - 2hr drive"
+  ]
+ },
+ {
+  "id": "past-9",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Oh yeah, I bumped into Elena at the farmers market on Saturday.",
+   "She'd just gotten back from visiting her parents in Porto Verde, looked really rested."
+  ],
+  "notes": []
+ },
+ {
+  "id": "others-0",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Yeah, tell Carlos his train to Leeds leaves at 6:15 tomorrow, platform 9.",
+   "He'll need to collect the tickets under booking TR482."
+  ],
+  "notes": [
+   "My train to York is on Thursday at 11:30",
+   "Grocery list: eggs, spinach, bread"
+  ]
+ },
+ {
+  "id": "others-1",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Don't forget, Mum's physio appointment got moved to Wednesday at 2:40 in Harrogate."
+  ],
+  "notes": [
+   "My physio is booked for Monday morning in town"
+  ]
+ },
+ {
+  "id": "others-2",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "She's booked the 8:05 flight to Lisbon for the twins, so they need to be at Heathrow by six."
+  ],
+  "notes": [
+   "No flights planned this month",
+   "Friday: budget review meeting at 10"
+  ]
+ },
+ {
+  "id": "others-3",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "We're taking Ben and Aisha to the theatre in Bath on Saturday night, the show starts at seven thirty.",
+   "I'll drive them, you don't need to sort parking."
+  ],
+  "notes": [
+   "Saturday night: staying in, call landlord about the leak"
+  ]
+ },
+ {
+  "id": "others-4",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "His dentist appointment is at 9:20, the clinic on Willow Lane.",
+   "Remind Jonah to bring his insurance card."
+  ],
+  "notes": [
+   "My dentist checkup was last month",
+   "Willow Lane: return parcel to post office"
+  ]
+ },
+ {
+  "id": "others-5",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "They've rescheduled the Hendersons' house viewing to 4 p.m. on Elm Street."
+  ],
+  "notes": [
+   "My house viewing is Sunday at noon on Cedar Avenue"
+  ]
+ },
+ {
+  "id": "others-6",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "For Nadia's wedding rehearsal, everyone needs to be at St. Mark's by five on Friday, okay?"
+  ],
+  "notes": [
+   "Friday evening: gym at 6, dinner at home"
+  ]
+ },
+ {
+  "id": "others-7",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Book a taxi for Grandpa Leo to get to his eye appointment at 1:15, the one in Norwich.",
+   "He said he wants to leave the house by twelve thirty."
+  ],
+  "notes": [
+   "My eye test is in Cambridge next week at 9 a.m."
+  ]
+ },
+ {
+  "id": "others-8",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "The kids' football practice moved to the field behind Greenhill School, it starts at 3:45 now."
+  ],
+  "notes": [
+   "No school pickups today",
+   "My running club meets at 7 p.m. at Riverside Park"
+  ]
+ },
+ {
+  "id": "others-9",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Tell Priya and Tom their connecting train in Munich leaves at 22:10, and the hotel is holding the room till midnight."
+  ],
+  "notes": [
+   "My trip to Munich was cancelled in March",
+   "Hotel booked in Berlin for August"
+  ]
+ },
+ {
+  "id": "irrelevant-0",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Attention passengers, the 14:20 service to Dunbridge will now depart from Platform 6.",
+   "We apologize for the change."
+  ],
+  "notes": [
+   "Pickup dry cleaning before 5pm",
+   "Eggs, oat milk, spinach",
+   "Call Mum about Sunday lunch"
+  ]
+ },
+ {
+  "id": "irrelevant-1",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Will the owner of a green umbrella left in the main hall please collect it from reception."
+  ],
+  "notes": [
+   "Dentist appointment - Dr. Patel, Tuesday 10:30am",
+   "Bring insurance card"
+  ]
+ },
+ {
+  "id": "irrelevant-2",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Good morning shoppers, today only, Aisle 4 has half-price tinned peaches while stocks last!"
+  ],
+  "notes": [
+   "Project deadline: submit Hawthorne report by Friday",
+   "Ask Luis about the spreadsheet formulas"
+  ]
+ },
+ {
+  "id": "irrelevant-3",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Final boarding call for Flight ZB418 to Tenerife, departing from Gate 19."
+  ],
+  "notes": [
+   "Flight ZB204 to Porto - Gate closes 08:40",
+   "Seat 14A",
+   "Hotel: Casa Mirante, check-in after 3pm"
+  ]
+ },
+ {
+  "id": "irrelevant-4",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Just a reminder that Floor 8 kitchens will be deep-cleaned this Sunday from 7am."
+  ],
+  "notes": [
+   "Meeting with Priya, Room 12, today at 3pm",
+   "Prepare slides on user retention"
+  ]
+ },
+ {
+  "id": "irrelevant-5",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "The Northgate branch library will close early at 4pm tomorrow for staff training."
+  ],
+  "notes": [
+   "Return 'The Salt Road' to Southfield Library by Saturday",
+   "Renew books online"
+  ]
+ },
+ {
+  "id": "irrelevant-6",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Please note, Thursday's 7pm Aqua Spin class at Riverside Leisure Centre is cancelled."
+  ],
+  "notes": [
+   "Gym: Monday 7pm Aqua Spin with Carla",
+   "Bring towel and padlock",
+   "Swimming costume in blue bag"
+  ]
+ },
+ {
+  "id": "irrelevant-7",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Can everyone welcome Jonah Reyes, who'll be running the charity bake sale in the lobby this Thursday."
+  ],
+  "notes": [
+   "Email Jonah Lee about the Q3 budget draft, due Thursday",
+   "Attach revised forecast v2"
+  ]
+ },
+ {
+  "id": "irrelevant-8",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Residents of Building C, water will be shut off on Wednesday between 9 and 11 for maintenance."
+  ],
+  "notes": [
+   "Flat 4, Building A - boiler service booked for Friday 9am",
+   "Meter reading: 04821"
+  ]
+ },
+ {
+  "id": "irrelevant-9",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Ladies and gentlemen, during the interval, the bar in the Grand Foyer will be serving the cast's signature mocktail."
+  ],
+  "notes": [
+   "Book taxi home for 10:45pm",
+   "Tickets are in coat pocket",
+   "Text Sam if running late"
+  ]
+ },
+ {
+  "id": "store-0",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Attention, FreshVale associates: cleanup on aisle five, cleanup on aisle five.",
+   "Please bring a mop and a wet floor sign."
+  ],
+  "notes": []
+ },
+ {
+  "id": "store-1",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Dana Whitfield, please report to receiving dock three.",
+   "Dana Whitfield, receiving dock three."
+  ],
+  "notes": []
+ },
+ {
+  "id": "store-2",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Staff reminder: the north stockroom will be locked for inventory at six p.m.",
+   "Please return all scanners to the charging cabinet before then."
+  ],
+  "notes": []
+ },
+ {
+  "id": "store-3",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Code ten at register four. Code ten, register four."
+  ],
+  "notes": []
+ },
+ {
+  "id": "store-4",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Good afternoon, team. This is Priya from the second-floor office.",
+   "Will whoever moved the key to meeting room B please return it to Facilities by three?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "store-5",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Maintenance to level P2, please. A ticket has been raised for bay seventeen."
+  ],
+  "notes": []
+ },
+ {
+  "id": "store-6",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "All cashiers, we are opening lanes eight and nine.",
+   "Luis and Amara, please log in when you're ready."
+  ],
+  "notes": []
+ },
+ {
+  "id": "store-7",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Platform staff, please note the 14:20 service to Northgate is now boarding from platform six.",
+   "Conductors to report to the duty manager before departure."
+  ],
+  "notes": []
+ },
+ {
+  "id": "store-8",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Would the duty pharmacist please come to consultation room two?",
+   "Duty pharmacist, consultation room two, thank you."
+  ],
+  "notes": []
+ },
+ {
+  "id": "store-9",
+  "expect": "none",
+  "kinds": [],
+  "heard": [
+   "Final call for the evening shift huddle by the staff entrance.",
+   "Bring your updated rota sheets with you."
+  ],
+  "notes": []
+ }
+]

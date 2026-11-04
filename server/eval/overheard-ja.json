@@ -1,0 +1,398 @@
+[
+ {
+  "id": "dinner",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "忘れないでね、金曜の夜7時にうちで夕ごはんだからね。",
+   "住所はパインストリート1420番地の3号室だよ。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "oat-milk",
+  "expect": "offer",
+  "kinds": [
+   "reminder",
+   "note"
+  ],
+  "heard": [
+   "帰りにオーツミルク買ってきてくれる？"
+  ],
+  "notes": []
+ },
+ {
+  "id": "dentist",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "歯医者さんから電話があって、クリーニングは木曜の10時半に変更になったって。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "phone-number",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "私の番号はよんいちごのごごごのゼロいちさんよんだから、着いたらテキストしてね。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "parking",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "オッケー、4階のG列に停めたよ。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "gate-change",
+  "expect": "offer",
+  "kinds": [
+   "alert",
+   "note"
+  ],
+  "notes": [
+   "今日の午後、UA812便でデンバーに行く"
+  ],
+  "heard": [
+   "お知らせします、デンバー行きユナイテッド航空812便は、B22番ゲートよりご搭乗ください。"
+  ]
+ },
+ {
+  "id": "platform-change",
+  "expect": "offer",
+  "kinds": [
+   "alert",
+   "note"
+  ],
+  "notes": [
+   "仕事終わりは5時15分のフリーモント行きに乗る"
+  ],
+  "heard": [
+   "ご乗車のお客様にお知らせします、5時15分発のフリーモント行きは5番ホームから発車します。"
+  ]
+ },
+ {
+  "id": "meeting-moved",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "ちょっと言っとくけど、プリヤとの会議、明日の午後3時にずれたから。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "passport",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "月曜の9時の予約にパスポートを持ってきてください。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "name",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "こちら、ダナ・ウィットフィールドさん。デザインチームを率いてる方だよ。",
+   "二人でローンチについて話してみてよ。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "rent",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "家賃はついたちまでだから、もう遅れないでね。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "prescription",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "薬局は今日の4時過ぎにお薬できるって言ってたよ。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "soccer",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "サッカーの練習、今週土曜の朝8時からリンカーンパークだよ。",
+   "今週、運転してくれる？"
+  ],
+  "notes": []
+ },
+ {
+  "id": "wifi",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "ワイファイのパスワードはオッター ブルー よんじゅうにで、ぜんぶ小文字だよ。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "birthday",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "ママの誕生日ランチは日曜のお昼12時、5番街のタイ料理屋さんだよ。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "museum",
+  "expect": "offer",
+  "kinds": [
+   "lookup",
+   "research"
+  ],
+  "heard": [
+   "博物館って月曜日開いてるか調べてくれる？"
+  ],
+  "notes": []
+ },
+ {
+  "id": "plumber",
+  "expect": "offer",
+  "kinds": [
+   "research",
+   "lookup"
+  ],
+  "heard": [
+   "今週来てくれる水道屋さんがどうしても必要なんだよね。",
+   "ちょっと調べてくれる？"
+  ],
+  "notes": []
+ },
+ {
+  "id": "package",
+  "expect": "offer",
+  "kinds": [
+   "reminder",
+   "note"
+  ],
+  "heard": [
+   "荷物は明日2時から4時の間に来るよ、サインがいるから誰か受け取らないと。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "kids",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "今日3時15分に子どもたち迎えに行ってくれる？仕事で抜けられなくて。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "locker",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "あなたのロッカーはにひゃくじゅうはちばんで、コードはよん、なな、いち、きゅうです。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "weather-chat",
+  "expect": "none",
+  "heard": [
+   "今日はいい天気だね？"
+  ],
+  "notes": []
+ },
+ {
+  "id": "game",
+  "expect": "none",
+  "heard": [
+   "昨日の夜の試合マジ信じらんない、あの終わり方やばかったよね。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "vague-dinner",
+  "expect": "none",
+  "heard": [
+   "今度ぜひ一緒にごはん行こうよ。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "trailer",
+  "expect": "none",
+  "heard": [
+   "新しい予告編見た？めっちゃすごそうだよ。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "tv",
+  "expect": "none",
+  "heard": [
+   "番組にお帰りなさい。休憩の後は、経済についてお話しします。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "coffee",
+  "expect": "none",
+  "heard": [
+   "このコーヒー、めっちゃ熱い。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "agreeing",
+  "expect": "none",
+  "heard": [
+   "うんうん、私もそう思う。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "tahoe",
+  "expect": "none",
+  "heard": [
+   "去年の冬にタホに行ったの覚えてる？あれめっちゃ楽しかったよね。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "other-train",
+  "expect": "none",
+  "notes": [
+   "仕事帰りは5時15分発のフリーモント行きに乗る"
+  ],
+  "heard": [
+   "お客様にお知らせします。サンノゼ行き6時40分発は、2番線でただいまご乗車中です。"
+  ]
+ },
+ {
+  "id": "radio-ad",
+  "expect": "none",
+  "heard": [
+   "今週末、スリープワールドでマットレスが一つ買うともう一つタダだって！"
+  ],
+  "notes": []
+ },
+ {
+  "id": "blue-one",
+  "expect": "none",
+  "heard": [
+   "青いほうが似合うと思うよ。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "traffic",
+  "expect": "none",
+  "heard": [
+   "うわー、今朝の渋滞ひどかったなぁ。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "anyway",
+  "expect": "none",
+  "heard": [
+   "でさぁ、考えとくって言ってたよ。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "eggs",
+  "expect": "none",
+  "heard": [
+   "卵、今めっちゃ高くない？"
+  ],
+  "notes": []
+ },
+ {
+  "id": "laugh",
+  "expect": "none",
+  "heard": [
+   "あはは、それ超ウケる。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "puppy",
+  "expect": "none",
+  "heard": [
+   "うちの姉ちゃんがさ、最近子犬飼い始めたんだけど、めっちゃかわいいんだよね。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "lunch-yesterday",
+  "expect": "none",
+  "heard": [
+   "昨日お昼にピザ食べたけど、まあまあだったよ。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "tired",
+  "expect": "none",
+  "heard": [
+   "めっちゃ疲れた、昨日の夜ほとんど寝てないんだよね。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "store-pa",
+  "expect": "none",
+  "heard": [
+   "5番通路、掃除お願いします。"
+  ],
+  "notes": []
+ },
+ {
+  "id": "next-stop",
+  "expect": "none",
+  "heard": [
+   "次はパウエルストリートです。"
+  ],
+  "notes": []
+ }
+]

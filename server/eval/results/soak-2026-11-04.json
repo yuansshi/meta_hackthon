@@ -1,0 +1,123 @@
+{
+ "at": "2026-11-04T05:26:06",
+ "summary": {
+  "prompts": 14,
+  "answered": 13,
+  "after_60_min": "2/2",
+  "minutes": 70.6
+ },
+ "rows": [
+  {
+   "n": 0,
+   "minute": 0.1,
+   "ok": true,
+   "first_s": 2.05,
+   "said": "It's four fifteen in the morning, Wednesday November fourth. ",
+   "heard": "Hey Earshot, what time is it?"
+  },
+  {
+   "n": 1,
+   "minute": 5.1,
+   "ok": true,
+   "first_s": 1.46,
+   "said": "It's four twenty in the morning, Wednesday November fourth. ",
+   "heard": "Hey Earshot, what time is it?"
+  },
+  {
+   "n": 2,
+   "minute": 10.1,
+   "ok": true,
+   "first_s": 1.79,
+   "said": "It's four twenty five in the morning, Wednesday November fourth. ",
+   "heard": "Hey Earshot, what time is it?"
+  },
+  {
+   "n": 3,
+   "minute": 15.2,
+   "ok": true,
+   "first_s": 4.26,
+   "said": "It's four thirty in the morning, Wednesday November fourth. ",
+   "heard": "Hey earshot, what time is it?"
+  },
+  {
+   "n": 4,
+   "minute": 20.2,
+   "ok": true,
+   "first_s": 3.9,
+   "said": "It's four thirty five in the morning, Wednesday November fourth. ",
+   "heard": "Hey earshot, what time is it?"
+  },
+  {
+   "n": 5,
+   "minute": 25.2,
+   "ok": true,
+   "first_s": 3.59,
+   "said": "It's four forty in the morning, Wednesday November fourth. ",
+   "heard": "Hey earshot, what time is it?"
+  },
+  {
+   "n": 6,
+   "minute": 30.3,
+   "ok": true,
+   "first_s": 2.23,
+   "said": "It's four forty five in the morning, Wednesday November fourth. ",
+   "heard": "Hey earshot, what time is it?"
+  },
+  {
+   "n": 7,
+   "minute": 35.3,
+   "ok": true,
+   "first_s": 4.81,
+   "said": "It's four fifty in the morning, Wednesday November fourth. ",
+   "heard": "Hey earshot, what time is it?"
+  },
+  {
+   "n": 8,
+   "minute": 40.3,
+   "ok": true,
+   "first_s": 4.09,
+   "said": "It's four fifty-five in the morning, Wednesday, November fourth. ",
+   "heard": ".hey earshot, what time is it?"
+  },
+  {
+   "n": 9,
+   "minute": 45.4,
+   "ok": true,
+   "first_s": 5.73,
+   "said": "It's five in the morning, Wednesday November fourth. ",
+   "heard": "Hey earshot what time is it"
+  },
+  {
+   "n": 10,
+   "minute": 50.4,
+   "ok": true,
+   "first_s": 1.93,
+   "said": "It's five oh six in the morning, Wednesday November fourth. ",
+   "heard": "Hey earshot what time is it?"
+  },
+  {
+   "n": 11,
+   "minute": 55.5,
+   "ok": false,
+   "first_s": null,
+   "said": "",
+   "heard": ""
+  },
+  {
+   "n": 12,
+   "minute": 60.5,
+   "ok": true,
+   "first_s": 3.45,
+   "said": "It's five sixteen in the morning, Wednesday November fourth. ",
+   "heard": "Hey earshot, what time is it?"
+  },
+  {
+   "n": 13,
+   "minute": 65.5,
+   "ok": true,
+   "first_s": 2.11,
+   "said": "It's five twenty one in the morning, Wednesday November fourth. ",
+   "heard": "Hey earshot what time is it"
+  }
+ ]
+}

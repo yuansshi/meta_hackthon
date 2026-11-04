@@ -9,6 +9,7 @@ connects. If Wonder is unavailable, Muse Spark Open does the job (without web se
 from __future__ import annotations
 
 import asyncio
+import json
 import logging
 import re
 import time
@@ -16,6 +17,7 @@ import uuid
 from collections import Counter
 from dataclasses import dataclass, field
 from datetime import datetime
+from pathlib import Path
 from zoneinfo import ZoneInfo
 
 from openai import AsyncOpenAI
@@ -34,7 +36,8 @@ Task: {goal}
 Context from the conversation: {context}
 Research as needed{search}, then reply in exactly this shape:
 SUMMARY: two or three short sentences meant to be spoken aloud, answer first, no lists or URLs.
-DETAILS: concise notes with the key facts, options, prices or times{sources}."""
+DETAILS: concise notes with the key facts, options, prices or times{sources}.
+Write both in {language}."""
 
 TOOL_DESCRIPTION = (
     "Hand a job that needs real research or planning (comparing options, planning a trip or a day, digging "
@@ -71,13 +74,19 @@ class Job:
     context: str
     tz: str
     actions: ActionLog
+    language: str = "English"
     started: float = field(default_factory=time.monotonic)
 
 
 class Researcher:
-    def __init__(self, cfg: dict, budget: Budget, clients: dict | None = None, poll_s: float | None = None):
+    def __init__(self, cfg: dict, budget: Budget, clients: dict | None = None, poll_s: float | None = None,
+                 store: Path | None = None):
         self.cfg = cfg
         self.budget = budget
+        # Jobs in flight and reports not yet delivered are kept here, so a server restart loses neither: a Muse Wonder
+        # background response keeps running at Meta while we're down, and resume() picks it up again.
+        self.store = store
+        self.shutting_down = False
         self.clients = clients if clients is not None else {}  # provider -> AsyncOpenAI (tests inject fakes)
         rc = cfg.get("research", {})
         self.poll_s = poll_s if poll_s is not None else rc.get("poll_s", 3)
@@ -92,13 +101,46 @@ class Researcher:
     def attach(self, device_id: str, session) -> list[dict]:
         """Registers a session and returns the reports that finished while the device was away."""
         self.live[device_id] = session
-        return self.inbox.pop(device_id, [])
+        reports = self.inbox.pop(device_id, [])
+        if (path := self._file("inbox", device_id)) and path.exists():
+            known = {r["job"] for r in reports}
+            reports += [r for r in json.loads(path.read_text()) if r["job"] not in known]  # kept over a restart
+            path.unlink(missing_ok=True)
+        return reports
+
+    def _file(self, kind: str, name: str) -> Path | None:
+        return self.store / kind / f"{name}.json" if self.store else None
+
+    def _write(self, kind: str, name: str, data) -> None:
+        if path := self._file(kind, name):
+            path.parent.mkdir(parents=True, exist_ok=True)
+            tmp = path.with_suffix(".tmp")
+            tmp.write_text(json.dumps(data))
+            tmp.replace(path)
+
+    def resume(self) -> int:
+        """After a restart: poll again the background jobs that were in flight. Returns how many."""
+        folder = self.store / "pending" if self.store else None
+        if not folder or not folder.exists():
+            return 0
+        n = 0
+        for path in folder.glob("*.json"):
+            d = json.loads(path.read_text())
+            if time.time() - d["at"] > self.timeout_s:
+                path.unlink(missing_ok=True)
+                continue
+            task = asyncio.create_task(self._resume(d))
+            self.tasks.add(task)
+            task.add_done_callback(self.tasks.discard)
+            n += 1
+        return n
 
     def detach(self, device_id: str, session) -> None:
         if self.live.get(device_id) is session:
             del self.live[device_id]
 
-    def start(self, device_id: str, goal: str, context: str, tz: str, actions: ActionLog) -> dict:
+    def start(self, device_id: str, goal: str, context: str, tz: str, actions: ActionLog,
+              language: str = "English") -> dict:
         if time.strftime("%Y-%m-%d") != self.day:
             self.day, self.started = time.strftime("%Y-%m-%d"), Counter()
         if not goal.strip():
@@ -106,7 +148,7 @@ class Researcher:
         if self.started[device_id] >= self.per_day:
             return {"error": f"this device already started {self.per_day} research jobs today"}
         self.started[device_id] += 1
-        job = Job(uuid.uuid4().hex[:8], device_id, goal.strip(), context.strip(), tz or "UTC", actions)
+        job = Job(uuid.uuid4().hex[:8], device_id, goal.strip(), context.strip(), tz or "UTC", actions, language)
         task = asyncio.create_task(self._run(job))
         self.tasks.add(task)
         task.add_done_callback(self.tasks.discard)
@@ -127,7 +169,40 @@ class Researcher:
             log.warning("research %s failed: %r", job.id, e)
             report["ok"] = False
             result = {"error": f"{type(e).__name__}: {e}"[:200]}
+        # Not in a finally: a shutdown (CancelledError) must leave the job on disk for resume().
+        if path := self._file("pending", job.id):
+            path.unlink(missing_ok=True)
         report["seconds"] = round(time.monotonic() - job.started)
+        report["entry"] = job.actions.finish(entry, report["ok"], result)
+        await self.deliver(job.device_id, report)
+
+    async def _resume(self, d: dict) -> None:
+        job = Job(d["id"], d["device_id"], d["goal"], d.get("context", ""), d.get("tz", "UTC"),
+                  ActionLog(Path(d["actions"]) if d.get("actions") else None), d.get("language", "English"))
+        m = model_cfg(self.cfg, d["model_key"])
+        entry = job.actions.start("research", {"goal": job.goal, "resumed": True}, "server")
+        report: dict = {"job": job.id, "goal": job.goal, "searches": 0, "cost_usd": 0.0, "model": m["id"]}
+        try:
+            client = self.client(m)
+            r = await client.responses.retrieve(d["response_id"])
+            while r.status in ("queued", "in_progress"):
+                if time.time() - d["at"] > self.timeout_s:
+                    await client.responses.cancel(r.id)
+                    raise TimeoutError("the research ran too long")
+                await asyncio.sleep(self.poll_s)
+                r = await client.responses.retrieve(r.id)
+            text, report["model"], report["searches"], report["cost_usd"] = self._result(m, r)
+            report["summary"], report["details"] = split_report(text)
+            report["ok"] = bool(report["summary"])
+            result = {"summary": report["summary"], "model": report["model"], "searches": report["searches"],
+                      "resumed": True}
+        except Exception as e:
+            log.warning("resumed research %s failed: %r", job.id, e)
+            report["ok"] = False
+            result = {"error": f"{type(e).__name__}: {e}"[:200]}
+        if path := self._file("pending", job.id):
+            path.unlink(missing_ok=True)
+        report["seconds"] = round(time.time() - d["at"])
         report["entry"] = job.actions.finish(entry, report["ok"], result)
         await self.deliver(job.device_id, report)
 
@@ -140,6 +215,7 @@ class Researcher:
             except Exception:
                 log.exception("delivering report %s failed; keeping it for later", report["job"])
         self.inbox.setdefault(device_id, []).append(report)
+        self._write("inbox", device_id, self.inbox[device_id])  # and on disk, in case the server restarts first
 
     def client(self, m: dict) -> AsyncOpenAI:
         if m["provider"] not in self.clients:
@@ -153,7 +229,7 @@ class Researcher:
         except (KeyError, ValueError):
             now = datetime.now(ZoneInfo("UTC")).strftime("%A %B %-d, %Y, %-I:%M %p")
         searching = m.get("web_search")
-        return PROMPT.format(now=now, tz=job.tz, goal=job.goal, context=job.context or "none",
+        return PROMPT.format(now=now, tz=job.tz, goal=job.goal, context=job.context or "none", language=job.language,
                              search=" with web search" if searching else " (you can't browse the web now; say so "
                              "briefly if live information matters)",
                              sources=", with sources" if searching else "")
@@ -176,16 +252,24 @@ class Researcher:
             model=m["id"], input=self.prompt(job, m), background=True,
             tools=[{"type": "web_search"}] if m.get("web_search") else [],
             reasoning={"effort": m["reasoning_effort"]}, max_output_tokens=m["max_output_tokens"])
+        self._write("pending", job.id, {"id": job.id, "device_id": job.device_id, "goal": job.goal, "context": job.context,
+                                        "tz": job.tz, "language": job.language, "response_id": r.id,
+                                        "model_key": self.cfg["background"], "at": time.time(),
+                                        "actions": str(job.actions.path) if job.actions.path else None})
         try:
             while r.status in ("queued", "in_progress"):
                 await asyncio.sleep(self.poll_s)
                 r = await client.responses.retrieve(r.id)
-        except asyncio.CancelledError:  # timed out: don't leave the job burning credits
-            try:
-                await client.responses.cancel(r.id)
-            except Exception:
-                pass
-            raise
+        except asyncio.CancelledError:
+            if not self.shutting_down:  # timed out: don't leave the job burning credits
+                try:
+                    await client.responses.cancel(r.id)
+                except Exception:
+                    pass
+            raise  # shutting down: the job runs on at Meta, and resume() collects it
+        return self._result(m, r)
+
+    def _result(self, m: dict, r) -> tuple[str, str, int, float]:
         if r.status != "completed":
             raise AgentError(f"research ended {r.status}: {getattr(r, 'error', None)}")
         searches = sum(1 for o in r.output if o.type == "web_search_call")

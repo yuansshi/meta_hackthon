@@ -1,0 +1,398 @@
+[
+ {
+  "id": "dinner",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Huwag mong kalimutan, sa bahay ko tayo magdi-dinner sa Friday, alas-siyete ng gabi.",
+   "1420 Pine Street, unit 3 yung address."
+  ],
+  "notes": []
+ },
+ {
+  "id": "oat-milk",
+  "expect": "offer",
+  "kinds": [
+   "reminder",
+   "note"
+  ],
+  "heard": [
+   "Pabili naman ng oat milk pag-uwi mo?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "dentist",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Tumawag yung dentista, nilipat yung cleaning mo sa Huwebes, alas-diyes y medya ng umaga."
+  ],
+  "notes": []
+ },
+ {
+  "id": "phone-number",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Number ko four one five five five five zero one three four, text mo ako pag lapag mo."
+  ],
+  "notes": []
+ },
+ {
+  "id": "parking",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Okay, naka-park tayo sa level 4, row G."
+  ],
+  "notes": []
+ },
+ {
+  "id": "gate-change",
+  "expect": "offer",
+  "kinds": [
+   "alert",
+   "note"
+  ],
+  "notes": [
+   "lilipad ng UA eight twelve papuntang Denver ngayong hapon"
+  ],
+  "heard": [
+   "Pansin po, yung United flight eight twelve papuntang Denver, boarding na po sa gate B twenty-two."
+  ]
+ },
+ {
+  "id": "platform-change",
+  "expect": "offer",
+  "kinds": [
+   "alert",
+   "note"
+  ],
+  "notes": [
+   "Sumasakay ako sa alas-5:15 papuntang Fremont pagkatapos ng trabaho"
+  ],
+  "heard": [
+   "Pansin po mga pasahero, yung alas-5:15 papuntang Fremont, sa platform 5 na po aalis."
+  ]
+ },
+ {
+  "id": "meeting-moved",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Uy, heads up lang, yung meeting with Priya na-move bukas, alas 3 ng hapon na."
+  ],
+  "notes": []
+ },
+ {
+  "id": "passport",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Dalhin mo yung passport mo sa appointment mo sa Lunes ng alas-nuwebe."
+  ],
+  "notes": []
+ },
+ {
+  "id": "name",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Ito si Dana Whitfield, siya ang head ng design team.",
+   "Mag-usap kayong dalawa tungkol sa launch."
+  ],
+  "notes": []
+ },
+ {
+  "id": "rent",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Sa uno ang bayad ng upa, wag ka nang ma-late ulit."
+  ],
+  "notes": []
+ },
+ {
+  "id": "prescription",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Sabi ng botika, ready na raw yung reseta mo pagkatapos ng alas-4 ngayon."
+  ],
+  "notes": []
+ },
+ {
+  "id": "soccer",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Sa Lincoln Park yung soccer practice ngayong Sabado ng 8 AM.",
+   "Pwede bang ikaw muna mag-drive ngayong linggo?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "wifi",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Ang Wi-Fi password ay otter blue forty-two, puro small letter."
+  ],
+  "notes": []
+ },
+ {
+  "id": "birthday",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Yung birthday lunch ni Mama sa Linggo ng tanghali, dun sa Thai place sa Fifth."
+  ],
+  "notes": []
+ },
+ {
+  "id": "museum",
+  "expect": "offer",
+  "kinds": [
+   "lookup",
+   "research"
+  ],
+  "heard": [
+   "Pwede mo bang alamin kung bukas yung museum sa Lunes?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "plumber",
+  "expect": "offer",
+  "kinds": [
+   "research",
+   "lookup"
+  ],
+  "heard": [
+   "Kailangan talaga namin ng tubero na makakapunta ngayong linggo.",
+   "Pwede mo bang asikasuhin 'yun?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "package",
+  "expect": "offer",
+  "kinds": [
+   "reminder",
+   "note"
+  ],
+  "heard": [
+   "Darating bukas yung package mo, mga alas-dos hanggang alas-kwatro, kailangan may pipirma."
+  ],
+  "notes": []
+ },
+ {
+  "id": "kids",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Pwede mo bang sunduin yung mga bata mamayang alas-tres kinse? Na-stuck ako sa trabaho."
+  ],
+  "notes": []
+ },
+ {
+  "id": "locker",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Yung locker mo number two one eight, tapos yung code ay four seven one nine."
+  ],
+  "notes": []
+ },
+ {
+  "id": "weather-chat",
+  "expect": "none",
+  "heard": [
+   "Ang ganda ng panahon ngayon, 'di ba?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "game",
+  "expect": "none",
+  "heard": [
+   "Grabe yung laro kagabi, hindi ako makapaniwala sa ending."
+  ],
+  "notes": []
+ },
+ {
+  "id": "vague-dinner",
+  "expect": "none",
+  "heard": [
+   "Sana makapag-dinner tayo minsan."
+  ],
+  "notes": []
+ },
+ {
+  "id": "trailer",
+  "expect": "none",
+  "heard": [
+   "Nakita mo na ba yung bagong trailer? Mukhang ang ganda."
+  ],
+  "notes": []
+ },
+ {
+  "id": "tv",
+  "expect": "none",
+  "heard": [
+   "Welcome back sa show. Pagkatapos ng break, pag-uusapan natin ang ekonomiya."
+  ],
+  "notes": []
+ },
+ {
+  "id": "coffee",
+  "expect": "none",
+  "heard": [
+   "Sobrang init naman ng kapeng 'to."
+  ],
+  "notes": []
+ },
+ {
+  "id": "agreeing",
+  "expect": "none",
+  "heard": [
+   "Oo, hindi, sa tingin ko ganun din."
+  ],
+  "notes": []
+ },
+ {
+  "id": "tahoe",
+  "expect": "none",
+  "heard": [
+   "Naalala mo nung pumunta tayo sa Tahoe last winter? Sobrang saya nun."
+  ],
+  "notes": []
+ },
+ {
+  "id": "other-train",
+  "expect": "none",
+  "notes": [
+   "Sumasakay ako sa alas-singko kinse papuntang Fremont pagkatapos ng trabaho."
+  ],
+  "heard": [
+   "Atensyon mga pasahero, yung alas-sais kuwarenta papuntang San Jose, sumasakay na ngayon sa platform dos."
+  ]
+ },
+ {
+  "id": "radio-ad",
+  "expect": "none",
+  "heard": [
+   "Buy one take one sa lahat ng mga mattress ngayong weekend sa Sleep World!"
+  ],
+  "notes": []
+ },
+ {
+  "id": "blue-one",
+  "expect": "none",
+  "heard": [
+   "Sa tingin ko mas bagay sa'yo yung asul."
+  ],
+  "notes": []
+ },
+ {
+  "id": "traffic",
+  "expect": "none",
+  "heard": [
+   "Hay nako, ang lala ng traffic kaninang umaga."
+  ],
+  "notes": []
+ },
+ {
+  "id": "anyway",
+  "expect": "none",
+  "heard": [
+   "So anyway, sabi niya pag-iisipan daw niya."
+  ],
+  "notes": []
+ },
+ {
+  "id": "eggs",
+  "expect": "none",
+  "heard": [
+   "Grabe, ang mahal na ng itlog ngayon, 'di ba?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "laugh",
+  "expect": "none",
+  "heard": [
+   "Haha, ang nakakatawa naman."
+  ],
+  "notes": []
+ },
+ {
+  "id": "puppy",
+  "expect": "none",
+  "heard": [
+   "Kakakuha lang ng sister ko ng bagong puppy, sobrang cute niya."
+  ],
+  "notes": []
+ },
+ {
+  "id": "lunch-yesterday",
+  "expect": "none",
+  "heard": [
+   "Nag-pizza kami kahapon nung lunch, okay naman."
+  ],
+  "notes": []
+ },
+ {
+  "id": "tired",
+  "expect": "none",
+  "heard": [
+   "Pagod na pagod na ako, halos hindi ako nakatulog kagabi."
+  ],
+  "notes": []
+ },
+ {
+  "id": "store-pa",
+  "expect": "none",
+  "heard": [
+   "Palinis po sa aisle five."
+  ],
+  "notes": []
+ },
+ {
+  "id": "next-stop",
+  "expect": "none",
+  "heard": [
+   "Ang susunod na hinto ay Powell Street."
+  ],
+  "notes": []
+ }
+]

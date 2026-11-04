@@ -21,6 +21,7 @@ def test_handshake_sets_endpointing_explicitly():
     assert hs["audioEncoding"] == "PCM_16KHZ"
     assert hs["authorization"]["accessToken"] == "Bearer k"
     assert "Earshot" in hs["keywords"]
+    assert hs["emitAudioProgress"] is True  # the stall watchdog's heartbeat
 
 
 def test_jitter_buffer_primes_drains_and_reprimes():
@@ -82,5 +83,39 @@ async def test_rejected_handshake_is_retried():
     task = asyncio.create_task(r.run())
     await asyncio.sleep(0.8)
     assert r.session_id == "s2"
+    await r.close()
+    task.cancel()
+
+
+async def test_a_stalled_stream_is_closed_and_reopened():
+    events = []
+
+    async def on_event(evt):
+        events.append(evt)
+
+    first = FakeWS([{"sessionId": "s1"}, {"type": "audioProgress", "audioProcessedMs": 80}])  # then nothing at all
+    second = FakeWS([{"sessionId": "s2"}])
+    r = AsrRelay(fast_cfg(stall_s=0.3), "k", on_event, connect=FakeConnect([first, second]))
+    task = asyncio.create_task(r.run())
+    await asyncio.sleep(1.1)  # 0.3 s of quiet, then the 0.5 s reconnect backoff
+    assert r.stalls >= 1 and r.session_id == "s2"
+    assert first.close_code == 4000
+    assert events == []  # the heartbeat isn't passed on to the session
+    await r.close()
+    task.cancel()
+
+
+async def test_a_refused_speech_service_is_reported_once_and_then_its_return():
+    events = []
+
+    async def on_event(evt):
+        events.append(evt)
+
+    refused = [FakeWS([{"type": "error", "message": "insufficient credit"}]) for _ in range(3)]
+    r = AsrRelay(fast_cfg(), "k", on_event, connect=FakeConnect([*refused, FakeWS([{"sessionId": "s4"}])]))
+    task = asyncio.create_task(r.run())
+    await asyncio.sleep(4.5)  # backoff 0.5 + 1 + 2 s between the refusals
+    kinds = [e["type"] for e in events]
+    assert kinds.count("relayDown") == 1 and kinds[-1] == "relayUp" and r.session_id == "s4"
     await r.close()
     task.cancel()

@@ -1,0 +1,94 @@
+{
+ "at": "2026-11-04T13:34:28",
+ "complete": true,
+ "snippets": 480,
+ "judge_agreed": 431,
+ "judge_disagreed_by_category": {
+  "plan": 0,
+  "ask": 9,
+  "detail": 26,
+  "announce": 3,
+  "lookup": 8,
+  "smalltalk": 0,
+  "media": 0,
+  "vague": 0,
+  "past": 0,
+  "others": 3,
+  "irrelevant": 0,
+  "store": 0
+ },
+ "screeners": {
+  "Muse Spark 1.2, minimal (shipped)": {
+   "screened": 431,
+   "precision": 0.895,
+   "recall": 0.994,
+   "false_offer_rate": 0.065,
+   "p50_s": 1.391,
+   "cost_per_screen": 0.00129,
+   "errors": 0,
+   "false_offers_by_category": {
+    "smalltalk": 1,
+    "media": 0,
+    "vague": 0,
+    "past": 4,
+    "others": 13,
+    "irrelevant": 0,
+    "store": 0
+   }
+  },
+  "Muse Spark 1.3, minimal": {
+   "screened": 431,
+   "precision": 0.886,
+   "recall": 0.961,
+   "false_offer_rate": 0.069,
+   "p50_s": 2.632,
+   "cost_per_screen": 0.00147,
+   "errors": 0,
+   "false_offers_by_category": {
+    "smalltalk": 0,
+    "media": 0,
+    "vague": 0,
+    "past": 3,
+    "others": 15,
+    "irrelevant": 1,
+    "store": 0
+   }
+  },
+  "Muse Wonder 1.0, low": {
+   "screened": 431,
+   "precision": 0.921,
+   "recall": 0.987,
+   "false_offer_rate": 0.047,
+   "p50_s": 2.953,
+   "cost_per_screen": 0.00904,
+   "errors": 0,
+   "false_offers_by_category": {
+    "smalltalk": 0,
+    "media": 0,
+    "vague": 0,
+    "past": 5,
+    "others": 8,
+    "irrelevant": 0,
+    "store": 0
+   }
+  },
+  "Muse Spark Open on Fireworks, low": {
+   "screened": 431,
+   "precision": 0.921,
+   "recall": 0.981,
+   "false_offer_rate": 0.047,
+   "p50_s": 15.84,
+   "cost_per_screen": 0.00209,
+   "errors": 0,
+   "false_offers_by_category": {
+    "smalltalk": 1,
+    "media": 0,
+    "vague": 0,
+    "past": 4,
+    "others": 8,
+    "irrelevant": 0,
+    "store": 0
+   }
+  }
+ }
+}

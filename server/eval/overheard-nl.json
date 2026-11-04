@@ -1,0 +1,398 @@
+[
+ {
+  "id": "dinner",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Vergeet niet, vrijdag om zeven uur 's avonds eten bij mij thuis.",
+   "Het is Pine Street veertien twintig, appartement drie."
+  ],
+  "notes": []
+ },
+ {
+  "id": "oat-milk",
+  "expect": "offer",
+  "kinds": [
+   "reminder",
+   "note"
+  ],
+  "heard": [
+   "Kun je op weg naar huis havermelk meenemen?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "dentist",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "De tandarts heeft gebeld, ze hebben je gebitsreiniging verplaatst naar donderdag om half elf."
+  ],
+  "notes": []
+ },
+ {
+  "id": "phone-number",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Mijn nummer is vier één vijf, vijf vijf vijf, nul één drie vier, app me als je geland bent."
+  ],
+  "notes": []
+ },
+ {
+  "id": "parking",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Oké, we staan op niveau vier, rij G."
+  ],
+  "notes": []
+ },
+ {
+  "id": "gate-change",
+  "expect": "offer",
+  "kinds": [
+   "alert",
+   "note"
+  ],
+  "notes": [
+   "vlieg vanmiddag met UA achthonderdtwaalf naar Denver"
+  ],
+  "heard": [
+   "Attentie alstublieft, United-vlucht achthonderdtwaalf naar Denver gaat nu boarden bij gate B tweeëntwintig."
+  ]
+ },
+ {
+  "id": "platform-change",
+  "expect": "offer",
+  "kinds": [
+   "alert",
+   "note"
+  ],
+  "notes": [
+   "Ik pak na m'n werk de trein van kwart over vijf naar Fremont"
+  ],
+  "heard": [
+   "Beste reizigers, de trein van kwart over vijf naar Fremont vertrekt nu van spoor vijf."
+  ]
+ },
+ {
+  "id": "meeting-moved",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Hé, de afspraak met Priya is verplaatst naar morgen om drie uur 's middags."
+  ],
+  "notes": []
+ },
+ {
+  "id": "passport",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Neem maandag om negen uur je paspoort mee naar de afspraak."
+  ],
+  "notes": []
+ },
+ {
+  "id": "name",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Dit is Dana Whitfield, zij leidt het designteam.",
+   "Jullie moeten het samen even over de lancering hebben."
+  ],
+  "notes": []
+ },
+ {
+  "id": "rent",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "De huur moet op de eerste betaald zijn, wees niet weer te laat."
+  ],
+  "notes": []
+ },
+ {
+  "id": "prescription",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "De apotheek zei dat je recept na vieren vandaag klaar is."
+  ],
+  "notes": []
+ },
+ {
+  "id": "soccer",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "De voetbaltraining is deze zaterdag om 8 uur 's ochtends in Lincoln Park.",
+   "Kun je deze week rijden?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "wifi",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Het wifi-wachtwoord is otter blue tweeënveertig, alles in kleine letters."
+  ],
+  "notes": []
+ },
+ {
+  "id": "birthday",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Mama's verjaardagslunch is zondag om twaalf uur 's middags, bij de Thai op Fifth."
+  ],
+  "notes": []
+ },
+ {
+  "id": "museum",
+  "expect": "offer",
+  "kinds": [
+   "lookup",
+   "research"
+  ],
+  "heard": [
+   "Kun je even opzoeken of het museum op maandag open is?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "plumber",
+  "expect": "offer",
+  "kinds": [
+   "research",
+   "lookup"
+  ],
+  "heard": [
+   "We hebben echt een loodgieter nodig die deze week nog kan langskomen.",
+   "Kun je dat even uitzoeken?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "package",
+  "expect": "offer",
+  "kinds": [
+   "reminder",
+   "note"
+  ],
+  "heard": [
+   "Je pakketje wordt morgen bezorgd tussen twee en vier, er moet iemand voor tekenen."
+  ],
+  "notes": []
+ },
+ {
+  "id": "kids",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Kun je vandaag om kwart over drie de kinderen ophalen? Ik zit nog vast op m'n werk."
+  ],
+  "notes": []
+ },
+ {
+  "id": "locker",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Je kluisje is nummer tweehonderdachttien, en de code is vier zeven een negen."
+  ],
+  "notes": []
+ },
+ {
+  "id": "weather-chat",
+  "expect": "none",
+  "heard": [
+   "Lekker weer vandaag, hè?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "game",
+  "expect": "none",
+  "heard": [
+   "Niet te geloven, die wedstrijd van gisteravond, wat een finish zeg."
+  ],
+  "notes": []
+ },
+ {
+  "id": "vague-dinner",
+  "expect": "none",
+  "heard": [
+   "We moeten echt een keer samen gaan eten."
+  ],
+  "notes": []
+ },
+ {
+  "id": "trailer",
+  "expect": "none",
+  "heard": [
+   "Heb je de nieuwe trailer al gezien? Hij ziet er echt geweldig uit."
+  ],
+  "notes": []
+ },
+ {
+  "id": "tv",
+  "expect": "none",
+  "heard": [
+   "Welkom terug bij de show. Na de pauze gaan we het over de economie hebben."
+  ],
+  "notes": []
+ },
+ {
+  "id": "coffee",
+  "expect": "none",
+  "heard": [
+   "Deze koffie is veel te heet."
+  ],
+  "notes": []
+ },
+ {
+  "id": "agreeing",
+  "expect": "none",
+  "heard": [
+   "Ja, nee, ik denk het ook."
+  ],
+  "notes": []
+ },
+ {
+  "id": "tahoe",
+  "expect": "none",
+  "heard": [
+   "Weet je nog dat we vorige winter naar Tahoe gingen? Dat was echt superleuk."
+  ],
+  "notes": []
+ },
+ {
+  "id": "other-train",
+  "expect": "none",
+  "notes": [
+   "Ik pak na m'n werk de trein van kwart over vijf naar Fremont"
+  ],
+  "heard": [
+   "Beste reizigers, de trein van zes uur veertig naar San Jose staat klaar om in te stappen op perron twee."
+  ]
+ },
+ {
+  "id": "radio-ad",
+  "expect": "none",
+  "heard": [
+   "Dit weekend bij Sleep World: koop één matras en krijg er één gratis!"
+  ],
+  "notes": []
+ },
+ {
+  "id": "blue-one",
+  "expect": "none",
+  "heard": [
+   "Ik vind die blauwe mooier bij je."
+  ],
+  "notes": []
+ },
+ {
+  "id": "traffic",
+  "expect": "none",
+  "heard": [
+   "Pff, het verkeer was vreselijk vanochtend."
+  ],
+  "notes": []
+ },
+ {
+  "id": "anyway",
+  "expect": "none",
+  "heard": [
+   "Maar goed, hij zei dat-ie erover na zou denken."
+  ],
+  "notes": []
+ },
+ {
+  "id": "eggs",
+  "expect": "none",
+  "heard": [
+   "Kun je geloven hoe duur eieren nu zijn?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "laugh",
+  "expect": "none",
+  "heard": [
+   "Haha, dat is echt hilarisch."
+  ],
+  "notes": []
+ },
+ {
+  "id": "puppy",
+  "expect": "none",
+  "heard": [
+   "Mijn zus heeft net een nieuwe puppy, hij is zo schattig."
+  ],
+  "notes": []
+ },
+ {
+  "id": "lunch-yesterday",
+  "expect": "none",
+  "heard": [
+   "We hadden gisteren pizza voor de lunch, was wel prima."
+  ],
+  "notes": []
+ },
+ {
+  "id": "tired",
+  "expect": "none",
+  "heard": [
+   "Ik ben zo moe, ik heb vannacht amper geslapen."
+  ],
+  "notes": []
+ },
+ {
+  "id": "store-pa",
+  "expect": "none",
+  "heard": [
+   "Even schoonmaken bij gang vijf, graag."
+  ],
+  "notes": []
+ },
+ {
+  "id": "next-stop",
+  "expect": "none",
+  "heard": [
+   "De volgende halte is Powell Street."
+  ],
+  "notes": []
+ }
+]

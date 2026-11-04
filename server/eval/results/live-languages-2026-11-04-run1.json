@@ -1,0 +1,2315 @@
+{
+ "at": "2026-11-04T04:27:11",
+ "url": "wss://earshot-yuansshi.fly.dev/ws",
+ "total": {
+  "weather": "63/69",
+  "reminder": "62/69",
+  "cost_usd": 0.888,
+  "minutes": 28.3
+ },
+ "by_language": {
+  "en": {
+   "weather": "3/3",
+   "wake": "3/3",
+   "answered_in_language": "3/3",
+   "reminder_with_spoken_yes": "3/3",
+   "first_word_p50_s": 1.98
+  },
+  "es": {
+   "weather": "1/3",
+   "wake": "2/3",
+   "answered_in_language": "2/3",
+   "reminder_with_spoken_yes": "3/3",
+   "first_word_p50_s": 2.935
+  },
+  "fr": {
+   "weather": "2/3",
+   "wake": "2/3",
+   "answered_in_language": "2/3",
+   "reminder_with_spoken_yes": "2/3",
+   "first_word_p50_s": 3.7300000000000004
+  },
+  "de": {
+   "weather": "3/3",
+   "wake": "3/3",
+   "answered_in_language": "3/3",
+   "reminder_with_spoken_yes": "3/3",
+   "first_word_p50_s": 2.18
+  },
+  "it": {
+   "weather": "3/3",
+   "wake": "3/3",
+   "answered_in_language": "3/3",
+   "reminder_with_spoken_yes": "3/3",
+   "first_word_p50_s": 2.38
+  },
+  "pt": {
+   "weather": "3/3",
+   "wake": "3/3",
+   "answered_in_language": "3/3",
+   "reminder_with_spoken_yes": "3/3",
+   "first_word_p50_s": 1.95
+  },
+  "nl": {
+   "weather": "2/3",
+   "wake": "3/3",
+   "answered_in_language": "2/3",
+   "reminder_with_spoken_yes": "3/3",
+   "first_word_p50_s": 2.21
+  },
+  "pl": {
+   "weather": "3/3",
+   "wake": "3/3",
+   "answered_in_language": "3/3",
+   "reminder_with_spoken_yes": "3/3",
+   "first_word_p50_s": 2.12
+  },
+  "tr": {
+   "weather": "3/3",
+   "wake": "3/3",
+   "answered_in_language": "3/3",
+   "reminder_with_spoken_yes": "3/3",
+   "first_word_p50_s": 2.12
+  },
+  "id": {
+   "weather": "3/3",
+   "wake": "3/3",
+   "answered_in_language": "3/3",
+   "reminder_with_spoken_yes": "3/3",
+   "first_word_p50_s": 1.86
+  },
+  "ms": {
+   "weather": "2/3",
+   "wake": "2/3",
+   "answered_in_language": "2/3",
+   "reminder_with_spoken_yes": "3/3",
+   "first_word_p50_s": 1.7
+  },
+  "vi": {
+   "weather": "3/3",
+   "wake": "3/3",
+   "answered_in_language": "3/3",
+   "reminder_with_spoken_yes": "3/3",
+   "first_word_p50_s": 2.21
+  },
+  "ja": {
+   "weather": "3/3",
+   "wake": "3/3",
+   "answered_in_language": "3/3",
+   "reminder_with_spoken_yes": "1/3",
+   "first_word_p50_s": 1.88
+  },
+  "zh": {
+   "weather": "3/3",
+   "wake": "3/3",
+   "answered_in_language": "3/3",
+   "reminder_with_spoken_yes": "3/3",
+   "first_word_p50_s": 2.47
+  },
+  "ko": {
+   "weather": "3/3",
+   "wake": "3/3",
+   "answered_in_language": "3/3",
+   "reminder_with_spoken_yes": "3/3",
+   "first_word_p50_s": 2.23
+  },
+  "hi": {
+   "weather": "2/3",
+   "wake": "3/3",
+   "answered_in_language": "3/3",
+   "reminder_with_spoken_yes": "3/3",
+   "first_word_p50_s": 1.61
+  },
+  "bn": {
+   "weather": "3/3",
+   "wake": "3/3",
+   "answered_in_language": "3/3",
+   "reminder_with_spoken_yes": "0/3",
+   "first_word_p50_s": 2.29
+  },
+  "ta": {
+   "weather": "3/3",
+   "wake": "3/3",
+   "answered_in_language": "3/3",
+   "reminder_with_spoken_yes": "3/3",
+   "first_word_p50_s": 2.2
+  },
+  "te": {
+   "weather": "3/3",
+   "wake": "3/3",
+   "answered_in_language": "3/3",
+   "reminder_with_spoken_yes": "3/3",
+   "first_word_p50_s": 2.42
+  },
+  "kn": {
+   "weather": "3/3",
+   "wake": "3/3",
+   "answered_in_language": "3/3",
+   "reminder_with_spoken_yes": "2/3",
+   "first_word_p50_s": 2.69
+  },
+  "th": {
+   "weather": "3/3",
+   "wake": "3/3",
+   "answered_in_language": "3/3",
+   "reminder_with_spoken_yes": "3/3",
+   "first_word_p50_s": 2.9
+  },
+  "he": {
+   "weather": "3/3",
+   "wake": "3/3",
+   "answered_in_language": "3/3",
+   "reminder_with_spoken_yes": "3/3",
+   "first_word_p50_s": 2.29
+  },
+  "ar": {
+   "weather": "3/3",
+   "wake": "3/3",
+   "answered_in_language": "3/3",
+   "reminder_with_spoken_yes": "3/3",
+   "first_word_p50_s": 1.67
+  }
+ },
+ "rows": [
+  {
+   "language": "en",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.75,
+   "total_s": 8.36,
+   "cost": 0.01072,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "On it. No, it should stay dry this afternoon downtown, just cloudy around fifty four degrees with only a tiny chance of rain. ",
+   "heard": "Hey earshot. Will it rain this afternoon?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "en",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 3.8,
+   "total_s": 8.88,
+   "cost": 0.00746,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Okay. Should I remind you to buy coffee at 6 AM? Done, buy coffee at six this morning. ",
+   "question": "Should I remind you to buy coffee at 6 AM?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "es",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 4.09,
+   "total_s": 4.09,
+   "cost": 0.00386,
+   "tools": [],
+   "said": "¿Que te gustaría ver o hacer esta tarde? ",
+   "heard": "Hey earshot, vaya a ver esta tarde",
+   "wake": true,
+   "in_language": true,
+   "ok": false
+  },
+  {
+   "language": "es",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.14,
+   "total_s": 6.35,
+   "cost": 0.00701,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Vale. ¿Te recuerdo «Comprar café» hoy a las 6:00? Listo, comprar café a las seis. ",
+   "question": "¿Te recuerdo «Comprar café» hoy a las 6:00?",
+   "question_in_language": false,
+   "ok": true
+  },
+  {
+   "language": "fr",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.35,
+   "total_s": 6.93,
+   "cost": 0.0056,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Je m'en occupe. Non, pas vraiment, ciel couvert cet après-midi vers douze degrés avec à peine quatre pour cent de risque de pluie. ",
+   "heard": "Hey, Earshot. Et ce qu'il va pleuvoir cet après-midi?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "fr",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.78,
+   "total_s": 7.38,
+   "cost": 0.00689,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "D'accord. Je te rappelle « Acheter du café » aujourd'hui à 6:00? C'est noté, acheter du café à six heures. ",
+   "question": "Je te rappelle « Acheter du café » aujourd'hui à 6:00?",
+   "question_in_language": false,
+   "ok": true
+  },
+  {
+   "language": "de",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.18,
+   "total_s": 6.62,
+   "cost": 0.00842,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Mach ich. Nein, heute Nachmittag bleibt es in Seattle trocken bei rund zwölf Grad und bedecktem Himmel. ",
+   "heard": "Hey Earshot, wird es heute Nachmittag regnen?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "de",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.61,
+   "total_s": 8.08,
+   "cost": 0.00438,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Okay. Soll ich dich an „Kaffee kaufen“ erinnern, heute um 6:00? Erledigt, Kaffee kaufen um sechs Uhr morgens. ",
+   "question": "Soll ich dich an „Kaffee kaufen“ erinnern, heute um 6:00?",
+   "question_in_language": false,
+   "ok": true
+  },
+  {
+   "language": "it",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.35,
+   "total_s": 6.59,
+   "cost": 0.00857,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Ci penso io. Oggi pomeriggio a Seattle sarà nuvoloso con circa dodici gradi e quasi nessuna pioggia. ",
+   "heard": "Hey, Earshot. Che avrà oggi pomeriggio?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "it",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 3.62,
+   "total_s": 7.26,
+   "cost": 0.00459,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Va bene. Ti ricordo «Comprare il caffè» oggi alle 6:00? Fatto, promemoria per comprare il caffè alle sei. ",
+   "question": "Ti ricordo «Comprare il caffè» oggi alle 6:00?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "pt",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 1.86,
+   "total_s": 6.48,
+   "cost": 0.00579,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Deixa comigo. Não, à tarde deve ficar só nublado com uns doze graus e chance bem baixa de chuva. ",
+   "heard": "Hey, earshot. Vai chover hoje à tarde?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "pt",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 3.13,
+   "total_s": 7.68,
+   "cost": 0.00471,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Tá bom. Quer que eu te lembre de “Comprar café” hoje às 6:00? Pronto, comprar café às seis. ",
+   "question": "Quer que eu te lembre de “Comprar café” hoje às 6:00?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "nl",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.02,
+   "total_s": 7.21,
+   "cost": 0.00875,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Komt eraan. Nee, vanmiddag blijft het in Seattle waarschijnlijk droog met zo'n twaalf graden en bewolking. ",
+   "heard": "Hey Earshot. Gaat het vanmiddag regenen?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "nl",
+   "scenario": "reminder",
+   "attempt": 3,
+   "first_s": 4.05,
+   "total_s": 8.6,
+   "cost": 0.00727,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Oké. Zal ik je herinneren aan ‘Koop koffie’, vandaag om 6:00? Klaar, koffie kopen om zes uur vanochtend. ",
+   "question": "Zal ik je herinneren aan ‘Koop koffie’, vandaag om 6:00?",
+   "question_in_language": false,
+   "ok": true
+  },
+  {
+   "language": "pl",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 1.99,
+   "total_s": 6.71,
+   "cost": 0.00804,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Już się robi. Po południu raczej nie będzie padać, tylko pochmurno i około dwanaście stopni. ",
+   "heard": "Hey earshot, czy dziś po południu będzie padać?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "pl",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.03,
+   "total_s": 5.93,
+   "cost": 0.0043,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Dobrze. Przypomnieć ci o „Kup kawę” dziś o 6:00? Gotowe, kupno kawy o szóstej rano. ",
+   "question": "Przypomnieć ci o „Kup kawę” dziś o 6:00?",
+   "question_in_language": false,
+   "ok": true
+  },
+  {
+   "language": "tr",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 1.92,
+   "total_s": 7.29,
+   "cost": 0.00549,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Hemen bakıyorum. Hayır, bu öğleden sonra yağmur beklenmiyor, hava kapalı olacak ve en yüksek on üç derece civarında. ",
+   "heard": "Hey earshot. Bu öğleden sonra yağmur yağacak mı?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "tr",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.59,
+   "total_s": 6.33,
+   "cost": 0.00424,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Tamam. “Kahve al” için bugün saat 6:00 hatırlatayım mı? Tamam, saat altıda kahve almanı hatırlatacağım. ",
+   "question": "“Kahve al” için bugün saat 6:00 hatırlatayım mı?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "id",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 1.46,
+   "total_s": 6.0,
+   "cost": 0.00819,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Siap. Sepertinya tidak, sore ini di Seattle hanya mendung dengan peluang hujan sekitar tujuh persen dan suhu sekitar dua belas derajat. ",
+   "heard": "Hey, Earshot, apakah sore ini akan hujan?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "id",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.45,
+   "total_s": 6.6,
+   "cost": 0.00704,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Oke. Mau saya ingatkan “Beli kopi” hari ini jam 6:00? Selesai, pengingat beli kopi jam enam pagi sudah dibuat. ",
+   "question": "Mau saya ingatkan “Beli kopi” hari ini jam 6:00?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ms",
+   "scenario": "weather",
+   "ok": false,
+   "error": "TimeoutError: ",
+   "first_s": null,
+   "cost": 0
+  },
+  {
+   "language": "ms",
+   "scenario": "reminder",
+   "attempt": 2,
+   "first_s": 2.39,
+   "total_s": 6.97,
+   "cost": 0.00456,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Okey. Nak saya ingatkan “Beli kopi” hari ini pukul 6:00? Siap, peringatan beli kopi pukul enam pagi sudah disimpan. ",
+   "question": "Nak saya ingatkan “Beli kopi” hari ini pukul 6:00?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "vi",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.93,
+   "total_s": 7.87,
+   "cost": 0.00862,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Để tôi lo. Chiều nay ở Seattle trời nhiều mây nhưng hầu như không mưa, khoảng mười hai độ. ",
+   "heard": "Hey, earshot. Chiều nay trời có mưa không?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "vi",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 1.01,
+   "total_s": 5.08,
+   "cost": 0.00638,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Được. Tôi nhắc bạn “Mua cà phê” nhé? Xong, đã nhắc mua cà phê rồi nhé. ",
+   "question": "Tôi nhắc bạn “Mua cà phê” nhé?",
+   "question_in_language": false,
+   "ok": true
+  },
+  {
+   "language": "ja",
+   "scenario": "weather",
+   "attempt": 3,
+   "first_s": 1.84,
+   "total_s": 7.12,
+   "cost": 0.00792,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "了解です。 今日の午後は雨はほぼ降らない見込みですよ。曇りで最高は十三度くらいです。 ",
+   "heard": "Hey, Earshot, 今日の午後は雨が降りますか？",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ja",
+   "scenario": "reminder",
+   "ok": false,
+   "error": "TimeoutError: ",
+   "first_s": null,
+   "cost": 0
+  },
+  {
+   "language": "zh",
+   "scenario": "weather",
+   "attempt": 2,
+   "first_s": 1.89,
+   "total_s": 6.61,
+   "cost": 0.00788,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "好的。 今天下午在西雅图应该不会下雨，只是多云，最高大概十三度左右。 ",
+   "heard": "Hey earshot 今天下午会下雨吗？",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "zh",
+   "scenario": "reminder",
+   "attempt": 3,
+   "first_s": 2.21,
+   "total_s": 5.5,
+   "cost": 0.00439,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "好。 要我今天18:00提醒你「买咖啡」吗？ 好了，下午六点买咖啡已经记好了。 ",
+   "question": "要我今天18:00提醒你「买咖啡」吗？",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ko",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.23,
+   "total_s": 6.4,
+   "cost": 0.00802,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "알겠어요. 오늘 오후 시애틀은 흐리지만 비 소식은 거의 없어요. 오후 한 시쯤 영상 십삼도, 네 시쯤 영상 십이도 정도예요. ",
+   "heard": "Hey Earshot. 오늘 오후에 비가 올까요?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ko",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.61,
+   "total_s": 7.57,
+   "cost": 0.00456,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "네. 오늘 6:00에 ‘커피 사기’ 알려 드릴까요? 됐어요, 오늘 여섯 시에 커피 사라고 알려드릴게요. ",
+   "question": "오늘 6:00에 ‘커피 사기’ 알려 드릴까요?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "hi",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 1.61,
+   "total_s": 6.57,
+   "cost": 0.00812,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "अभी देखते हैं। नहीं, सिएटल में आज दोपहर बारिश नहीं होगी, बस बादल रहेंगे और तेरह डिग्री तक तापमान रहेगा। ",
+   "heard": "Hey Earshot! क्या आज दोपहर बारिश होगी?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "hi",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.6,
+   "total_s": 6.9,
+   "cost": 0.00437,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "ठीक है। क्या मैं आपको आज 6:00 बजे “कॉफी खरीदें” की याद दिलाऊँ? हो गया, सुबह छह बजे कॉफी खरीदने की याद दिलाऊंगी। ",
+   "question": "क्या मैं आपको आज 6:00 बजे “कॉफी खरीदें” की याद दिलाऊँ?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "bn",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.29,
+   "total_s": 7.34,
+   "cost": 0.00832,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "এখনই দেখছি। আজ সিয়াটলে বিকেলে বৃষ্টি হওয়ার কথা না, আকাশ মেঘলা থাকবে আর তাপমাত্রা বারো ডিগ্রির আশেপাশে থাকবে। ",
+   "heard": "Hey earshot. আজ বিকেলে কি বৃষ্টি হবে?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "bn",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 3.27,
+   "total_s": 25.72,
+   "cost": 0.00518,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "ঠিক আছে। আপনাকে কি “কফি কেনো” মনে করিয়ে দেব? আজ কফি কেনার রিমাইন্ডারটা সেট হয়নি, আমি কি এখন সেট করে দেবো? ",
+   "question": "আপনাকে কি “কফি কেনো” মনে করিয়ে দেব?",
+   "question_in_language": true,
+   "ok": false
+  },
+  {
+   "language": "ta",
+   "scenario": "weather",
+   "attempt": 2,
+   "first_s": 1.71,
+   "total_s": 6.62,
+   "cost": 0.00876,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "இதோ பார்க்கிறேன். இன்று மதியம் சியாட்டிலில் மழை வராது, வானம் மேகமூட்டமாக இருக்கும். மதியம் பதின்மூன்று டிகிரி வரை வெப்பம் இருக்கும். ",
+   "heard": "Hey Earshot, இன்று மதியம் மழை பெய்யுமா?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ta",
+   "scenario": "reminder",
+   "attempt": 3,
+   "first_s": 3.01,
+   "total_s": 9.27,
+   "cost": 0.00512,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "சரி. இன்று 6:00 மணிக்கு “காபி வாங்கு” என்று நினைவூட்டட்டுமா? சரி, காலை ஆறு மணிக்கு காபி வாங்க நினைவூட்டல் வைத்துவிட்டேன். ",
+   "question": "இன்று 6:00 மணிக்கு “காபி வாங்கு” என்று நினைவூட்டட்டுமா?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "te",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.42,
+   "total_s": 7.28,
+   "cost": 0.00807,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "ఇప్పుడే చూస్తాను. ఈ మధ్యాహ్నం వర్షం పడే అవకాశం చాలా తక్కువ, ఒంటి గంటకు ఒక శాతం, నాలుగు గంటలకు ఏడు శాతం మాత్రమే. ",
+   "heard": "Hey earshot, ఈ మధ్యాహ్నం వర్షం పడుతుందా?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "te",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 3.77,
+   "total_s": 7.53,
+   "cost": 0.00736,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "సరే. ఈరోజు 6:00కి “కాఫీ కొను” గుర్తు చేయనా? అయింది, ఆరు గంటలకు కాఫీ కొనమని గుర్తు పెట్టాను. ",
+   "question": "ఈరోజు 6:00కి “కాఫీ కొను” గుర్తు చేయనా?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "kn",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.69,
+   "total_s": 7.53,
+   "cost": 0.00844,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "ಈಗಲೇ ನೋಡುತ್ತೇನೆ. ಇಂದು ಮಧ್ಯಾಹ್ನ ಮಳೆ ಬರುವ ಸಾಧ್ಯತೆ ತುಂಬಾ ಕಡಿಮೆ, ಮೋಡ ಕವಿದಿದ್ದರೂ ಒಣಗಿಯೇ ಇರುತ್ತೆ. ಗರಿಷ್ಠ ಹದಿಮೂರು ಡಿಗ್ರಿ ಇರುತ್ತೆ. ",
+   "heard": "Hey Earshot, ಇಂದು ಮಧ್ಯಾಹ್ನ ಮಳೆ ಬರುತ್ತದೆಯೇ?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "kn",
+   "scenario": "reminder",
+   "ok": false,
+   "error": "TimeoutError: ",
+   "first_s": null,
+   "cost": 0
+  },
+  {
+   "language": "th",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 3.1,
+   "total_s": 9.81,
+   "cost": 0.00826,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "รับทราบ คืนนี้ถึงเช้าไม่ตกจ้า ฟ้าใสแต่หนาวประมาณสี่องศา ตอนบ่ายเมฆเยอะและอาจมีฝนปรอยนิดหน่อย ",
+   "heard": "Hey earshot. ใบนี้ฝนจะตกไหม",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "th",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 3.02,
+   "total_s": 7.45,
+   "cost": 0.00487,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "ได้เลย ให้เตือนเรื่อง “ซื้อกาแฟ” วันนี้ เวลา 6:00 ไหม เรียบร้อย ตั้งเตือนซื้อกาแฟตอนหกโมงเช้าแล้ว ",
+   "question": "ให้เตือนเรื่อง “ซื้อกาแฟ” วันนี้ เวลา 6:00 ไหม",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "he",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.36,
+   "total_s": 8.44,
+   "cost": 0.00845,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "אני על זה. לא, אחר הצהריים צפוי להיות מעונן בלי גשם, עם סיכוי של אחוז בודד עד שבעה אחוז בסביבות ארבע. הטמפרטורה תהיה סביב שתים עשרה עד שלוש עשרה מעלות. ",
+   "heard": "Hey Earshot, האם ירד גשם אחר הצהריים?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "he",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.52,
+   "total_s": 6.55,
+   "cost": 0.00703,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "בסדר. להזכיר לך „לקנות קפה” היום ב-6:00? בוצע, תזכורת לקנות קפה בשש בבוקר. ",
+   "question": "להזכיר לך „לקנות קפה” היום ב-6:00?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ar",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 1.67,
+   "total_s": 5.84,
+   "cost": 0.00822,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "حاضر. لا، بعد الظهر في سياتل غائم بس من غير مطر، الحرارة حوالي تلتاشر درجة. ",
+   "heard": "Hey earshot. هل ستمطر بعد الظهر؟",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ar",
+   "scenario": "reminder",
+   "attempt": 2,
+   "first_s": 2.49,
+   "total_s": 8.61,
+   "cost": 0.00672,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "حسنًا. هل أذكّرك بـ«اشترِ القهوة» اليوم الساعة 6:00؟ تم، تذكير شراء القهوة على الساعة السادسة صباحا. ",
+   "question": "هل أذكّرك بـ«اشترِ القهوة» اليوم الساعة 6:00؟",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "en",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 1.98,
+   "total_s": 6.41,
+   "cost": 0.00543,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "On it. No, you should stay dry this afternoon in Seattle. It's overcast with only about a seven percent chance around four. ",
+   "heard": "Hey earshot, will it rain this afternoon?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "en",
+   "scenario": "reminder",
+   "attempt": 2,
+   "first_s": 3.01,
+   "total_s": 7.74,
+   "cost": 0.00414,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Okay. Should I remind you to buy coffee at 6 AM? Done, buy coffee at six this morning. ",
+   "question": "Should I remind you to buy coffee at 6 AM?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "es",
+   "scenario": "weather",
+   "ok": false,
+   "error": "TimeoutError: ",
+   "first_s": null,
+   "cost": 0
+  },
+  {
+   "language": "es",
+   "scenario": "reminder",
+   "attempt": 2,
+   "first_s": 2.26,
+   "total_s": 6.0,
+   "cost": 0.00423,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Vale. ¿Te recuerdo «Comprar café» hoy a las 6:00? Listo, comprar café a las seis. ",
+   "question": "¿Te recuerdo «Comprar café» hoy a las 6:00?",
+   "question_in_language": false,
+   "ok": true
+  },
+  {
+   "language": "fr",
+   "scenario": "weather",
+   "ok": false,
+   "error": "TimeoutError: ",
+   "first_s": null,
+   "cost": 0
+  },
+  {
+   "language": "fr",
+   "scenario": "reminder",
+   "ok": false,
+   "error": "TimeoutError: ",
+   "first_s": null,
+   "cost": 0
+  },
+  {
+   "language": "de",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 8.36,
+   "total_s": 14.41,
+   "cost": 0.00812,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Mach ich. Nein, heute Nachmittag bleibt es trocken bei etwa zwölf bis dreizehn Grad, nur bewölkt. ",
+   "heard": "hey Earshot wird es heute Nachmittag regnen",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "de",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.63,
+   "total_s": 6.49,
+   "cost": 0.00659,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Okay. Soll ich dich an „Kaufe Kaffee“ erinnern, heute um 6:00? Erledigt, Kaffee kaufen um sechs Uhr morgens. ",
+   "question": "Soll ich dich an „Kaufe Kaffee“ erinnern, heute um 6:00?",
+   "question_in_language": false,
+   "ok": true
+  },
+  {
+   "language": "it",
+   "scenario": "weather",
+   "attempt": 3,
+   "first_s": 2.38,
+   "total_s": 6.17,
+   "cost": 0.00588,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Che tempo farà oggi pomeriggio? Oggi pomeriggio a Seattle sarà nuvoloso con circa tredici gradi, poi dodici gradi verso le quattro. ",
+   "heard": "Hey earshot. Che verrà oggi pomeriggio?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "it",
+   "scenario": "reminder",
+   "attempt": 3,
+   "first_s": 2.72,
+   "total_s": 7.18,
+   "cost": 0.00457,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Va bene. Ti ricordo «Comprare il caffè» oggi alle 6:00? Fatto, promemoria per le sei per comprare il caffè. ",
+   "question": "Ti ricordo «Comprare il caffè» oggi alle 6:00?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "pt",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.73,
+   "total_s": 6.92,
+   "cost": 0.0084,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Deixa comigo. Não, a tarde deve ficar só nublada, com uns treze graus na hora do almoço e doze no fim da tarde. ",
+   "heard": "Hey, Earshot. Vai chover hoje à tarde?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "pt",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 1.99,
+   "total_s": 6.15,
+   "cost": 0.00663,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Tá bom. Quer que eu te lembre de “Comprar café” hoje às 6:00? Pronto, comprar café às seis. ",
+   "question": "Quer que eu te lembre de “Comprar café” hoje às 6:00?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "nl",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.21,
+   "total_s": 7.01,
+   "cost": 0.00814,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Komt eraan. Nee, vanmiddag blijft het droog in Seattle, alleen bewolkt met zo'n dertien graden. ",
+   "heard": "Hey Earshot, gaat het vanmiddag regenen?",
+   "wake": true,
+   "in_language": false,
+   "ok": false
+  },
+  {
+   "language": "nl",
+   "scenario": "reminder",
+   "attempt": 3,
+   "first_s": 2.35,
+   "total_s": 7.36,
+   "cost": 0.00449,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Oké. Zal ik je herinneren aan ‘Koffie kopen’, vandaag om 6:00? Gedaan, koffie kopen om zes uur. ",
+   "question": "Zal ik je herinneren aan ‘Koffie kopen’, vandaag om 6:00?",
+   "question_in_language": false,
+   "ok": true
+  },
+  {
+   "language": "pl",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.12,
+   "total_s": 7.3,
+   "cost": 0.00816,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Już się robi. Nie, po południu ma być sucho, tylko pochmurno, około dwanaście do trzynastu stopni. ",
+   "heard": "Hey earshot, czy dziś w popołudniu będzie padać?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "pl",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.98,
+   "total_s": 7.49,
+   "cost": 0.00459,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Dobrze. Przypomnieć ci o „Kup kawę” dziś o 6:00? Gotowe, przypomnę o kawie o szóstej rano. ",
+   "question": "Przypomnieć ci o „Kup kawę” dziś o 6:00?",
+   "question_in_language": false,
+   "ok": true
+  },
+  {
+   "language": "tr",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.33,
+   "total_s": 7.35,
+   "cost": 0.00824,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Hemen bakıyorum. Hayır, Seattle'da öğleden sonra yağmur beklenmiyor, hava kapalı olacak ve sıcaklık on üç derece civarında. ",
+   "heard": "Hey, Earshot. Bu öğleden sonra yağmur yağacak mı?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "tr",
+   "scenario": "reminder",
+   "attempt": 2,
+   "first_s": 2.66,
+   "total_s": 6.81,
+   "cost": 0.00676,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Tamam. “Kahve al” için bugün saat 6:00 hatırlatayım mı? Tamam, sabah altıda kahve alman için hatırlatma kurdum. ",
+   "question": "“Kahve al” için bugün saat 6:00 hatırlatayım mı?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "id",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.16,
+   "total_s": 6.39,
+   "cost": 0.008,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Siap. Tidak, sore ini hanya mendung dengan peluang hujan tujuh persen dan suhu sekitar dua belas derajat. ",
+   "heard": "Hey, earshot. Apakah sore ini akan hujan?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "id",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.1,
+   "total_s": 6.23,
+   "cost": 0.00674,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Oke. Mau saya ingatkan “Beli kopi” hari ini jam 18:00? Selesai, beli kopi jam enam sore. ",
+   "question": "Mau saya ingatkan “Beli kopi” hari ini jam 18:00?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ms",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 1.73,
+   "total_s": 6.09,
+   "cost": 0.00837,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Baik. Tidak, petang ini di Seattle diramal mendung sahaja dengan peluang hujan sekitar tujuh peratus dan suhu sekitar dua belas darjah. ",
+   "heard": "Hey, Earshot, adakah hujan akan turun petang ini,",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ms",
+   "scenario": "reminder",
+   "attempt": 2,
+   "first_s": 2.25,
+   "total_s": 7.01,
+   "cost": 0.0046,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Okey. Nak saya ingatkan “Beli kopi” hari ini pukul 6:00? Siap, ingatan beli kopi pada pukul enam pagi sudah ditetapkan. ",
+   "question": "Nak saya ingatkan “Beli kopi” hari ini pukul 6:00?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "vi",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.02,
+   "total_s": 7.26,
+   "cost": 0.00567,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Để tôi lo. Chiều nay ở Seattle trời nhiều mây nhưng hầu như không mưa, khoảng mười hai đến mười ba độ. ",
+   "heard": "Hey earshot, chiều nay trời có mưa không?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "vi",
+   "scenario": "reminder",
+   "attempt": 2,
+   "first_s": 2.22,
+   "total_s": 8.94,
+   "cost": 0.00434,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Được. Tôi nhắc bạn “Mua cà phê” lúc 6:00 hôm nay nhé? Xong rồi, nhắc mua cà phê lúc sáu giờ sáng nay. ",
+   "question": "Tôi nhắc bạn “Mua cà phê” lúc 6:00 hôm nay nhé?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ja",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.12,
+   "total_s": 8.15,
+   "cost": 0.0086,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "了解です。 午後は曇りで雨はほぼ降らない見込みです。最高は十三度くらいですよ。 ",
+   "heard": "Hey, earshot. 今日の午後は雨が降ります。か？",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ja",
+   "scenario": "reminder",
+   "ok": false,
+   "error": "TimeoutError: ",
+   "first_s": null,
+   "cost": 0
+  },
+  {
+   "language": "zh",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 5.65,
+   "total_s": 10.11,
+   "cost": 0.00781,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "好的。 今天下午在西雅图应该不会下雨，下午多云，最高大概十三度左右。 ",
+   "heard": "Hey, Earshot, 今天下午会下雨吗?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "zh",
+   "scenario": "reminder",
+   "attempt": 2,
+   "first_s": 2.66,
+   "total_s": 6.14,
+   "cost": 0.00648,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "好。 要我今天6:00提醒你「买咖啡」吗？ 好了，已经设好早上六点买咖啡的提醒。 ",
+   "question": "要我今天6:00提醒你「买咖啡」吗？",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ko",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 1.62,
+   "total_s": 6.56,
+   "cost": 0.0083,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "알겠어요. 오늘 오후 시애틀은 흐리지만 비 확률은 한 자릿수라서 거의 안 올 거예요. ",
+   "heard": "Hey earshot, 오늘 오후에 비가 올까요?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ko",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.58,
+   "total_s": 6.5,
+   "cost": 0.00662,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "네. 오늘 6:00에 ‘커피 사기’ 알려 드릴까요? 됐어요, 아침 여섯 시에 커피 사라고 알려드릴게요. ",
+   "question": "오늘 6:00에 ‘커피 사기’ 알려 드릴까요?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "hi",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 0.7,
+   "total_s": 0.7,
+   "cost": 0.00323,
+   "tools": [],
+   "said": "आज आप क्या जानना चाहते हैं? ",
+   "heard": "दोपहर बारिश होगी?",
+   "wake": true,
+   "in_language": true,
+   "ok": false
+  },
+  {
+   "language": "hi",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.95,
+   "total_s": 7.59,
+   "cost": 0.00694,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "ठीक है। क्या मैं आपको आज 6:00 बजे “कॉफी खरीदें” की याद दिलाऊँ? हो गया, सुबह छह बजे कॉफी खरीदने का रिमाइंडर लगा दिया। ",
+   "question": "क्या मैं आपको आज 6:00 बजे “कॉफी खरीदें” की याद दिलाऊँ?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "bn",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.08,
+   "total_s": 5.96,
+   "cost": 0.0081,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "এখনই দেখছি। আজ সিয়াটলে বিকেলে বৃষ্টির সম্ভাবনা খুব কম, মাত্র সাত ভাগ, তবে আকাশ মেঘলা থাকবে আর তাপমাত্রা বারো ডিগ্রির মতো থাকবে। ",
+   "heard": "Hey earshot. আজ বিকেলে কি বৃষ্টি হবে?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "bn",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 3.33,
+   "total_s": 27.1,
+   "cost": 0.00723,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "ঠিক আছে। আপনাকে কি “কফি কেনো” মনে করিয়ে দেব? হয়নি, আপনি হ্যাঁ বলেননি তাই কফি কেনার মনে করিয়ে দেওয়াটা যোগ হয়নি। আমি কি আবার চেষ্টা করব? ",
+   "question": "আপনাকে কি “কফি কেনো” মনে করিয়ে দেব?",
+   "question_in_language": true,
+   "ok": false
+  },
+  {
+   "language": "ta",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 3.13,
+   "total_s": 7.74,
+   "cost": 0.00882,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "இதோ பார்க்கிறேன். இல்லை, சியாட்டலில் இன்று மதியம் மழை வர வாய்ப்பு இல்லை, மேகமூட்டமாக மட்டும் இருக்கும், பதிமூன்று டிகிரி வரை வெப்பம் இருக்கும். ",
+   "heard": "Hey, earshot. Indru மதியம் மழை பெய்யுமா?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ta",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.8,
+   "total_s": 6.31,
+   "cost": 0.00709,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "சரி. இன்று 6:00 மணிக்கு “காபி வாங்கு” என்று நினைவூட்டட்டுமா? முடிஞ்சது, காலையில ஆறு மணிக்கு காபி வாங்க நினைவூட்டுறேன். ",
+   "question": "இன்று 6:00 மணிக்கு “காபி வாங்கு” என்று நினைவூட்டட்டுமா?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "te",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 7.28,
+   "total_s": 12.08,
+   "cost": 0.00882,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "ఇప్పుడే చూస్తాను. లేదు, ఈ మధ్యాహ్నం సియాటెల్ లో వర్షం పడే ఛాన్స్ చాలా తక్కువ, ఒకటి రెండు శాతమే. మబ్బుగా ఉండి పదమూడు డిగ్రీల చుట్టూ ఉంటుంది. ",
+   "heard": "Hey, Earshot, ఈ మధ్యాహ్నం వర్షం పడుతుందా?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "te",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.81,
+   "total_s": 6.68,
+   "cost": 0.00441,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "సరే. ఈరోజు 6:00కి “కాఫీ కొను” గుర్తు చేయనా? అయింది, ఆరు గంటలకు కాఫీ కొనమని గుర్తు పెట్టాను. ",
+   "question": "ఈరోజు 6:00కి “కాఫీ కొను” గుర్తు చేయనా?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "kn",
+   "scenario": "weather",
+   "attempt": 2,
+   "first_s": 3.18,
+   "total_s": 8.23,
+   "cost": 0.00852,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "ಈಗಲೇ ನೋಡುತ್ತೇನೆ. ಇಂದು ಮಧ್ಯಾಹ್ನ ಮಳೆ ಬರುವ ಸಾಧ್ಯತೆ ಇಲ್ಲ, ಒಂದರಿಂದ ಏಳು ಪ್ರತಿಶತ ಮಾತ್ರ ಇದೆ ಮತ್ತು ಮೋಡ ಕವಿದಿರುತ್ತದೆ. ",
+   "heard": "Hey earshot. Indu ಮಧ್ಯಾಹ್ನ ಮಳೆ ಬರುತ್ತದೆಯೇ?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "kn",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.73,
+   "total_s": 6.44,
+   "cost": 0.00701,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "ಸರಿ. ಇಂದು 6:00ಕ್ಕೆ “ಕೋಸಿೊಳ್ಳು” ಎಂದು ನೆನಪಿಸಲೇ? ಆಯ್ತು, ಬೆಳಿಗ್ಗೆ ಆರು ಗಂಟೆಗೆ ಕೋಸಿಕೊಳ್ಳಲು ನೆನಪಿಸುತ್ತೇನೆ. ",
+   "question": "ಇಂದು 6:00ಕ್ಕೆ “ಕೋಸಿೊಳ್ಳು” ಎಂದು ನೆನಪಿಸಲೇ?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "th",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.9,
+   "total_s": 7.69,
+   "cost": 0.00865,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "รับทราบ บ่ายนี้ที่ดาวน์ทาวน์ซีแอตเติลไม่น่ามีฝน แค่เมฆครึ้ม อากาศประมาณสิบสามองศา ",
+   "heard": "Hey, Earshot,บ่ายนี้ฝนจะตกไหม",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "th",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.39,
+   "total_s": 5.95,
+   "cost": 0.00671,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "ได้เลย ให้เตือนเรื่อง “ซื้อกาแฟ” วันนี้ เวลา 6:00 ไหม เรียบร้อย เตือนซื้อกาแฟตอนหกโมงเช้าให้แล้ว ",
+   "question": "ให้เตือนเรื่อง “ซื้อกาแฟ” วันนี้ เวลา 6:00 ไหม",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "he",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.17,
+   "total_s": 7.98,
+   "cost": 0.00851,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "אני על זה. לא, אחר הצהריים צפוי להיות מעונן בלי גשם, בסביבות שתים עשרה מעלות. ",
+   "heard": "Hey, earshot, האם ירד גשם אחר הצהריים?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "he",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 3.2,
+   "total_s": 6.93,
+   "cost": 0.00457,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "בסדר. להזכיר לך „לקנות קפה” היום ב-6:00? בוצע, תזכורת לקנות קפה בשש בבוקר. ",
+   "question": "להזכיר לך „לקנות קפה” היום ב-6:00?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ar",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 1.62,
+   "total_s": 6.6,
+   "cost": 0.00837,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "حاضر. لا، بعد الظهر في سياتل غائم بس من غير مطر، والحرارة حوالي تلتاشر درجة. ",
+   "heard": "Hey earshot هل ستمطر بعد الظهر?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ar",
+   "scenario": "reminder",
+   "attempt": 2,
+   "first_s": 2.47,
+   "total_s": 8.06,
+   "cost": 0.00689,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "حسنًا. هل أذكّرك بـ«اشترِ القهوة» اليوم الساعة 6:00؟ تم، ذكرتك بشراء القهوة الساعة ستة الصبح. ",
+   "question": "هل أذكّرك بـ«اشترِ القهوة» اليوم الساعة 6:00؟",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "en",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 1.77,
+   "total_s": 6.02,
+   "cost": 0.00778,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "On it. No, you should stay dry this afternoon in Seattle, just cloudy with only about a one to seven percent chance of rain. ",
+   "heard": "Hey earshot. Will it rain this afternoon?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "en",
+   "scenario": "reminder",
+   "attempt": 2,
+   "first_s": 4.57,
+   "total_s": 8.44,
+   "cost": 0.00682,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Okay. Should I remind you to buy coffee at 6 AM? Done, buy coffee at six. ",
+   "question": "Should I remind you to buy coffee at 6 AM?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "es",
+   "scenario": "weather",
+   "attempt": 2,
+   "first_s": 1.78,
+   "total_s": 6.16,
+   "cost": 0.00568,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Enseguida. No, esta tarde se queda nublado pero casi sin lluvia, con máxima de trece grados. ",
+   "heard": "Hey Earshot, va a llover esta tarde?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "es",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 3.07,
+   "total_s": 7.38,
+   "cost": 0.00675,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Vale. ¿Te recuerdo «Comprar café» hoy a las 6:00? Listo, comprar café a las seis de la mañana. ",
+   "question": "¿Te recuerdo «Comprar café» hoy a las 6:00?",
+   "question_in_language": false,
+   "ok": true
+  },
+  {
+   "language": "fr",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 5.11,
+   "total_s": 10.72,
+   "cost": 0.00558,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Je m'en occupe. Non, cet après-midi à Seattle reste nuageux autour de treize degrés, sans pluie à prévoir. ",
+   "heard": "Hey, earshot. Et ce qu'il va pleuvoir cet après-midi?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "fr",
+   "scenario": "reminder",
+   "attempt": 3,
+   "first_s": 2.77,
+   "total_s": 7.52,
+   "cost": 0.00642,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "D'accord. Je te rappelle « Acheter du café » aujourd'hui à 6:00? C'est noté, acheter du café à six heures. ",
+   "question": "Je te rappelle « Acheter du café » aujourd'hui à 6:00?",
+   "question_in_language": false,
+   "ok": true
+  },
+  {
+   "language": "de",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 1.95,
+   "total_s": 7.21,
+   "cost": 0.00822,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Mach ich. Nein, heute Nachmittag in Seattle bleibt es trocken, nur bewölkt bei etwa dreizehn Grad. ",
+   "heard": "Hey earshot. wird es heute Nachmittag regnen?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "de",
+   "scenario": "reminder",
+   "attempt": 2,
+   "first_s": 3.01,
+   "total_s": 7.23,
+   "cost": 0.00695,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Okay. Soll ich dich an „Kaufe Kaffee“ erinnern, heute um 6:00? Erledigt, Kaffee kaufen um sechs Uhr. ",
+   "question": "Soll ich dich an „Kaufe Kaffee“ erinnern, heute um 6:00?",
+   "question_in_language": false,
+   "ok": true
+  },
+  {
+   "language": "it",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.41,
+   "total_s": 10.42,
+   "cost": 0.01284,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Ci penso io. No, a Seattle oggi pomeriggio resta asciutto con schiarite e circa tredici gradi. ",
+   "heard": "Hey, earshot, pioverà oggi pomeriggio?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "it",
+   "scenario": "reminder",
+   "attempt": 3,
+   "first_s": 2.33,
+   "total_s": 6.78,
+   "cost": 0.00696,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Va bene. Ti ricordo «Compra il caffè» oggi alle 6:00? Fatto, comprare il caffè alle sei. ",
+   "question": "Ti ricordo «Compra il caffè» oggi alle 6:00?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "pt",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 1.95,
+   "total_s": 7.32,
+   "cost": 0.00554,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Deixa comigo. Não, a tarde deve ficar nublada mas seca, com máxima de treze graus. ",
+   "heard": "Hey, Earshot. Vai chover hoje à tarde?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "pt",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.47,
+   "total_s": 7.0,
+   "cost": 0.00686,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Tá bom. Quer que eu te lembre de “Comprar café” hoje às 6:00? Pronto, comprar café às seis. ",
+   "question": "Quer que eu te lembre de “Comprar café” hoje às 6:00?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "nl",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 3.03,
+   "total_s": 8.01,
+   "cost": 0.00799,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Komt eraan. Nee, vanmiddag blijft het droog in Seattle met bewolking en zo'n dertien graden. ",
+   "heard": "Hey earshot. Gaat het vanmiddag regenen?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "nl",
+   "scenario": "reminder",
+   "attempt": 2,
+   "first_s": 3.49,
+   "total_s": 7.34,
+   "cost": 0.00715,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Oké. Zal ik je herinneren aan ‘Koop koffie’, vandaag om 6:00? Klaar, ik herinner je om zes uur om koffie te kopen. ",
+   "question": "Zal ik je herinneren aan ‘Koop koffie’, vandaag om 6:00?",
+   "question_in_language": false,
+   "ok": true
+  },
+  {
+   "language": "pl",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.53,
+   "total_s": 7.63,
+   "cost": 0.00577,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Już się robi. Nie, po południu nie powinno padać, będzie pochmurno i około trzynastu stopni, a później około dwunastu. ",
+   "heard": "Hey earshot, Czy dziś po południu będzie padać?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "pl",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 3.05,
+   "total_s": 8.93,
+   "cost": 0.00451,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Dobrze. Przypomnieć ci o „Kup kawę” dziś o 6:00? Gotowe, kupić kawę o szóstej. ",
+   "question": "Przypomnieć ci o „Kup kawę” dziś o 6:00?",
+   "question_in_language": false,
+   "ok": true
+  },
+  {
+   "language": "tr",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.12,
+   "total_s": 6.31,
+   "cost": 0.0055,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Hemen bakıyorum. Hayır, Seattle'da öğleden sonra yağmur beklenmiyor, hava kapalı olacak ve sıcaklık on üç derece civarında. ",
+   "heard": "Hey, Earshot. Bu öğleden sonra yağmur yağacak mı?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "tr",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.82,
+   "total_s": 7.09,
+   "cost": 0.0064,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Tamam. “Kahve al” için bugün saat 6:00 hatırlatayım mı? Tamam, sabah altıda kahve alman için hatırlatma kurdum. ",
+   "question": "“Kahve al” için bugün saat 6:00 hatırlatayım mı?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "id",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 1.86,
+   "total_s": 7.8,
+   "cost": 0.00568,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Siap. Tidak, sore ini sepertinya tidak hujan, hanya mendung sekitar dua belas derajat. ",
+   "heard": "Hey earshot. Apakah sore ini akan hujan?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "id",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.44,
+   "total_s": 5.49,
+   "cost": 0.00688,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Oke. Mau saya ingatkan “Beli kopi” hari ini jam 6:00? Sudah, beli kopi jam enam pagi. ",
+   "question": "Mau saya ingatkan “Beli kopi” hari ini jam 6:00?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ms",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 1.67,
+   "total_s": 6.09,
+   "cost": 0.00824,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Baik. Tak, petang ini mendung saja dengan peluang hujan cuma sekitar tujuh peratus dan suhu dua belas darjah. ",
+   "heard": "Hey, earshot, adakah hujan akan turun petang ini?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ms",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 4.89,
+   "total_s": 9.22,
+   "cost": 0.00756,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Okey. Nak saya ingatkan “Beli kopi” hari ini pukul 6:00? Siap, ingatkan beli kopi pukul enam pagi. ",
+   "question": "Nak saya ingatkan “Beli kopi” hari ini pukul 6:00?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "vi",
+   "scenario": "weather",
+   "attempt": 2,
+   "first_s": 2.21,
+   "total_s": 8.21,
+   "cost": 0.01069,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "Để tôi lo. Chiều nay ở Seattle trời nhiều mây nhưng hầu như không mưa, chỉ khoảng một đến bảy phần trăm thôi, nhiệt độ khoảng mười hai đến mười ba độ. ",
+   "heard": "Hey, earshot. Chiều nay trời có mưa không?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "vi",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.13,
+   "total_s": 6.54,
+   "cost": 0.0067,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "Được. Tôi nhắc bạn “Mua cà phê” lúc 6:00 hôm nay nhé? Xong rồi, nhắc mua cà phê lúc sáu giờ sáng nay. ",
+   "question": "Tôi nhắc bạn “Mua cà phê” lúc 6:00 hôm nay nhé?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ja",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 1.88,
+   "total_s": 6.38,
+   "cost": 0.00553,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "了解です。 午後のシアトルは曇りで、雨はほとんど降りませんよ。最高は十三度くらいです。 ",
+   "heard": "Hey, Earshot. 今日の午後は雨が降りますか？",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ja",
+   "scenario": "reminder",
+   "attempt": 3,
+   "first_s": 2.74,
+   "total_s": 7.12,
+   "cost": 0.0066,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "わかりました。 「コーヒーを買う」を今日の6:00にリマインドしますか？ 了解、朝六時にコーヒーを買うリマインダーをセットしたよ。 ",
+   "question": "「コーヒーを買う」を今日の6:00にリマインドしますか？",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "zh",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.47,
+   "total_s": 6.71,
+   "cost": 0.00814,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "好的。 今天下午应该不会下雨，主要是多云，最高大概十三度左右。 ",
+   "heard": "Hey earshot, 今天下午会下雨吗?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "zh",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.57,
+   "total_s": 5.76,
+   "cost": 0.00413,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "好。 要我今天6:00提醒你「买咖啡」吗？ 好了，早上六点提醒你买咖啡。 ",
+   "question": "要我今天6:00提醒你「买咖啡」吗？",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ko",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.25,
+   "total_s": 6.7,
+   "cost": 0.00838,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "알겠어요. 오늘 오후 시애틀은 흐리지만 비 소식은 거의 없어요. 기온은 아홉 도에서 열세 도까지 오르겠어요. ",
+   "heard": "Hey Earshot, 오늘 오후에 비가 올까요?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ko",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.47,
+   "total_s": 7.31,
+   "cost": 0.00456,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "네. 오늘 6:00에 ‘커피 사기’ 알려 드릴까요? 됐어요, 여섯 시에 커피 사기 알림 해둘게요. ",
+   "question": "오늘 6:00에 ‘커피 사기’ 알려 드릴까요?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "hi",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.04,
+   "total_s": 7.1,
+   "cost": 0.00816,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "अभी देखते हैं। नहीं, आज दोपहर बारिश की उम्मीद नहीं है, बस बादल रहेंगे और तेरह डिग्री तक गर्मी रहेगी। ",
+   "heard": "Hey, earshot. क्या आज दोपहर बारिश होगी?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "hi",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 3.05,
+   "total_s": 7.39,
+   "cost": 0.00642,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "ठीक है। क्या मैं आपको आज 6:00 बजे “कॉफी खरीदें” की याद दिलाऊँ? हो गया, सुबह छह बजे कॉफी खरीदने का रिमाइंडर लगा दिया। ",
+   "question": "क्या मैं आपको आज 6:00 बजे “कॉफी खरीदें” की याद दिलाऊँ?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "bn",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.75,
+   "total_s": 8.3,
+   "cost": 0.00828,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "এখনই দেখছি। আজ সিয়াটলে বিকেলে বৃষ্টির সম্ভাবনা প্রায় নেই, আকাশ মেঘলা থাকবে আর তাপমাত্রা বারো ডিগ্রির আশেপাশে থাকবে। ",
+   "heard": "Hey, earshot, আজ বিকেলে কি বৃষ্টি হবে?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "bn",
+   "scenario": "reminder",
+   "ok": false,
+   "error": "TimeoutError: ",
+   "first_s": null,
+   "cost": 0
+  },
+  {
+   "language": "ta",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.2,
+   "total_s": 6.52,
+   "cost": 0.00806,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "இதோ பார்க்கிறேன். இல்லை, மதியம் மழை வராது, மேகமூட்டமாக இருக்கும், பதிமூணு டிகிரி இருக்கும். ",
+   "heard": "Hey Earshot. இன்று மதியம் மழை பெய்யுமா?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ta",
+   "scenario": "reminder",
+   "attempt": 2,
+   "first_s": 3.15,
+   "total_s": 6.63,
+   "cost": 0.00482,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "சரி. இன்று 6:00 மணிக்கு “காபி வாங்கு” என்று நினைவூட்டட்டுமா? முடிந்தது, காலை ஆறு மணிக்கு காபி வாங்க நினைவூட்டல் வைத்துவிட்டேன். ",
+   "question": "இன்று 6:00 மணிக்கு “காபி வாங்கு” என்று நினைவூட்டட்டுமா?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "te",
+   "scenario": "weather",
+   "attempt": 3,
+   "first_s": 1.79,
+   "total_s": 7.98,
+   "cost": 0.0081,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "ఇప్పుడే చూస్తాను. ఈ మధ్యాహ్నం వర్షం పడే అవకాశం చాలా తక్కువగా ఉంది, ఆకాశం మేఘావృతంగా ఉండి పదమూడు డిగ్రీల చుట్టూ ఉంటుంది. ",
+   "heard": "Hey, Earshot. ఈ మధ్యాహ్నం పర్షం పడుతుందా?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "te",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 3.17,
+   "total_s": 9.91,
+   "cost": 0.00684,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "సరే. ఈరోజు 6:00కి “కాఫీ కొను” గుర్తు చేయనా? అయింది, ఆరు గంటలకు కాఫీ కొనమని గుర్తు పెట్టాను. ",
+   "question": "ఈరోజు 6:00కి “కాఫీ కొను” గుర్తు చేయనా?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "kn",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.01,
+   "total_s": 7.67,
+   "cost": 0.00799,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "ಈಗಲೇ ನೋಡುತ್ತೇನೆ. ಇಲ್ಲ, ಮಧ್ಯಾಹ್ನ ಮಳೆ ಬರಲ್ಲ, ಮೋಡ ಕವಿದಿರುತ್ತೆ, ಸುಮಾರು ಹದಿಮೂರು ಡಿಗ್ರಿ ಇರುತ್ತೆ. ",
+   "heard": "Hey Earshot, ಇಂದು ಮಧ್ಯಾಹ್ನ ಮಳೆ ಬರುತ್ತದೆಯೇ?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "kn",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.91,
+   "total_s": 10.23,
+   "cost": 0.00727,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "ಸರಿ. ಇಂದು 6:00ಕ್ಕೆ “ಕಾಫಿ ಕೊಳ್ಳು” ಎಂದು ನೆನಪಿಸಲೇ? ಆಯ್ತು, ಬೆಳಿಗ್ಗೆ ಆರು ಗಂಟೆಗೆ ಕಾಫಿ ಕೊಳ್ಳೋದನ್ನ ನೆನಪಿಸ್ತೀನಿ. ",
+   "question": "ಇಂದು 6:00ಕ್ಕೆ “ಕಾಫಿ ಕೊಳ್ಳು” ಎಂದು ನೆನಪಿಸಲೇ?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "th",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.39,
+   "total_s": 6.96,
+   "cost": 0.00793,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "รับทราบ บ่ายนี้ที่ซีแอตเทิลไม่น่าตกครับ เมฆเยอะแต่โอกาสฝนแค่ราวหนึ่งถึงเจ็ดเปอร์เซ็นต์ อากาศสูงสุดประมาณสิบสามองศาครับ ",
+   "heard": "Hey, Earshot, บ่ายนี้ฝนจะตกไหม",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "th",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 4.7,
+   "total_s": 8.89,
+   "cost": 0.00513,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "ได้เลย ให้เตือนเรื่อง “ซื้อกาแฟ” วันนี้ เวลา 6:00 ไหม เรียบร้อย เตือนซื้อกาแฟตอนหกโมงเช้าแล้ว ",
+   "question": "ให้เตือนเรื่อง “ซื้อกาแฟ” วันนี้ เวลา 6:00 ไหม",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "he",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.29,
+   "total_s": 7.8,
+   "cost": 0.00579,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "אני על זה. לא, מחר בצהריים לא צפוי גשם. יהיה מעונן עם סיכוי קטן בלבד, סביב שלוש עשרה מעלות. ",
+   "heard": "Hey earshot, האם ירד גשם מחר הצהריים?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "he",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 2.7,
+   "total_s": 7.12,
+   "cost": 0.00694,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "בסדר. להזכיר לך „לקנות קפה” היום ב-18:00? בוצע, תזכורת לקנות קפה בשש בערב. ",
+   "question": "להזכיר לך „לקנות קפה” היום ב-18:00?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ar",
+   "scenario": "weather",
+   "attempt": 2,
+   "first_s": 1.86,
+   "total_s": 6.31,
+   "cost": 0.00769,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "حاضر. لا، بعد الظهر غائم بدون مطر تقريبا، والحرارة حوالي ثلاثة عشر درجة. ",
+   "heard": "Hey earshot. هل ستمطر بعد الظهر?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ar",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 3.83,
+   "total_s": 9.27,
+   "cost": 0.00734,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "حسنًا. هل أذكّرك بـ«اشتر القهوة» اليوم الساعة 6:00؟ تم، ذكرتك تشتري القهوة الساعة ستة الصبح. ",
+   "question": "هل أذكّرك بـ«اشتر القهوة» اليوم الساعة 6:00؟",
+   "question_in_language": true,
+   "ok": true
+  }
+ ]
+}

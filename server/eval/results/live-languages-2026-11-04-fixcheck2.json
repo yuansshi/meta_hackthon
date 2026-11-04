@@ -1,0 +1,199 @@
+{
+ "at": "2026-11-04T05:56:54",
+ "url": "wss://earshot-yuansshi.fly.dev/ws",
+ "total": {
+  "weather": "6/6",
+  "reminder": "3/6",
+  "cost_usd": 0.061,
+  "minutes": 5.2
+ },
+ "by_language": {
+  "ja": {
+   "weather": "3/3",
+   "wake": "3/3",
+   "answered_in_language": "3/3",
+   "reminder_with_spoken_yes": "0/3",
+   "first_word_p50_s": 2.16
+  },
+  "he": {
+   "weather": "3/3",
+   "wake": "3/3",
+   "answered_in_language": "3/3",
+   "reminder_with_spoken_yes": "3/3",
+   "first_word_p50_s": 2.25
+  }
+ },
+ "rows": [
+  {
+   "language": "ja",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 3.28,
+   "total_s": 9.11,
+   "cost": 0.00812,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "了解です。 午後のシアトルは曇りで、雨はほとんど降らない見込みですよ。最高は十三度くらいです。 ",
+   "heard": "Hey earshot. 今日の午後は雨が降りますか？",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ja",
+   "scenario": "reminder",
+   "ok": false,
+   "error": "TimeoutError:  | heard: ようにリマインドして。 | said: ",
+   "first_s": null,
+   "cost": 0
+  },
+  {
+   "language": "he",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.25,
+   "total_s": 8.02,
+   "cost": 0.0087,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "אני על זה. לא, אחר הצהריים צפוי להיות מעונן בלי גשם, סביב שלוש עשרה מעלות. ",
+   "heard": "Hey, Earshot, האם ירד גשם אחר הצהריים?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "he",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 3.38,
+   "total_s": 9.44,
+   "cost": 0.00464,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "בסדר. להזכיר לך „לקנות קפה” היום ב-18:00? נשמר, אזכיר לך לקנות קפה בשש בערב. ",
+   "question": "להזכיר לך „לקנות קפה” היום ב-18:00?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ja",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.16,
+   "total_s": 8.0,
+   "cost": 0.00601,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "了解です。 午後のシアトルは曇りで、雨はほぼ降らない見込みです。最高は十三度くらいですよ。 ",
+   "heard": "Hey Earshot. 今日の午後は雨が降りますか?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ja",
+   "scenario": "reminder",
+   "ok": false,
+   "error": "TimeoutError:  | heard: Hey, Earshot. / ようにリマインドして。 | said: はい？",
+   "first_s": null,
+   "cost": 0
+  },
+  {
+   "language": "he",
+   "scenario": "weather",
+   "attempt": 3,
+   "first_s": 2.81,
+   "total_s": 9.03,
+   "cost": 0.00599,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "אני על זה. לא צפוי גשם של ממש אחר הצהריים, רק מעונן עם סיכוי קטן של כעשרה אחוזים בסביבות חמש, ועד שלוש עשרה מעלות. ",
+   "heard": "Hey, Earshot, האם ירד גשם אחר הצהריים?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "he",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 31.04,
+   "total_s": 64.09,
+   "cost": 0.007,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "בסדר. להזכיר לך „לקנות קפה” היום ב-18:00? רשמתי, אזכיר לך לקנות קפה בשש בערב. ",
+   "question": "להזכיר לך „לקנות קפה” היום ב-18:00?",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ja",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 1.58,
+   "total_s": 5.9,
+   "cost": 0.00575,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "了解です。 午後の雨はたぶんなしで曇り、最高は十三度くらいです。夕方に少し降るかもしれないので折りたたみがあると安心です。 ",
+   "heard": "Hey, earshot 今日の午後は雨が降りますか？",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ja",
+   "scenario": "reminder",
+   "ok": false,
+   "error": "TimeoutError:  | heard: ようにリマインドして。 | said: ",
+   "first_s": null,
+   "cost": 0
+  },
+  {
+   "language": "he",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.09,
+   "total_s": 7.31,
+   "cost": 0.00777,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "אני על זה. לא, מחר בצהריים לא צפוי גשם, רק מעונן עם סיכוי קטן של כחמש עשרה אחוז. ",
+   "heard": "Hey earshot, האם ירד גשם מחר הצהריים?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "he",
+   "scenario": "reminder",
+   "attempt": 1,
+   "first_s": 3.25,
+   "total_s": 8.49,
+   "cost": 0.00712,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "בסדר. להזכיר לך „לקנות קפה” היום ב-18:00? נשמר, אזכיר לך לקנות קפה בשש בערב. ",
+   "question": "להזכיר לך „לקנות קפה” היום ב-18:00?",
+   "question_in_language": true,
+   "ok": true
+  }
+ ]
+}

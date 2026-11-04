@@ -1,0 +1,929 @@
+{
+ "at": "2026-11-04T07:23:42",
+ "summary": {
+  "snippets": 96,
+  "completed": 96,
+  "precision": 0.929,
+  "recall": 0.975,
+  "false_offers": 3,
+  "false_offers_by_category": {
+   "others": 3
+  },
+  "missed_by_category": {
+   "ask": 1
+  },
+  "offer_after_speech_p50_s": 2.34,
+  "minutes": 16.4
+ },
+ "rows": [
+  {
+   "id": "announce-7-19",
+   "category": "announce",
+   "expect": "offer",
+   "error": "TimeoutError: timed out during opening handshake",
+   "offer_s": -3.56,
+   "heard": "southbound services from platform one are suspended / Passengers should use platform four and change at Aldercross for southbound connections.",
+   "offered": true,
+   "offer": "Southbound Platform 1 suspended \u2014 your 17:15 train affected",
+   "ok": true
+  },
+  {
+   "id": "announce-0-8",
+   "category": "announce",
+   "expect": "offer",
+   "error": "TimeoutError: timed out during opening handshake",
+   "offer_s": -0.87,
+   "heard": "Supporters with tickets for Gate C, that gate is not in use today. / Please use gate D on Ridley Street instead.",
+   "offered": true,
+   "offer": "Gate C at Fenwick Stadium is closed today",
+   "ok": true
+  },
+  {
+   "id": "announce-9-3",
+   "category": "announce",
+   "expect": "offer",
+   "error": "TimeoutError: timed out during opening handshake",
+   "offer_s": 5.75,
+   "heard": "Good evening. Tonight's performance at the Lumen Theatre will begin at 8.15 instead of 7.30 due to a technical delay.",
+   "offered": true,
+   "offer": "Lumen Theatre tonight delayed to 8:15, not 7:30",
+   "ok": true
+  },
+  {
+   "id": "announce-9-14",
+   "category": "announce",
+   "expect": "offer",
+   "offer_s": 2.16,
+   "heard": "This is a platform alteration. The 1803 to Eastfield will now arrive on platform one.",
+   "offered": true,
+   "offer": "18:03 Eastfield train now platform 1, not platform 4",
+   "ok": true
+  },
+  {
+   "id": "announce-0-15",
+   "category": "announce",
+   "expect": "offer",
+   "offer_s": -1.34,
+   "heard": "Passengers for / flight TR735 to San Valora, please note an earlier departure time of 22 10. / Chicken will close at 21 15.",
+   "offered": true,
+   "offer": "Flight TR735 to San Valora now departs 22:10, earlier than 23:05",
+   "ok": true
+  },
+  {
+   "id": "announce-3-10",
+   "category": "announce",
+   "expect": "offer",
+   "offer_s": -1.31,
+   "heard": "hotel shuttle update / the shuttle to the Aldermere hotel will now pick up from basics outside arrivals / this replaces the usual bay two pickup.",
+   "offered": true,
+   "offer": "Aldermere shuttle now picks up basics outside arrivals, not Bay 2",
+   "ok": true
+  },
+  {
+   "id": "announce-3-9",
+   "category": "announce",
+   "expect": "offer",
+   "offer_s": -0.67,
+   "heard": "All guided to Earth today will now depart from the Garden Pavilion. / Tours will no longer meet in the main lobby.",
+   "offered": true,
+   "offer": "Museum tours today now depart from Garden Pavilion, not main lobby.",
+   "ok": true
+  },
+  {
+   "id": "announce-9-15",
+   "category": "announce",
+   "expect": "offer",
+   "offer_s": 2.0,
+   "heard": "baggage from flight RK 119 from Tel Aviv has been redirected to carousel seven due to a belt fault.",
+   "offered": true,
+   "offer": "RK119 baggage now at carousel 7, not 2",
+   "ok": true
+  },
+  {
+   "id": "ask-9-7",
+   "category": "ask",
+   "expect": "offer",
+   "offer_s": 2.35,
+   "heard": "Next time you're near the pharmacy on Delaney Road, would you mind picking up my prescription? It's under Tavares, T-A-V-A-R-E-S.",
+   "offered": true,
+   "offer": "Want a reminder for the pharmacy pickup on Delaney Road?",
+   "ok": true
+  },
+  {
+   "id": "ask-3-18",
+   "category": "ask",
+   "expect": "offer",
+   "offer_s": -1.29,
+   "heard": "Kofi, do me a favor and set aside that chipped yellow mug for the charity box. / Actually, put the two chipped plates in with it too.",
+   "offered": true,
+   "offer": "Set aside chipped yellow mug for charity box?",
+   "ok": true
+  },
+  {
+   "id": "ask-3-12",
+   "category": "ask",
+   "expect": "offer",
+   "offer_s": 3.03,
+   "heard": "Tariq, when you're at Northgate Hardware, get me a pack of those 60 watt warm bulbs, would you? / We're out in the hallway",
+   "offered": true,
+   "offer": "Add 60 watt warm bulbs at Northgate Hardware to list?",
+   "ok": true
+  },
+  {
+   "id": "ask-2-16",
+   "category": "ask",
+   "expect": "offer",
+   "heard": "Remember to ask Doctor Patel about the refill when you see her Tuesday. The inhaler, the blue one.",
+   "offered": false,
+   "offer": null,
+   "ok": false
+  },
+  {
+   "id": "ask-0-10",
+   "category": "ask",
+   "expect": "offer",
+   "offer_s": 2.81,
+   "heard": "uh, and old milk, the blue carton, two of them, if Tesco on Mill Road has it.",
+   "offered": true,
+   "offer": "Remember two blue cartons of old milk at Tesco Mill Road?",
+   "ok": true
+  },
+  {
+   "id": "ask-9-0",
+   "category": "ask",
+   "expect": "offer",
+   "offer_s": -1.87,
+   "heard": "When you go to Aunt Lydia's on Saturday, can you take her those photocopies of my passport? / They're in the blue envelope on the hall table. Don't leave them behind.",
+   "offered": true,
+   "offer": "Need reminder to bring passport photocopies to Aunt Lydia's Saturday?",
+   "ok": true
+  },
+  {
+   "id": "ask-7-16",
+   "category": "ask",
+   "expect": "offer",
+   "offer_s": 3.72,
+   "heard": "Please don't buy the peanut crackers this time. Get the plain rice ones. The brand with the green stripe",
+   "offered": true,
+   "offer": "Add reminder for plain rice crackers, green stripe brand, no peanuts?",
+   "ok": true
+  },
+  {
+   "id": "ask-2-3",
+   "category": "ask",
+   "expect": "offer",
+   "offer_s": 2.68,
+   "heard": "If you are going out anyway, we need dishwasher tabs. Like, urgently, and don't get the lemon ones again.",
+   "offered": true,
+   "offer": "Need a reminder for dishwasher tabs, not lemon?",
+   "ok": true
+  },
+  {
+   "id": "detail-0-5",
+   "category": "detail",
+   "expect": "offer",
+   "offer_s": 2.31,
+   "heard": "Locker 217. Combo is 082413. My gym stuff's already in there if you grab my shoes.",
+   "offered": true,
+   "offer": "Save locker 217 combo 082413?",
+   "ok": true
+  },
+  {
+   "id": "detail-6-7",
+   "category": "detail",
+   "expect": "offer",
+   "offer_s": -1.59,
+   "heard": "Ask for Tom\u00e1s at reception. Not Tom, there's two of them. / He's the one with the blue lanyard who has your visitor pass.",
+   "offered": true,
+   "offer": "Remember to ask for Tom\u00e1s at reception?",
+   "ok": true
+  },
+  {
+   "id": "detail-1-14",
+   "category": "detail",
+   "expect": "offer",
+   "offer_s": 3.53,
+   "heard": "When you get in, it's six two to nine nil to disarm it, then the same again to set it when you leave.",
+   "offered": true,
+   "offer": "Remember alarm code 62290 for entry and exit?",
+   "ok": true
+  },
+  {
+   "id": "detail-7-8",
+   "category": "detail",
+   "expect": "offer",
+   "offer_s": 2.54,
+   "heard": "it's in the second drawer down in the kitchen underneath the tea towels",
+   "offered": true,
+   "offer": "Save where your passport is?",
+   "ok": true
+  },
+  {
+   "id": "detail-5-4",
+   "category": "detail",
+   "expect": "offer",
+   "offer_s": 2.21,
+   "heard": "Her name's not spelled how you'd think. Shavonne. S I O B H O N. At Larkspur Dental.",
+   "offered": true,
+   "offer": "Save Shavonne spelled S I O B H O N at Larkspur Dental?",
+   "ok": true
+  },
+  {
+   "id": "detail-3-11",
+   "category": "detail",
+   "expect": "offer",
+   "offer_s": 2.68,
+   "heard": "Your bike isn't by the main doors, I moved it to the rack by the library's north entrance.",
+   "offered": true,
+   "offer": "Save bike location at library's north entrance rack?",
+   "ok": true
+  },
+  {
+   "id": "detail-1-9",
+   "category": "detail",
+   "expect": "offer",
+   "offer_s": -3.03,
+   "heard": "When you call the clinic, ask for extension 309 / That's Doctor Patel's nurse directly. Saves you the whole phone tree.",
+   "offered": true,
+   "offer": "Remember extension 309 for the clinic?",
+   "ok": true
+  },
+  {
+   "id": "detail-1-17",
+   "category": "detail",
+   "expect": "offer",
+   "offer_s": 3.39,
+   "heard": "The good charge isn't lost, I moved it to the drawer under the kettle.",
+   "offered": true,
+   "offer": "Want to save where the good charge is?",
+   "ok": true
+  },
+  {
+   "id": "irrelevant-0-16",
+   "category": "irrelevant",
+   "expect": "none",
+   "heard": "Please be advised roadworks on Mill Road will continue until the end of the month expect diversions via Church Lane",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "irrelevant-0-10",
+   "category": "irrelevant",
+   "expect": "none",
+   "heard": "Will the owner of a blue sedan, license plate KTR 592, please move your vehicle from the loading zone?",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "irrelevant-1-10",
+   "category": "irrelevant",
+   "expect": "none",
+   "heard": "Please note the yoga class at 7 PM has been replaced with a spin class in gym two.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "irrelevant-8-3",
+   "category": "irrelevant",
+   "expect": "none",
+   "heard": "",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "irrelevant-4-15",
+   "category": "irrelevant",
+   "expect": "none",
+   "heard": "",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "irrelevant-0-8",
+   "category": "irrelevant",
+   "expect": "none",
+   "heard": "",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "irrelevant-7-0",
+   "category": "irrelevant",
+   "expect": "none",
+   "heard": "Attention passengers, flight ZK472 to Port Sable is now delayed until 6.40 PM. / Please remain in the departure lounge for further updates.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "irrelevant-5-5",
+   "category": "irrelevant",
+   "expect": "none",
+   "heard": "Announcement from the Kestrel Project Team. Our client demo has been moved to 11 AM on Wednesday.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "lookup-5-19",
+   "category": "lookup",
+   "expect": "offer",
+   "offer_s": 2.56,
+   "heard": "Could you find out how much they charge to rent the small room at the Kestrel Arts Center on a Saturday evening? / and where the chairs are included.",
+   "offered": true,
+   "offer": "Look up Kestrel Arts Center small room Saturday rate?",
+   "ok": true
+  },
+  {
+   "id": "lookup-9-11",
+   "category": "lookup",
+   "expect": "offer",
+   "offer_s": 4.13,
+   "heard": "If you're passing your laptop anyway, see if that little cafe on Loom Street does oat lattes decaf. / I'm meeting Sana there and she can't have caffeine",
+   "offered": true,
+   "offer": "Remember to check if cafe on Loom Street has decaf oat lattes?",
+   "ok": true
+  },
+  {
+   "id": "lookup-7-0",
+   "category": "lookup",
+   "expect": "offer",
+   "offer_s": -1.29,
+   "heard": "Hey Tom, could you look up whether the Fernal Library is open on bank holiday Monday? / I wanted to return that atlas before it goes overdue",
+   "offered": true,
+   "offer": "Want me to check Fernal Library bank holiday Monday hours?",
+   "ok": true
+  },
+  {
+   "id": "lookup-8-8",
+   "category": "lookup",
+   "expect": "offer",
+   "offer_s": -0.83,
+   "heard": "Can you see if the library in Northfield has that book, The Salt Road, available? / If not, maybe who has it nearby?",
+   "offered": true,
+   "offer": "Check if Northfield library has The Salt Road?",
+   "ok": true
+  },
+  {
+   "id": "lookup-7-12",
+   "category": "lookup",
+   "expect": "offer",
+   "offer_s": -1.46,
+   "heard": "Can you look into how long the passport renewal is taking at the moment? / Mine expires in March and we're traveling in April.",
+   "offered": true,
+   "offer": "Want me to check current passport renewal times?",
+   "ok": true
+  },
+  {
+   "id": "lookup-2-11",
+   "category": "lookup",
+   "expect": "offer",
+   "offer_s": 3.22,
+   "heard": "While you're on your laptop, find out / what our landlord actually said about subletting in the lease, was it six months notice?",
+   "offered": true,
+   "offer": "Want me to check your lease for the subletting notice period?",
+   "ok": true
+  },
+  {
+   "id": "lookup-8-0",
+   "category": "lookup",
+   "expect": "offer",
+   "offer_s": -2.23,
+   "heard": "Hey, can you look up what time Brindle's bakery closes on Sundays? / I need to know if we can still grab that sourdough after four.",
+   "offered": true,
+   "offer": "Look up Brindle's bakery Sunday closing time?",
+   "ok": true
+  },
+  {
+   "id": "lookup-0-1",
+   "category": "lookup",
+   "expect": "offer",
+   "offer_s": 2.35,
+   "heard": "can you find out if Dr. Lyons clinic on Rooker Avenue takes new patients under the green shield plan? / I need to know before Thursday.",
+   "offered": true,
+   "offer": "Check if Dr. Lyons clinic on Rooker Avenue takes green shield?",
+   "ok": true
+  },
+  {
+   "id": "media-4-9",
+   "category": "media",
+   "expect": "none",
+   "heard": "This summer, one hero returns. He thought he left Black Ridge behind. He was wrong.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "media-1-1",
+   "category": "media",
+   "expect": "none",
+   "heard": "call / zero eight zero zero five five five zero one four two now and your order that's two wonder mops two buckets and free delivery to anywhere in Northshire",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "media-8-17",
+   "category": "media",
+   "expect": "none",
+   "heard": "The little wakes, perfectly still, knowing one wrong step will send the / herd scattering across the plain.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "media-4-7",
+   "category": "media",
+   "expect": "none",
+   "heard": "And for tomorrow, high is near 58 in the valley. With rain moving into Port Halloway after sunset.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "media-6-11",
+   "category": "media",
+   "expect": "none",
+   "heard": "smash that subscribe button and drop a comment telling me your worst travel fail",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "media-8-4",
+   "category": "media",
+   "expect": "none",
+   "heard": "Can you help Professor Pickle find the missing moon key? Say it with me, behind the purple door.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "media-5-1",
+   "category": "media",
+   "expect": "none",
+   "heard": "This weekend only a tree county motors in Belfield get 0% financing on every remaining 2024 SUV. Call 5550147 before Saturday and mention code drive 20",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "media-9-1",
+   "category": "media",
+   "expect": "none",
+   "heard": "At Zeeks Autobahn in Pottsville, every trick is marked down this weekend only. Zero down, just 299 a month, but you have to come in before Sunday.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "others-4-12",
+   "category": "others",
+   "expect": "none",
+   "heard": "Lisa said her train home is the 17:43 from Paddington. If it's on time,",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "others-5-10",
+   "category": "others",
+   "expect": "none",
+   "heard": "Apparently his scan got moved forward to 9.30 so he'll drive straight there after breakfast",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "others-4-5",
+   "category": "others",
+   "expect": "none",
+   "heard": "If Jenna asks, her interview got pushed to Monday at 9.40",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "others-9-11",
+   "category": "others",
+   "expect": "none",
+   "offer_s": 3.89,
+   "heard": "Caleb, your one minute is booked in Exeter on the fifth at two PM. Don't forget.",
+   "offered": true,
+   "offer": "Want a reminder for Exeter on the fifth at 2 PM?",
+   "ok": false
+  },
+  {
+   "id": "others-5-1",
+   "category": "others",
+   "expect": "none",
+   "heard": "Marco's on the 642 to Bristol tomorrow he's meeting his sister at Temple Meads",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "others-1-8",
+   "category": "others",
+   "expect": "none",
+   "heard": "They moved Tom's hospital appointment to Friday afternoon Ward C",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "others-1-19",
+   "category": "others",
+   "expect": "none",
+   "offer_s": 2.68,
+   "heard": "My sister's graduation ceremony is at 3 PM in Oxford, we're taking the coach at 12 30.",
+   "offered": true,
+   "offer": "Save graduation ceremony at 3 PM in Oxford, coach at 12:30?",
+   "ok": false
+  },
+  {
+   "id": "others-3-6",
+   "category": "others",
+   "expect": "none",
+   "offer_s": 3.63,
+   "heard": "I'm just booking the table for Priya and Tom anniversary dinner. 8 PM at the Copper Hen on the 14th.",
+   "offered": true,
+   "offer": "Add dinner at Copper Hen on the 14th at 8 PM?",
+   "ok": false
+  },
+  {
+   "id": "past-8-17",
+   "category": "past",
+   "expect": "none",
+   "heard": "When I was working at the bookstore in Ashford, we once had a guy try to return a book he'd clearly read in the bath.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "past-1-7",
+   "category": "past",
+   "expect": "none",
+   "heard": "Remember when the power went out during the game at Hollis Field? / We just sat there in the dark for 20 minutes laughing.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "past-4-3",
+   "category": "past",
+   "expect": "none",
+   "heard": "We tried that little bakery on Ninth Street yesterday morning. The cardamom rolls were completely sold out by 10.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "past-0-15",
+   "category": "past",
+   "expect": "none",
+   "heard": "She tried that spicy ramen place that opened near campus and said she couldn't finish even half of it.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "past-5-19",
+   "category": "past",
+   "expect": "none",
+   "heard": "Nobody believed it at first, but the old lighthouse keeper really did row out there every night until 98.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "past-2-17",
+   "category": "past",
+   "expect": "none",
+   "heard": "My sister graduated from Westfield Academy in 2019. Top of her class.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "past-2-4",
+   "category": "past",
+   "expect": "none",
+   "heard": "",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "past-6-16",
+   "category": "past",
+   "expect": "none",
+   "heard": "",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "plan-0-0",
+   "category": "plan",
+   "expect": "offer",
+   "offer_s": -1.01,
+   "heard": "We're still on for brunch with Androsa. / Saturday at 11 at the sunny side cafe. Right? / You said you'd bring the photo album.",
+   "offered": true,
+   "offer": "Want a reminder for brunch Saturday at 11?",
+   "ok": true
+  },
+  {
+   "id": "plan-5-15",
+   "category": "plan",
+   "expect": "offer",
+   "offer_s": 2.34,
+   "heard": "Don't be late Wednesday. your brother's recital we're sitting together North Gate School Auditorium at five forty five",
+   "offered": true,
+   "offer": "Add brother's recital today at 5:45?",
+   "ok": true
+  },
+  {
+   "id": "plan-5-14",
+   "category": "plan",
+   "expect": "offer",
+   "offer_s": 2.6,
+   "heard": "So, Sunday hike is on. You, me, and the kids, trailheaded Pinna Crest Falls, meet at nine.",
+   "offered": true,
+   "offer": "Add Sunday 9 AM hike at Pinna Crest Falls trailhead?",
+   "ok": true
+  },
+  {
+   "id": "plan-0-13",
+   "category": "plan",
+   "expect": "offer",
+   "offer_s": 2.4,
+   "heard": "We are booked in with Dr. Patel together Tuesday morning. I put you down for the 10:15 slot right after mine at the clinic on Grove Street.",
+   "offered": true,
+   "offer": "Add appointment with Dr. Patel Tuesday at 10:15?",
+   "ok": true
+  },
+  {
+   "id": "plan-2-1",
+   "category": "plan",
+   "expect": "offer",
+   "offer_s": 2.84,
+   "heard": "Okay, so teams are set. You. Me. and Ravi. Thursday at 6 45 at Northgate Lanes.",
+   "offered": true,
+   "offer": "Add bowling Thursday 6:45 at Northgate Lanes?",
+   "ok": true
+  },
+  {
+   "id": "plan-7-17",
+   "category": "plan",
+   "expect": "offer",
+   "offer_s": 3.2,
+   "heard": "Flood viewing with me tomorrow? Agent said 12.30. / Unit 4B at Tansy House on Millbrook Lane. / Bring your ID. They asked for both of ours.",
+   "offered": true,
+   "offer": "Add viewing tomorrow at 12:30 to your notes?",
+   "ok": true
+  },
+  {
+   "id": "plan-9-4",
+   "category": "plan",
+   "expect": "offer",
+   "offer_s": -3.75,
+   "heard": "I got your ticket too Friday night nine o'clock showing / Cineplex at Harbour Mall screen four don't make me watch the trailers alone",
+   "offered": true,
+   "offer": "Reminder for Friday night 9 o'clock showing?",
+   "ok": true
+  },
+  {
+   "id": "plan-6-2",
+   "category": "plan",
+   "expect": "offer",
+   "offer_s": 3.15,
+   "heard": "Mom, I'll meet you Friday at 5 45 by platform three at Union Station. Then we'll go to your aunts together",
+   "offered": true,
+   "offer": "Need a reminder for Friday 5:45 at Union Station platform three?",
+   "ok": true
+  },
+  {
+   "id": "smalltalk-4-7",
+   "category": "smalltalk",
+   "expect": "none",
+   "heard": "He's grown so tall since Christmas I didn't recognize him at first. / Kids do that one summer and they completely different.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "smalltalk-0-18",
+   "category": "smalltalk",
+   "expect": "none",
+   "heard": "Ben's laugh is so contagious, the whole table started giggling. / Even the waiter,",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "smalltalk-3-4",
+   "category": "smalltalk",
+   "expect": "none",
+   "heard": "That little cafe on Harley Street makes the smoothest oat latte. / And they always remember my name now.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "smalltalk-8-1",
+   "category": "smalltalk",
+   "expect": "none",
+   "heard": "My tomatoes finally turned red this week. Took them long enough. / The ones by the fence are still a bit green though.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "smalltalk-6-10",
+   "category": "smalltalk",
+   "expect": "none",
+   "heard": "Marcellus said his tomatoes finally started turning red this week. / Only took all summer.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "smalltalk-9-19",
+   "category": "smalltalk",
+   "expect": "none",
+   "heard": "That was such a mild October in Portland. Wasn't it? / I was still having coffee outside in the afternoons.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "smalltalk-8-12",
+   "category": "smalltalk",
+   "expect": "none",
+   "heard": "Marcus has repainted his front fence that's sage green color. / saw it this morning. Looks quite smart against the brick.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "smalltalk-7-9",
+   "category": "smalltalk",
+   "expect": "none",
+   "heard": "That song was playing everywhere last summer. Remember? / Every shop, every car window down.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "store-3-6",
+   "category": "store",
+   "expect": "none",
+   "heard": "all available floor staff to the fitting rooms. / Please, we have a line forming.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "store-0-2",
+   "category": "store",
+   "expect": "none",
+   "heard": "Will all available cashiers please come to the registers? We need backup on lanes three and six.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "store-6-19",
+   "category": "store",
+   "expect": "none",
+   "heard": "Final boarding procedures have begun. Gate agents please proceed to podium C7 for assignments.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "store-3-5",
+   "category": "store",
+   "expect": "none",
+   "heard": "Kind, please report to photo counter. Kendra to photo.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "store-1-3",
+   "category": "store",
+   "expect": "none",
+   "heard": "We need backup at register three / Please, any available cashier to register three",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "store-5-4",
+   "category": "store",
+   "expect": "none",
+   "heard": "Code yellow, building C. / Second floor. Code yellow. building C / maintenance, please respond",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "store-9-15",
+   "category": "store",
+   "expect": "none",
+   "heard": "Jamie, you'll break his over confront end needs you on register five.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "store-0-10",
+   "category": "store",
+   "expect": "none",
+   "heard": "All department heads please return your inventory sheets to Mrs. Alvarez in the main office by three o'clock.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "vague-0-14",
+   "category": "vague",
+   "expect": "none",
+   "heard": "I'd like to pick your brain about that workshop idea sometime, if you're open to it,",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "vague-3-3",
+   "category": "vague",
+   "expect": "none",
+   "heard": "We ought to do brunch again like we used to. / Totally. Miss that.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "vague-7-0",
+   "category": "vague",
+   "expect": "none",
+   "heard": "We should grab coffee sometime, Priya. / It's been ages since we actually sat down.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "vague-0-5",
+   "category": "vague",
+   "expect": "none",
+   "heard": "Someday we should finally take that road trip we keep talking about. / Elena.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "vague-1-2",
+   "category": "vague",
+   "expect": "none",
+   "heard": "Let's finally do that hike we keep talking about.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "vague-1-15",
+   "category": "vague",
+   "expect": "none",
+   "heard": "It would be fun to go kayaking together at some point. / Yeah, I've always wanted to try it.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "vague-5-19",
+   "category": "vague",
+   "expect": "none",
+   "heard": "At some point, coffee's on me, I still owe you for last time.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  },
+  {
+   "id": "vague-6-4",
+   "category": "vague",
+   "expect": "none",
+   "heard": "Let me know if you ever want to go for a walk around the lake again.",
+   "offered": false,
+   "offer": null,
+   "ok": true
+  }
+ ]
+}

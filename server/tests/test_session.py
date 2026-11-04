@@ -481,6 +481,157 @@ async def test_rewind_explains_push_to_talk(env):
     assert result["heard"] == [] and "push-to-talk" in result["note"]
 
 
+OFFER = ('{"kind": "reminder", "offer": "Want me to remind you about dinner Friday at seven?", '
+         '"request": "Remind me about dinner at 1420 Pine Street on Friday at 7 PM."}')
+
+
+async def heads_up_session(meta, clock=time.monotonic):
+    s, sent, models = await make_session(meta=meta, hello={**HELLO, "heads_up": True}, clock=clock)
+    s.cfg["heads_up"]["debounce_s"] = 0
+    return s, sent, models
+
+
+async def test_heads_up_offers_and_acts_on_a_yes_without_asking_twice(env):
+    s, sent, models = await heads_up_session([
+        text_reply("s1", OFFER),
+        tool_reply("r1", "create_reminder", {"title": "Dinner at 1420 Pine Street", "due": "2026-11-06T19:00"}, "c1"),
+        text_reply("r2", "Done, dinner Friday at seven."),
+    ])
+    await s.on_asr_event({"type": "speechComplete", "transcript": "Dinner's at my place Friday at seven, 1420 Pine."})
+    question = await next_msg(sent, "confirm")
+    assert question == {"type": "confirm", "turn": "h1", "question": "Want me to remind you about dinner Friday at seven?"}
+    await s.on_asr_event({"type": "speechComplete", "transcript": "And bring that wine you like."})  # the friend again
+    assert s.awaiting and not s.awaiting.done()  # only a short yes or no answers an offer
+    await s.on_asr_event({"type": "speechComplete", "transcript": "Yes please."})
+    call = await next_msg(sent, "tool_call")
+    assert call["name"] == "create_reminder"
+    await s.handle_text({"type": "tool_result", "id": call["id"], "ok": True, "result": {"ok": True}})
+    await s.turn
+    assert says(sent) == ["Want me to remind you about dinner Friday at seven?", "On it.", "Done, dinner Friday at seven."]
+    assert sum(m["type"] == "confirm" for m in sent) == 1  # the yes to the offer was the only question
+    screened = models["meta"].responses.calls[0]
+    assert "Dinner's at my place" in screened["input"][0]["content"] and screened["reasoning"] == {"effort": "minimal"}
+    receipt = [m["entry"] for m in sent if m["type"] == "action" and m["entry"]["tool"] == "heads_up"][-1]
+    assert receipt["args"] == {"kind": "reminder"} and receipt["result"] == {"accepted": True}
+    assert s.agent.preapproved == 0
+
+
+async def test_heads_up_does_nothing_without_a_yes(env):
+    s, sent, models = await heads_up_session([text_reply("s1", OFFER)])
+    await s.on_asr_event({"type": "speechComplete", "transcript": "Dinner's at my place Friday at seven."})
+    await next_msg(sent, "confirm")
+    await s.on_asr_event({"type": "speechComplete", "transcript": "No thanks."})
+    await s.turn
+    assert not [m for m in sent if m["type"] == "tool_call"]
+    receipt = [m["entry"] for m in sent if m["type"] == "action" and m["entry"]["tool"] == "heads_up"][-1]
+    assert receipt["status"] == "cancelled" and "Dinner" not in json.dumps(receipt)
+
+
+async def test_heads_up_is_off_by_default_quiet_when_nothing_matters_and_spaced_out(env):
+    s, sent, models = await make_session(meta=[])
+    await s.on_asr_event({"type": "speechComplete", "transcript": "Dinner's at my place Friday at seven."})
+    await asyncio.sleep(0.05)
+    assert not models["meta"].responses.calls  # off unless the client asks for it
+    now = [1000.0]
+    s, sent, models = await heads_up_session([text_reply("s1", '{"kind": "none"}'), text_reply("s2", OFFER)],
+                                             clock=lambda: now[0])
+    await s.on_asr_event({"type": "speechComplete", "transcript": "Nice weather today, huh."})
+    await asyncio.sleep(0.05)
+    assert len(models["meta"].responses.calls) == 1 and not [m for m in sent if m["type"] == "confirm"]
+    await s.on_asr_event({"type": "speechComplete", "transcript": "Dinner's at my place Friday at seven."})
+    await next_msg(sent, "confirm")
+    await s.handle_text({"type": "text", "text": "no"})
+    await s.turn
+    now[0] += 10
+    await s.on_asr_event({"type": "speechComplete", "transcript": "Oh, and lunch on Saturday at noon."})
+    await asyncio.sleep(0.05)
+    assert len(models["meta"].responses.calls) == 2  # too soon after an offer: not even screened
+
+
+async def test_heads_up_alert_is_spoken_without_a_question(env):
+    alert = '{"kind": "alert", "offer": "Heads-up: your 5:15 to Fremont now leaves from platform 5."}'
+    s, sent, models = await heads_up_session([text_reply("s1", alert)])
+    await s.memory.remember("I take the 5:15 to Fremont after work")
+    await s.on_asr_event({"type": "speechComplete", "transcript": "The 5:15 to Fremont will now depart from platform 5."})
+    done = await next_msg(sent, "turn_done")
+    assert done["heads_up"] and says(sent) == ["Heads-up: your 5:15 to Fremont now leaves from platform 5."]
+    assert not [m for m in sent if m["type"] == "confirm"]
+    assert "5:15 to Fremont after work" in models["meta"].responses.calls[0]["instructions"]  # its notes give context
+
+
+async def test_heads_up_screens_on_the_fallback_when_meta_is_unreachable(env):
+    s, sent, models = await make_session(meta=[not_found()], fireworks=[[chat_chunk(OFFER)]],
+                                         hello={**HELLO, "heads_up": True})
+    s.cfg["heads_up"]["debounce_s"] = 0
+    await s.on_asr_event({"type": "speechComplete", "transcript": "Dinner's at my place Friday at seven."})
+    question = await next_msg(sent, "confirm")
+    assert question["question"] == "Want me to remind you about dinner Friday at seven?"
+    assert models["meta"].responses.calls[0]["model"] == "muse-spark-1.2"  # the screener the eval picked
+    assert models["fireworks"].responses.calls[0]["model"].endswith("muse-spark-open")
+
+
+SAM_RECORDS = "<0f>0<|box;x1=1500;y1=100;x2=1799;y2=299;w=1920;h=1280;c=0.91|><|mask;x=0;y=0;data=2,2,!AAA|>"
+
+
+async def test_find_it_locates_with_sam_and_outlines_the_photo(env):
+    s, sent, models = await make_session(meta=[
+        tool_reply("r1", "find_in_photo", {"thing": "exit sign"}, "c1"),
+        text_reply("sam", SAM_RECORDS),
+        text_reply("r2", "The exit sign is at the top right."),
+    ])
+    await s.handle_text({"type": "image", "data": PHOTO, "text": "Where's the exit?"})
+    await s.turn
+    sam = models["meta"].responses.calls[1]
+    assert sam["model"] == "sam-3.1" and sam["input"][0]["content"][0] == {"type": "input_text", "text": "exit sign"}
+    highlight = await next_msg(sent, "highlight")
+    assert highlight["boxes"] == [{"x1": 0.7812, "y1": 0.0781, "x2": 0.9375, "y2": 0.2344}]
+    out = next(i for i in models["meta"].responses.calls[2]["input"] if i.get("type") == "function_call_output")
+    assert json.loads(out["output"])["where"] == ["top right"]
+    assert says(sent) == ["On it.", "The exit sign is at the top right."]
+
+
+async def test_find_it_needs_a_recent_photo(env):
+    s, sent, models = await make_session()
+    assert "no photo" in (await s.agent.tools["find_in_photo"].run(thing="exit sign"))["error"]
+
+
+def test_find_it_says_where_in_words():
+    from earshot.find import where
+    assert where({"x1": 0.8, "y1": 0.05, "x2": 0.95, "y2": 0.25}) == "top right"
+    assert where({"x1": 0.4, "y1": 0.4, "x2": 0.6, "y2": 0.6}) == "in the middle"
+    assert where({"x1": 0.0, "y1": 0.4, "x2": 0.2, "y2": 0.6}) == "on the left"
+    assert where({"x1": 0.4, "y1": 0.8, "x2": 0.6, "y2": 0.95}) == "at the bottom"
+    assert where({"x1": 0.0, "y1": 0.0, "x2": 1.0, "y2": 0.9}) == "filling most of the photo"
+
+
+async def test_out_of_credit_falls_back_but_our_own_bad_request_does_not(env):
+    def status(code: int) -> openai.APIStatusError:
+        response = httpx.Response(code, request=httpx.Request("POST", "https://api.meta.ai/v1/responses"))
+        return openai.APIStatusError(f"HTTP {code}", response=response, body=None)
+
+    s, sent, models = await make_session(meta=[status(402)], fireworks=[[chat_chunk("Still here.")]])
+    await s.handle_text({"type": "text", "text": "hello"})
+    await s.turn
+    done = await next_msg(sent, "turn_done")
+    assert says(sent) == ["Still here."] and done["fallback_from"] == "muse-spark-1.3"
+    assert "muse-spark" in agent_mod.UNAVAILABLE  # later turns skip the refused brain for a while
+
+    agent_mod.UNAVAILABLE.clear()
+    s, sent, models = await make_session(meta=[status(400)], fireworks=[[chat_chunk("should not be used")]])
+    await s.handle_text({"type": "text", "text": "hello"})
+    await s.turn
+    assert not models["fireworks"].responses.calls and says(sent) == ["Sorry, something went wrong."]
+
+
+def test_parse_offer_stays_quiet_when_unsure():
+    from earshot.headsup import parse_offer
+    assert parse_offer('{"kind": "none"}') is None
+    assert parse_offer("not json at all") is None
+    assert parse_offer('{"kind": "reminder", "offer": "Remind you?"}') is None  # nothing to act on
+    o = parse_offer('Sure: {"kind": "note", "offer": "Want me to save her number?", "request": "Remember Dana is 555 0134."}')
+    assert o and o.kind == "note" and o.request.startswith("Remember")
+
+
 def test_split_report_skips_wondering_out_loud():
     from earshot.research import split_report
     text = ("Searching for Seattle's three tallest buildings to build your cited summary.I'll open that source to "
@@ -506,3 +657,61 @@ def test_sentence_splitter_waits_for_whole_sentences():
     assert sp.feed("It's 3.5 degrees") == []
     assert sp.feed(" colder today. Bring a") == ["It's 3.5 degrees colder today."]
     assert sp.feed(" coat") == [] and sp.flush() == "Bring a coat"
+
+
+async def test_research_in_flight_survives_a_server_restart(env):
+    import json as _json
+    store = env / "research"
+    wonder = FakeResearchModel("SUMMARY: The Aventon Level 3 is the pick. DETAILS: $1,399.", polls=1000)
+    researcher = Researcher(load_config(), Budget(100), clients={"meta": wonder}, poll_s=0.01, store=store)
+    s, sent, _ = await make_session(meta=research_scripts("e-bikes under $1,500"), researcher=researcher)
+    await s.handle_text({"type": "text", "text": "look into e-bikes under 1500 and get back to me"})
+    await s.turn
+    await asyncio.sleep(0.05)
+    pending = list((store / "pending").glob("*.json"))
+    assert len(pending) == 1 and _json.loads(pending[0].read_text())["response_id"] == "w1"
+    researcher.shutting_down = True  # the server stops: its tasks are cancelled, the job runs on at Meta
+    for t in list(researcher.tasks):
+        t.cancel()
+    await asyncio.gather(*list(researcher.tasks), return_exceptions=True)
+    await s.close()
+    assert pending[0].exists()  # still on disk for the next start
+    done = FakeResearchModel("SUMMARY: The Aventon Level 3 is the pick. DETAILS: $1,399.", polls=1)
+    after = Researcher(load_config(), Budget(100), clients={"meta": done}, poll_s=0.01, store=store)  # restarted
+    assert after.resume() == 1
+    await asyncio.gather(*list(after.tasks))
+    assert not pending[0].exists() and (store / "inbox" / "test.json").exists()
+    s2, sent2, _ = await make_session(researcher=after)  # the device reconnects
+    spoken = [m["text"] for m in sent2 if m["type"] == "say" and m["text"]]
+    assert spoken[0].startswith("While you were away") and "Aventon" in spoken[-1]
+    assert not (store / "inbox" / "test.json").exists()
+
+
+async def test_the_conversation_continues_after_a_server_restart(env):
+    import json as _json
+    s, sent, _ = await make_session(meta=[text_reply("r1", "Paris.")])
+    await s.handle_text({"type": "text", "text": "What's the capital of France?"})
+    await s.turn
+    await s.close(clean=False)  # the server went away mid-session
+    s2, sent2, models2 = await make_session(meta=[text_reply("r2", "Madrid.")])  # the page reconnects
+    await s2.handle_text({"type": "text", "text": "And Spain?"})
+    await s2.turn
+    sent_input = models2["meta"].responses.calls[0]["input"]
+    assert sent_input[0]["content"] == "What's the capital of France?"  # the turn before the restart
+    assert sent_input[1]["type"] == "message" and sent_input[-1]["content"] == "And Spain?"  # its reply, then now
+
+
+async def test_a_clean_close_forgets_the_conversation_and_photos_are_never_saved(env):
+    import json as _json
+    photo = "data:image/jpeg;base64," + "A" * 400
+    s, sent, _ = await make_session(meta=[text_reply("r1", "A red bike.")])
+    await s.stage_image({"type": "image", "data": photo, "text": "What's this?"})
+    await s.turn
+    saved = (env / "history" / "test.json").read_text()
+    assert "base64" not in saved and "a photo the user shared" in saved
+    await s.close(clean=True)
+    assert not (env / "history" / "test.json").exists()
+    s2, _, models2 = await make_session(meta=[text_reply("r2", "Hi.")])
+    await s2.handle_text({"type": "text", "text": "hello"})
+    await s2.turn
+    assert "red bike" not in _json.dumps(models2["meta"].responses.calls[0]["input"])

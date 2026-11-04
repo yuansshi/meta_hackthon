@@ -3,7 +3,7 @@ const $ = (s) => document.querySelector(s);
 const state = {
   ws: null, mode: "ptt", ptt: false, tailUntil: 0, muted: false, audio: null, retries: 0,
   server: "offline", bubbles: {}, thinking: null, turns: [], cost: 0, photo: null, photoTimer: null, quick: null,
-  confirmTurn: null,
+  confirmTurn: null, headsUp: false,
 };
 const STATUS = { listening: "Listening", thinking: "Thinking", speaking: "Speaking", offline: "Offline", connecting: "Connecting", muted: "Muted" };
 
@@ -63,6 +63,29 @@ function chime() {
   });
 }
 
+// ---------- language: Earshot hears and answers in the user's language ----------
+// The 25 languages Muse Voice Transcribe is validated for: [code the server takes, menu name, speech tag].
+const LANGS = [["en", "English", "en-US"], ["ar", "العربية", "ar-SA"], ["bn", "বাংলা", "bn-IN"],
+  ["nl", "Nederlands", "nl-NL"], ["fr", "Français", "fr-FR"], ["de", "Deutsch", "de-DE"], ["he", "עברית", "he-IL"],
+  ["hi", "हिन्दी", "hi-IN"], ["id", "Bahasa Indonesia", "id-ID"], ["it", "Italiano", "it-IT"], ["ja", "日本語", "ja-JP"],
+  ["kn", "ಕನ್ನಡ", "kn-IN"], ["ko", "한국어", "ko-KR"], ["ms", "Bahasa Melayu", "ms-MY"], ["zh", "中文", "zh-CN"],
+  ["mr", "मराठी", "mr-IN"], ["pl", "Polski", "pl-PL"], ["pt", "Português", "pt-BR"], ["es", "Español", "es-ES"],
+  ["tl", "Tagalog", "fil-PH"], ["ta", "தமிழ்", "ta-IN"], ["te", "తెలుగు", "te-IN"], ["th", "ไทย", "th-TH"],
+  ["tr", "Türkçe", "tr-TR"], ["vi", "Tiếng Việt", "vi-VN"]];
+const LANG_TAG = Object.fromEntries(LANGS.map(([code, , tag]) => [code, tag]));
+const YES_NO = { en: ["Yes", "No"], es: ["Sí", "No"], fr: ["Oui", "Non"], de: ["Ja", "Nein"], it: ["Sì", "No"],
+  pt: ["Sim", "Não"], nl: ["Ja", "Nee"], pl: ["Tak", "Nie"], tr: ["Evet", "Hayır"], id: ["Ya", "Tidak"], ms: ["Ya", "Tidak"],
+  vi: ["Có", "Không"], ja: ["はい", "いいえ"], zh: ["好的", "不用"], ko: ["네", "아니요"], hi: ["हाँ", "नहीं"], bn: ["হ্যাঁ", "না"],
+  ta: ["ஆம்", "இல்லை"], te: ["అవును", "వద్దు"], kn: ["ಹೌದು", "ಬೇಡ"], mr: ["हो", "नको"], th: ["ใช่", "ไม่"], he: ["כן", "לא"],
+  ar: ["نعم", "لا"], tl: ["Oo", "Hindi"] };
+const VOICE_PREFIXES = { tl: ["fil", "tl"], he: ["he", "iw"] };  // how browsers tag those voices
+function browserLang() {
+  const code = (navigator.language || "en").split("-")[0].toLowerCase();
+  const known = { fil: "tl", iw: "he", in: "id" }[code] || code;
+  return LANG_TAG[known] ? known : "en";
+}
+state.lang = LANG_TAG[store.get("earshot.lang", "")] ? store.get("earshot.lang", "") : browserLang();
+
 // ---------- speech out: one sentence at a time, reported to the server so it can ignore the echo ----------
 const speech = {
   queue: [], speaking: false, voice: null,
@@ -73,6 +96,7 @@ const speech = {
     this.speaking = true;
     renderStatus();
     const u = new SpeechSynthesisUtterance(text);
+    u.lang = LANG_TAG[state.lang] || "en-US";
     if (this.voice) u.voice = this.voice;
     u.rate = 1.05;
     let ended = false;
@@ -90,18 +114,26 @@ const speech = {
   },
 };
 
-// macOS ships joke voices ("Bubbles", "Zarvox") that would sink a demo; keep them out of the menu.
+// macOS ships joke voices ("Bubbles", "Zarvox") and robotic ones in every language ("Eddy", "Grandma") that would
+// sink a demo; keep them out of the menu.
 const NOVELTY = new Set(["Albert", "Bad News", "Bahh", "Bells", "Boing", "Bubbles", "Cellos", "Fred", "Good News",
-  "Jester", "Junior", "Kathy", "Organ", "Ralph", "Superstar", "Trinoids", "Whisper", "Wobble", "Zarvox"]);
+  "Jester", "Junior", "Kathy", "Organ", "Ralph", "Superstar", "Trinoids", "Whisper", "Wobble", "Zarvox",
+  "Eddy", "Flo", "Grandma", "Grandpa", "Reed", "Rocko", "Sandy", "Shelley"]);
+const robotic = (v) => NOVELTY.has(v.name) || NOVELTY.has(v.name.split(" (")[0]);
 
 function loadVoices() {
-  const voices = speechSynthesis.getVoices().filter((v) => v.lang && v.lang.startsWith("en") && !NOVELTY.has(v.name));
-  if (!voices.length) return;
-  const preferred = ["Samantha", "Ava", "Google US English", "Microsoft Aria", "Allison", "Karen", "Daniel"];
-  const saved = store.get("earshot.voice", null);
-  const pick = voices.find((v) => v.name === saved) || preferred.map((p) => voices.find((v) => v.name.includes(p))).find(Boolean) || voices[0];
+  const all = speechSynthesis.getVoices();
+  if (!all.length) return;  // not loaded yet; onvoiceschanged calls again
+  const prefixes = VOICE_PREFIXES[state.lang] || [state.lang];
+  const voices = all.filter((v) => v.lang && prefixes.some((p) => v.lang.toLowerCase().startsWith(p)) && !robotic(v));
   const sel = $("#voice");
   sel.innerHTML = "";
+  if (!voices.length) { sel.add(new Option("Browser default", "")); speech.voice = null; return; }
+  const preferred = state.lang === "en" ? ["Samantha", "Ava", "Google US English", "Microsoft Aria", "Allison", "Karen", "Daniel"] : [];
+  const saved = store.get(`earshot.voice.${state.lang}`, null) ?? (state.lang === "en" ? store.get("earshot.voice", null) : null);
+  const pick = voices.find((v) => v.name === saved) || preferred.map((p) => voices.find((v) => v.name.includes(p))).find(Boolean)
+    || voices.find((v) => v.lang === LANG_TAG[state.lang] && v.localService) || voices.find((v) => v.localService)
+    || voices[0];
   for (const v of voices) sel.add(new Option(`${v.name} (${v.lang})`, v.name, false, v === pick));
   speech.voice = pick;
 }
@@ -109,7 +141,15 @@ speechSynthesis.onvoiceschanged = loadVoices;
 loadVoices();
 $("#voice").addEventListener("change", (e) => {
   speech.voice = speechSynthesis.getVoices().find((v) => v.name === e.target.value) || null;
-  store.set("earshot.voice", e.target.value);
+  store.set(`earshot.voice.${state.lang}`, e.target.value);
+});
+for (const [code, name] of LANGS) $("#lang").add(new Option(name, code, false, code === state.lang));
+$("#lang").addEventListener("change", (e) => {
+  state.lang = e.target.value;
+  store.set("earshot.lang", state.lang);
+  loadVoices();
+  // Speech recognition's language is set when a session starts, so start a new one; onclose reconnects.
+  if (state.ws && state.ws.readyState === WebSocket.OPEN) state.ws.close(1000, "language changed");
 });
 
 // ---------- mic in ----------
@@ -179,7 +219,7 @@ function clearThinking() {
 function bubbleFor(turn) {
   let b = state.bubbles[turn];
   if (!b) {
-    if (state.thinking && !turn.startsWith("r")) { // the dots become this turn's bubble, where the dots were
+    if (state.thinking && !/^[rh]/.test(turn)) { // the dots become this turn's bubble, where the dots were
       b = state.thinking;
       state.thinking = null;
       b.removeAttribute("aria-label");
@@ -189,6 +229,11 @@ function bubbleFor(turn) {
     }
     b.append(document.createElement("span"));
     state.bubbles[turn] = b;
+    if (turn.startsWith("h")) { // Earshot spoke up on its own about something it overheard
+      b.classList.add("report");
+      b.dataset.label = "Heads-up";
+      chime();
+    }
   }
   return b;
 }
@@ -218,13 +263,14 @@ function showConfirm(msg) {
   clearConfirm();
   const quick = document.createElement("div");
   quick.className = "quick";
-  for (const answer of ["Yes", "No"]) {
+  const [yes, no] = YES_NO[state.lang] || YES_NO.en;
+  for (const [answer, word] of [[yes, "yes"], [no, "no"]]) {  // the server hears English yes and no in every language
     const btn = Object.assign(document.createElement("button"), { type: "button", textContent: answer });
     btn.addEventListener("click", () => {
       answered();
       speech.stop();
       addMsg("user", answer);
-      send({ type: "text", text: answer.toLowerCase() });
+      send({ type: "text", text: word });
     });
     quick.append(btn);
   }
@@ -268,7 +314,7 @@ function turnDone(msg) {
   if (!b) return;
   const meta = document.createElement("span");
   meta.className = "meta";
-  const first = msg.background ? `${Math.round(msg.total_ms / 1000)} s in the background`
+  const first = msg.heads_up ? "Heads-up" : msg.background ? `${Math.round(msg.total_ms / 1000)} s in the background`
     : msg.first_say_ms != null ? `${(msg.first_say_ms / 1000).toFixed(1)} s to first word` : "no reply";
   const extra = msg.searches ? ` · ${msg.searches} web search${msg.searches > 1 ? "es" : ""}` : "";
   meta.textContent = `${first} · ${prettyModel(msg.model)}${msg.fallback_from ? " (fallback)" : ""}${extra} · $${msg.cost_usd.toFixed(4)}`;
@@ -308,6 +354,15 @@ function describe(e) {
     case "create_reminder":
       return { title: "Reminder", what: `“${a.title || ""}”${a.due ? ` · ${fmtDue(a.due)}` : ""}`,
                out: fail || (r.ok ? `Saved to ${r.saved_to || r.list || "Reminders"}` : "") };
+    case "find_in_photo":
+      return { title: "Find it", what: `“${a.thing || ""}” · SAM 3.1`,
+               out: fail || (r.found ? `${r.found} found: ${(r.where || []).join(", ")}` : r.note || "") };
+    case "heads_up": {  // the receipt keeps the kind and the answer, never the words heard
+      const kinds = { reminder: "offered a reminder", note: "offered to remember something", lookup: "offered to look something up",
+                      research: "offered to research something", alert: "told you about an announcement" };
+      return { title: "Heads-up", what: kinds[a.kind] || "offered to help",
+               out: fail || (r.accepted ? "You said yes" : r.told ? "Spoken" : "") };
+    }
     case "rewind": {  // the receipt keeps a count, never the words heard
       const n = r.lines || 0;
       return { title: "Rewind", what: a.minutes ? `last ${a.minutes} min` : "last few minutes",
@@ -384,7 +439,21 @@ async function runTool(name, args) {
 function onEvent(msg) {
   switch (msg.type) {
     case "ready":
+      // A new server session (after a reconnect or a language change) numbers its turns from t1 again,
+      // so its replies must get new bubbles rather than join the last session's.
+      state.bubbles = {};
+      clearConfirm();
       setBrain(msg.brain, false);
+      renderHeadsUp(Boolean(msg.heads_up));
+      // The server restarted before it started on the last question (nothing came back): ask it again, once.
+      if (state.unanswered && Date.now() - state.unanswered.at < 60000) {
+        send({ type: "text", text: state.unanswered.text });
+        toast("Reconnected. Asking again.");
+      }
+      state.unanswered = null;
+      break;
+    case "heads_up":
+      renderHeadsUp(Boolean(msg.on));
       break;
     case "state":
       state.server = msg.value;
@@ -395,24 +464,33 @@ function onEvent(msg) {
     case "transcript":
       if (!msg.final) { $("#caption").textContent = msg.text ? `“${msg.text}”` : ""; break; }
       $("#caption").textContent = "";
-      if (msg.accepted) { if (msg.reason === "answer") answered(); addMsg("user", msg.text); }
+      if (msg.accepted) {
+        if (msg.reason === "answer") answered();
+        addMsg("user", msg.text);
+        if (msg.reason !== "answer") state.unanswered = { text: msg.text, at: Date.now() };
+      }
       else if (state.mode === "wake" && msg.reason === "no_wake" && msg.text) {
         $("#caption").textContent = `Heard “${msg.text}”. Start with “Hey Earshot” to ask something.`;
       }
       break;
     case "say":
-      if (msg.text) { agentSay(msg.turn, msg.text); speech.push(msg.text); }
+      if (msg.text) { state.unanswered = null; agentSay(msg.turn, msg.text); speech.push(msg.text); }
       break;
     case "tool_call":
+      state.unanswered = null;
       runTool(msg.name, msg.args || {})
         .then((result) => send({ type: "tool_result", id: msg.id, ok: !result.error, result, error: result.error }))
         .catch((err) => send({ type: "tool_result", id: msg.id, ok: false, error: err.message || String(err) }));
       break;
     case "action":
+      state.unanswered = null;  // the server started on it: never ask twice
       upsertReceipt(msg.entry);
       break;
     case "photo_used":
       photoUsed();
+      break;
+    case "highlight":
+      highlightPhoto(msg);
       break;
     case "report":
       showReport(msg);
@@ -426,6 +504,9 @@ function onEvent(msg) {
     case "error":
       toast(msg.message);
       break;
+    case "asr":  // speech recognition went away (say, no credit) or came back
+      notice(msg.ok ? "" : msg.message);
+      break;
   }
 }
 
@@ -437,7 +518,8 @@ function connect() {
   ws.onopen = () => {
     state.retries = 0;
     send({ type: "hello", client: "web", device_id: DEVICE_ID, mode: state.mode, sample_rate: 16000,
-           tz: Intl.DateTimeFormat().resolvedOptions().timeZone, tools: ["get_location", "create_reminder"] });
+           tz: Intl.DateTimeFormat().resolvedOptions().timeZone, tools: ["get_location", "create_reminder"],
+           heads_up: state.headsUp, language: state.lang });
   };
   ws.onmessage = (ev) => onEvent(JSON.parse(ev.data));
   ws.onclose = (ev) => {
@@ -506,6 +588,20 @@ function setMode(mode) {
 }
 for (const b of document.querySelectorAll(".modes button")) b.addEventListener("click", () => setMode(b.dataset.mode));
 
+// Heads-up: Earshot speaks up about something it overhears that you'll want. Hands-free only; it always asks first.
+function renderHeadsUp(on) {
+  state.headsUp = on;
+  $("#headsup").setAttribute("aria-pressed", String(on));
+}
+$("#headsup").addEventListener("click", () => {
+  const on = !state.headsUp;
+  renderHeadsUp(on);
+  store.set("earshot.headsup", on);
+  send({ type: "heads_up", on });
+  if (on && state.mode !== "wake") toast("Heads-up listens in Hands-free mode.");
+});
+renderHeadsUp(store.get("earshot.headsup", false));
+
 function sendText(text) {
   text = text.trim();
   if (!text) return;
@@ -513,10 +609,46 @@ function sendText(text) {
   speech.stop();
   addMsg("user", text);
   send({ type: "text", text });
+  state.unanswered = { text, at: Date.now() };
 }
 $("#typed").addEventListener("submit", (e) => { e.preventDefault(); sendText($("#text").value); $("#text").value = ""; });
 for (const c of document.querySelectorAll(".chip")) {
-  c.addEventListener("click", () => (c.dataset.action === "photo" ? $("#photo-file").click() : sendText(c.textContent)));
+  c.addEventListener("click", () => (c.dataset.action === "photo" ? $("#photo-file").click()
+    : c.dataset.action === "sample" ? useSample() : sendText(c.textContent)));
+}
+
+// A synthetic platform photo (Muse Image, faces blurred by SAM 3.1), so anyone can try Look and Find it.
+async function useSample() {
+  if (!state.ws || state.ws.readyState !== WebSocket.OPEN) { toast("Not connected yet. One moment."); return; }
+  try {
+    const dataUrl = await downscale(await (await fetch("samples/platform.jpg")).blob());
+    stagePhoto(dataUrl);
+    send({ type: "image", data: dataUrl });
+    sendText("Which platform is the 19:05? Show me where it is on the board.");
+  } catch (err) {
+    toast(`Couldn't load the sample photo (${err.message}).`);
+  }
+}
+
+// Find it: SAM 3.1's boxes, outlined on the photo the user asked about.
+function highlightPhoto(msg) {
+  const thumbs = document.querySelectorAll("#log .msg.user .thumb");
+  const img = thumbs[thumbs.length - 1];
+  if (!img || !msg.boxes?.length) return;
+  let wrap = img.parentElement;
+  if (!wrap.classList.contains("thumb-wrap")) {
+    wrap = Object.assign(document.createElement("span"), { className: "thumb-wrap" });
+    img.replaceWith(wrap);
+    wrap.append(img);
+  }
+  wrap.classList.add("found");
+  for (const el of wrap.querySelectorAll(".hl")) el.remove();
+  for (const b of msg.boxes) {
+    const el = Object.assign(document.createElement("span"), { className: "hl" });
+    Object.assign(el.style, { left: `${b.x1 * 100}%`, top: `${b.y1 * 100}%`,
+                              width: `${(b.x2 - b.x1) * 100}%`, height: `${(b.y2 - b.y1) * 100}%` });
+    wrap.append(el);
+  }
 }
 
 // ---------- photos: staged on the server, then sent with the next question, spoken or typed ----------

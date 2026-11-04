@@ -50,9 +50,12 @@ class FakeEndpoint:
     def __init__(self, scripts: list[list]):
         self.scripts = list(scripts)
         self.calls: list[dict] = []
+        self.delay = 0.0  # seconds before the reply starts, like a model thinking
 
     async def create(self, **kw):
         self.calls.append(kw)
+        if self.delay:
+            await asyncio.sleep(self.delay)
         script = self.scripts.pop(0)
         if isinstance(script, Exception):
             raise script
@@ -107,6 +110,7 @@ def chat_tool(index: int, call_id: str | None, name: str | None, arguments: str 
 
 class FakeRelay:
     def __init__(self, cfg: dict, key: str, on_event):
+        self.cfg = cfg
         self.on_event = on_event
         self.fed = bytearray()
         self.sent_s = 0.0
@@ -143,12 +147,13 @@ class FakeWS:
     async def __anext__(self):
         m = await self.inbox.get()
         if m is CLOSE:
-            self.close_code = 1000
+            self.close_code = self.close_code or 1000
             raise StopAsyncIteration
         return json.dumps(m) if isinstance(m, dict) else m
 
-    async def close(self) -> None:
-        self.close_code = self.close_code or 1000
+    async def close(self, code: int = 1000, reason: str = "") -> None:
+        self.close_code = self.close_code or code
+        self.inbox.put_nowait(CLOSE)  # like a real socket, closing ends the read loop
 
     async def wait_closed(self) -> None:
         pass

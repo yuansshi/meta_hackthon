@@ -1,0 +1,398 @@
+[
+ {
+  "id": "dinner",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Đừng quên, tối thứ Sáu lúc bảy giờ ăn tối ở nhà mình nhé.",
+   "Ở một bốn hai không đường Pine, căn số ba."
+  ],
+  "notes": []
+ },
+ {
+  "id": "oat-milk",
+  "expect": "offer",
+  "kinds": [
+   "reminder",
+   "note"
+  ],
+  "heard": [
+   "Trên đường về nhớ mua sữa yến mạch nhé?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "dentist",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Nha sĩ mới gọi tới, họ dời cái hẹn lấy cao răng của bạn sang thứ Năm lúc mười giờ rưỡi."
+  ],
+  "notes": []
+ },
+ {
+  "id": "phone-number",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Số của tôi là bốn một năm năm năm năm không một ba bốn, nhắn cho tôi khi bạn hạ cánh nhé."
+  ],
+  "notes": []
+ },
+ {
+  "id": "parking",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Okay, mình đậu xe ở tầng bốn, dãy G."
+  ],
+  "notes": []
+ },
+ {
+  "id": "gate-change",
+  "expect": "offer",
+  "kinds": [
+   "alert",
+   "note"
+  ],
+  "notes": [
+   "chiều nay bay UA tám một hai đi Denver"
+  ],
+  "heard": [
+   "Xin quý khách chú ý, chuyến bay United tám một hai đi Denver sẽ lên máy bay tại cổng B hai hai."
+  ]
+ },
+ {
+  "id": "platform-change",
+  "expect": "offer",
+  "kinds": [
+   "alert",
+   "note"
+  ],
+  "notes": [
+   "Tôi đi chuyến năm giờ mười lăm tới Fremont sau giờ tan làm."
+  ],
+  "heard": [
+   "Xin quý khách chú ý, chuyến tàu năm giờ mười lăm đi Fremont sẽ khởi hành từ sân ga số năm."
+  ]
+ },
+ {
+  "id": "meeting-moved",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Ê, cuộc họp với Priya lùi sang 3 giờ chiều mai rồi nhé."
+  ],
+  "notes": []
+ },
+ {
+  "id": "passport",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Mang theo hộ chiếu đến buổi hẹn vào thứ Hai lúc chín giờ."
+  ],
+  "notes": []
+ },
+ {
+  "id": "name",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Đây là Dana Whitfield, chị ấy phụ trách nhóm thiết kế.",
+   "Hai bạn nên nói chuyện với nhau về vụ ra mắt nhé."
+  ],
+  "notes": []
+ },
+ {
+  "id": "rent",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Tiền nhà đóng vào mùng một, đừng trễ nữa nha."
+  ],
+  "notes": []
+ },
+ {
+  "id": "prescription",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Tiệm thuốc nói đơn thuốc của bạn sau 4 giờ chiều nay mới lấy được."
+  ],
+  "notes": []
+ },
+ {
+  "id": "soccer",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Tập bóng đá ở Lincoln Park thứ Bảy này lúc 8 giờ sáng.",
+   "Tuần này bạn lái xe được không?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "wifi",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Mật khẩu Wi-Fi là otter blue bốn hai, viết thường hết."
+  ],
+  "notes": []
+ },
+ {
+  "id": "birthday",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Bữa trưa sinh nhật mẹ là trưa Chủ nhật lúc 12 giờ, ở quán Thái trên đường Fifth đó."
+  ],
+  "notes": []
+ },
+ {
+  "id": "museum",
+  "expect": "offer",
+  "kinds": [
+   "lookup",
+   "research"
+  ],
+  "heard": [
+   "Bạn tìm hiểu giúp xem bảo tàng có mở cửa vào thứ Hai không?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "plumber",
+  "expect": "offer",
+  "kinds": [
+   "research",
+   "lookup"
+  ],
+  "heard": [
+   "Nhà mình đang cần gấp thợ ống nước qua xem trong tuần này.",
+   "Bạn coi giúp vụ đó được không?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "package",
+  "expect": "offer",
+  "kinds": [
+   "reminder",
+   "note"
+  ],
+  "heard": [
+   "Gói hàng của bạn mai sẽ giao trong khoảng hai giờ đến bốn giờ chiều, phải có người ký nhận nha."
+  ],
+  "notes": []
+ },
+ {
+  "id": "kids",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Hôm nay bạn đón bọn trẻ lúc 3 giờ 15 chiều giúp tôi được không? Tôi kẹt ở chỗ làm rồi."
+  ],
+  "notes": []
+ },
+ {
+  "id": "locker",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Tủ đồ của bạn là số hai trăm mười tám, và mã số là bốn bảy một chín."
+  ],
+  "notes": []
+ },
+ {
+  "id": "weather-chat",
+  "expect": "none",
+  "heard": [
+   "Hôm nay thời tiết đẹp nhỉ?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "game",
+  "expect": "none",
+  "heard": [
+   "Không tin nổi trận đấu tối qua luôn á, kết thúc quá đỉnh."
+  ],
+  "notes": []
+ },
+ {
+  "id": "vague-dinner",
+  "expect": "none",
+  "heard": [
+   "Hôm nào mình đi ăn tối với nhau nhé."
+  ],
+  "notes": []
+ },
+ {
+  "id": "trailer",
+  "expect": "none",
+  "heard": [
+   "Xem trailer mới chưa? Trông đỉnh lắm luôn á."
+  ],
+  "notes": []
+ },
+ {
+  "id": "tv",
+  "expect": "none",
+  "heard": [
+   "Chào mừng quay trở lại với chương trình. Sau giờ nghỉ, chúng ta sẽ nói về kinh tế."
+  ],
+  "notes": []
+ },
+ {
+  "id": "coffee",
+  "expect": "none",
+  "heard": [
+   "Cà phê này nóng quá trời luôn."
+  ],
+  "notes": []
+ },
+ {
+  "id": "agreeing",
+  "expect": "none",
+  "heard": [
+   "Ừ, tui cũng nghĩ vậy luôn á."
+  ],
+  "notes": []
+ },
+ {
+  "id": "tahoe",
+  "expect": "none",
+  "heard": [
+   "Nhớ hồi mình đi Tahoe mùa đông năm ngoái không? Vui lắm luôn á."
+  ],
+  "notes": []
+ },
+ {
+  "id": "other-train",
+  "expect": "none",
+  "notes": [
+   "Tan làm tôi đi chuyến năm giờ mười lăm đi Fremont."
+  ],
+  "heard": [
+   "Xin quý khách chú ý, chuyến tàu lúc sáu giờ bốn mươi đi San Jose hiện đang đón khách ở sân ga số hai."
+  ]
+ },
+ {
+  "id": "radio-ad",
+  "expect": "none",
+  "heard": [
+   "Cuối tuần này mua một tặng một tất cả nệm ở Sleep World!"
+  ],
+  "notes": []
+ },
+ {
+  "id": "blue-one",
+  "expect": "none",
+  "heard": [
+   "Mình nghĩ cái màu xanh trông hợp với bạn hơn đấy."
+  ],
+  "notes": []
+ },
+ {
+  "id": "traffic",
+  "expect": "none",
+  "heard": [
+   "Trời ơi, sáng nay kẹt xe kinh khủng luôn."
+  ],
+  "notes": []
+ },
+ {
+  "id": "anyway",
+  "expect": "none",
+  "heard": [
+   "Thì, ổng bảo là để ổng suy nghĩ thêm đã."
+  ],
+  "notes": []
+ },
+ {
+  "id": "eggs",
+  "expect": "none",
+  "heard": [
+   "Tin nổi không, trứng bây giờ đắt quá trời luôn á?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "laugh",
+  "expect": "none",
+  "heard": [
+   "Haha, buồn cười quá."
+  ],
+  "notes": []
+ },
+ {
+  "id": "puppy",
+  "expect": "none",
+  "heard": [
+   "Chị gái mình mới nuôi một bé cún con, dễ thương lắm luôn á."
+  ],
+  "notes": []
+ },
+ {
+  "id": "lunch-yesterday",
+  "expect": "none",
+  "heard": [
+   "Trưa hôm qua tụi mình ăn pizza, cũng ổn."
+  ],
+  "notes": []
+ },
+ {
+  "id": "tired",
+  "expect": "none",
+  "heard": [
+   "Mệt quá, tối qua hầu như chẳng ngủ được tí nào."
+  ],
+  "notes": []
+ },
+ {
+  "id": "store-pa",
+  "expect": "none",
+  "heard": [
+   "Dọn dẹp ở lối số năm giùm với ạ."
+  ],
+  "notes": []
+ },
+ {
+  "id": "next-stop",
+  "expect": "none",
+  "heard": [
+   "Trạm tiếp theo là Powell Street."
+  ],
+  "notes": []
+ }
+]

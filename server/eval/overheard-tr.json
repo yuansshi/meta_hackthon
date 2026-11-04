@@ -1,0 +1,398 @@
+[
+ {
+  "id": "dinner",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Unutma, cuma akşamı saat yedide yemek bende.",
+   "Adres Pine Sokağı bin dört yüz yirmi, daire üç."
+  ],
+  "notes": []
+ },
+ {
+  "id": "oat-milk",
+  "expect": "offer",
+  "kinds": [
+   "reminder",
+   "note"
+  ],
+  "heard": [
+   "Eve gelirken yulaf sütü alır mısın?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "dentist",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Dişçi aradı, temizlik randevunu perşembe günü on buçuğa almışlar."
+  ],
+  "notes": []
+ },
+ {
+  "id": "phone-number",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Numaram dört bir beş, beş beş beş, sıfır bir üç dört, inince bana mesaj at."
+  ],
+  "notes": []
+ },
+ {
+  "id": "parking",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Tamam, dördüncü katta G sırasına park ettik."
+  ],
+  "notes": []
+ },
+ {
+  "id": "gate-change",
+  "expect": "offer",
+  "kinds": [
+   "alert",
+   "note"
+  ],
+  "notes": [
+   "bu öğleden sonra U A sekiz yüz on iki ile Denver'a uçuyorum"
+  ],
+  "heard": [
+   "Dikkat lütfen, Denver'a giden United sekiz yüz on iki sefer sayılı uçuş şimdi Be yirmi iki kapısından binişe başlıyor."
+  ]
+ },
+ {
+  "id": "platform-change",
+  "expect": "offer",
+  "kinds": [
+   "alert",
+   "note"
+  ],
+  "notes": [
+   "İşten sonra Fremont'a giden beş on beş trenine biniyorum."
+  ],
+  "heard": [
+   "Sayın yolcuların dikkatine, Fremont'a gidecek olan beş on beş treni artık beş numaralı perondan kalkacaktır."
+  ]
+ },
+ {
+  "id": "meeting-moved",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Haberin olsun, Priya'yla toplantı yarın öğleden sonra 3'e ertelendi."
+  ],
+  "notes": []
+ },
+ {
+  "id": "passport",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Pazartesi günü saat dokuzdaki randevuya pasaportunu getir."
+  ],
+  "notes": []
+ },
+ {
+  "id": "name",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Bu Dana Whitfield, tasarım ekibini yönetiyor.",
+   "Siz ikiniz lansman hakkında bir konuşmalısınız."
+  ],
+  "notes": []
+ },
+ {
+  "id": "rent",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Kira ayın birinde, yine geç kalma."
+  ],
+  "notes": []
+ },
+ {
+  "id": "prescription",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Eczane, reçeten bugün dörtten sonra hazır olacak dedi."
+  ],
+  "notes": []
+ },
+ {
+  "id": "soccer",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Futbol antrenmanı bu cumartesi sabah sekizde Lincoln Park'ta.",
+   "Bu hafta sen götürebilir misin?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "wifi",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Wi-Fi şifresi otter blue kırk iki, hepsi küçük harf."
+  ],
+  "notes": []
+ },
+ {
+  "id": "birthday",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Annemin doğum günü öğle yemeği pazar günü öğlen, Fifth'teki Tayland restoranında."
+  ],
+  "notes": []
+ },
+ {
+  "id": "museum",
+  "expect": "offer",
+  "kinds": [
+   "lookup",
+   "research"
+  ],
+  "heard": [
+   "Müze pazartesi günü açık mı öğrenebilir misin?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "plumber",
+  "expect": "offer",
+  "kinds": [
+   "research",
+   "lookup"
+  ],
+  "heard": [
+   "Bu hafta gelebilecek bir tesisatçıya gerçekten ihtiyacımız var.",
+   "Buna bir bakabilir misin?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "package",
+  "expect": "offer",
+  "kinds": [
+   "reminder",
+   "note"
+  ],
+  "heard": [
+   "Kargon yarın ikiyle dört arası geliyor, biri imza için orada olmalı."
+  ],
+  "notes": []
+ },
+ {
+  "id": "kids",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "Bugün çocukları üçü çeyrek geçe alabilir misin? İşte takılı kaldım."
+  ],
+  "notes": []
+ },
+ {
+  "id": "locker",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "Dolap numaran iki yüz on sekiz, şifresi dört yedi bir dokuz."
+  ],
+  "notes": []
+ },
+ {
+  "id": "weather-chat",
+  "expect": "none",
+  "heard": [
+   "Bugün hava güzel, değil mi?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "game",
+  "expect": "none",
+  "heard": [
+   "Dün geceki maç neydi öyle ya, sonu inanılmazdı."
+  ],
+  "notes": []
+ },
+ {
+  "id": "vague-dinner",
+  "expect": "none",
+  "heard": [
+   "Bir ara mutlaka birlikte yemek yiyelim."
+  ],
+  "notes": []
+ },
+ {
+  "id": "trailer",
+  "expect": "none",
+  "heard": [
+   "Yeni fragmanı gördün mü? Harika görünüyor."
+  ],
+  "notes": []
+ },
+ {
+  "id": "tv",
+  "expect": "none",
+  "heard": [
+   "Programa tekrar hoş geldiniz. Aradan sonra ekonomiyi konuşacağız."
+  ],
+  "notes": []
+ },
+ {
+  "id": "coffee",
+  "expect": "none",
+  "heard": [
+   "Bu kahve çok sıcak."
+  ],
+  "notes": []
+ },
+ {
+  "id": "agreeing",
+  "expect": "none",
+  "heard": [
+   "He ya, ben de öyle düşünüyorum."
+  ],
+  "notes": []
+ },
+ {
+  "id": "tahoe",
+  "expect": "none",
+  "heard": [
+   "Geçen kış Tahoe'ya gitmiştik hatırlıyor musun? Çok eğlenceliydi."
+  ],
+  "notes": []
+ },
+ {
+  "id": "other-train",
+  "expect": "none",
+  "notes": [
+   "İşten sonra Fremont'a giden beş on beşe biniyorum."
+  ],
+  "heard": [
+   "Sayın yolcular, San Jose'ye giden altı kırk treni iki numaralı peronda yolcu alıyor."
+  ]
+ },
+ {
+  "id": "radio-ad",
+  "expect": "none",
+  "heard": [
+   "Sleep World'de bu hafta sonu tüm yataklarda bir alana bir bedava!"
+  ],
+  "notes": []
+ },
+ {
+  "id": "blue-one",
+  "expect": "none",
+  "heard": [
+   "Bence mavi olan sana daha çok yakışıyor."
+  ],
+  "notes": []
+ },
+ {
+  "id": "traffic",
+  "expect": "none",
+  "heard": [
+   "Of, bu sabah trafik berbattı."
+  ],
+  "notes": []
+ },
+ {
+  "id": "anyway",
+  "expect": "none",
+  "heard": [
+   "Neyse işte, düşüneceğini söyledi."
+  ],
+  "notes": []
+ },
+ {
+  "id": "eggs",
+  "expect": "none",
+  "heard": [
+   "Yumurta ne kadar pahalanmış gördün mü ya?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "laugh",
+  "expect": "none",
+  "heard": [
+   "Haha, çok komik."
+  ],
+  "notes": []
+ },
+ {
+  "id": "puppy",
+  "expect": "none",
+  "heard": [
+   "Kız kardeşim daha yeni bir köpek yavrusu aldı, çok tatlı."
+  ],
+  "notes": []
+ },
+ {
+  "id": "lunch-yesterday",
+  "expect": "none",
+  "heard": [
+   "Dün öğlen pizza yedik, fena değildi."
+  ],
+  "notes": []
+ },
+ {
+  "id": "tired",
+  "expect": "none",
+  "heard": [
+   "Çok yorgunum, dün gece neredeyse hiç uyuyamadım."
+  ],
+  "notes": []
+ },
+ {
+  "id": "store-pa",
+  "expect": "none",
+  "heard": [
+   "Beşinci koridora temizlik lütfen."
+  ],
+  "notes": []
+ },
+ {
+  "id": "next-stop",
+  "expect": "none",
+  "heard": [
+   "Bir sonraki durak Powell Street."
+  ],
+  "notes": []
+ }
+]

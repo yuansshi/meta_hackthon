@@ -1,0 +1,103 @@
+{
+ "at": "2026-11-04T06:02:41",
+ "url": "wss://earshot-yuansshi.fly.dev/ws",
+ "total": {
+  "weather": "3/3",
+  "reminder": "1/3",
+  "cost_usd": 0.025,
+  "minutes": 3.3
+ },
+ "by_language": {
+  "ja": {
+   "weather": "3/3",
+   "wake": "3/3",
+   "answered_in_language": "3/3",
+   "reminder_with_spoken_yes": "1/3",
+   "first_word_p50_s": 3.07
+  }
+ },
+ "rows": [
+  {
+   "language": "ja",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 3.07,
+   "total_s": 9.07,
+   "cost": 0.00842,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "了解です。 午後のシアトルは曇りで、雨の心配はほぼなさそうです。夕方五時でも降水確率は十パーセントほどで、最高気温は十三度くらいです。 ",
+   "heard": "Hey, Earshot. 今日の午後は雨が降りますか?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ja",
+   "scenario": "reminder",
+   "attempt": 3,
+   "first_s": 2.5,
+   "total_s": 7.36,
+   "cost": 0.00442,
+   "tools": [
+    "create_reminder"
+   ],
+   "said": "わかりました。 「コーヒーを買う」を今日の18:00にリマインドしますか？ 夕方六時にコーヒーを買うリマインダーをセットしましたよ。 ",
+   "question": "「コーヒーを買う」を今日の18:00にリマインドしますか？",
+   "question_in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ja",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 3.25,
+   "total_s": 8.48,
+   "cost": 0.00847,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "了解です。 午後のシアトルは曇りで、雨はほとんど降らない見込みです。気温は十三度くらいまで上がりますよ。 ",
+   "heard": "今日の午後は雨が降りますか？",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ja",
+   "scenario": "reminder",
+   "ok": false,
+   "error": "TimeoutError:  | heard: hey earshot / ようにリマインドして。 | said: 了解です。 何をいつリマインドしましょうか。内容と時間を教えてください。",
+   "first_s": null,
+   "cost": 0
+  },
+  {
+   "language": "ja",
+   "scenario": "weather",
+   "attempt": 1,
+   "first_s": 2.46,
+   "total_s": 6.65,
+   "cost": 0.00327,
+   "tools": [
+    "get_location",
+    "get_weather"
+   ],
+   "said": "了解です。 午後のシアトルは曇りで、雨はほとんど降りません。気温は十三度くらいまで上がりますよ。 ",
+   "heard": "Hey, earshot. 今日の午後は雨が降りますか?",
+   "wake": true,
+   "in_language": true,
+   "ok": true
+  },
+  {
+   "language": "ja",
+   "scenario": "reminder",
+   "ok": false,
+   "error": "TimeoutError:  | heard: Hey, earshot. / にリマインドして。 | said: 何をリマインドしましょうか。",
+   "first_s": null,
+   "cost": 0
+  }
+ ]
+}

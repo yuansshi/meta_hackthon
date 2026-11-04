@@ -1,0 +1,45 @@
+{
+ "at": "2026-11-04T06:16:25",
+ "summary": {
+  "trials": 3,
+  "remembered": 1,
+  "report_after_restart": 3,
+  "reconnect_s": [
+   5.782720874994993,
+   7.181158083025366,
+   8.641409749980085
+  ]
+ },
+ "rows": [
+  {
+   "trial": 0,
+   "stop_s": 2.2,
+   "reconnect_s": 8.641409749980085,
+   "answer": "On it. Your name is Priya. I looked into the best umbrellas for windy cities. Priya, for a windy Seattle weekend, get the Repel Windproof Travel Umbrella if you want the best value, or the Blunt Metro if wind resistance matters most. Pair either with a hooded waterproof jacket, because Seattle gusts can still make any umbrella awkward near the waterfront.",
+   "remembered": true,
+   "report": "you want the best value, or the Blunt Metro if wind resistance matters most. Pair either with a hooded waterproof jacket, because Seattle gusts can still make any umbrella awkward near the waterfront.",
+   "report_after_restart": true,
+   "report_s_after_stop": 25.2
+  },
+  {
+   "trial": 1,
+   "stop_s": 3.1,
+   "reconnect_s": 5.782720874994993,
+   "answer": "On it. I don't have your name saved yet. What should I call you?",
+   "remembered": false,
+   "report": "Umbrella if you want the best value, or the Blunt Metro if you want the strongest wind protection. Seattle looks mostly light rain and breezy rather than stormy, so the compact Repel should be plenty.",
+   "report_after_restart": true,
+   "report_s_after_stop": 26.3
+  },
+  {
+   "trial": 2,
+   "stop_s": 2.7,
+   "reconnect_s": 7.181158083025366,
+   "answer": "On it. Sorry, I don't know your name yet. What should I call you?",
+   "remembered": false,
+   "report": "roof Travel Umbrella \u2014 it's compact, under a pound, and around twenty-seven dollars. Pair it with a hooded waterproof jacket, because Seattle's November wind often makes any umbrella alone unreliable.",
+   "report_after_restart": true,
+   "report_s_after_stop": 29.1
+  }
+ ]
+}

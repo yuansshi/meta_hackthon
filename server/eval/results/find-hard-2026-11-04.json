@@ -1,0 +1,1891 @@
+{
+ "at": "2026-11-04T14:51:36",
+ "summary": {
+  "photos": 60,
+  "errors": 0,
+  "truth_side_agreed": "58/60",
+  "sam_found_target": "52/60",
+  "sam_found_nothing_for_absent_object": "60/60",
+  "sam_right_side": "52/52",
+  "agent_said_right_side": "56/58",
+  "agent_outlined": "53/60",
+  "agent_first_word_p50_s": 2.3099999999999996,
+  "agent_total_p50_s": 6.6850000000000005,
+  "agent_cost_per_question_usd": 0.0115,
+  "minutes": 4.1
+ },
+ "rows": [
+  {
+   "i": 0,
+   "scene": "a cluttered desk",
+   "target": "pair of scissors",
+   "absent": "piano",
+   "asked_side": "left",
+   "image_s": 24.631655673999987,
+   "spark_side": "left",
+   "spark_cost": 0.004193,
+   "sam_s": 1.2951027269999997,
+   "truth": "left",
+   "sam_found": 1,
+   "sam_side": "left",
+   "sam_absent_found": 0,
+   "agent_said": "On it. They're on the left side of the desk, on the crumpled paper.",
+   "agent_highlight": [
+    {
+     "x1": 0.0057,
+     "y1": 0.3852,
+     "x2": 0.1521,
+     "y2": 0.6844
+    }
+   ],
+   "agent_first_s": 2.06,
+   "agent_total_s": 7.42,
+   "agent_cost": 0.01422,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 1,
+   "scene": "a crowded kitchen counter",
+   "target": "salt shaker",
+   "absent": "bicycle",
+   "asked_side": "left",
+   "image_s": 10.624701635000008,
+   "spark_side": "left",
+   "spark_cost": 0.0043375,
+   "sam_s": 1.028669100000002,
+   "truth": "left",
+   "sam_found": 2,
+   "sam_side": "left",
+   "sam_absent_found": 0,
+   "agent_said": "On it. It's on the far left by the garlic and lemon, I've outlined it for you.",
+   "agent_highlight": [
+    {
+     "x1": 0.0292,
+     "y1": 0.5477,
+     "x2": 0.1052,
+     "y2": 0.75
+    },
+    {
+     "x1": 0.7958,
+     "y1": 0.5094,
+     "x2": 0.8885,
+     "y2": 0.707
+    }
+   ],
+   "agent_first_s": 2.56,
+   "agent_total_s": 8.36,
+   "agent_cost": 0.01431,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 2,
+   "scene": "a dim hallway at night",
+   "target": "light switch",
+   "absent": "sofa",
+   "asked_side": "left",
+   "image_s": 8.543282003000002,
+   "spark_side": "left",
+   "spark_cost": 0.004349,
+   "sam_s": 1.594022190000004,
+   "truth": "left",
+   "sam_found": 0,
+   "sam_side": null,
+   "sam_absent_found": 0,
+   "agent_said": "On it. On your left, just above the mail pile by the hanging bags.",
+   "agent_highlight": null,
+   "agent_first_s": 2.18,
+   "agent_total_s": 7.49,
+   "agent_cost": 0.01432,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 3,
+   "scene": "a busy bus station",
+   "target": "ticket machine",
+   "absent": "bathtub",
+   "asked_side": "left",
+   "image_s": 30.085031513000004,
+   "spark_side": "left",
+   "spark_cost": 0.00421725,
+   "sam_s": 1.0556003129999993,
+   "truth": "left",
+   "sam_found": 1,
+   "sam_side": "left",
+   "sam_absent_found": 0,
+   "agent_said": "On it. It's on your left against the pillar, next to the umbrellas.",
+   "agent_highlight": [
+    {
+     "x1": 0.1208,
+     "y1": 0.3461,
+     "x2": 0.2917,
+     "y2": 0.6344
+    }
+   ],
+   "agent_first_s": 2.18,
+   "agent_total_s": 6.12,
+   "agent_cost": 0.01413,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 4,
+   "scene": "a messy living room",
+   "target": "TV remote",
+   "absent": "fire hydrant",
+   "asked_side": "left",
+   "image_s": 18.560350799000005,
+   "spark_side": "left",
+   "spark_cost": 0.0043575,
+   "sam_s": 1.6323590989999985,
+   "truth": "left",
+   "sam_found": 1,
+   "sam_side": "left",
+   "sam_absent_found": 0,
+   "agent_said": "On it. Found it on the bottom left of the coffee table next to your keys and coins.",
+   "agent_highlight": [
+    {
+     "x1": 0.0,
+     "y1": 0.7148,
+     "x2": 0.0828,
+     "y2": 0.8773
+    }
+   ],
+   "agent_first_s": 2.15,
+   "agent_total_s": 7.27,
+   "agent_cost": 0.01369,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 5,
+   "scene": "a dark parking lot at night",
+   "target": "exit sign",
+   "absent": "bed",
+   "asked_side": "left",
+   "image_s": 7.756008678000001,
+   "spark_side": "left",
+   "spark_cost": 0.00425975,
+   "sam_s": 2.2587820070000078,
+   "truth": "left",
+   "sam_found": 1,
+   "sam_side": "left",
+   "sam_absent_found": 0,
+   "agent_said": "On it. It's the little green lit sign on the fence to your upper left by the bins. I've outlined it for you.",
+   "agent_highlight": [
+    {
+     "x1": 0.1427,
+     "y1": 0.2938,
+     "x2": 0.1646,
+     "y2": 0.3328
+    }
+   ],
+   "agent_first_s": 2.23,
+   "agent_total_s": 6.16,
+   "agent_cost": 0.0087,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 6,
+   "scene": "a cluttered entryway",
+   "target": "set of keys",
+   "absent": "guitar",
+   "asked_side": "left",
+   "image_s": 12.838927361000003,
+   "spark_side": "left",
+   "spark_cost": 0.00420575,
+   "sam_s": 0.7813814030000117,
+   "truth": "left",
+   "sam_found": 1,
+   "sam_side": "left",
+   "sam_absent_found": 0,
+   "agent_said": "On it. They're on the floor bottom left, next to the tan bag and some coins.",
+   "agent_highlight": [
+    {
+     "x1": 0.1448,
+     "y1": 0.6391,
+     "x2": 0.2344,
+     "y2": 0.7492
+    }
+   ],
+   "agent_first_s": 2.58,
+   "agent_total_s": 6.2,
+   "agent_cost": 0.0141,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 7,
+   "scene": "a bathroom shelf of bottles",
+   "target": "bottle with a red cap",
+   "absent": "car",
+   "asked_side": "left",
+   "image_s": 7.802455499000004,
+   "spark_side": "left",
+   "spark_cost": 0.0043655,
+   "sam_s": 1.276381379,
+   "truth": "left",
+   "sam_found": 2,
+   "sam_side": "left",
+   "sam_absent_found": 0,
+   "agent_said": "On it. It's at the bottom left, next to the cotton pads.",
+   "agent_highlight": [
+    {
+     "x1": 0.0557,
+     "y1": 0.6,
+     "x2": 0.1448,
+     "y2": 0.8773
+    },
+    {
+     "x1": 0.0,
+     "y1": 0.3688,
+     "x2": 0.0302,
+     "y2": 0.607
+    }
+   ],
+   "agent_first_s": 2.35,
+   "agent_total_s": 6.24,
+   "agent_cost": 0.01399,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 8,
+   "scene": "a foggy park",
+   "target": "bench",
+   "absent": "refrigerator",
+   "asked_side": "left",
+   "image_s": 25.58237571699999,
+   "spark_side": "left",
+   "spark_cost": 0.00419475,
+   "sam_s": 0.9989951870000056,
+   "truth": "left",
+   "sam_found": 1,
+   "sam_side": "left",
+   "sam_absent_found": 0,
+   "agent_said": "On it. It's on the left side among the trash, I've outlined it for you.",
+   "agent_highlight": [
+    {
+     "x1": 0.1625,
+     "y1": 0.4875,
+     "x2": 0.3203,
+     "y2": 0.7344
+    }
+   ],
+   "agent_first_s": 2.01,
+   "agent_total_s": 6.13,
+   "agent_cost": 0.01335,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 9,
+   "scene": "a staircase in low light",
+   "target": "handrail",
+   "absent": "piano",
+   "asked_side": "left",
+   "image_s": 20.051845240000006,
+   "spark_side": "left",
+   "spark_cost": 0.004213,
+   "sam_s": 1.3840427399999982,
+   "truth": "left",
+   "sam_found": 2,
+   "sam_side": "left",
+   "sam_absent_found": 0,
+   "agent_said": "I found the handrail. It's on the left wall going up the stairs, I've outlined it for you.",
+   "agent_highlight": [
+    {
+     "x1": 0.308,
+     "y1": 0.135,
+     "x2": 0.4323,
+     "y2": 0.3504
+    },
+    {
+     "x1": 0.0885,
+     "y1": 0.3795,
+     "x2": 0.2917,
+     "y2": 0.5932
+    }
+   ],
+   "agent_first_s": 2.59,
+   "agent_total_s": 10.59,
+   "agent_cost": 0.00818,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 10,
+   "scene": "a crowded cafe",
+   "target": "power outlet",
+   "absent": "horse",
+   "asked_side": "left",
+   "image_s": 18.494019316999996,
+   "spark_side": "left",
+   "spark_cost": 0.0042725,
+   "sam_s": 1.4490211710000125,
+   "truth": "left",
+   "sam_found": 0,
+   "sam_side": null,
+   "sam_absent_found": 0,
+   "agent_said": "On it. On your left low by the table, right next to the little potted plant.",
+   "agent_highlight": null,
+   "agent_first_s": 2.43,
+   "agent_total_s": 11.15,
+   "agent_cost": 0.01544,
+   "agent_tools": [
+    "find_in_photo",
+    "find_in_photo"
+   ],
+   "agent_side_ok": false
+  },
+  {
+   "i": 11,
+   "scene": "a train platform at night",
+   "target": "platform number sign",
+   "absent": "bathtub",
+   "asked_side": "left",
+   "image_s": 19.644196486,
+   "spark_side": "left",
+   "spark_cost": 0.00421425,
+   "sam_s": 0.9011605390000028,
+   "truth": "left",
+   "sam_found": 2,
+   "sam_side": "left",
+   "sam_absent_found": 0,
+   "agent_said": "On it. It's on the left on the pillar behind the cleaning cart. It says two.",
+   "agent_highlight": [
+    {
+     "x1": 0.1797,
+     "y1": 0.3695,
+     "x2": 0.2359,
+     "y2": 0.4586
+    },
+    {
+     "x1": 0.6229,
+     "y1": 0.2906,
+     "x2": 0.6375,
+     "y2": 0.3063
+    }
+   ],
+   "agent_first_s": 5.03,
+   "agent_total_s": 9.22,
+   "agent_cost": 0.00841,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 12,
+   "scene": "a hotel room in the evening",
+   "target": "thermostat",
+   "absent": "bicycle",
+   "asked_side": "left",
+   "image_s": 16.670560526000003,
+   "spark_side": "left",
+   "spark_cost": 0.0042415,
+   "sam_s": 0.9948860450000012,
+   "truth": "left",
+   "sam_found": 1,
+   "sam_side": "left",
+   "sam_absent_found": 0,
+   "agent_said": "On it. It's on the wall at the top left, showing seventy two degrees.",
+   "agent_highlight": [
+    {
+     "x1": 0.0661,
+     "y1": 0.1297,
+     "x2": 0.151,
+     "y2": 0.2367
+    }
+   ],
+   "agent_first_s": 2.82,
+   "agent_total_s": 6.51,
+   "agent_cost": 0.01417,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 13,
+   "scene": "an office kitchen",
+   "target": "coffee machine",
+   "absent": "tractor",
+   "asked_side": "left",
+   "image_s": 19.337361169000005,
+   "spark_side": "left",
+   "spark_cost": 0.0042725,
+   "sam_s": 1.4128191629999947,
+   "truth": "left",
+   "sam_found": 1,
+   "sam_side": "left",
+   "sam_absent_found": 0,
+   "agent_said": "On it. On the far left of the counter, next to the stacked mugs.",
+   "agent_highlight": [
+    {
+     "x1": 0.0437,
+     "y1": 0.5281,
+     "x2": 0.2073,
+     "y2": 0.8742
+    }
+   ],
+   "agent_first_s": 1.98,
+   "agent_total_s": 5.27,
+   "agent_cost": 0.01392,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 14,
+   "scene": "a shop counter with many items",
+   "target": "card reader",
+   "absent": "ladder",
+   "asked_side": "left",
+   "image_s": 24.142608549000002,
+   "spark_side": "left",
+   "spark_cost": 0.004247,
+   "sam_s": 1.546001208000007,
+   "truth": "left",
+   "sam_found": 1,
+   "sam_side": "left",
+   "sam_absent_found": 0,
+   "agent_said": "On it. It's on the top left of the counter, next to the coins.",
+   "agent_highlight": [
+    {
+     "x1": 0.0755,
+     "y1": 0.2422,
+     "x2": 0.2286,
+     "y2": 0.4094
+    }
+   ],
+   "agent_first_s": 3.41,
+   "agent_total_s": 6.79,
+   "agent_cost": 0.01417,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 15,
+   "scene": "a cluttered desk",
+   "target": "pair of scissors",
+   "absent": "piano",
+   "asked_side": "right",
+   "image_s": 20.21281027399999,
+   "spark_side": "right",
+   "spark_cost": 0.004227,
+   "sam_s": 1.5688818480000037,
+   "truth": "right",
+   "sam_found": 1,
+   "sam_side": "right",
+   "sam_absent_found": 0,
+   "agent_said": "On it. On the right side of the desk next to the tape roll and the black cables.",
+   "agent_highlight": [
+    {
+     "x1": 0.8203,
+     "y1": 0.4492,
+     "x2": 0.9719,
+     "y2": 0.7914
+    }
+   ],
+   "agent_first_s": 2.3,
+   "agent_total_s": 7.27,
+   "agent_cost": 0.01392,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 16,
+   "scene": "a crowded kitchen counter",
+   "target": "salt shaker",
+   "absent": "bicycle",
+   "asked_side": "right",
+   "image_s": 8.757662775,
+   "spark_side": "right",
+   "spark_cost": 0.00431625,
+   "sam_s": 0.9501069519999987,
+   "truth": "right",
+   "sam_found": 1,
+   "sam_side": "right",
+   "sam_absent_found": 0,
+   "agent_said": "On it. On the right side of the counter next to the half lemon. I've highlighted it for you.",
+   "agent_highlight": [
+    {
+     "x1": 0.7734,
+     "y1": 0.4766,
+     "x2": 0.8505,
+     "y2": 0.7094
+    }
+   ],
+   "agent_first_s": 2.24,
+   "agent_total_s": 5.9,
+   "agent_cost": 0.0082,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 17,
+   "scene": "a dim hallway at night",
+   "target": "light switch",
+   "absent": "sofa",
+   "asked_side": "right",
+   "image_s": 8.568923394999999,
+   "spark_side": "right",
+   "spark_cost": 0.00426825,
+   "sam_s": 0.5870761399999935,
+   "truth": "right",
+   "sam_found": 1,
+   "sam_side": "right",
+   "sam_absent_found": 0,
+   "agent_said": "On it. On your right wall, just above the mail and umbrella.",
+   "agent_highlight": [
+    {
+     "x1": 0.7896,
+     "y1": 0.3508,
+     "x2": 0.8177,
+     "y2": 0.4367
+    }
+   ],
+   "agent_first_s": 2.44,
+   "agent_total_s": 5.58,
+   "agent_cost": 0.00837,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 18,
+   "scene": "a busy bus station",
+   "target": "ticket machine",
+   "absent": "bathtub",
+   "asked_side": "right",
+   "image_s": 25.621744545,
+   "spark_side": "right",
+   "spark_cost": 0.00425125,
+   "sam_s": 1.3245690319999994,
+   "truth": "right",
+   "sam_found": 0,
+   "sam_side": null,
+   "sam_absent_found": 0,
+   "agent_said": "On it. It's on your right, the dark gray kiosk just above the crates and water bottles.",
+   "agent_highlight": [
+    {
+     "x1": 0.8208,
+     "y1": 0.3297,
+     "x2": 0.9927,
+     "y2": 0.7281
+    }
+   ],
+   "agent_first_s": 2.21,
+   "agent_total_s": 72.32,
+   "agent_cost": 0.01373,
+   "agent_tools": [
+    "find_in_photo",
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 19,
+   "scene": "a messy living room",
+   "target": "TV remote",
+   "absent": "fire hydrant",
+   "asked_side": "right",
+   "image_s": 29.130208377000002,
+   "spark_side": "right",
+   "spark_cost": 0.00426825,
+   "sam_s": 1.1829370530000176,
+   "truth": "right",
+   "sam_found": 1,
+   "sam_side": "right",
+   "sam_absent_found": 0,
+   "agent_said": "On it. It's on the bottom right of the table, on the napkin next to the chip bag.",
+   "agent_highlight": [
+    {
+     "x1": 0.8604,
+     "y1": 0.6289,
+     "x2": 0.949,
+     "y2": 0.825
+    }
+   ],
+   "agent_first_s": 1.91,
+   "agent_total_s": 5.24,
+   "agent_cost": 0.01395,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 20,
+   "scene": "a dark parking lot at night",
+   "target": "exit sign",
+   "absent": "bed",
+   "asked_side": "right",
+   "image_s": 10.44964437099999,
+   "spark_side": "right",
+   "spark_cost": 0.00420875,
+   "sam_s": 0.7701979779999988,
+   "truth": "right",
+   "sam_found": 1,
+   "sam_side": "right",
+   "sam_absent_found": 0,
+   "agent_said": "On it. It's on your right, glowing green low on the wall.",
+   "agent_highlight": [
+    {
+     "x1": 0.8307,
+     "y1": 0.4938,
+     "x2": 0.8641,
+     "y2": 0.5406
+    }
+   ],
+   "agent_first_s": 2.37,
+   "agent_total_s": 6.4,
+   "agent_cost": 0.00818,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 21,
+   "scene": "a cluttered entryway",
+   "target": "set of keys",
+   "absent": "guitar",
+   "asked_side": "right",
+   "image_s": 23.744678769000018,
+   "spark_side": "right",
+   "spark_cost": 0.00429925,
+   "sam_s": 0.7981805210000061,
+   "truth": "right",
+   "sam_found": 1,
+   "sam_side": "right",
+   "sam_absent_found": 0,
+   "agent_said": "On it. On the cluttered table to your right, sitting next to your black wallet.",
+   "agent_highlight": [
+    {
+     "x1": 0.6943,
+     "y1": 0.718,
+     "x2": 0.7776,
+     "y2": 0.8258
+    }
+   ],
+   "agent_first_s": 1.61,
+   "agent_total_s": 65.63,
+   "agent_cost": 0.01391,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 22,
+   "scene": "a bathroom shelf of bottles",
+   "target": "bottle with a red cap",
+   "absent": "car",
+   "asked_side": "right",
+   "image_s": 18.987098063000005,
+   "spark_side": "right",
+   "spark_cost": 0.00431025,
+   "sam_s": 61.06352091900001,
+   "truth": "right",
+   "sam_found": 1,
+   "sam_side": "right",
+   "sam_absent_found": 0,
+   "agent_said": "On it. It's on the bottom right of the shelf, next to the towel.",
+   "agent_highlight": [
+    {
+     "x1": 0.8005,
+     "y1": 0.5547,
+     "x2": 0.8828,
+     "y2": 0.8055
+    }
+   ],
+   "agent_first_s": 2.34,
+   "agent_total_s": 5.3,
+   "agent_cost": 0.01374,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 23,
+   "scene": "a foggy park",
+   "target": "bench",
+   "absent": "refrigerator",
+   "asked_side": "right",
+   "image_s": 9.470948926000005,
+   "spark_side": "right",
+   "spark_cost": 0.00435625,
+   "sam_s": 61.448251634,
+   "truth": "right",
+   "sam_found": 1,
+   "sam_side": "right",
+   "sam_absent_found": 0,
+   "agent_said": "On it. On the right side by the bikes and trash can, facing the trail.",
+   "agent_highlight": [
+    {
+     "x1": 0.6031,
+     "y1": 0.4211,
+     "x2": 0.7714,
+     "y2": 0.7398
+    }
+   ],
+   "agent_first_s": 3.33,
+   "agent_total_s": 68.21,
+   "agent_cost": 0.01377,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 24,
+   "scene": "a staircase in low light",
+   "target": "handrail",
+   "absent": "piano",
+   "asked_side": "right",
+   "image_s": 14.486949636999995,
+   "spark_side": "right",
+   "spark_cost": 0.0044595,
+   "sam_s": 1.9130311010000014,
+   "truth": "right",
+   "sam_found": 1,
+   "sam_side": "right",
+   "sam_absent_found": 0,
+   "agent_said": "On it. It's on the right side of the stairs going up the wall. I've highlighted it for you.",
+   "agent_highlight": [
+    {
+     "x1": 0.5609,
+     "y1": 0.1039,
+     "x2": 0.7411,
+     "y2": 0.5703
+    }
+   ],
+   "agent_first_s": 1.79,
+   "agent_total_s": 7.65,
+   "agent_cost": 0.00619,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 25,
+   "scene": "a crowded cafe",
+   "target": "power outlet",
+   "absent": "horse",
+   "asked_side": "right",
+   "image_s": 31.619117404999997,
+   "spark_side": "right",
+   "spark_cost": 0.00420875,
+   "sam_s": 0.9439856510000197,
+   "truth": "right",
+   "sam_found": 1,
+   "sam_side": "right",
+   "sam_absent_found": 0,
+   "agent_said": "On it. On the right wall by your coffee cup.",
+   "agent_highlight": [
+    {
+     "x1": 0.8625,
+     "y1": 0.4711,
+     "x2": 0.9385,
+     "y2": 0.6094
+    }
+   ],
+   "agent_first_s": 2.22,
+   "agent_total_s": 7.64,
+   "agent_cost": 0.0079,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 26,
+   "scene": "a train platform at night",
+   "target": "platform number sign",
+   "absent": "bathtub",
+   "asked_side": "right",
+   "image_s": 15.541499920000007,
+   "spark_side": "right",
+   "spark_cost": 0.00429075,
+   "sam_s": 1.5361904620000075,
+   "truth": "right",
+   "sam_found": 1,
+   "sam_side": "right",
+   "sam_absent_found": 0,
+   "agent_said": "On it. It's on the upper right, on the pillar showing number four.",
+   "agent_highlight": [
+    {
+     "x1": 0.8724,
+     "y1": 0.2555,
+     "x2": 0.9115,
+     "y2": 0.3117
+    }
+   ],
+   "agent_first_s": 4.52,
+   "agent_total_s": 9.01,
+   "agent_cost": 0.01412,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 27,
+   "scene": "a hotel room in the evening",
+   "target": "thermostat",
+   "absent": "bicycle",
+   "asked_side": "right",
+   "image_s": 18.762791015000005,
+   "spark_side": "right",
+   "spark_cost": 0.00427975,
+   "sam_s": 1.3142104770000174,
+   "truth": "right",
+   "sam_found": 1,
+   "sam_side": "right",
+   "sam_absent_found": 0,
+   "agent_said": "On it. It's on the right side by your keys, just left of the hanging blue jacket. I've outlined it on your photo.",
+   "agent_highlight": [
+    {
+     "x1": 0.8818,
+     "y1": 0.55,
+     "x2": 0.9703,
+     "y2": 0.6664
+    }
+   ],
+   "agent_first_s": 2.32,
+   "agent_total_s": 6.63,
+   "agent_cost": 0.01417,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": false
+  },
+  {
+   "i": 28,
+   "scene": "an office kitchen",
+   "target": "coffee machine",
+   "absent": "tractor",
+   "asked_side": "right",
+   "image_s": 15.63113579200001,
+   "spark_side": "right",
+   "spark_cost": 0.0042215,
+   "sam_s": 1.1122536210000078,
+   "truth": "right",
+   "sam_found": 1,
+   "sam_side": "right",
+   "sam_absent_found": 0,
+   "agent_said": "On it. On the far right of the counter, next to the glass tea jar.",
+   "agent_highlight": [
+    {
+     "x1": 0.8099,
+     "y1": 0.4859,
+     "x2": 0.9167,
+     "y2": 0.7812
+    }
+   ],
+   "agent_first_s": 1.68,
+   "agent_total_s": 5.54,
+   "agent_cost": 0.00855,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 29,
+   "scene": "a shop counter with many items",
+   "target": "card reader",
+   "absent": "ladder",
+   "asked_side": "right",
+   "image_s": 24.831223488999996,
+   "spark_side": "right",
+   "spark_cost": 0.00426825,
+   "sam_s": 0.5953898730000162,
+   "truth": "right",
+   "sam_found": 1,
+   "sam_side": "right",
+   "sam_absent_found": 0,
+   "agent_said": "On it. It's on the right side of the counter, next to the tape roll and pens.",
+   "agent_highlight": [
+    {
+     "x1": 0.7865,
+     "y1": 0.3258,
+     "x2": 0.899,
+     "y2": 0.5547
+    }
+   ],
+   "agent_first_s": 3.33,
+   "agent_total_s": 6.19,
+   "agent_cost": 0.01342,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 30,
+   "scene": "a cluttered desk",
+   "target": "pair of scissors",
+   "absent": "piano",
+   "asked_side": "left",
+   "image_s": 23.970374557999975,
+   "spark_side": "left",
+   "spark_cost": 0.00434175,
+   "sam_s": 0.9976372659999981,
+   "truth": "left",
+   "sam_found": 1,
+   "sam_side": "left",
+   "sam_absent_found": 0,
+   "agent_said": "On it. They're on the left edge of the desk on some torn paper.",
+   "agent_highlight": [
+    {
+     "x1": 0.0208,
+     "y1": 0.4359,
+     "x2": 0.1318,
+     "y2": 0.6813
+    }
+   ],
+   "agent_first_s": 1.93,
+   "agent_total_s": 6.87,
+   "agent_cost": 0.00791,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 31,
+   "scene": "a crowded kitchen counter",
+   "target": "salt shaker",
+   "absent": "bicycle",
+   "asked_side": "left",
+   "image_s": 17.377960386000012,
+   "spark_side": "left",
+   "spark_cost": 0.00427375,
+   "sam_s": 0.6209120659999883,
+   "truth": "left",
+   "sam_found": 1,
+   "sam_side": "left",
+   "sam_absent_found": 0,
+   "agent_said": "On it. On the left side, next to the garlic and the green cloth.",
+   "agent_highlight": [
+    {
+     "x1": 0.063,
+     "y1": 0.4734,
+     "x2": 0.149,
+     "y2": 0.7031
+    }
+   ],
+   "agent_first_s": 1.93,
+   "agent_total_s": 4.76,
+   "agent_cost": 0.00819,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 32,
+   "scene": "a dim hallway at night",
+   "target": "light switch",
+   "absent": "sofa",
+   "asked_side": "left",
+   "image_s": 11.12824829600001,
+   "spark_side": "left",
+   "spark_cost": 0.00425125,
+   "sam_s": 0.9864201409999964,
+   "truth": "left",
+   "sam_found": 0,
+   "sam_side": null,
+   "sam_absent_found": 0,
+   "agent_said": "On it. On your left, on the wall just above the umbrella handle.",
+   "agent_highlight": null,
+   "agent_first_s": 1.98,
+   "agent_total_s": 6.91,
+   "agent_cost": 0.00846,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 33,
+   "scene": "a busy bus station",
+   "target": "ticket machine",
+   "absent": "bathtub",
+   "asked_side": "left",
+   "image_s": 25.020387117000013,
+   "spark_side": "left",
+   "spark_cost": 0.004383,
+   "sam_s": 1.7354038370000069,
+   "truth": "left",
+   "sam_found": 0,
+   "sam_side": null,
+   "sam_absent_found": 0,
+   "agent_said": "On it. It's on the left wall next to the stacked crates, above the yellow mop bucket.",
+   "agent_highlight": null,
+   "agent_first_s": 2.88,
+   "agent_total_s": 11.95,
+   "agent_cost": 0.01567,
+   "agent_tools": [
+    "find_in_photo",
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 34,
+   "scene": "a messy living room",
+   "target": "TV remote",
+   "absent": "fire hydrant",
+   "asked_side": "left",
+   "image_s": 6.907361952999992,
+   "spark_side": "left",
+   "spark_cost": 0.004196,
+   "sam_s": 1.0792145940000069,
+   "truth": "left",
+   "sam_found": 1,
+   "sam_side": "left",
+   "sam_absent_found": 0,
+   "agent_said": "On it. On the left side of the coffee table, buried in the papers.",
+   "agent_highlight": [
+    {
+     "x1": 0.0307,
+     "y1": 0.6656,
+     "x2": 0.1401,
+     "y2": 0.8023
+    }
+   ],
+   "agent_first_s": 2.38,
+   "agent_total_s": 6.74,
+   "agent_cost": 0.00799,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 35,
+   "scene": "a dark parking lot at night",
+   "target": "exit sign",
+   "absent": "bed",
+   "asked_side": "left",
+   "image_s": 7.204397693999994,
+   "spark_side": "left",
+   "spark_cost": 0.00422575,
+   "sam_s": 0.9069267520000039,
+   "truth": "left",
+   "sam_found": 1,
+   "sam_side": "left",
+   "sam_absent_found": 0,
+   "agent_said": "I found the exit sign. On the left wall above the trash bins, glowing green.",
+   "agent_highlight": [
+    {
+     "x1": 0.0792,
+     "y1": 0.3203,
+     "x2": 0.1099,
+     "y2": 0.3758
+    }
+   ],
+   "agent_first_s": 1.73,
+   "agent_total_s": 5.41,
+   "agent_cost": 0.00817,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 36,
+   "scene": "a cluttered entryway",
+   "target": "set of keys",
+   "absent": "guitar",
+   "asked_side": "left",
+   "image_s": 9.37113968700001,
+   "spark_side": "left",
+   "spark_cost": 0.0042015,
+   "sam_s": 1.2684598749999907,
+   "truth": "left",
+   "sam_found": 1,
+   "sam_side": "left",
+   "sam_absent_found": 0,
+   "agent_said": "On it. They're on the table at the bottom left, next to the beige purse and some coins.",
+   "agent_highlight": [
+    {
+     "x1": 0.1641,
+     "y1": 0.7438,
+     "x2": 0.2552,
+     "y2": 0.8938
+    }
+   ],
+   "agent_first_s": 2.84,
+   "agent_total_s": 5.87,
+   "agent_cost": 0.0084,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 37,
+   "scene": "a bathroom shelf of bottles",
+   "target": "bottle with a red cap",
+   "absent": "car",
+   "asked_side": "left",
+   "image_s": 19.745238812000025,
+   "spark_side": "left",
+   "spark_cost": 0.0042295,
+   "sam_s": 0.5369356459999892,
+   "truth": "left",
+   "sam_found": 1,
+   "sam_side": "left",
+   "sam_absent_found": 0,
+   "agent_said": "On it. It's on the far left edge of the shelf, next to the washcloth.",
+   "agent_highlight": [
+    {
+     "x1": 0.0714,
+     "y1": 0.4836,
+     "x2": 0.1589,
+     "y2": 0.7977
+    },
+    {
+     "x1": 0.4714,
+     "y1": 0.2031,
+     "x2": 0.5927,
+     "y2": 0.7922
+    },
+    {
+     "x1": 0.5656,
+     "y1": 0.2711,
+     "x2": 0.7224,
+     "y2": 0.5172
+    },
+    {
+     "x1": 0.4292,
+     "y1": 0.2094,
+     "x2": 0.4896,
+     "y2": 0.4813
+    },
+    {
+     "x1": 0.2958,
+     "y1": 0.1938,
+     "x2": 0.4021,
+     "y2": 0.4492
+    }
+   ],
+   "agent_first_s": 2.82,
+   "agent_total_s": 7.49,
+   "agent_cost": 0.01412,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 38,
+   "scene": "a foggy park",
+   "target": "bench",
+   "absent": "refrigerator",
+   "asked_side": "left",
+   "image_s": 8.44588940700001,
+   "spark_side": "left",
+   "spark_cost": 0.0042925,
+   "sam_s": 1.0483300799999995,
+   "truth": "left",
+   "sam_found": 1,
+   "sam_side": "left",
+   "sam_absent_found": 0,
+   "agent_said": "On it. It's on the left side of the path, with a jacket on it. I've outlined it for you.",
+   "agent_highlight": [
+    {
+     "x1": 0.0443,
+     "y1": 0.4625,
+     "x2": 0.3526,
+     "y2": 0.7484
+    }
+   ],
+   "agent_first_s": 2.37,
+   "agent_total_s": 9.71,
+   "agent_cost": 0.01408,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 39,
+   "scene": "a staircase in low light",
+   "target": "handrail",
+   "absent": "piano",
+   "asked_side": "left",
+   "image_s": 17.808869587999993,
+   "spark_side": "left",
+   "spark_cost": 0.00451475,
+   "sam_s": 1.1115506799999935,
+   "truth": "left",
+   "sam_found": 2,
+   "sam_side": "left",
+   "sam_absent_found": 0,
+   "agent_said": "On it. There's one running up the middle of the stairs, and another short one low on the left wall by the mop.",
+   "agent_highlight": [
+    {
+     "x1": 0.4621,
+     "y1": 0.0843,
+     "x2": 0.4851,
+     "y2": 0.4693
+    },
+    {
+     "x1": 0.0454,
+     "y1": 0.4721,
+     "x2": 0.2121,
+     "y2": 0.5658
+    }
+   ],
+   "agent_first_s": 1.96,
+   "agent_total_s": 68.17,
+   "agent_cost": 0.01346,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 40,
+   "scene": "a crowded cafe",
+   "target": "power outlet",
+   "absent": "horse",
+   "asked_side": "left",
+   "image_s": 20.513881499000007,
+   "spark_side": "left",
+   "spark_cost": 0.0042555,
+   "sam_s": 0.6888670079999883,
+   "truth": "left",
+   "sam_found": 1,
+   "sam_side": "left",
+   "sam_absent_found": 0,
+   "agent_said": "On it. On the left wall just behind your green bag.",
+   "agent_highlight": [
+    {
+     "x1": 0.1167,
+     "y1": 0.5281,
+     "x2": 0.1859,
+     "y2": 0.6297
+    }
+   ],
+   "agent_first_s": 2.26,
+   "agent_total_s": 67.58,
+   "agent_cost": 0.01365,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 41,
+   "scene": "a train platform at night",
+   "target": "platform number sign",
+   "absent": "bathtub",
+   "asked_side": "left",
+   "image_s": 31.751015714999994,
+   "spark_side": "right",
+   "spark_cost": 0.0045585,
+   "sam_s": 61.67693106599998,
+   "truth": null,
+   "sam_found": 0,
+   "sam_side": null,
+   "sam_absent_found": 0,
+   "agent_said": "On it. I don't see a clear platform number sign in this photo, just a blurry yellow hanging sign mid platform that's too far to read.",
+   "agent_highlight": null,
+   "agent_first_s": 3.28,
+   "agent_total_s": 8.8,
+   "agent_cost": 0.00885,
+   "agent_tools": [
+    "find_in_photo"
+   ]
+  },
+  {
+   "i": 42,
+   "scene": "a hotel room in the evening",
+   "target": "thermostat",
+   "absent": "bicycle",
+   "asked_side": "left",
+   "image_s": 18.08479527,
+   "spark_side": "left",
+   "spark_cost": 0.00420325,
+   "sam_s": 1.8209338990000106,
+   "truth": "left",
+   "sam_found": 1,
+   "sam_side": "left",
+   "sam_absent_found": 0,
+   "agent_said": "On it. It's on the left wall above the desk, showing seventy two degrees. I've outlined it on your photo.",
+   "agent_highlight": [
+    {
+     "x1": 0.0807,
+     "y1": 0.4102,
+     "x2": 0.1682,
+     "y2": 0.5242
+    }
+   ],
+   "agent_first_s": 3.75,
+   "agent_total_s": 67.18,
+   "agent_cost": 0.01403,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 43,
+   "scene": "an office kitchen",
+   "target": "coffee machine",
+   "absent": "tractor",
+   "asked_side": "left",
+   "image_s": 18.229028591000002,
+   "spark_side": "left",
+   "spark_cost": 0.004434,
+   "sam_s": 2.3790220939999926,
+   "truth": "left",
+   "sam_found": 1,
+   "sam_side": "left",
+   "sam_absent_found": 0,
+   "agent_said": "On it. It's on the left end of the counter, next to the little plant.",
+   "agent_highlight": [
+    {
+     "x1": 0.1219,
+     "y1": 0.4617,
+     "x2": 0.2693,
+     "y2": 0.7648
+    }
+   ],
+   "agent_first_s": 2.5,
+   "agent_total_s": 6.39,
+   "agent_cost": 0.00805,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 44,
+   "scene": "a shop counter with many items",
+   "target": "card reader",
+   "absent": "ladder",
+   "asked_side": "left",
+   "image_s": 17.294445974000013,
+   "spark_side": "left",
+   "spark_cost": 0.0042555,
+   "sam_s": 1.59761659199998,
+   "truth": "left",
+   "sam_found": 1,
+   "sam_side": "left",
+   "sam_absent_found": 0,
+   "agent_said": "I found the card reader for you. On the left side of the counter, next to the coins and keys.",
+   "agent_highlight": [
+    {
+     "x1": 0.1599,
+     "y1": 0.4188,
+     "x2": 0.2667,
+     "y2": 0.6086
+    }
+   ],
+   "agent_first_s": 2.85,
+   "agent_total_s": 7.21,
+   "agent_cost": 0.01344,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 45,
+   "scene": "a cluttered desk",
+   "target": "pair of scissors",
+   "absent": "piano",
+   "asked_side": "right",
+   "image_s": 15.757881131999994,
+   "spark_side": "right",
+   "spark_cost": 0.004227,
+   "sam_s": 1.0172975149999957,
+   "truth": "right",
+   "sam_found": 1,
+   "sam_side": "right",
+   "sam_absent_found": 0,
+   "agent_said": "On it. On the lower right on top of the brown paper napkin.",
+   "agent_highlight": [
+    {
+     "x1": 0.8286,
+     "y1": 0.4766,
+     "x2": 0.9417,
+     "y2": 0.7719
+    }
+   ],
+   "agent_first_s": 1.72,
+   "agent_total_s": 4.1,
+   "agent_cost": 0.00789,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 46,
+   "scene": "a crowded kitchen counter",
+   "target": "salt shaker",
+   "absent": "bicycle",
+   "asked_side": "right",
+   "image_s": 22.561003564999993,
+   "spark_side": "right",
+   "spark_cost": 0.004278,
+   "sam_s": 0.6640508360000013,
+   "truth": "right",
+   "sam_found": 2,
+   "sam_side": "right",
+   "sam_absent_found": 0,
+   "agent_said": "On it. It's on the right side of the counter, just past the avocado.",
+   "agent_highlight": [
+    {
+     "x1": 0.8896,
+     "y1": 0.5125,
+     "x2": 0.9609,
+     "y2": 0.7156
+    },
+    {
+     "x1": 0.6078,
+     "y1": 0.3258,
+     "x2": 0.675,
+     "y2": 0.5484
+    }
+   ],
+   "agent_first_s": 2.14,
+   "agent_total_s": 6.21,
+   "agent_cost": 0.01357,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 47,
+   "scene": "a dim hallway at night",
+   "target": "light switch",
+   "absent": "sofa",
+   "asked_side": "right",
+   "image_s": 10.528433988999979,
+   "spark_side": "right",
+   "spark_cost": 0.0043745,
+   "sam_s": 1.0837770370000044,
+   "truth": "right",
+   "sam_found": 1,
+   "sam_side": "right",
+   "sam_absent_found": 0,
+   "agent_said": "On it. It's on the right door frame at about eye level, I've highlighted it for you.",
+   "agent_highlight": [
+    {
+     "x1": 0.8167,
+     "y1": 0.3586,
+     "x2": 0.837,
+     "y2": 0.4406
+    }
+   ],
+   "agent_first_s": 2.2,
+   "agent_total_s": 6.42,
+   "agent_cost": 0.00842,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 48,
+   "scene": "a busy bus station",
+   "target": "ticket machine",
+   "absent": "bathtub",
+   "asked_side": "right",
+   "image_s": 29.96436733599998,
+   "spark_side": "right",
+   "spark_cost": 0.00442975,
+   "sam_s": 2.6545712049999963,
+   "truth": "right",
+   "sam_found": 0,
+   "sam_side": null,
+   "sam_absent_found": 0,
+   "agent_said": "On it. On your right against the wall, just above the umbrellas. It's the gray box with the dark screen.",
+   "agent_highlight": null,
+   "agent_first_s": 2.58,
+   "agent_total_s": 7.58,
+   "agent_cost": 0.01189,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 49,
+   "scene": "a messy living room",
+   "target": "TV remote",
+   "absent": "fire hydrant",
+   "asked_side": "right",
+   "image_s": 30.529326115000003,
+   "spark_side": "none",
+   "spark_cost": 0.0045445,
+   "sam_s": 1.4622257670000067,
+   "truth": null,
+   "sam_found": 0,
+   "sam_side": null,
+   "sam_absent_found": 0,
+   "agent_said": "On it. I don't see a TV remote anywhere in this photo.",
+   "agent_highlight": null,
+   "agent_first_s": 2.59,
+   "agent_total_s": 6.16,
+   "agent_cost": 0.01399,
+   "agent_tools": [
+    "find_in_photo"
+   ]
+  },
+  {
+   "i": 50,
+   "scene": "a dark parking lot at night",
+   "target": "exit sign",
+   "absent": "bed",
+   "asked_side": "right",
+   "image_s": 24.759917135999984,
+   "spark_side": "right",
+   "spark_cost": 0.00423,
+   "sam_s": 0.7592529220000017,
+   "truth": "right",
+   "sam_found": 1,
+   "sam_side": "right",
+   "sam_absent_found": 0,
+   "agent_said": "On it. It's on the right side, on the wall above the trash.",
+   "agent_highlight": [
+    {
+     "x1": 0.8234,
+     "y1": 0.3086,
+     "x2": 0.8844,
+     "y2": 0.3594
+    }
+   ],
+   "agent_first_s": 1.9,
+   "agent_total_s": 8.26,
+   "agent_cost": 0.01159,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 51,
+   "scene": "a cluttered entryway",
+   "target": "set of keys",
+   "absent": "guitar",
+   "asked_side": "right",
+   "image_s": 15.278274914999997,
+   "spark_side": "right",
+   "spark_cost": 0.00423125,
+   "sam_s": 0.6852067970000064,
+   "truth": "right",
+   "sam_found": 1,
+   "sam_side": "right",
+   "sam_absent_found": 0,
+   "agent_said": "On it. They're in the little blue dish on the step at the bottom right, by the green beanie. I've outlined them in your photo.",
+   "agent_highlight": [
+    {
+     "x1": 0.7828,
+     "y1": 0.6773,
+     "x2": 0.8396,
+     "y2": 0.768
+    }
+   ],
+   "agent_first_s": 3.09,
+   "agent_total_s": 7.92,
+   "agent_cost": 0.00853,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 52,
+   "scene": "a bathroom shelf of bottles",
+   "target": "bottle with a red cap",
+   "absent": "car",
+   "asked_side": "right",
+   "image_s": 25.60742602800002,
+   "spark_side": "right",
+   "spark_cost": 0.004272,
+   "sam_s": 0.7088819380000189,
+   "truth": "right",
+   "sam_found": 1,
+   "sam_side": "right",
+   "sam_absent_found": 0,
+   "agent_said": "On it. It's at the bottom right edge of the shelf, tucked in with the clutter.",
+   "agent_highlight": [
+    {
+     "x1": 0.9464,
+     "y1": 0.5523,
+     "x2": 1.0,
+     "y2": 0.818
+    }
+   ],
+   "agent_first_s": 2.93,
+   "agent_total_s": 6.17,
+   "agent_cost": 0.01422,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 53,
+   "scene": "a foggy park",
+   "target": "bench",
+   "absent": "refrigerator",
+   "asked_side": "right",
+   "image_s": 8.35834173500001,
+   "spark_side": "right",
+   "spark_cost": 0.004199,
+   "sam_s": 0.7739640289999841,
+   "truth": "right",
+   "sam_found": 1,
+   "sam_side": "right",
+   "sam_absent_found": 0,
+   "agent_said": "On it. It's on the right by the trash bins. I've outlined it for you.",
+   "agent_highlight": [
+    {
+     "x1": 0.6505,
+     "y1": 0.4648,
+     "x2": 0.9,
+     "y2": 0.7617
+    }
+   ],
+   "agent_first_s": 2.17,
+   "agent_total_s": 7.38,
+   "agent_cost": 0.01362,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 54,
+   "scene": "a staircase in low light",
+   "target": "handrail",
+   "absent": "piano",
+   "asked_side": "right",
+   "image_s": 10.08595587900001,
+   "spark_side": "right",
+   "spark_cost": 0.00431925,
+   "sam_s": 1.4799356549999914,
+   "truth": "right",
+   "sam_found": 1,
+   "sam_side": "right",
+   "sam_absent_found": 0,
+   "agent_said": "On it. It's on the right side of the stairs, sticking up out of the clutter.",
+   "agent_highlight": [
+    {
+     "x1": 0.5975,
+     "y1": 0.3549,
+     "x2": 0.7076,
+     "y2": 0.6401
+    }
+   ],
+   "agent_first_s": 1.34,
+   "agent_total_s": 5.2,
+   "agent_cost": 0.00798,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 55,
+   "scene": "a crowded cafe",
+   "target": "power outlet",
+   "absent": "horse",
+   "asked_side": "right",
+   "image_s": 16.83732921699999,
+   "spark_side": "right",
+   "spark_cost": 0.004264,
+   "sam_s": 0.7792862009999908,
+   "truth": "right",
+   "sam_found": 1,
+   "sam_side": "right",
+   "sam_absent_found": 0,
+   "agent_said": "On it. It's on the right side of the table, mounted on the wood wall next to your green bag.",
+   "agent_highlight": [
+    {
+     "x1": 0.8833,
+     "y1": 0.5109,
+     "x2": 0.9432,
+     "y2": 0.6352
+    }
+   ],
+   "agent_first_s": 1.39,
+   "agent_total_s": 6.0,
+   "agent_cost": 0.01339,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 56,
+   "scene": "a train platform at night",
+   "target": "platform number sign",
+   "absent": "bathtub",
+   "asked_side": "right",
+   "image_s": 11.438993843999981,
+   "spark_side": "right",
+   "spark_cost": 0.004431,
+   "sam_s": 1.710735593999999,
+   "truth": "right",
+   "sam_found": 1,
+   "sam_side": "right",
+   "sam_absent_found": 0,
+   "agent_said": "On it. On the right on the pole by the trash, showing number two. I've outlined it for you.",
+   "agent_highlight": [
+    {
+     "x1": 0.8203,
+     "y1": 0.3742,
+     "x2": 0.8729,
+     "y2": 0.5406
+    }
+   ],
+   "agent_first_s": 3.28,
+   "agent_total_s": 6.19,
+   "agent_cost": 0.00859,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 57,
+   "scene": "a hotel room in the evening",
+   "target": "thermostat",
+   "absent": "bicycle",
+   "asked_side": "right",
+   "image_s": 34.45908062800001,
+   "spark_side": "right",
+   "spark_cost": 0.004267,
+   "sam_s": 1.1156555119999894,
+   "truth": "right",
+   "sam_found": 1,
+   "sam_side": "right",
+   "sam_absent_found": 0,
+   "agent_said": "On it. It's on the right wall next to your hanging keys, showing seventy two. I've outlined it on your photo.",
+   "agent_highlight": [
+    {
+     "x1": 0.8266,
+     "y1": 0.3023,
+     "x2": 0.9281,
+     "y2": 0.4555
+    }
+   ],
+   "agent_first_s": 2.17,
+   "agent_total_s": 5.59,
+   "agent_cost": 0.00815,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 58,
+   "scene": "an office kitchen",
+   "target": "coffee machine",
+   "absent": "tractor",
+   "asked_side": "right",
+   "image_s": 19.095252773000027,
+   "spark_side": "right",
+   "spark_cost": 0.00423,
+   "sam_s": 0.7072219570000016,
+   "truth": "right",
+   "sam_found": 1,
+   "sam_side": "right",
+   "sam_absent_found": 0,
+   "agent_said": "On it. On the far right of the counter, next to the stacked containers.",
+   "agent_highlight": [
+    {
+     "x1": 0.8052,
+     "y1": 0.4406,
+     "x2": 0.9672,
+     "y2": 0.7758
+    }
+   ],
+   "agent_first_s": 2.94,
+   "agent_total_s": 6.17,
+   "agent_cost": 0.0079,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  },
+  {
+   "i": 59,
+   "scene": "a shop counter with many items",
+   "target": "card reader",
+   "absent": "ladder",
+   "asked_side": "right",
+   "image_s": 18.545371071000005,
+   "spark_side": "right",
+   "spark_cost": 0.004247,
+   "sam_s": 1.2487889150000058,
+   "truth": "right",
+   "sam_found": 1,
+   "sam_side": "right",
+   "sam_absent_found": 0,
+   "agent_said": "On it. It's on the right side of the table with the coiled cord.",
+   "agent_highlight": [
+    {
+     "x1": 0.7906,
+     "y1": 0.3797,
+     "x2": 0.9245,
+     "y2": 0.582
+    }
+   ],
+   "agent_first_s": 2.04,
+   "agent_total_s": 6.37,
+   "agent_cost": 0.00789,
+   "agent_tools": [
+    "find_in_photo"
+   ],
+   "agent_side_ok": true
+  }
+ ]
+}

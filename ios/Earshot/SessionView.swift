@@ -86,6 +86,8 @@ struct SessionView: View {
                     Toggle(session.muted ? "Muted" : "Say “Hey Earshot…”, or tap your glasses", isOn: Binding(
                         get: { !session.muted }, set: { session.muted = !$0 }))
                         .font(.callout)
+                    Toggle("Heads-up: offer help with what it overhears", isOn: $session.headsUp)
+                        .font(.callout)
                 }
                 ProgressView(value: min(1, Double(session.level) * 6))
                     .tint(session.level > 0.02 ? .green : .gray)
@@ -105,7 +107,17 @@ struct SessionView: View {
                     VStack(alignment: .leading, spacing: 4) {
                         if let photo = m.photo {
                             Image(uiImage: photo).resizable().scaledToFit()
-                                .frame(maxWidth: 160, maxHeight: 120)
+                                .frame(maxWidth: m.found.isEmpty ? 160 : 280, maxHeight: m.found.isEmpty ? 120 : 210)
+                                .overlay {  // Find it: outline what SAM 3.1 found
+                                    GeometryReader { geo in
+                                        ForEach(Array(m.found.enumerated()), id: \.offset) { _, r in
+                                            RoundedRectangle(cornerRadius: 4)
+                                                .stroke(Color.blue, lineWidth: 2)
+                                                .frame(width: r.width * geo.size.width, height: r.height * geo.size.height)
+                                                .position(x: r.midX * geo.size.width, y: r.midY * geo.size.height)
+                                        }
+                                    }
+                                }
                                 .clipShape(RoundedRectangle(cornerRadius: 10))
                         }
                         Text(m.text)

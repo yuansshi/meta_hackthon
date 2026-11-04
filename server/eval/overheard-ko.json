@@ -1,0 +1,398 @@
+[
+ {
+  "id": "dinner",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "잊지 마, 금요일 저녁 일곱 시에 우리 집에서 저녁 먹기로 했어.",
+   "파인 스트리트 천사백이십번지, 삼호야."
+  ],
+  "notes": []
+ },
+ {
+  "id": "oat-milk",
+  "expect": "offer",
+  "kinds": [
+   "reminder",
+   "note"
+  ],
+  "heard": [
+   "집에 오는 길에 오트밀크 좀 사와 줄 수 있어?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "dentist",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "치과에서 전화 왔는데, 스케일링 목요일 오전 10시 반으로 바뀌었대."
+  ],
+  "notes": []
+ },
+ {
+  "id": "phone-number",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "내 번호는 사일오 오오오 공일삼사야, 도착하면 문자 보내줘."
+  ],
+  "notes": []
+ },
+ {
+  "id": "parking",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "어, 우리 4층 G열에 주차했어."
+  ],
+  "notes": []
+ },
+ {
+  "id": "gate-change",
+  "expect": "offer",
+  "kinds": [
+   "alert",
+   "note"
+  ],
+  "notes": [
+   "오늘 오후 유나이티드 팔백십이편 타고 덴버 가요"
+  ],
+  "heard": [
+   "승객 여러분 안내 말씀 드립니다. 덴버행 유나이티드 팔백십이편은 지금 비이십이 게이트에서 탑승합니다."
+  ]
+ },
+ {
+  "id": "platform-change",
+  "expect": "offer",
+  "kinds": [
+   "alert",
+   "note"
+  ],
+  "notes": [
+   "퇴근하고 다섯 시 십오분 프리몬트 가는 거 타요"
+  ],
+  "heard": [
+   "승객 여러분, 프리몬트 가는 다섯 시 십오분 기차는 이제 오번 승강장에서 출발합니다."
+  ]
+ },
+ {
+  "id": "meeting-moved",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "미리 말하는데, 프리야랑 회의 내일 오후 3시로 미뤄졌어."
+  ],
+  "notes": []
+ },
+ {
+  "id": "passport",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "월요일 아홉 시 약속에 여권 가져오세요."
+  ],
+  "notes": []
+ },
+ {
+  "id": "name",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "이쪽은 데이나 휘트필드님이세요, 디자인팀 맡고 계세요.",
+   "두 분 런칭 얘기 좀 나눠보세요."
+  ],
+  "notes": []
+ },
+ {
+  "id": "rent",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "월세는 1일에 내야 돼, 또 늦지 마."
+  ],
+  "notes": []
+ },
+ {
+  "id": "prescription",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "약국에서 처방약 오늘 오후 네 시 이후에 준비된다고 했어요."
+  ],
+  "notes": []
+ },
+ {
+  "id": "soccer",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "이번 주 토요일 아침 8시에 링컨 파크에서 축구 연습 있어.",
+   "이번 주에는 네가 운전해 줄 수 있어?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "wifi",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "와이파이 비밀번호는 오터 블루 포티투야, 전부 소문자야."
+  ],
+  "notes": []
+ },
+ {
+  "id": "birthday",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "엄마 생일 점심은 일요일 낮 열두 시에 오번가에 있는 태국 식당에서 해."
+  ],
+  "notes": []
+ },
+ {
+  "id": "museum",
+  "expect": "offer",
+  "kinds": [
+   "lookup",
+   "research"
+  ],
+  "heard": [
+   "박물관 월요일에 여는지 좀 알아봐 줄 수 있어?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "plumber",
+  "expect": "offer",
+  "kinds": [
+   "research",
+   "lookup"
+  ],
+  "heard": [
+   "이번 주에 와줄 수 있는 배관공이 꼭 필요한데요.",
+   "좀 알아봐 주실 수 있을까요?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "package",
+  "expect": "offer",
+  "kinds": [
+   "reminder",
+   "note"
+  ],
+  "heard": [
+   "택배 내일 오후 2시에서 4시 사이에 온대, 누가 직접 사인하고 받아야 돼."
+  ],
+  "notes": []
+ },
+ {
+  "id": "kids",
+  "expect": "offer",
+  "kinds": [
+   "reminder"
+  ],
+  "heard": [
+   "오늘 3시 15분에 애들 좀 데리러 가 줄 수 있어? 나 일 때문에 꼼짝 못 하겠어."
+  ],
+  "notes": []
+ },
+ {
+  "id": "locker",
+  "expect": "offer",
+  "kinds": [
+   "note"
+  ],
+  "heard": [
+   "락커 번호는 이백십팔번이고, 비밀번호는 사 칠 일 구예요."
+  ],
+  "notes": []
+ },
+ {
+  "id": "weather-chat",
+  "expect": "none",
+  "heard": [
+   "오늘 날씨 좋지?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "game",
+  "expect": "none",
+  "heard": [
+   "어제 밤 경기 진짜 말이 안 돼, 마무리가 완전 대박이었잖아."
+  ],
+  "notes": []
+ },
+ {
+  "id": "vague-dinner",
+  "expect": "none",
+  "heard": [
+   "언제 한번 같이 밥 먹어요."
+  ],
+  "notes": []
+ },
+ {
+  "id": "trailer",
+  "expect": "none",
+  "heard": [
+   "새 트레일러 봤어? 진짜 대박이던데."
+  ],
+  "notes": []
+ },
+ {
+  "id": "tv",
+  "expect": "none",
+  "heard": [
+   "쇼에 다시 오신 걸 환영합니다. 잠시 쉬었다가 경제 얘기 나눠보겠습니다."
+  ],
+  "notes": []
+ },
+ {
+  "id": "coffee",
+  "expect": "none",
+  "heard": [
+   "이 커피 너무 뜨거워."
+  ],
+  "notes": []
+ },
+ {
+  "id": "agreeing",
+  "expect": "none",
+  "heard": [
+   "응, 아니, 나도 그렇게 생각해."
+  ],
+  "notes": []
+ },
+ {
+  "id": "tahoe",
+  "expect": "none",
+  "heard": [
+   "지난 겨울에 타호 갔던 거 기억나? 진짜 너무 재밌었잖아."
+  ],
+  "notes": []
+ },
+ {
+  "id": "other-train",
+  "expect": "none",
+  "notes": [
+   "퇴근하고 5시 15분 프리몬트행 타요"
+  ],
+  "heard": [
+   "승객 여러분, 6시 40분 산호세행 열차가 지금 2번 승강장에서 탑승 중입니다."
+  ]
+ },
+ {
+  "id": "radio-ad",
+  "expect": "none",
+  "heard": [
+   "이번 주말 슬립월드에서 매트리스 전품목 하나 사면 하나 공짜!"
+  ],
+  "notes": []
+ },
+ {
+  "id": "blue-one",
+  "expect": "none",
+  "heard": [
+   "파란색이 너한테 더 잘 어울리는 것 같아."
+  ],
+  "notes": []
+ },
+ {
+  "id": "traffic",
+  "expect": "none",
+  "heard": [
+   "아, 오늘 아침 차 진짜 엄청 막혔어."
+  ],
+  "notes": []
+ },
+ {
+  "id": "anyway",
+  "expect": "none",
+  "heard": [
+   "그래서 뭐, 생각해 보겠다고 했어."
+  ],
+  "notes": []
+ },
+ {
+  "id": "eggs",
+  "expect": "none",
+  "heard": [
+   "요즘 계란값 진짜 비싸지지 않았어?"
+  ],
+  "notes": []
+ },
+ {
+  "id": "laugh",
+  "expect": "none",
+  "heard": [
+   "하하, 너무 웃겨."
+  ],
+  "notes": []
+ },
+ {
+  "id": "puppy",
+  "expect": "none",
+  "heard": [
+   "내 여동생이 새 강아지 데려왔는데 너무 귀여워."
+  ],
+  "notes": []
+ },
+ {
+  "id": "lunch-yesterday",
+  "expect": "none",
+  "heard": [
+   "어제 점심으로 피자 먹었는데, 괜찮았어."
+  ],
+  "notes": []
+ },
+ {
+  "id": "tired",
+  "expect": "none",
+  "heard": [
+   "아 너무 피곤해, 어젯밤에 거의 못 잤어."
+  ],
+  "notes": []
+ },
+ {
+  "id": "store-pa",
+  "expect": "none",
+  "heard": [
+   "5번 통로 청소 부탁드려요."
+  ],
+  "notes": []
+ },
+ {
+  "id": "next-stop",
+  "expect": "none",
+  "heard": [
+   "다음 정류장은 파월 스트리트입니다."
+  ],
+  "notes": []
+ }
+]
