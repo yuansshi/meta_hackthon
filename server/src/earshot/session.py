@@ -19,6 +19,7 @@ from .config import DATA_DIR, MissingKey, api_key
 from .memory import Memory, memory_tools
 from .relay import AsrRelay
 from .research import Researcher, research_tool
+from .rewind import Heard, rewind_tool
 from .tools import available
 
 log = logging.getLogger(__name__)
@@ -162,6 +163,7 @@ class Session:
         self.pending_image: tuple[str, float] | None = None  # (data URL, staged at)
         self.asr_billed_s = 0.0
         self.gate = Gate(cfg["turns"])
+        self.heard = Heard(cfg["turns"].get("rewind_s", 0), clock)  # speech not meant for the agent, for Rewind
         self.agent: Agent | None = None
 
     async def start(self, hello: dict) -> None:
@@ -172,6 +174,8 @@ class Session:
         self.actions = ActionLog(DATA_DIR / "actions" / f"{device_id}.jsonl")
         tools = available([t for t in hello.get("tools") or [] if isinstance(t, str)])
         tools.update(memory_tools(Memory(DATA_DIR / "memory" / f"{device_id}.json")))
+        if self.heard.window_s > 0:
+            tools["rewind"] = rewind_tool(self.heard, lambda: self.gate.mode)
         if self.researcher and self.cfg.get("background"):
             tools["start_background_task"] = research_tool(self.start_research)
         self.agent = self.agent_factory(self.cfg, self.budget, tools, self.actions,
@@ -236,6 +240,8 @@ class Session:
                                  "reason": "answer"})
                 self.awaiting.set_result(text)  # the answer to "add … to your reminders?", no wake word needed
                 return
+            if d.reason == "no_wake" and self.heard.window_s > 0:
+                self.heard.add(text)  # not for the agent, but "what did she just say?" may ask about it
             if d.accept and self.turn and not self.turn.done():
                 d = Decision(False, text, "busy")
             await self.send({"type": "transcript", "final": True, "text": text, "accepted": d.accept,
@@ -374,6 +380,7 @@ class Session:
         await self.send({"type": "error", "message": "session time limit reached"})
 
     async def close(self) -> None:
+        self.heard.clear()
         if self.researcher:
             self.researcher.detach(self.device_id, self)  # jobs keep running; reports wait in the inbox
         if self.awaiting and not self.awaiting.done():

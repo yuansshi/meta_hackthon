@@ -16,6 +16,7 @@ class Tool:
     where: str  # "server" or "device"
     side_effect: bool = False
     run: Callable[..., Awaitable[dict]] | None = None  # server tools only
+    receipt: Callable[[dict], dict] | None = None  # what the receipt keeps of a result, when not all of it
 
     def spec(self, api: str) -> dict:
         fn = {"name": self.name, "description": self.description, "parameters": self.parameters}

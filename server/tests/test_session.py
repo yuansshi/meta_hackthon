@@ -440,6 +440,47 @@ def test_confirm_question_reads_a_capitalized_title_as_a_verb():
     assert confirm_question("create_reminder", {"title": "Dentist"}, None) == "Should I remind you about Dentist?"
 
 
+async def test_rewind_answers_from_speech_that_was_not_for_it(env):
+    s, sent, models = await make_session(meta=[
+        tool_reply("r1", "rewind", {}, "c1"), text_reply("r2", "1420 Pine Street, unit 3, at seven.")])
+    await s.on_asr_event({"type": "speechComplete", "transcript": "Meet me at 1420 Pine Street, unit 3, at seven."})
+    assert s.turn is None  # not said to the agent
+    await s.on_asr_event({"type": "speechComplete", "transcript": "Hey Earshot, what was that address?"})
+    await s.turn
+    out = next(i for i in models["meta"].responses.calls[1]["input"] if i.get("type") == "function_call_output")
+    heard = json.loads(out["output"])["heard"]
+    assert len(heard) == 1 and heard[0].endswith("Meet me at 1420 Pine Street, unit 3, at seven.")
+    assert says(sent) == ["On it.", "1420 Pine Street, unit 3, at seven."]
+    receipt = [m["entry"] for m in sent if m["type"] == "action" and m["entry"]["status"] == "done"][-1]
+    assert receipt["tool"] == "rewind" and receipt["result"] == {"lines": 1}
+    assert "Pine" not in (session_mod.DATA_DIR / "actions" / "test.jsonl").read_text()  # words never hit disk
+
+
+async def test_rewind_keeps_only_recent_speech_that_was_not_for_it(env):
+    now = [1000.0]
+    s, sent, models = await make_session(meta=[text_reply("r1", "Sure.")], clock=lambda: now[0])
+    await s.on_asr_event({"type": "speechComplete", "transcript": "The train to Fremont leaves from platform two."})
+    now[0] += 100
+    await s.handle_text({"type": "tts", "state": "start", "text": "Your coffee is ready."})
+    await s.on_asr_event({"type": "speechComplete", "transcript": "Your coffee is ready."})  # its own voice
+    await s.handle_text({"type": "tts", "state": "end"})
+    now[0] += 5
+    await s.on_asr_event({"type": "speechComplete", "transcript": "Hey Earshot, thanks"})  # said to it
+    await s.turn
+    assert [line.split(": ", 1)[1] for line in s.heard.recent()] == ["The train to Fremont leaves from platform two."]
+    now[0] += 90  # 195 s after the first line, past the 180 s window
+    assert s.heard.recent() == []
+    assert (await s.agent.tools["rewind"].run())["note"].startswith("nothing was heard")
+    await s.close()
+    assert not s.heard.lines
+
+
+async def test_rewind_explains_push_to_talk(env):
+    s, sent, models = await make_session(hello={**HELLO, "mode": "ptt"})
+    result = await s.agent.tools["rewind"].run()
+    assert result["heard"] == [] and "push-to-talk" in result["note"]
+
+
 def test_split_report_skips_wondering_out_loud():
     from earshot.research import split_report
     text = ("Searching for Seattle's three tallest buildings to build your cited summary.I'll open that source to "

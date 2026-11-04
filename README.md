@@ -11,6 +11,7 @@ Most "smart" audio glasses are just a Bluetooth headset: a microphone, two speak
 - **Look:** take a photo (tap Look on iPhone, or the camera button on the web), then ask about it out loud: "what does this sign say?" Muse Spark answers from the image. No wake word is needed right after a photo.
 - **Get back to me:** "look into the best e-bikes under $1,500 and get back to me" hands the job to **Muse Wonder**, which researches in the background with web search. A minute or so later it speaks up with the answer, or tells you when you next connect.
 - **Memory:** "remember I parked on level 3, spot 42", then later "where did I park?"
+- **Rewind:** "what was that address she just said?" In hands-free mode Earshot keeps the last 3 minutes of speech that wasn't meant for it, in memory only, and answers from it. Nothing it overhears is written to disk.
 - **Asks first:** before it changes anything, like adding a reminder, it asks "Should I remind you to…?" and waits for a spoken or tapped yes.
 
 ## How it works
@@ -21,9 +22,9 @@ any browser + any headset ──▶ web client ───────────
                                                                   ▼
             Agent server (FastAPI): holds the keys, never the audio
               ├─ ASR relay ── own 80 ms clock, silence fill, reconnects ──▶ Muse Voice Transcribe (realtime)
-              ├─ turn gate ── wake word · 8 s follow-up window · echo filter
+              ├─ turn gate ── wake word · 8 s follow-up window · echo filter · 3-minute Rewind buffer (memory only)
               ├─ agent loop ── streaming tool calls ──▶ Muse Spark (Responses API + web_search)
-              ├─ server tools: weather          device tools (run on your phone): location, reminders
+              ├─ server tools: weather, memory, Rewind, research    device tools (run on your phone): location, reminders
               └─ receipts ── every tool call with arguments, result and timing, shown live
 ```
 
@@ -102,6 +103,7 @@ Server → client:
 
 - Audio streams to Meta's speech recognition only while a session is open. No audio is stored.
 - Transcripts go to Muse Spark.
+- Rewind works only in hands-free mode. It holds the last 3 minutes of speech that wasn't meant for Earshot in server memory, drops it when the session ends, and sends it to Muse Spark only when you ask about it. Its receipts record how many lines were heard, never the words.
 - Receipts (tool calls) are kept per device in `server/data/` so you can see exactly what the agent did.
 - The public demo has a daily spend cap, a 10-minute session limit and a per-address session limit.
 

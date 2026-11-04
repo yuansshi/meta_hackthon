@@ -308,6 +308,11 @@ function describe(e) {
     case "create_reminder":
       return { title: "Reminder", what: `“${a.title || ""}”${a.due ? ` · ${fmtDue(a.due)}` : ""}`,
                out: fail || (r.ok ? `Saved to ${r.saved_to || r.list || "Reminders"}` : "") };
+    case "rewind": {  // the receipt keeps a count, never the words heard
+      const n = r.lines || 0;
+      return { title: "Rewind", what: a.minutes ? `last ${a.minutes} min` : "last few minutes",
+               out: fail || (n ? `${n} line${n === 1 ? "" : "s"} heard nearby` : r.note || "Nothing heard") };
+    }
     default:
       return { title: e.tool, what: "", out: fail || "" };
   }

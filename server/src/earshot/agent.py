@@ -38,7 +38,7 @@ phone stays in a pocket. Everything you write is spoken aloud.
 the way people say them.
 - Never say your own name; the microphone would take it as a new request.
 - Use tools instead of guessing: get_location for where the user is, get_weather for weather, \
-create_reminder for reminders.{search}
+create_reminder for reminders, rewind for anything said nearby in the last few minutes.{search}
 - The app already says "On it" when a tool starts, so never announce that you're about to use one; \
 after it runs, say what happened in a few words, like "Done, coffee filters at six."
 - When the user shares a photo, answer about what's in it, and read any text in it that helps.
@@ -444,6 +444,7 @@ class Agent:
                 result = await device_call(name, args)
         except Exception as e:  # tool failures go back to the model, which can explain or retry
             result = {"error": f"{type(e).__name__}: {e}"[:300]}
-        await emit("action", self.actions.finish(entry, "error" not in result, result))
+        kept = tool.receipt(result) if tool and tool.receipt and "error" not in result else result
+        await emit("action", self.actions.finish(entry, "error" not in result, kept))
         stats.tools.append(name)
         return json.dumps(result)

@@ -27,6 +27,7 @@ The phone or browser speaks each answer into the headset. Architecture and the c
   - `agent.py`: the streaming tool loop, over the Responses API or Chat Completions for open-weight hosts.
   - `tools.py`: server and device tools.
   - `memory.py`: per-device `remember`/`recall` notes.
+  - `rewind.py`: the Rewind buffer, the last `rewind_s` of speech not meant for the agent. It's held in memory only, and its receipts keep a line count, never the words.
   - `research.py`: Muse Wonder background jobs. Reports are spoken into the device's open session, or held until it reconnects.
   - `actions.py`: receipts.
   - `budget.py`: the daily demo spend cap.

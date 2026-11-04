@@ -95,6 +95,7 @@ turns:
   max_tool_rounds: 4
   confirm_side_effects: true  # ask "add … to your reminders?" and wait for a spoken or typed yes
   confirm_timeout_s: 20
+  rewind_s: 180            # Rewind: how long speech not meant for the agent is held, in memory only (0 = off)
 
 research:
   poll_s: 3
