@@ -2,16 +2,26 @@
 
 **Meta's models on every ear.** Earshot turns the Bluetooth glasses or earbuds you already own into a Meta AI agent you use without taking out your phone. It also notices what you'll want before you ask.
 
-**Built for your world, as the hackathon theme asks: for people on the move with their hands full.**
-- The walk home with a bag in each hand.
-- The school run with a toddler.
-- The platform where the announcement just changed.
-
-Today a question means stopping, finding the phone, unlocking it and typing, which takes both hands and your eyes. With Earshot you ask out loud and keep walking: the first word comes back in 1.2 to 3.5 s. And when a friend says "dinner's at my place Friday at seven", Earshot offers the reminder on its own.
+**Built for your world, as the hackathon theme asks. Ours is the walking commute:** twice a day, a bag or a coffee in each hand, and small questions on the way. Will it rain this afternoon? Which platform is the 19:05? What was that address?
+- **Before:** every question means stopping, getting the phone out, unlocking it and typing.
+  - Just reaching a phone in a pocket takes 4.6 s on average, against 2.8 s for a watch, and up to 78% of that is getting it out ([Ashbrook et al., CHI 2008](https://doi.org/10.1145/1357054.1357092)).
+  - Then the answer needs a free hand and your eyes.
+- **After:** you ask out loud and keep walking. The first word of the answer comes back 1.2 to 3.5 s after you stop talking, and your hands and eyes stay on the street.
+- **Before you even ask:** when a friend says "dinner's at my place Friday at seven", Earshot offers the reminder on its own. Only a yes lets it act.
 
 **Try it now:** https://earshot-yuansshi.fly.dev. It works in any browser, with any headset, or by typing.
 
-**Watch it (82 s):** https://earshot-yuansshi.fly.dev/media/earshot-demo.mp4 shows one take of the live app on the five core prompts, with each Meta model named on screen as it works. **In Spanish, Japanese and Hindi (77 s):** https://earshot-yuansshi.fly.dev/media/earshot-languages.mp4
+**Watch it:**
+- **The whole demo (1:47):** https://earshot-yuansshi.fly.dev/media/earshot-demo-full.mp4
+  - The five core prompts, then Heads-up.
+  - Each Meta model is named on screen as it works.
+- **The five core prompts alone (82 s):** https://earshot-yuansshi.fly.dev/media/earshot-demo.mp4, one take of the live app.
+- **Heads-up alone, the hook (28 s):** https://earshot-yuansshi.fly.dev/media/earshot-headsup.mp4
+  - A friend mentions dinner, not to Earshot. Muse Spark 1.2 notices and asks first.
+  - One yes, and Muse Spark 1.3 sets the reminder.
+- **In Spanish, Japanese and Hindi (77 s):** https://earshot-yuansshi.fly.dev/media/earshot-languages.mp4
+
+All are screen recordings of the live site in headless Chrome, with the spoken prompts fed in as its microphone. Headless Chrome can't play speech, so Earshot's replies were voiced afterwards with a macOS voice, each at the moment the page spoke it.
 
 ## Try it in 60 seconds
 

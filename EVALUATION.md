@@ -28,7 +28,8 @@ All 18 of 18 trials passed: 3 trials of each judge prompt against https://earsho
   - typed questions went to Muse Spark Open, though Fireworks itself answered some calls with 503 "overloaded", so the fallback now retries 3 times;
   - a photo question was still answered correctly from the image, without SAM 3.1's outline;
   - speech recognition accepted each session, then closed it (1008). The relay now counts a session as working only once it sends something, and the page shows its "can't hear you" notice 2.7 s after a hands-free session starts;
-  - all spoken prompts failed until credit is added.
+  - all spoken prompts failed until credit is added;
+  - a cold start still worked, after the trial stopped the machine at 10:14 AM: the page loaded in 6.3 s, and a typed question's first word came 10.3 s after asking (4.4 s on the next visit), against 2.6 s on Meta's hosted Muse Spark.
 - **Speech recognition:** a transcript arrives 0.17 to 0.30 s after speech ends.
 - **History:** resending the conversation, instead of chaining with `previous_response_id`, cut the answer after a tool from 7.3 s to 2.1 s (`scripts/probe.py`).
 - **Unit tests:** 99, all using fake models and fake speech recognition.
