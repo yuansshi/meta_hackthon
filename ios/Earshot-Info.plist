@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+		<string>location</string>
+	</array>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Earshot listens through your glasses or earbuds so you can talk to the agent hands-free.</string>
+	<key>NSRemindersFullAccessUsageDescription</key>
+	<string>Earshot adds the reminders you ask for to the Reminders app.</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>Earshot adds the reminders you ask for to the Reminders app.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Earshot uses the camera when you tap Look, so you can ask about what's in front of you.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Earshot uses your location to answer questions like "will it rain here?"</string>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Earshot connects to its agent server on your local network during development.</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+</dict>
+</plist>

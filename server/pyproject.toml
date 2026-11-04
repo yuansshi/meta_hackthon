@@ -1,0 +1,30 @@
+[project]
+name = "earshot"
+version = "0.1.0"
+description = "A Meta AI agent for any Bluetooth glasses or earbuds: Muse Voice Transcribe hears, Muse Spark thinks"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "fastapi>=0.115",
+  "uvicorn[standard]>=0.32",
+  "websockets>=14",
+  "openai>=1.66",
+  "httpx>=0.28",
+  "pyyaml",
+  "python-dotenv",
+  "truststore>=0.10",
+]
+
+[dependency-groups]
+dev = ["pytest>=8", "pytest-asyncio>=0.24"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/earshot"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]

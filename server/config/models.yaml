@@ -1,0 +1,107 @@
+# Single source of truth for providers, model ids, prices and request settings.
+# Prices are $ per 1M tokens from dev.meta.ai/docs/pricing-rate-limits, checked 2026-11-03.
+# Swap the brain with `brain:` or EARSHOT_BRAIN=<model key>; any OpenAI-compatible endpoint works.
+
+providers:
+  meta:
+    base_url: https://api.meta.ai/v1
+    api_key_env: META_API_KEY
+  fireworks:
+    base_url: https://api.fireworks.ai/inference/v1
+    api_key_env: FIREWORKS_API_KEY
+
+brain: muse-spark           # answers every turn
+think: muse-spark-think     # used when the user asks it to "think about it"
+fallback: muse-spark-open   # takes the turn when the brain fails before speaking (404, 5xx, network)
+background: muse-wonder     # long "look into it and get back to me" research jobs
+background_fallback: muse-spark-open
+
+models:
+  muse-spark:
+    # Probe from Fly sjc, 2026-11-03: first word p50 1.6 s at `minimal` (3.7 s at `low`). The round after a
+    # tool took 7.3 s chained with previous_response_id vs 2.1 s resending history, so resend it.
+    provider: meta
+    id: muse-spark-1.3
+    api: responses           # web_search is a built-in tool on the Responses API only
+    reasoning_effort: minimal
+    web_search: true
+    chain: stateless              # `previous_response_id` also works, but is ~3.5x slower after a tool call
+    max_output_tokens: 2000       # reasoning tokens count toward this
+    price_in: 1.25
+    price_cached_in: 0.15
+    price_out: 4.25
+  muse-spark-think:
+    provider: meta
+    id: muse-spark-1.3
+    api: responses
+    reasoning_effort: medium
+    web_search: true
+    chain: stateless
+    max_output_tokens: 8000
+    price_in: 1.25
+    price_cached_in: 0.15
+    price_out: 4.25
+  muse-wonder:
+    # Runs as a background response (`background: true`, then polled); checked working on Meta 2026-11-03.
+    provider: meta
+    id: muse-wonder-1.0
+    api: responses
+    reasoning_effort: low     # keeps a typical job to a minute or two; raise for harder research
+    web_search: true
+    chain: stateless          # background tasks are one-shot
+    max_output_tokens: 16000
+    price_in: 4.00
+    price_cached_in: 0.20
+    price_out: 20.00
+  muse-spark-open:
+    # Meta open weights on Fireworks serverless (the only Muse model there, checked 2026-11-03;
+    # Glimmer is self-host only). Probe: `low` ~3.3 s median to first word; `minimal` was slower
+    # and more erratic. Reasoning counts toward max_output_tokens, so keep it roomy.
+    provider: fireworks
+    id: accounts/fireworks/models/muse-spark-open
+    api: chat
+    reasoning_effort: low
+    web_search: false
+    max_output_tokens: 1500
+    price_in: 1.25           # placeholder: Meta's Muse Spark price as a conservative stand-in
+    price_cached_in: 0.15
+    price_out: 4.25
+
+search_price_per_1k: 2.50
+
+asr:
+  url: wss://api.meta.ai/v1/asr/realtime
+  model: muse-voice-transcribe-1.0
+  api_key_env: META_API_KEY
+  sample_rate: 16000
+  encoding: PCM_16KHZ
+  mode: ENDPOINTING        # the API default is PUSH_TO_TALK; we want server-side turn boundaries
+  languages: [English]
+  keywords: [Earshot]
+  frame_ms: 80
+  prebuffer_frames: 2      # jitter buffer depth before real audio starts flowing
+  max_backlog_s: 1.0       # drop the oldest audio past this; Meta closes streams beyond ~5 s ahead
+  price_per_hour: 0.18
+
+turns:
+  wake_word: earshot
+  wake_variants: [ear shot, air shot, ears shot, here shot, ear shop, earshot's]
+  wake_fuzzy: 0.8          # difflib ratio for near-miss spellings of the wake word
+  follow_up_s: 8           # after a reply, the next utterance needs no wake word
+  echo_tail_s: 0.6         # ignore transcripts this long after the device stops speaking
+  echo_similarity: 0.6     # drop transcripts this similar to what the device just said
+  speaking_timeout_s: 30   # treat the device as silent if it never reports `tts end`
+  device_tool_timeout_s: 12
+  max_tool_rounds: 4
+  confirm_side_effects: true  # ask "add … to your reminders?" and wait for a spoken or typed yes
+  confirm_timeout_s: 20
+
+research:
+  poll_s: 3
+  timeout_s: 600
+  per_device_per_day: 5
+
+budget:
+  daily_usd: 25            # hard stop for the public demo; the $150 credit pool must last through judging
+  web_session_minutes: 10
+  sessions_per_ip: 3

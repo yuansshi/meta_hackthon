@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Earshot</title>
+  <meta name="description" content="A Meta AI agent for the Bluetooth glasses or earbuds you already own. Muse Voice Transcribe hears, Muse Spark thinks.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23246bfd'/%3E%3Cpath d='M8 13v6M12 9v14M16 11.5v9M20 7v18M24 13v6' stroke='white' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #f5f6f8; --card: #ffffff; --ink: #14171f; --muted: #5d6573; --line: #e3e6eb;
+      --accent: #246bfd; --accent-ink: #ffffff; --soft: #eef3ff; --ok: #138a4a; --warn: #b26b00; --bad: #c8312b;
+      --user: #246bfd; --user-ink: #ffffff; --agent: #f0f2f5; --shadow: 0 1px 2px rgba(16,24,40,.06), 0 4px 16px rgba(16,24,40,.06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #0e1116; --card: #161a21; --ink: #e8ebf0; --muted: #98a1b0; --line: #262c36;
+        --accent: #5b8dff; --accent-ink: #0b0d12; --soft: #1b2436; --ok: #3ccf7f; --warn: #f0b44c; --bad: #ff6b62;
+        --user: #3b6ff0; --user-ink: #ffffff; --agent: #20252e; --shadow: none;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #0e1116; --card: #161a21; --ink: #e8ebf0; --muted: #98a1b0; --line: #262c36;
+      --accent: #5b8dff; --accent-ink: #0b0d12; --soft: #1b2436; --ok: #3ccf7f; --warn: #f0b44c; --bad: #ff6b62;
+      --user: #3b6ff0; --user-ink: #ffffff; --agent: #20252e; --shadow: none;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif; }
+    header, .lede, main, footer { max-width: 1180px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+    header { display: flex; align-items: center; gap: 12px; padding-top: 18px; padding-bottom: 10px; }
+    .mark { width: 34px; height: 34px; border-radius: 9px; background: var(--accent); display: grid; place-items: center; flex: none; }
+    .brand h1 { font-size: 18px; margin: 0; letter-spacing: -.01em; }
+    .brand p { margin: 0; color: var(--muted); font-size: 13px; }
+    .spacer { flex: 1; }
+    .pill { display: inline-flex; align-items: center; gap: 7px; padding: 5px 11px; border-radius: 999px; background: var(--card); border: 1px solid var(--line); font-size: 13px; font-weight: 600; white-space: nowrap; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); }
+    .pill[data-s="listening"] .dot { background: var(--ok); }
+    .pill[data-s="thinking"] .dot { background: var(--warn); animation: pulse 1s infinite; }
+    .pill[data-s="speaking"] .dot { background: var(--accent); animation: pulse 1s infinite; }
+    .pill[data-s="offline"] .dot { background: var(--bad); }
+    @keyframes pulse { 50% { opacity: .35; } }
+    .lede { padding-bottom: 16px; }
+    .lede p { margin: 0; max-width: 820px; color: var(--muted); }
+    .lede strong { color: var(--ink); }
+    main { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 20px; padding-bottom: 24px; }
+    main > * { min-width: 0; } /* grid items otherwise grow to their widest child and scroll the page sideways */
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); }
+    .talk-card { padding: 22px; display: flex; flex-direction: column; min-height: 660px; }
+    .toprow { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; justify-content: space-between; }
+    .modes { display: inline-flex; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 3px; }
+    .modes button { border: 0; background: none; color: var(--muted); font: inherit; font-weight: 600; font-size: 13px; padding: 6px 12px; border-radius: 8px; cursor: pointer; }
+    .modes button[aria-pressed="true"] { background: var(--card); color: var(--ink); box-shadow: var(--shadow); }
+    .models { display: flex; flex-wrap: wrap; gap: 6px; }
+    .badge { font-size: 12px; padding: 3px 9px; border-radius: 999px; background: var(--soft); color: var(--ink); white-space: nowrap; }
+    .badge b { color: var(--muted); font-weight: 600; margin-right: 4px; }
+    .badge.fallback { background: color-mix(in srgb, var(--warn) 18%, transparent); }
+    .stage { display: grid; grid-template-columns: auto 1fr; gap: 22px; align-items: center; margin: 20px 0 8px; }
+    #talk { --level: 0; width: 112px; height: 112px; border-radius: 50%; border: 0; cursor: pointer; background: var(--accent); color: var(--accent-ink);
+      box-shadow: 0 0 0 calc(6px + var(--level) * 26px) color-mix(in srgb, var(--accent) 22%, transparent); transition: box-shadow 80ms linear, transform 120ms, background 150ms; touch-action: none; user-select: none; -webkit-user-select: none; }
+    #talk:active, #talk.held { transform: scale(.96); }
+    #talk.muted { background: var(--muted); }
+    #talk:focus-visible, .chip:focus-visible, .btn:focus-visible, .modes button:focus-visible { outline: 3px solid color-mix(in srgb, var(--accent) 45%, transparent); outline-offset: 2px; }
+    #talk svg { width: 40px; height: 40px; }
+    .hint h2 { font-size: 20px; margin: 0 0 4px; letter-spacing: -.01em; }
+    .hint p { margin: 0; color: var(--muted); }
+    @media (hover: none) { .kb { display: none; } } /* no Space bar on a phone */
+    kbd { font: 600 12px ui-monospace, SFMono-Regular, Menlo, monospace; padding: 1px 6px; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 6px; background: var(--bg); color: var(--ink); }
+    #caption { min-height: 24px; color: var(--muted); font-style: italic; margin: 6px 0 10px; overflow-wrap: anywhere; }
+    #notice { display: none; margin: 0 0 10px; padding: 10px 12px; border-radius: 10px; background: color-mix(in srgb, var(--warn) 14%, transparent); font-size: 14px; }
+    #notice.on { display: block; }
+    #log { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; padding: 6px 2px; min-height: 220px; max-height: 50vh; }
+    .msg { max-width: 82%; padding: 10px 14px; border-radius: 16px; overflow-wrap: anywhere; }
+    .msg.user { align-self: flex-end; background: var(--user); color: var(--user-ink); border-bottom-right-radius: 5px; }
+    .msg.agent { align-self: flex-start; background: var(--agent); border-bottom-left-radius: 5px; }
+    .msg .meta { display: block; margin-top: 6px; font-size: 12px; color: var(--muted); }
+    .msg.report { border-left: 3px solid var(--accent); }
+    .msg.report::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 600; color: var(--accent); margin-bottom: 4px; }
+    .msg details { margin-top: 8px; font-size: 13px; }
+    .msg details summary { cursor: pointer; color: var(--muted); }
+    .msg details div { white-space: pre-wrap; margin-top: 6px; }
+    .quick { align-self: flex-start; display: flex; gap: 8px; }
+    .quick button { border: 1px solid var(--accent); background: var(--card); color: var(--accent); border-radius: 999px; padding: 6px 16px; font: inherit; font-weight: 600; cursor: pointer; }
+    .quick button:first-child { background: var(--accent); color: var(--accent-ink); }
+    .typing { display: inline-flex; gap: 4px; padding: 4px 0; }
+    .typing i { width: 7px; height: 7px; border-radius: 50%; background: var(--muted); animation: blink 1.2s infinite; }
+    .typing i:nth-child(2) { animation-delay: .2s; } .typing i:nth-child(3) { animation-delay: .4s; }
+    @keyframes blink { 0%, 80%, 100% { opacity: .25; } 40% { opacity: 1; } }
+    .empty { color: var(--muted); text-align: center; margin: auto; max-width: 440px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+    .chip { border: 1px solid var(--line); background: var(--soft); color: var(--ink); border-radius: 999px; padding: 6px 12px; font: inherit; font-size: 13px; cursor: pointer; text-align: left; }
+    .chip:hover { border-color: var(--accent); }
+    form { display: flex; gap: 8px; }
+    .icon-btn { flex: none; width: 44px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 10px; cursor: pointer; display: grid; place-items: center; }
+    .icon-btn:hover { border-color: var(--accent); }
+    .icon-btn svg { width: 20px; height: 20px; }
+    #staged { display: flex; align-items: center; gap: 10px; margin: 0 0 8px; padding: 6px 8px; border: 1px solid var(--line); border-radius: 12px; background: var(--soft); font-size: 13px; }
+    #staged[hidden] { display: none; }
+    #staged img { width: 44px; height: 44px; object-fit: cover; border-radius: 8px; flex: none; }
+    #staged span { flex: 1; min-width: 0; }
+    #staged button { flex: none; border: 0; background: none; color: var(--muted); font-size: 20px; line-height: 1; cursor: pointer; padding: 4px 8px; }
+    .msg .thumb { display: block; max-width: 180px; max-height: 140px; border-radius: 10px; margin-bottom: 6px; }
+    input[type=text] { flex: 1; min-width: 0; border: 1px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 10px; padding: 10px 12px; font: inherit; }
+    .btn { border: 0; background: var(--accent); color: var(--accent-ink); border-radius: 10px; padding: 10px 16px; font: inherit; font-weight: 600; cursor: pointer; }
+    .settings { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; font-size: 13px; color: var(--muted); }
+    .settings label { display: flex; align-items: center; gap: 6px; min-width: 0; max-width: 100%; }
+    .settings select { min-width: 0; max-width: min(220px, 100%); border: 1px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 8px; padding: 4px 6px; font: inherit; }
+    aside { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+    aside .card { padding: 18px; }
+    aside h3 { margin: 0 0 10px; font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+    .receipt { border-top: 1px solid var(--line); padding: 10px 0; font-size: 14px; }
+    .receipt:first-of-type { border-top: 0; padding-top: 0; }
+    .receipt .row { display: flex; gap: 8px; align-items: baseline; }
+    .receipt .row b { flex: none; }
+    .receipt .what { flex: 1; min-width: 0; color: var(--muted); overflow-wrap: anywhere; }
+    .receipt .st { flex: none; font-size: 12px; font-weight: 600; }
+    .receipt .st.done { color: var(--ok); } .receipt .st.failed { color: var(--bad); } .receipt .st.running { color: var(--warn); }
+    .receipt .st.cancelled { color: var(--muted); }
+    .receipt .out { margin-top: 2px; overflow-wrap: anywhere; }
+    .receipt .where { font-size: 12px; color: var(--muted); }
+    .receipt details { margin-top: 4px; font-size: 12px; color: var(--muted); }
+    .receipt summary { cursor: pointer; }
+    .receipt code { display: block; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 12px; margin-top: 3px; }
+    .none { color: var(--muted); font-size: 13px; margin: 0; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .stat b { display: block; font-size: 20px; letter-spacing: -.01em; }
+    .stat span { font-size: 12px; color: var(--muted); }
+    ul.how { margin: 0; padding-left: 18px; font-size: 13px; } ul.how li { margin-bottom: 6px; }
+    footer { padding-bottom: 28px; color: var(--muted); font-size: 12px; }
+    #start { position: fixed; inset: 0; display: grid; place-items: center; background: color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter: blur(6px); z-index: 10; padding: 16px; }
+    #start .card { max-width: 480px; padding: 28px; text-align: center; }
+    #start h2 { margin: 0 0 8px; } #start p { color: var(--muted); margin: 0 0 18px; }
+    #toast { position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: 10px 16px; border-radius: 10px; font-size: 13px; opacity: 0; transition: opacity .2s; pointer-events: none; max-width: calc(100% - 32px); }
+    #toast.on { opacity: .95; }
+    @media (max-width: 900px) {
+      header, .lede, main, footer { padding-left: 16px; padding-right: 16px; }
+      main { grid-template-columns: minmax(0, 1fr); }
+      header { padding-top: 14px; }
+      .talk-card { min-height: 0; padding: 18px; }
+      .stage { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+      #log { max-height: none; }
+      .brand p { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="mark" aria-hidden="true">
+      <svg viewBox="0 0 32 32" width="24" height="24"><path d="M8 13v6M12 9v14M16 11.5v9M20 7v18M24 13v6" stroke="white" stroke-width="2.8" stroke-linecap="round"/></svg>
+    </div>
+    <div class="brand">
+      <h1>Earshot</h1>
+      <p>Meta's models on every ear</p>
+    </div>
+    <div class="spacer"></div>
+    <span class="pill" id="status" data-s="offline"><span class="dot"></span><span id="status-text">Not started</span></span>
+  </header>
+
+  <section class="lede">
+    <p><strong>A Meta AI agent for the Bluetooth glasses or earbuds you already own.</strong> Earshot hears through your headset, thinks with Meta's Muse models, and acts on your phone. On iPhone it runs with the phone locked in your pocket. Here you can try the same agent with any microphone or headset.</p>
+  </section>
+
+  <main>
+    <section class="card talk-card" aria-label="Conversation">
+      <div class="toprow">
+        <div class="modes" role="group" aria-label="Listening mode">
+          <button type="button" data-mode="ptt" aria-pressed="true">Push to talk</button>
+          <button type="button" data-mode="wake" aria-pressed="false">Hands-free</button>
+        </div>
+        <div class="models">
+          <span class="badge"><b>Ears</b><span id="ears">Muse Voice Transcribe</span></span>
+          <span class="badge" id="brain-badge"><b>Brain</b><span id="brain">Muse Spark</span></span>
+        </div>
+      </div>
+      <div class="stage">
+        <button id="talk" type="button" aria-label="Hold to talk">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 17v5"/></svg>
+        </button>
+        <div class="hint">
+          <h2 id="hint-title">Hold to talk</h2>
+          <p id="hint-text">Hold the button<span class="kb"> or <kbd>Space</kbd></span> and speak. Pick your Bluetooth glasses or earbuds as the microphone below to hear answers in your ears.</p>
+        </div>
+      </div>
+      <div id="caption" aria-live="polite"></div>
+      <div id="notice" role="status"></div>
+      <div id="log" aria-live="polite">
+        <p class="empty" id="empty">Ask about the weather where you are, set a reminder, or ask about today's news. Every action the agent takes shows up as a receipt.</p>
+      </div>
+      <div class="chips" id="chips">
+        <button class="chip" type="button">Will it rain here this afternoon?</button>
+        <button class="chip" type="button">Remind me to buy coffee filters at 6 PM</button>
+        <button class="chip" type="button">What's the latest news about Meta's Muse models?</button>
+        <button class="chip" type="button">Remember I parked on level 3, spot 42</button>
+        <button class="chip" type="button">Look into the best e-bikes under $1,500 and get back to me</button>
+        <button class="chip" type="button" data-action="photo">Ask about a photo…</button>
+      </div>
+      <div id="staged" hidden>
+        <img id="staged-img" alt="Photo to ask about">
+        <span>Photo attached. Ask about it out loud or type a question.</span>
+        <button type="button" id="staged-x" aria-label="Remove photo">×</button>
+      </div>
+      <form id="typed" autocomplete="off">
+        <input type="text" id="text" placeholder="Or type a request" aria-label="Type a request">
+        <button class="icon-btn" type="button" id="photo-btn" aria-label="Ask about a photo" title="Ask about a photo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>
+        </button>
+        <input type="file" id="photo-file" accept="image/*" hidden>
+        <button class="btn" type="submit">Send</button>
+      </form>
+      <div class="settings">
+        <label>Microphone <select id="mic"><option value="">Default</option></select></label>
+        <label>Voice <select id="voice"></select></label>
+      </div>
+    </section>
+
+    <aside>
+      <section class="card" aria-label="Receipts">
+        <h3>Receipts</h3>
+        <div id="receipts"><p class="none">Every tool call shows up here with what it did, where it ran, and how long it took.</p></div>
+      </section>
+      <section class="card" aria-label="This session">
+        <h3>This session</h3>
+        <div class="stats">
+          <div class="stat"><b id="stat-turns">0</b><span>turns</span></div>
+          <div class="stat"><b id="stat-first">–</b><span>median to first word</span></div>
+          <div class="stat"><b id="stat-cost">$0</b><span>model cost</span></div>
+        </div>
+      </section>
+      <section class="card" aria-label="Reminders">
+        <h3>Reminders (this browser)</h3>
+        <div id="reminders"><p class="none">None yet. On iPhone they go to the Reminders app.</p></div>
+      </section>
+      <section class="card" aria-label="How it works">
+        <h3>How it works</h3>
+        <ul class="how">
+          <li><b>Muse Voice Transcribe</b> hears you in real time and marks where each turn ends, about 0.2 s after you stop talking.</li>
+          <li><b>Muse Spark</b> reasons at minimal effort for voice speed, searches the web, and calls tools.</li>
+          <li>Tools run where they belong: weather on the server; location and reminders on your device.</li>
+          <li>Attach a photo and ask about it. Muse Spark answers from the image itself.</li>
+          <li>For bigger jobs ("look into…"), <b>Muse Wonder</b> researches in the background and speaks up when it's done.</li>
+          <li>It remembers what you ask it to, and asks before it changes anything, like adding a reminder.</li>
+          <li>Answers are spoken a sentence at a time into whatever headset you use.</li>
+          <li>If the hosted model is unavailable, <b>Muse Spark Open</b> (open weights) takes the turn automatically.</li>
+        </ul>
+      </section>
+    </aside>
+  </main>
+
+  <footer>Audio streams to Meta's speech recognition only while a session is open, and no audio is stored. Sessions last up to 10 minutes. Built for the Meta Global AI Developer Hackathon.</footer>
+
+  <div id="start">
+    <div class="card">
+      <h2>Talk to Earshot</h2>
+      <p>Your browser will ask for the microphone. Bluetooth glasses or earbuds work best, and your laptop's mic works too. You can also just type.</p>
+      <button class="btn" id="go" type="button">Start</button>
+    </div>
+  </div>
+  <div id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
