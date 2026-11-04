@@ -174,9 +174,9 @@ async def main() -> None:
     ap.add_argument("--out", default=str(ROOT / "results" / "live-eval.json"))
     args = ap.parse_args()
     pcm = {k: synth_pcm(v, 16000) for k, v in {
-        "weather": "Hey Earshot, will it rain this afternoon?",
+        "weather": "Hey EveryMuse, will it rain this afternoon?",
         "friend_address": "Meet me at 1420 Pine Street, unit 3, at seven tonight.",
-        "what_address": "Hey Earshot, what was that address she just said?",
+        "what_address": "Hey EveryMuse, what was that address she just said?",
         "friend_dinner": "Don't forget, dinner's at my place on Friday at seven. It's 1420 Pine Street, unit 3."}.items()}
     names = [n for n in SCENARIOS if not args.only or args.only.lower() in n.lower()]
     gate = asyncio.Semaphore(3)

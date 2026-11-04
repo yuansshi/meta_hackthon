@@ -3,9 +3,9 @@
     uv run python scripts/eval_languages.py            # all languages, three language-bias settings each
     uv run python scripts/eval_languages.py --diarize  # also: who said what, in a two-person conversation
 
-For each language, a macOS voice speaks "Hey Earshot, will it rain this afternoon?" in that language, and the clip
+For each language, a macOS voice speaks "Hey EveryMuse, will it rain this afternoon?" in that language, and the clip
 streams to the realtime API at real speed, as a phone would. Measured per language and language-bias setting:
-- wake: whether Earshot's own wake-word gate finds "Earshot" in the transcript;
+- wake: whether EveryMuse's own wake-word gate finds "EveryMuse" in the transcript;
 - cer: character error rate of the rest of the sentence against what was spoken;
 - latency: end of speech to the final transcript.
 Writes eval/results/languages-<date>.json. Speech recognition costs $0.18 an hour; a full run costs about 2 cents.
@@ -24,45 +24,45 @@ import unicodedata
 import wave
 from pathlib import Path
 
-from earshot.config import api_key, load_config
-from earshot.languages import spaced
-from earshot.relay import AsrRelay
-from earshot.session import Gate
+from everymuse.config import api_key, load_config
+from everymuse.languages import spaced
+from everymuse.relay import AsrRelay
+from everymuse.session import Gate
 
 RATE = 16000
 LEAD_S, TAIL_S = 0.5, 2.5
 # (Meta language name, macOS voice, the request as spoken). Marathi and Tagalog have no macOS voice.
 LANGS = [
-    ("English", "Samantha", "Hey Earshot, will it rain this afternoon?"),
-    ("Spanish", "Paulina", "Hey Earshot, ¿va a llover esta tarde?"),
-    ("French", "Thomas", "Hey Earshot, est-ce qu'il va pleuvoir cet après-midi ?"),
-    ("German", "Anna", "Hey Earshot, wird es heute Nachmittag regnen?"),
-    ("Italian", "Alice", "Hey Earshot, pioverà oggi pomeriggio?"),
-    ("Portuguese", "Luciana", "Hey Earshot, vai chover hoje à tarde?"),
-    ("Dutch", "Xander", "Hey Earshot, gaat het vanmiddag regenen?"),
-    ("Polish", "Zosia", "Hey Earshot, czy dziś po południu będzie padać?"),
-    ("Turkish", "Yelda", "Hey Earshot, bu öğleden sonra yağmur yağacak mı?"),
-    ("Indonesian", "Damayanti", "Hey Earshot, apakah sore ini akan hujan?"),
-    ("Malay", "Amira", "Hey Earshot, adakah hujan akan turun petang ini?"),
-    ("Vietnamese", "Linh", "Hey Earshot, chiều nay trời có mưa không?"),
-    ("Japanese", "Kyoko", "Hey Earshot、今日の午後は雨が降りますか？"),
-    ("Mandarin Chinese", "Tingting", "Hey Earshot，今天下午会下雨吗？"),
-    ("Korean", "Yuna", "Hey Earshot, 오늘 오후에 비가 올까요?"),
-    ("Hindi", "Lekha", "Hey Earshot, क्या आज दोपहर बारिश होगी?"),
-    ("Bengali", "Piya", "Hey Earshot, আজ বিকেলে কি বৃষ্টি হবে?"),
-    ("Tamil", "Vani", "Hey Earshot, இன்று மதியம் மழை பெய்யுமா?"),
-    ("Telugu", "Geeta", "Hey Earshot, ఈ మధ్యాహ్నం వర్షం పడుతుందా?"),
-    ("Kannada", "Soumya", "Hey Earshot, ಇಂದು ಮಧ್ಯಾಹ್ನ ಮಳೆ ಬರುತ್ತದೆಯೇ?"),
-    ("Thai", "Kanya", "Hey Earshot บ่ายนี้ฝนจะตกไหม"),
-    ("Hebrew", "Carmit", "Hey Earshot, האם ירד גשם אחר הצהריים?"),
-    ("Arabic", "Majed", "Hey Earshot، هل ستمطر بعد الظهر؟"),
+    ("English", "Samantha", "Hey EveryMuse, will it rain this afternoon?"),
+    ("Spanish", "Paulina", "Hey EveryMuse, ¿va a llover esta tarde?"),
+    ("French", "Thomas", "Hey EveryMuse, est-ce qu'il va pleuvoir cet après-midi ?"),
+    ("German", "Anna", "Hey EveryMuse, wird es heute Nachmittag regnen?"),
+    ("Italian", "Alice", "Hey EveryMuse, pioverà oggi pomeriggio?"),
+    ("Portuguese", "Luciana", "Hey EveryMuse, vai chover hoje à tarde?"),
+    ("Dutch", "Xander", "Hey EveryMuse, gaat het vanmiddag regenen?"),
+    ("Polish", "Zosia", "Hey EveryMuse, czy dziś po południu będzie padać?"),
+    ("Turkish", "Yelda", "Hey EveryMuse, bu öğleden sonra yağmur yağacak mı?"),
+    ("Indonesian", "Damayanti", "Hey EveryMuse, apakah sore ini akan hujan?"),
+    ("Malay", "Amira", "Hey EveryMuse, adakah hujan akan turun petang ini?"),
+    ("Vietnamese", "Linh", "Hey EveryMuse, chiều nay trời có mưa không?"),
+    ("Japanese", "Kyoko", "Hey EveryMuse、今日の午後は雨が降りますか？"),
+    ("Mandarin Chinese", "Tingting", "Hey EveryMuse，今天下午会下雨吗？"),
+    ("Korean", "Yuna", "Hey EveryMuse, 오늘 오후에 비가 올까요?"),
+    ("Hindi", "Lekha", "Hey EveryMuse, क्या आज दोपहर बारिश होगी?"),
+    ("Bengali", "Piya", "Hey EveryMuse, আজ বিকেলে কি বৃষ্টি হবে?"),
+    ("Tamil", "Vani", "Hey EveryMuse, இன்று மதியம் மழை பெய்யுமா?"),
+    ("Telugu", "Geeta", "Hey EveryMuse, ఈ మధ్యాహ్నం వర్షం పడుతుందా?"),
+    ("Kannada", "Soumya", "Hey EveryMuse, ಇಂದು ಮಧ್ಯಾಹ್ನ ಮಳೆ ಬರುತ್ತದೆಯೇ?"),
+    ("Thai", "Kanya", "Hey EveryMuse บ่ายนี้ฝนจะตกไหม"),
+    ("Hebrew", "Carmit", "Hey EveryMuse, האם ירד גשם אחר הצהריים?"),
+    ("Arabic", "Majed", "Hey EveryMuse، هل ستمطر بعد الظهر؟"),
 ]
-CONVERSATION = [  # (who, macOS voice, line): a friend, the user, and Earshot's own voice from the speaker
+CONVERSATION = [  # (who, macOS voice, line): a friend, the user, and EveryMuse's own voice from the speaker
     ("friend", "Daniel", "Don't forget, dinner's at my place on Friday at seven."),
     ("user", "Alex", "Great. What's the address again?"),
     ("friend", "Daniel", "It's 1420 Pine Street, unit 3."),
-    ("user", "Alex", "Hey Earshot, remind me about dinner on Friday."),
-    ("earshot", "Samantha", "Should I remind you about dinner on Friday at seven?"),
+    ("user", "Alex", "Hey EveryMuse, remind me about dinner on Friday."),
+    ("everymuse", "Samantha", "Should I remind you about dinner on Friday at seven?"),
     ("user", "Alex", "Yes please."),
 ]
 GAP_S = 0.7
@@ -88,7 +88,7 @@ def letters(text: str) -> str:
 
 
 def strip_wake(text: str) -> str:
-    return re.sub(r"^\W*(hey|hi|ok|okay)?\W*earshot\W*", "", text, flags=re.I)
+    return re.sub(r"^\W*(hey|hi|ok|okay)?\W*everymuse\W*", "", text, flags=re.I)
 
 
 def request_cer(said: str, heard: str) -> float:
@@ -186,8 +186,8 @@ async def main() -> None:
     work = Path(tempfile.mkdtemp(prefix="langs-"))
     pcms = {lang: pcm_of(voice, text, work, f"l{i}") for i, (lang, voice, text) in enumerate(LANGS)}
     # The brand name said the English way, then the request in the language: closer to how people say a product name
-    # than a voice reading "Hey Earshot" with its own language's spelling rules.
-    hey = pcm_of("Samantha", "Hey Earshot,", work, "hey")
+    # than a voice reading "Hey EveryMuse" with its own language's spelling rules.
+    hey = pcm_of("Samantha", "Hey EveryMuse,", work, "hey")
     mixed = {lang: hey + silence(0.15) + pcm_of(voice, strip_wake(text), work, f"m{i}")
              for i, (lang, voice, text) in enumerate(LANGS)}
     sem = asyncio.Semaphore(20)

@@ -2,9 +2,9 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "earshot",
+      "name": "everymuse",
       "runtimeExecutable": "uv",
-      "runtimeArgs": ["--directory", "server", "run", "uvicorn", "earshot.app:app", "--host", "0.0.0.0", "--port", "8000"],
+      "runtimeArgs": ["--directory", "server", "run", "uvicorn", "everymuse.app:app", "--host", "0.0.0.0", "--port", "8000"],
       "port": 8000
     }
   ]

@@ -7,14 +7,14 @@ import openai
 import pytest
 from fakes import FakeModel, FakeRelay, FakeResearchModel, chat_chunk, chat_tool, text_reply, tool_reply
 
-from earshot import agent as agent_mod
-from earshot import session as session_mod
-from earshot import tools as tools_mod
-from earshot.agent import Agent, Sentences
-from earshot.budget import Budget
-from earshot.config import load_config
-from earshot.research import Researcher
-from earshot.session import Session
+from everymuse import agent as agent_mod
+from everymuse import session as session_mod
+from everymuse import tools as tools_mod
+from everymuse.agent import Agent, Sentences
+from everymuse.budget import Budget
+from everymuse.config import load_config
+from everymuse.research import Researcher
+from everymuse.session import Session
 
 FORECAST = {
     "current": {"time": "2026-11-03T14:15", "temperature_2m": 61.2, "apparent_temperature": 59.8,
@@ -87,7 +87,7 @@ async def test_wake_word_turn_runs_a_device_tool_and_resends_history(env):
         tool_reply("r1", "create_reminder", {"title": "buy coffee filters", "due": "2026-11-03T18:00"}, "c1"),
         text_reply("r2", "Done, coffee filters at six."),
     ])
-    await s.on_asr_event({"type": "speechComplete", "transcript": "Hey Earshot, remind me to buy coffee filters at 6"})
+    await s.on_asr_event({"type": "speechComplete", "transcript": "Hey EveryMuse, remind me to buy coffee filters at 6"})
     question = await next_msg(sent, "confirm")
     assert question["question"].startswith("Should I remind you to buy coffee filters")
     await s.on_asr_event({"type": "speechComplete", "transcript": "Yes please."})  # no wake word for the answer
@@ -162,7 +162,7 @@ async def test_ignored_utterances_and_wake_only(env):
     final = await next_msg(sent, "transcript")
     assert final["accepted"] is False and final["reason"] == "no_wake"
     assert s.turn is None
-    await s.on_asr_event({"type": "speechComplete", "transcript": "Earshot?"})
+    await s.on_asr_event({"type": "speechComplete", "transcript": "EveryMuse?"})
     await s.turn
     assert says(sent) == ["Yes?"] and models["meta"].responses.calls == []
 
@@ -194,7 +194,7 @@ async def test_think_requests_escalate_reasoning(env):
 
 
 async def test_chat_completions_path_for_open_weight_hosts(env, monkeypatch):
-    monkeypatch.setenv("EARSHOT_BRAIN", "muse-spark-open")
+    monkeypatch.setenv("EVERYMUSE_BRAIN", "muse-spark-open")
     s, sent, models = await make_session(fireworks=[
         [chat_chunk(tool_calls=[chat_tool(0, "c1", "get_weather", '{"place": ')]),
          chat_chunk(tool_calls=[chat_tool(0, None, None, '"Seattle"}')])],
@@ -284,7 +284,7 @@ async def test_only_the_newest_photo_is_resent(env):
 
 
 async def test_photo_on_the_chat_path(env, monkeypatch):
-    monkeypatch.setenv("EARSHOT_BRAIN", "muse-spark-open")
+    monkeypatch.setenv("EVERYMUSE_BRAIN", "muse-spark-open")
     s, sent, models = await make_session(fireworks=[[chat_chunk("A red and blue square.")]])
     await s.handle_text({"type": "image", "data": PHOTO, "text": "colors?"})
     await s.turn
@@ -434,7 +434,7 @@ async def test_text_cut_off_by_a_search_does_not_run_into_the_answer(env):
 
 
 def test_confirm_question_reads_a_capitalized_title_as_a_verb():
-    from earshot.agent import confirm_question
+    from everymuse.agent import confirm_question
     assert (confirm_question("create_reminder", {"title": "Go to Clement Street Night Market"}, None)
             == "Should I remind you to go to Clement Street Night Market?")
     assert confirm_question("create_reminder", {"title": "Dentist"}, None) == "Should I remind you about Dentist?"
@@ -445,7 +445,7 @@ async def test_rewind_answers_from_speech_that_was_not_for_it(env):
         tool_reply("r1", "rewind", {}, "c1"), text_reply("r2", "1420 Pine Street, unit 3, at seven.")])
     await s.on_asr_event({"type": "speechComplete", "transcript": "Meet me at 1420 Pine Street, unit 3, at seven."})
     assert s.turn is None  # not said to the agent
-    await s.on_asr_event({"type": "speechComplete", "transcript": "Hey Earshot, what was that address?"})
+    await s.on_asr_event({"type": "speechComplete", "transcript": "Hey EveryMuse, what was that address?"})
     await s.turn
     out = next(i for i in models["meta"].responses.calls[1]["input"] if i.get("type") == "function_call_output")
     heard = json.loads(out["output"])["heard"]
@@ -465,7 +465,7 @@ async def test_rewind_keeps_only_recent_speech_that_was_not_for_it(env):
     await s.on_asr_event({"type": "speechComplete", "transcript": "Your coffee is ready."})  # its own voice
     await s.handle_text({"type": "tts", "state": "end"})
     now[0] += 5
-    await s.on_asr_event({"type": "speechComplete", "transcript": "Hey Earshot, thanks"})  # said to it
+    await s.on_asr_event({"type": "speechComplete", "transcript": "Hey EveryMuse, thanks"})  # said to it
     await s.turn
     assert [line.split(": ", 1)[1] for line in s.heard.recent()] == ["The train to Fremont leaves from platform two."]
     now[0] += 90  # 195 s after the first line, past the 180 s window
@@ -596,7 +596,7 @@ async def test_find_it_needs_a_recent_photo(env):
 
 
 def test_find_it_says_where_in_words():
-    from earshot.find import where
+    from everymuse.find import where
     assert where({"x1": 0.8, "y1": 0.05, "x2": 0.95, "y2": 0.25}) == "top right"
     assert where({"x1": 0.4, "y1": 0.4, "x2": 0.6, "y2": 0.6}) == "in the middle"
     assert where({"x1": 0.0, "y1": 0.4, "x2": 0.2, "y2": 0.6}) == "on the left"
@@ -624,7 +624,7 @@ async def test_out_of_credit_falls_back_but_our_own_bad_request_does_not(env):
 
 
 def test_parse_offer_stays_quiet_when_unsure():
-    from earshot.headsup import parse_offer
+    from everymuse.headsup import parse_offer
     assert parse_offer('{"kind": "none"}') is None
     assert parse_offer("not json at all") is None
     assert parse_offer('{"kind": "reminder", "offer": "Remind you?"}') is None  # nothing to act on
@@ -633,7 +633,7 @@ def test_parse_offer_stays_quiet_when_unsure():
 
 
 def test_split_report_skips_wondering_out_loud():
-    from earshot.research import split_report
+    from everymuse.research import split_report
     text = ("Searching for Seattle's three tallest buildings to build your cited summary.I'll open that source to "
             "verify the figures.SUMMARY: Seattle's three tallest are Columbia Center at 933 feet, Rainier Square "
             "at 847 feet, and 1201 Third Avenue at 772 feet.\n\nDETAILS:\n- Columbia Center — 933 ft\n- Rainier Square — 847 ft")
@@ -646,7 +646,7 @@ def test_split_report_skips_wondering_out_loud():
 async def test_research_daily_limit(env):
     researcher = Researcher(load_config(), Budget(100), clients={"meta": FakeResearchModel("SUMMARY: ok.")}, poll_s=0.01)
     researcher.per_day = 1
-    from earshot.actions import ActionLog
+    from everymuse.actions import ActionLog
     assert researcher.start("dev", "one thing", "", "UTC", ActionLog(None))["started"]
     assert "error" in researcher.start("dev", "another thing", "", "UTC", ActionLog(None))
     await asyncio.gather(*list(researcher.tasks))

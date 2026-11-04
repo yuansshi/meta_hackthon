@@ -1,7 +1,7 @@
-"""Earshot in the 25 languages Muse Voice Transcribe is validated for.
+"""EveryMuse in the 25 languages Muse Voice Transcribe is validated for.
 
 The client says which language its user speaks, as a tag like "es-MX". The server then:
-- biases speech recognition toward that language, plus English for the name "Earshot";
+- biases speech recognition toward that language, plus English for the name "EveryMuse";
 - tells Muse Spark, the Heads-up screener and Muse Wonder to answer in it;
 - speaks its few fixed phrases in it, and hears yes and no in it.
 
@@ -30,13 +30,13 @@ class Language:
     _re: dict = field(default_factory=dict, compare=False, repr=False)
 
     def say(self, key: str) -> str:
-        if key == "listening":  # the answer to a bare "Hey Earshot"
+        if key == "listening":  # the answer to a bare "Hey EveryMuse"
             return LISTENING.get(self.code, "Yes?")
         return self.phrases[PHRASES.index(key)]
 
     @property
     def bias(self) -> list[str]:
-        """Speech recognition's languageBias: the user's language, plus English for "Earshot" and mixed speech."""
+        """Speech recognition's languageBias: the user's language, plus English for "EveryMuse" and mixed speech."""
         return [self.name] if self.code == "en" else [self.name, "English"]
 
     def _words(self, kind: str, start: bool) -> re.Pattern:
@@ -204,7 +204,7 @@ LANGUAGES: dict[str, Language] = {lang.code: lang for lang in [
           ["không", "đừng", "hủy", "khoan", "thôi"]),
 ]}
 ALIASES = {"fil": "tl", "iw": "he", "in": "id", "cmn": "zh", "yue": "zh"}
-# What Earshot says to a bare "Hey Earshot", so the user goes on.
+# What EveryMuse says to a bare "Hey EveryMuse", so the user goes on.
 LISTENING = {"en": "Yes?", "ar": "نعم؟", "bn": "হ্যাঁ, বলুন?", "nl": "Ja?", "fr": "Oui ?", "de": "Ja?", "he": "כן?",
              "hi": "जी, बोलिए?", "id": "Ya?", "it": "Sì?", "ja": "はい？", "kn": "ಹೇಳಿ?", "ko": "네?", "ms": "Ya?", "zh": "嗯？",
              "mr": "बोला?", "pl": "Tak?", "pt": "Sim?", "es": "¿Sí?", "tl": "Ano iyon?", "ta": "சொல்லுங்கள்?", "te": "చెప్పండి?",
@@ -227,7 +227,7 @@ def _latin(c: str) -> bool:
 
 
 def spaced(text: str) -> str:
-    """Splits "Hey earshot,今天下午会下雨吗" into words: a space after punctuation glued to the next word, and between
+    """Splits "Hey everymuse,今天下午会下雨吗" into words: a space after punctuation glued to the next word, and between
     a Latin letter and a letter of another script. Japanese, Chinese and Thai don't put spaces between words."""
     t = _GLUED.sub(lambda m: (m.group(1) or m.group(2)) + " ", text)
     out: list[str] = []

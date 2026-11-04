@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct EarshotApp: App {
+struct EveryMuseApp: App {
     @State private var session = AgentSession()
 
     var body: some Scene {

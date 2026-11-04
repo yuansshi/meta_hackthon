@@ -1,11 +1,11 @@
-"""Does "look into it and get back to me" hold up beyond one demo? 20 varied research jobs through Earshot's own
+"""Does "look into it and get back to me" hold up beyond one demo? 20 varied research jobs through EveryMuse's own
 Muse Wonder path (background mode, polled), as the agent would hand them over.
 
     uv run python scripts/eval_research.py --jobs 20    # on the server (fly ssh console), which reaches Meta's API
 
-Saves each finished job to $EARSHOT_DATA_DIR/eval-research/ as it goes, so a rerun after a trial restart resumes.
+Saves each finished job to $EVERYMUSE_DATA_DIR/eval-research/ as it goes, so a rerun after a trial restart resumes.
 Records for each job whether a report came back, how long it took, how many web searches it ran, what it cost,
-and the spoken summary. Writes $EARSHOT_DATA_DIR/eval-research.json (the server's volume) and prints a summary.
+and the spoken summary. Writes $EVERYMUSE_DATA_DIR/eval-research.json (the server's volume) and prints a summary.
 """
 
 from __future__ import annotations
@@ -16,10 +16,10 @@ import json
 import statistics
 import time
 
-from earshot.actions import ActionLog
-from earshot.budget import Budget
-from earshot.config import DATA_DIR, load_config
-from earshot.research import Job, Researcher, split_report
+from everymuse.actions import ActionLog
+from everymuse.budget import Budget
+from everymuse.config import DATA_DIR, load_config
+from everymuse.research import Job, Researcher, split_report
 
 GOALS = [
     "the best noise-cancelling earbuds under $200", "which Seattle libraries are open late on Fridays",

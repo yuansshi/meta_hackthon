@@ -1,4 +1,4 @@
-// Earshot web client: mic → 16 kHz PCM over a WebSocket; server events → speech, bubbles and receipts.
+// EveryMuse web client: mic → 16 kHz PCM over a WebSocket; server events → speech, bubbles and receipts.
 const $ = (s) => document.querySelector(s);
 const state = {
   ws: null, mode: "ptt", ptt: false, tailUntil: 0, muted: false, audio: null, retries: 0,
@@ -11,9 +11,9 @@ const store = {
   get(k, d) { try { const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch { return d; } },
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
 };
-const DEVICE_ID = store.get("earshot.device", null) || (() => {
+const DEVICE_ID = store.get("everymuse.device", null) || (() => {
   const id = "web-" + Math.random().toString(36).slice(2, 14);
-  store.set("earshot.device", id);
+  store.set("everymuse.device", id);
   return id;
 })();
 
@@ -63,7 +63,7 @@ function chime() {
   });
 }
 
-// ---------- language: Earshot hears and answers in the user's language ----------
+// ---------- language: EveryMuse hears and answers in the user's language ----------
 // The 25 languages Muse Voice Transcribe is validated for: [code the server takes, menu name, speech tag].
 const LANGS = [["en", "English", "en-US"], ["ar", "العربية", "ar-SA"], ["bn", "বাংলা", "bn-IN"],
   ["nl", "Nederlands", "nl-NL"], ["fr", "Français", "fr-FR"], ["de", "Deutsch", "de-DE"], ["he", "עברית", "he-IL"],
@@ -84,7 +84,7 @@ function browserLang() {
   const known = { fil: "tl", iw: "he", in: "id" }[code] || code;
   return LANG_TAG[known] ? known : "en";
 }
-state.lang = LANG_TAG[store.get("earshot.lang", "")] ? store.get("earshot.lang", "") : browserLang();
+state.lang = LANG_TAG[store.get("everymuse.lang", "")] ? store.get("everymuse.lang", "") : browserLang();
 
 // ---------- speech out: one sentence at a time, reported to the server so it can ignore the echo ----------
 const speech = {
@@ -130,7 +130,7 @@ function loadVoices() {
   sel.innerHTML = "";
   if (!voices.length) { sel.add(new Option("Browser default", "")); speech.voice = null; return; }
   const preferred = state.lang === "en" ? ["Samantha", "Ava", "Google US English", "Microsoft Aria", "Allison", "Karen", "Daniel"] : [];
-  const saved = store.get(`earshot.voice.${state.lang}`, null) ?? (state.lang === "en" ? store.get("earshot.voice", null) : null);
+  const saved = store.get(`everymuse.voice.${state.lang}`, null) ?? (state.lang === "en" ? store.get("everymuse.voice", null) : null);
   const pick = voices.find((v) => v.name === saved) || preferred.map((p) => voices.find((v) => v.name.includes(p))).find(Boolean)
     || voices.find((v) => v.lang === LANG_TAG[state.lang] && v.localService) || voices.find((v) => v.localService)
     || voices[0];
@@ -141,12 +141,12 @@ speechSynthesis.onvoiceschanged = loadVoices;
 loadVoices();
 $("#voice").addEventListener("change", (e) => {
   speech.voice = speechSynthesis.getVoices().find((v) => v.name === e.target.value) || null;
-  store.set(`earshot.voice.${state.lang}`, e.target.value);
+  store.set(`everymuse.voice.${state.lang}`, e.target.value);
 });
 for (const [code, name] of LANGS) $("#lang").add(new Option(name, code, false, code === state.lang));
 $("#lang").addEventListener("change", (e) => {
   state.lang = e.target.value;
-  store.set("earshot.lang", state.lang);
+  store.set("everymuse.lang", state.lang);
   loadVoices();
   // Speech recognition's language is set when a session starts, so start a new one; onclose reconnects.
   if (state.ws && state.ws.readyState === WebSocket.OPEN) state.ws.close(1000, "language changed");
@@ -229,7 +229,7 @@ function bubbleFor(turn) {
     }
     b.append(document.createElement("span"));
     state.bubbles[turn] = b;
-    if (turn.startsWith("h")) { // Earshot spoke up on its own about something it overheard
+    if (turn.startsWith("h")) { // EveryMuse spoke up on its own about something it overheard
       b.classList.add("report");
       b.dataset.label = "Heads-up";
       chime();
@@ -403,7 +403,7 @@ function upsertReceipt(e) {
 }
 
 function renderReminders() {
-  const list = store.get("earshot.reminders", []);
+  const list = store.get("everymuse.reminders", []);
   const box = $("#reminders");
   if (!list.length) return;
   box.innerHTML = "";
@@ -426,9 +426,9 @@ async function runTool(name, args) {
              accuracy_m: Math.round(pos.coords.accuracy) };
   }
   if (name === "create_reminder") {
-    const list = store.get("earshot.reminders", []);
+    const list = store.get("everymuse.reminders", []);
     list.push({ title: args.title, due: args.due || null, notes: args.notes || null, created: new Date().toISOString() });
-    store.set("earshot.reminders", list);
+    store.set("everymuse.reminders", list);
     renderReminders();
     return { ok: true, saved_to: "this browser's demo reminder list" };
   }
@@ -470,7 +470,7 @@ function onEvent(msg) {
         if (msg.reason !== "answer") state.unanswered = { text: msg.text, at: Date.now() };
       }
       else if (state.mode === "wake" && msg.reason === "no_wake" && msg.text) {
-        $("#caption").textContent = `Heard “${msg.text}”. Start with “Hey Earshot” to ask something.`;
+        $("#caption").textContent = `Heard “${msg.text}”. Start with “Hey EveryMuse” to ask something.`;
       }
       break;
     case "say":
@@ -573,7 +573,7 @@ document.addEventListener("keyup", (e) => {
 
 const HINTS = {
   ptt: ["Hold to talk", 'Hold the button<span class="kb"> or <kbd>Space</kbd></span> and speak. Pick your Bluetooth glasses or earbuds as the microphone below to hear answers in your ears.'],
-  wake: ["Say “Hey Earshot…”", "Hands-free, like the glasses: start with “Hey Earshot”. For eight seconds after each answer, just keep talking. Tap the button to mute."],
+  wake: ["Say “Hey EveryMuse…”", "Hands-free, like the glasses: start with “Hey EveryMuse”. For eight seconds after each answer, just keep talking. Tap the button to mute."],
 };
 function setMode(mode) {
   state.mode = mode;
@@ -588,7 +588,7 @@ function setMode(mode) {
 }
 for (const b of document.querySelectorAll(".modes button")) b.addEventListener("click", () => setMode(b.dataset.mode));
 
-// Heads-up: Earshot speaks up about something it overhears that you'll want. Hands-free only; it always asks first.
+// Heads-up: EveryMuse speaks up about something it overhears that you'll want. Hands-free only; it always asks first.
 function renderHeadsUp(on) {
   state.headsUp = on;
   $("#headsup").setAttribute("aria-pressed", String(on));
@@ -596,11 +596,11 @@ function renderHeadsUp(on) {
 $("#headsup").addEventListener("click", () => {
   const on = !state.headsUp;
   renderHeadsUp(on);
-  store.set("earshot.headsup", on);
+  store.set("everymuse.headsup", on);
   send({ type: "heads_up", on });
   if (on && state.mode !== "wake") toast("Heads-up listens in Hands-free mode.");
 });
-renderHeadsUp(store.get("earshot.headsup", false));
+renderHeadsUp(store.get("everymuse.headsup", false));
 
 function sendText(text) {
   text = text.trim();

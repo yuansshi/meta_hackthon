@@ -11,7 +11,11 @@ from dotenv import load_dotenv
 
 ROOT = Path(__file__).resolve().parents[2]  # server/
 WEB_DIR = ROOT.parent / "web"
-DATA_DIR = Path(os.environ.get("EARSHOT_DATA_DIR", ROOT / "data"))
+DATA_DIR = Path(os.environ.get("EVERYMUSE_DATA_DIR", ROOT / "data"))
+# EveryMuse was called Earshot until Nov 4, 2026: move the data folder kept under the old name, once.
+_OLD_DATA_DIR = DATA_DIR.parent / "earshot"
+if not DATA_DIR.exists() and _OLD_DATA_DIR.is_dir():
+    _OLD_DATA_DIR.rename(DATA_DIR)
 
 truststore.inject_into_ssl()  # corporate networks re-sign TLS; trust the OS keychain like the browser does
 load_dotenv(ROOT / ".env")
@@ -23,7 +27,7 @@ class MissingKey(RuntimeError):
 
 def load_config(path: Path | None = None) -> dict:
     cfg = yaml.safe_load((path or ROOT / "config" / "models.yaml").read_text())
-    cfg["brain"] = os.environ.get("EARSHOT_BRAIN") or cfg["brain"]
+    cfg["brain"] = os.environ.get("EVERYMUSE_BRAIN") or cfg["brain"]
     return cfg
 
 

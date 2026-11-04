@@ -23,7 +23,7 @@ final class RemoteControls {
             targets.append((command, token))
         }
         MPNowPlayingInfoCenter.default().nowPlayingInfo = [
-            MPMediaItemPropertyTitle: "Earshot",
+            MPMediaItemPropertyTitle: "EveryMuse",
             MPMediaItemPropertyArtist: "Listening",
             MPNowPlayingInfoPropertyIsLiveStream: true,
             MPNowPlayingInfoPropertyPlaybackRate: 1.0,

@@ -17,7 +17,7 @@ from pathlib import Path
 import httpx
 from openai import AsyncOpenAI
 
-from earshot.config import api_key, load_config, model_cfg
+from everymuse.config import api_key, load_config, model_cfg
 
 PROMPT = ("A candid, photorealistic phone photo on a train platform of a fictional city at dusk: three commuters "
           "waiting, faces clearly visible, one checking a phone, and a large departures board on the right listing "

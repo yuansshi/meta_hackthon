@@ -102,7 +102,10 @@ class Gate:
             for span in (1, 2):
                 if start + span <= len(words):
                     joined = "".join(c for _, c in words[start:start + span])
-                    if SequenceMatcher(None, joined, self.wake).ratio() >= self.cfg["wake_fuzzy"]:
+                    near = SequenceMatcher(None, joined, self.wake).ratio() >= self.cfg["wake_fuzzy"]
+                    # Two words count when they spell the wake word ("Every Muse, ..."), or come close after a
+                    # greeting ("Hey Avery Muse"). Otherwise everyday speech like "Every museum..." would wake it.
+                    if joined == self.wake or (near and (span == 1 or i > 0)):
                         return " ".join(w for w, _ in words[start + span:])
         return None
 
@@ -206,7 +209,7 @@ class Session:
                                         {"tz": self.tz, "client": self.client, "language": self.lang.code})
         self.agent.confirm = self.confirm
         self.restore_history()
-        asr = {**self.cfg["asr"], "languages": self.lang.bias}  # hear the user's language, and "Earshot"
+        asr = {**self.cfg["asr"], "languages": self.lang.bias}  # hear the user's language, and "EveryMuse"
         try:
             self.relay = self.relay_factory(asr, api_key(asr["api_key_env"]), self.on_asr_event)
             self.relay_task = asyncio.create_task(self.relay.run())
@@ -260,7 +263,7 @@ class Session:
         kind = evt.get("type")
         now = self.clock()
         if kind == "relayDown":  # speech recognition keeps refusing us, say a spent key: typing still works
-            await self.send({"type": "asr", "ok": False, "message": "Earshot can't hear you right now: speech "
+            await self.send({"type": "asr", "ok": False, "message": "EveryMuse can't hear you right now: speech "
                              "recognition isn't answering. You can still type."})
             return
         if kind == "relayUp":

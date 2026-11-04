@@ -19,9 +19,9 @@ import time
 
 from openai import AsyncOpenAI
 
-from earshot import headsup
-from earshot.config import DATA_DIR, ROOT, api_key, load_config, model_cfg
-from earshot.headsup import screen
+from everymuse import headsup
+from everymuse.config import DATA_DIR, ROOT, api_key, load_config, model_cfg
+from everymuse.headsup import screen
 
 TZ = "America/Los_Angeles"
 OUT = DATA_DIR / "eval-headsup"  # on the server's volume, so a trial restart can't lose it

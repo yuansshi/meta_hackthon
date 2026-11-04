@@ -1,27 +1,27 @@
-# Earshot
+# EveryMuse
 
-**Meta's models on every ear.** Earshot turns the Bluetooth glasses or earbuds you already own into a Meta AI agent you use without taking out your phone. It also notices what you'll want before you ask.
+**Meta's models on every ear.** EveryMuse turns the Bluetooth glasses or earbuds you already own into a Meta AI agent you use without taking out your phone. It also notices what you'll want before you ask.
 
 **Built for your world, as the hackathon theme asks. Ours is the walking commute:** twice a day, a bag or a coffee in each hand, and small questions on the way. Will it rain this afternoon? Which platform is the 19:05? What was that address?
 - **Before:** every question means stopping, getting the phone out, unlocking it and typing.
   - Just reaching a phone in a pocket takes 4.6 s on average, against 2.8 s for a watch, and up to 78% of that is getting it out ([Ashbrook et al., CHI 2008](https://doi.org/10.1145/1357054.1357092)).
   - Then the answer needs a free hand and your eyes.
 - **After:** you ask out loud and keep walking. The first word of the answer comes back 1.2 to 3.5 s after you stop talking, and your hands and eyes stay on the street.
-- **Before you even ask:** when a friend says "dinner's at my place Friday at seven", Earshot offers the reminder on its own. Only a yes lets it act.
+- **Before you even ask:** when a friend says "dinner's at my place Friday at seven", EveryMuse offers the reminder on its own. Only a yes lets it act.
 
 **Try it now:** https://earshot-yuansshi.fly.dev. It works in any browser, with any headset, or by typing.
 
 **Watch it:**
-- **The whole demo (1:47):** https://earshot-yuansshi.fly.dev/media/earshot-demo-full.mp4
+- **The whole demo (1:47):** https://earshot-yuansshi.fly.dev/media/everymuse-demo-full.mp4
   - The five core prompts, then Heads-up.
   - Each Meta model is named on screen as it works.
-- **The five core prompts alone (82 s):** https://earshot-yuansshi.fly.dev/media/earshot-demo.mp4, one take of the live app.
-- **Heads-up alone, the hook (28 s):** https://earshot-yuansshi.fly.dev/media/earshot-headsup.mp4
-  - A friend mentions dinner, not to Earshot. Muse Spark 1.2 notices and asks first.
+- **The five core prompts alone (82 s):** https://earshot-yuansshi.fly.dev/media/everymuse-demo.mp4, one take of the live app.
+- **Heads-up alone, the hook (28 s):** https://earshot-yuansshi.fly.dev/media/everymuse-headsup.mp4
+  - A friend mentions dinner, not to EveryMuse. Muse Spark 1.2 notices and asks first.
   - One yes, and Muse Spark 1.3 sets the reminder.
-- **In Spanish, Japanese and Hindi (77 s):** https://earshot-yuansshi.fly.dev/media/earshot-languages.mp4
+- **In Spanish, Japanese and Hindi (77 s):** https://earshot-yuansshi.fly.dev/media/everymuse-languages.mp4
 
-All are screen recordings of the live site in headless Chrome, with the spoken prompts fed in as its microphone. Headless Chrome can't play speech, so Earshot's replies were voiced afterwards with a macOS voice, each at the moment the page spoke it.
+All are screen recordings of the live site in headless Chrome, with the spoken prompts fed in as its microphone. Headless Chrome can't play speech, so EveryMuse's replies were voiced afterwards with a macOS voice, each at the moment the page spoke it. They were recorded before the project was renamed, so the app in them is called Earshot and the wake phrase is "Hey Earshot".
 
 ## Try it in 60 seconds
 
@@ -30,28 +30,28 @@ All are screen recordings of the live site in headless Chrome, with the spoken p
    - Muse Spark reads the board, and SAM 3.1 outlines where the answer is.
 3. **Tap** *Look into the best e-bikes under $1,500 and get back to me*, then keep using it.
    - Muse Wonder researches in the background and speaks up 30 to 60 s later.
-4. **Switch to Hands-free** (allow the mic) and say "Hey Earshot, will it rain this afternoon?"
+4. **Switch to Hands-free** (allow the mic) and say "Hey EveryMuse, will it rain this afternoon?"
    - Watch the receipts: location, then weather.
 5. **Turn on Heads-up.** Read this aloud without the wake word: "Dinner's at my place Friday at seven, 1420 Pine Street."
-   - Earshot asks whether to remind you. Say "yes".
-6. **Then ask** "Hey Earshot, what was that address?" That's Rewind, the last 3 minutes, which is never stored.
-7. **Pick another language** under Language, below the conversation, and ask in it. Earshot hears it and answers in it.
+   - EveryMuse asks whether to remind you. Say "yes".
+6. **Then ask** "Hey EveryMuse, what was that address?" That's Rewind, the last 3 minutes, which is never stored.
+7. **Pick another language** under Language, below the conversation, and ask in it. EveryMuse hears it and answers in it.
 
 ## What makes it different
 
 - **Heads-up: it notices, then asks.**
-  - In hands-free mode, Muse Spark screens speech that wasn't said to Earshot, using your own notes for context.
+  - In hands-free mode, Muse Spark screens speech that wasn't said to EveryMuse, using your own notes for context.
   - When it finds a plan, a request or an announcement you'd want, it offers in one short question.
   - Only a yes lets it act. It's opt-in, and nothing it overhears is stored.
-- **Rewind: "what did she just say?"** Earshot answers from the last 3 minutes of speech it heard nearby, held in memory only.
-- **Find it: "where is it?"** SAM 3.1 locates what you asked about in a photo. Earshot says where it is, and the app outlines it.
-- **It speaks your language.** Earshot hears and answers in all 25 languages Muse Voice Transcribe is validated for, including Heads-up offers and reminder questions. Pick one on the page; the iPhone app uses the phone's language.
+- **Rewind: "what did she just say?"** EveryMuse answers from the last 3 minutes of speech it heard nearby, held in memory only.
+- **Find it: "where is it?"** SAM 3.1 locates what you asked about in a photo. EveryMuse says where it is, and the app outlines it.
+- **It speaks your language.** EveryMuse hears and answers in all 25 languages Muse Voice Transcribe is validated for, including Heads-up offers and reminder questions. Pick one on the page; the iPhone app uses the phone's language.
 - **It gets back to you.** Muse Wonder takes long research jobs in the background, then reports back, even after you've disconnected.
 - **It asks before it changes anything, and leaves receipts.** Every tool call shows its arguments, result and timing. The receipt log is hash-chained, so tampering is detectable.
 
 ## Results
 
-These were measured live on Meta's models; the full study is in **[EVALUATION.md](EVALUATION.md)**.
+These were measured live on Meta's models; the full study is in **[EVALUATION.md](EVALUATION.md)**. EveryMuse was called Earshot when they ran, so the spoken prompts said "Hey Earshot". The new wake phrase, "Hey EveryMuse", passes the unit tests but hasn't been tested by voice yet.
 
 | What | Result |
 |---|---|
@@ -77,7 +77,7 @@ These were measured live on Meta's models; the full study is in **[EVALUATION.md
 | Those 100 reports, fact-checked claim by claim by Muse Spark 1.3 with web search | 541 of 554 claims supported, 6 contradicted (near misses, like a bus that's 75 minutes, not an hour) |
 | Cost per question | About half a cent; Heads-up adds about $0.25 an hour of nearby conversation |
 | Cost of all six steps above | About $0.10 to $0.32, mostly the research job ([details](EVALUATION.md#7-what-the-public-demo-costs-to-run)) |
-| Unit tests | 102, all using fake models and fake speech recognition |
+| Unit tests | 107, all using fake models and fake speech recognition |
 
 ## How it works: one cascade over Meta's models
 
@@ -88,10 +88,10 @@ any browser + any headset ──▶ web client ───────────
             Agent server (FastAPI): holds the keys, never the audio
               ├─ ASR relay ── own 80 ms clock, silence fill, reconnects ──▶ Muse Voice Transcribe (realtime)
               ├─ turn gate ── wake word · 8 s follow-up window · echo filter
-              │     ├─ said to Earshot ──▶ agent loop ──▶ Muse Spark 1.3 (tools, web search, vision)
+              │     ├─ said to EveryMuse ──▶ agent loop ──▶ Muse Spark 1.3 (tools, web search, vision)
               │     │                         ├─ "where is it?" ──▶ SAM 3.1 (Find it)
               │     │                         └─ "look into it" ──▶ Muse Wonder (background, reports back)
-              │     └─ not said to Earshot ──▶ 3-minute Rewind buffer (memory only)
+              │     └─ not said to EveryMuse ──▶ 3-minute Rewind buffer (memory only)
               │                                 └─ Heads-up ──▶ Muse Spark 1.2 screens ──▶ "Want me to…?" ──▶ agent
               ├─ fallback ── Muse Spark Open on Fireworks takes over if Meta's API fails
               └─ receipts ── every tool call, hash-chained; never the words overheard
@@ -99,7 +99,7 @@ any browser + any headset ──▶ web client ───────────
 
 | Job | Meta model | Why this one (measured) |
 |---|---|---|
-| Ears | `muse-voice-transcribe-1.0`, realtime, endpointing mode | It marks where each turn ends, 0.2 s after you stop talking, with keyword bias for "Earshot". Its language bias is set to the user's language: in 23 languages, requests were transcribed within 15% character error in 68 of 69 trials, against 61 of 69 with English only. |
+| Ears | `muse-voice-transcribe-1.0`, realtime, endpointing mode | It marks where each turn ends, 0.2 s after you stop talking, with keyword bias for "EveryMuse". Its language bias is set to the user's language: in 23 languages, requests were transcribed within 15% character error in 68 of 69 trials, against 61 of 69 with English only. |
 | Brain | `muse-spark-1.3`, Responses API, `minimal` effort | Tools, built-in web search and vision, with a first word in about 2 s. "Think about it" raises the effort. |
 | Heads-up screener | `muse-spark-1.2`, `minimal` effort | Best of 7 setups we compared: 100% recall, 2.0 s median, $0.07 an hour. |
 | Find it | `sam-3.1` | Finds things in photos in 1 to 3 s, for a quarter of a cent. |
@@ -113,7 +113,7 @@ any browser + any headset ──▶ web client ───────────
 ## Privacy
 
 - **Audio** streams to Meta's speech recognition only while a session is open. No audio, video or photo is stored.
-- **Overheard speech:** what wasn't said to Earshot stays in server memory for 3 minutes, hands-free mode only. It reaches Muse Spark only when you ask about it, or when you've turned Heads-up on.
+- **Overheard speech:** what wasn't said to EveryMuse stays in server memory for 3 minutes, hands-free mode only. It reaches Muse Spark only when you ask about it, or when you've turned Heads-up on.
 - **Your conversation** is copied to the server's disk, without photos, so a reconnect after a server restart picks it up. Closing the page deletes it; otherwise it's ignored after 15 minutes and deleted.
 - **Receipts** record what the agent did, never what it overheard. They're kept per device in `server/data/` and hash-chained, so editing one breaks the chain.
 - **Spend limits:** the public demo has a daily spend cap, a 10-minute session limit and a per-address session limit. The day's spend is kept on a volume, so restarts don't reset the cap.
@@ -122,7 +122,7 @@ any browser + any headset ──▶ web client ───────────
 ## Why not just use Siri?
 
 - **Siri is hard-wired.** On iPhone, "Hey Siri" on AirPods and the glasses' assistant button only reach Siri, and iOS 27 lets Siri hand off to ChatGPT and nothing else.
-- **Earshot answers instead, over the same route.** It doesn't replace Siri; it runs its own always-ready session over the same Bluetooth audio route.
+- **EveryMuse answers instead, over the same route.** It doesn't replace Siri; it runs its own always-ready session over the same Bluetooth audio route.
 - **AirPods work too,** exactly as glasses do.
 
 ## Run it
@@ -138,20 +138,20 @@ uv --directory server run python scripts/eval_live.py     # the live evaluation 
 uv --directory server run python scripts/eval_headsup.py  # the screener comparison (needs Meta API access)
 ```
 
-Open http://localhost:8000 in Chrome or Safari, and pick your Bluetooth headset as the microphone. Hold the button (or Space) to talk, or switch to **Hands-free** and start with "Hey Earshot".
+Open http://localhost:8000 in Chrome or Safari, and pick your Bluetooth headset as the microphone. Hold the button (or Space) to talk, or switch to **Hands-free** and start with "Hey EveryMuse".
 
-Deploy: `docker build -t earshot .` at the repo root, then run it on any host that supports WebSockets, with `META_API_KEY` set as a secret.
+Deploy: `docker build -t everymuse .` at the repo root, then run it on any host that supports WebSockets, with `META_API_KEY` set as a secret.
 
 ### iPhone app (`ios/`)
 
-1. Run `open ios/Earshot.xcodeproj`, choose your iPhone as the run destination, and press Run.
+1. Run `open ios/EveryMuse.xcodeproj`, choose your iPhone as the run destination, and press Run.
    - Signing uses your Apple Development team.
    - On first install, trust the developer in Settings → General → VPN & Device Management, and turn on Developer Mode if iOS asks.
-2. Pair the glasses (or AirPods) with the phone. In Earshot → Server, enter one of:
+2. Pair the glasses (or AirPods) with the phone. In EveryMuse → Server, enter one of:
    - `ws://<mac-ip>:8000/ws`, with the phone on the same Wi-Fi as the Mac running `make serve`.
    - The deployed `wss://…/ws` URL.
 3. Tap **Start listening** once with the app open (iOS only lets an app *start* the mic in the foreground). Then lock the phone and put it away. Turn on **Heads-up** if you want offers.
-4. Say "Hey Earshot, …", or tap the glasses and just talk.
+4. Say "Hey EveryMuse, …", or tap the glasses and just talk.
 
 **Diagnostics** shows the audio route and mic sample rate, mic buffers per second, headset taps, interruptions and restarts, and how often the agent heard its own voice. It also has an echo test and a test line every 30 s for checking background audio.
 

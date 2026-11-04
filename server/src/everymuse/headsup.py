@@ -1,4 +1,4 @@
-"""Heads-up: Earshot notices something you'll want in speech that wasn't said to it, and offers to act.
+"""Heads-up: EveryMuse notices something you'll want in speech that wasn't said to it, and offers to act.
 
 A cascade over Meta's models, cheapest and fastest first:
 1. Muse Voice Transcribe hears everything (the turn gate sets aside what wasn't said to the agent).

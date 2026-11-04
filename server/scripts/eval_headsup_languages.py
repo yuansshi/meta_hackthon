@@ -21,9 +21,9 @@ import unicodedata
 
 from openai import AsyncOpenAI
 
-from earshot.config import DATA_DIR, ROOT, api_key, load_config, model_cfg
-from earshot.headsup import screen
-from earshot.languages import resolve
+from everymuse.config import DATA_DIR, ROOT, api_key, load_config, model_cfg
+from everymuse.headsup import screen
+from everymuse.languages import resolve
 
 TZ = "America/Los_Angeles"
 SCRIPTS = {"ja": ("HIRAGANA", "KATAKANA", "CJK"), "zh": ("CJK",), "ko": ("HANGUL",), "hi": ("DEVANAGARI",),

@@ -1,9 +1,12 @@
-# Earshot: what we measured, and why it's built this way
+# EveryMuse: what we measured, and why it's built this way
 
 **Source of every number:**
 - Measured on Meta's models from the deployed server on Nov 3 and 4, 2026, using the scripts in `server/scripts/`.
 - The raw results are in `server/eval/results/`.
 - Spoken prompts were synthesized with macOS `say` and streamed in real time, as a phone would.
+- **EveryMuse was called Earshot until Nov 4, 2026.**
+  - Every test here ran under that name, so the spoken prompts began "Hey Earshot". Where a result depends on the exact words spoken, they're quoted as they were.
+  - The new wake phrase, "Hey EveryMuse", passes the unit tests but hasn't been tested by voice yet.
 
 ## 1. Does the live demo hold up?
 
@@ -23,7 +26,7 @@ All 18 of 18 trials passed: 3 trials of each judge prompt against https://earsho
 
 **Other checks:**
 - **Cold start:** from fully stopped, the page loads in 5.7 s and the first word comes 2.6 s after asking (3 trials; see section 10).
-- **Out of credit:** if the Meta key is refused (401, 402, 403 or 404), typed questions fall back to Muse Spark Open. Speech recognition still needs a working Meta key. When it refuses three times in a row, the page now says so ("Earshot can't hear you right now… You can still type"), instead of a microphone that silently hears nothing.
+- **Out of credit:** if the Meta key is refused (401, 402, 403 or 404), typed questions fall back to Muse Spark Open. Speech recognition still needs a working Meta key. When it refuses three times in a row, the page now says so ("EveryMuse can't hear you right now… You can still type"), instead of a microphone that silently hears nothing.
 - **Out of credit, for real.** The hackathon's Meta credit ran out during these tests, at 9:37 AM PT on Nov 4; the key now gets HTTP 402, "Billing verification failed". Measured on the live server after that:
   - typed questions went to Muse Spark Open, though Fireworks itself answered some calls with 503 "overloaded", so the fallback now retries 3 times;
   - a photo question was still answered correctly from the image, without SAM 3.1's outline;
@@ -37,7 +40,7 @@ All 18 of 18 trials passed: 3 trials of each judge prompt against https://earsho
 
 ## 2. Heads-up: the models work as a cascade
 
-Heads-up is the feature that makes Earshot more than an agent on standby. It notices something you'll want in speech that wasn't said to it, and offers to act on it. Each stage hands off to a bigger model only when the one before it finds something:
+Heads-up is the feature that makes EveryMuse more than an agent on standby. It notices something you'll want in speech that wasn't said to it, and offers to act on it. Each stage hands off to a bigger model only when the one before it finds something:
 
 | Stage | Model | Runs when | Cost |
 |---|---|---|---|
@@ -146,7 +149,7 @@ Everything above screens text. This tests the whole cascade on the live server:
 
 ## 3. Find it: SAM 3.1 shows where things are
 
-Muse Spark reads the photo. When you ask where something is, it calls SAM 3.1 to segment that object. Earshot then says where it is ("on the right"), and the app outlines it on the photo.
+Muse Spark reads the photo. When you ask where something is, it calls SAM 3.1 to segment that object. EveryMuse then says where it is ("on the right"), and the app outlines it on the photo.
 
 **Measured:**
 - SAM 3.1 took 1.1 to 2.9 s per image, at $0.0025 a call.
@@ -167,7 +170,7 @@ Muse Spark reads the photo. When you ask where something is, it calls SAM 3.1 to
 | Data | Where it lives | How long |
 |---|---|---|
 | Microphone audio | Streamed to Muse Voice Transcribe | Never stored |
-| What you say to Earshot | The session's conversation, in memory, plus a copy on the server's disk without photos, so a reconnect after a restart can continue | Deleted when you close the page. Otherwise ignored after 15 minutes and deleted |
+| What you say to EveryMuse | The session's conversation, in memory, plus a copy on the server's disk without photos, so a reconnect after a restart can continue | Deleted when you close the page. Otherwise ignored after 15 minutes and deleted |
 | What it overhears (Rewind, Heads-up) | Server memory | 3 minutes, then dropped. Reaches Muse Spark only when you ask, or when Heads-up is on |
 | Photos | Server memory | One turn, at most 2 minutes |
 | Notes you asked it to keep | Server disk, per device | Until removed; the newest 200 |
@@ -183,10 +186,10 @@ Muse Spark reads the photo. When you ask where something is, it calls SAM 3.1 to
 | Raw audio, 16 kHz PCM | 115 MB | Needs checksums | Voices, which are biometric | Not kept |
 | Compressed audio, Opus at 24 kbps | 11 MB | Needs checksums | Voices | Not kept |
 | Transcripts | About 50 KB | Easy | Other people's words | 3 minutes, in memory only |
-| **Derived facts: notes and receipts** | **About 0.3 to 0.4 KB each** | **Hash-chained** | **Only what you chose to keep** | **What Earshot keeps** |
+| **Derived facts: notes and receipts** | **About 0.3 to 0.4 KB each** | **Hash-chained** | **Only what you chose to keep** | **What EveryMuse keeps** |
 
 **How it works:**
-- **Integrity:** each receipt line carries the SHA-256 of the line before it. Editing, deleting or reordering a past receipt breaks the chain, and `earshot.actions.verify` reports the first broken line. This is tested.
+- **Integrity:** each receipt line carries the SHA-256 of the line before it. Editing, deleting or reordering a past receipt breaks the chain, and `everymuse.actions.verify` reports the first broken line. This is tested.
 - **Atomic notes:** they're written to a temp file and then swapped in, so a crash mid-write never leaves half a file.
 
 **Pros:**
@@ -200,7 +203,7 @@ Muse Spark reads the photo. When you ask where something is, it calls SAM 3.1 to
 
 ## 5. Anonymizing recorded video (for footage you publish)
 
-Earshot itself records no video. For demo footage of other people, we tested the parts of a privacy filter: Muse Image made a synthetic platform photo (12 to 20 s, $0.01), SAM 3.1 found every face (2 to 3 s, $0.0025), and the faces were blurred.
+EveryMuse itself records no video. For demo footage of other people, we tested the parts of a privacy filter: Muse Image made a synthetic platform photo (12 to 20 s, $0.01), SAM 3.1 found every face (2 to 3 s, $0.0025), and the faces were blurred.
 
 ![Synthetic photo made with Muse Image; SAM 3.1 found the faces, which were then blurred](media/privacy-filter.jpg)
 
@@ -231,7 +234,7 @@ Earshot itself records no video. For demo footage of other people, we tested the
 Each model does the one job it measured best at. The cascade sends everything to the cheapest model that can handle it, and hands off to a bigger one only when needed.
 
 **The honest costs:**
-- More parts can fail. We cover that with the fallback and the 102 tests.
+- More parts can fail. We cover that with the fallback and the 107 tests.
 - Each extra stage adds a little latency.
 - Any always-listening feature has to earn trust. That's why Heads-up and Rewind are opt-in, text-only, memory-only and ask first.
 
@@ -256,10 +259,10 @@ These costs come from the 36 live trials in section 1, plus the recorded demo.
 
 That covers at least 75 complete demos a day, or over 3,000 single questions. All the measured runs in this document cost about $2.50.
 
-## 8. Earshot in 25 languages
+## 8. EveryMuse in 25 languages
 
-Muse Voice Transcribe is validated for 25 languages, and Earshot now uses all of them. The page has a Language menu, and the iPhone app sends the phone's language. For each session the server then:
-- biases speech recognition toward that language, plus English for the name "Earshot";
+Muse Voice Transcribe is validated for 25 languages, and EveryMuse now uses all of them. The page has a Language menu, and the iPhone app sends the phone's language. For each session the server then:
+- biases speech recognition toward that language, plus English for the name "EveryMuse";
 - tells Muse Spark, the Heads-up screener and Muse Wonder to answer in it;
 - speaks its fixed phrases, like "On it", in it;
 - hears yes and no in it;
@@ -271,7 +274,7 @@ We tested 23 of the 25 languages; Marathi and Tagalog have no macOS voice. A mac
 
 | Speech recognition bias | Wake word heard | Request within 15% character error | Median time to the transcript |
 |---|---|---|---|
-| English only (Earshot before this change) | 69/69 | 61/69 | 0.44 s |
+| English only (EveryMuse before this change) | 69/69 | 61/69 | 0.44 s |
 | **The user's language, plus English (shipped)** | **69/69** | **68/69** | **0.41 s** |
 
 These rows say "Hey Earshot" the English way, as people say a product name, with the request in the language.
@@ -279,14 +282,14 @@ These rows say "Hey Earshot" the English way, as people say a product name, with
 **What it showed:**
 - **An English-only bias garbles some languages.** Spanish and Telugu requests failed in all 3 runs: Telugu came back in Gujarati script. Dutch and Hebrew failed in some runs.
 - **With the user's language, only 1 of 69 requests was off:** one Italian run.
-- **When each voice read "Hey Earshot" with its own spelling rules, it was heard in 55 of 69 trials** (46 with the English-only bias). The misses were in Portuguese, Turkish, Korean, Arabic and French, where "Earshot" came out as other words. In those languages, push-to-talk or a headset tap skips the wake word.
+- **When each voice read "Hey Earshot" with its own spelling rules, it was heard in 55 of 69 trials** (46 with the English-only bias). The misses were in Portuguese, Turkish, Korean, Arabic and French, where "EveryMuse" came out as other words. In those languages, push-to-talk or a headset tap skips the wake word.
 - **Japanese and Chinese transcripts put no space after "Earshot,".** So the wake-word check now splits words where the script changes.
 
 ### End to end, live, in 23 languages (`scripts/eval_live_languages.py`)
 
 Each trial was its own session on the live server, with the hello carrying the language, run 3 times in each of 23 languages. Two spoken scenarios:
 - **Weather:** "Hey Earshot, will it rain this afternoon?" It passes if the wake word was heard, the forecast tool ran, and the reply is in that language.
-- **Reminder:** "Hey Earshot, remind me to buy coffee at 6 PM." Earshot asks first, in the language, and the answer is a spoken yes in the language, like "Sí, por favor" or "はい、お願いします". It passes if the reminder was created.
+- **Reminder:** "Hey Earshot, remind me to buy coffee at 6 PM." EveryMuse asks first, in the language, and the answer is a spoken yes in the language, like "Sí, por favor" or "はい、お願いします". It passes if the reminder was created.
 
 | Scenario | Passed | First word (median by language) |
 |---|---|---|
@@ -295,20 +298,20 @@ Each trial was its own session on the live server, with the hello carrying the l
 
 **What it showed, and what we changed:**
 - **The replies were in the user's language every time,** with Celsius where that's the local unit. The reminder question, built from the reminder's own fields, was in the language too.
-- **Speech recognition sometimes split "Hey Earshot" from the question** (3 misses, in Chinese, Turkish and Hebrew). Earshot answered the bare wake word, and the question arrived while it spoke. Now a bare wake word waits while speech recognition still hears the user talking, and a second piece of a sentence restarts the turn whole, as long as the turn hasn't spoken. Both are tested.
+- **Speech recognition sometimes split "Hey Earshot" from the question** (3 misses, in Chinese, Turkish and Hebrew). EveryMuse answered the bare wake word, and the question arrived while it spoke. Now a bare wake word waits while speech recognition still hears the user talking, and a second piece of a sentence restarts the turn whole, as long as the turn hasn't spoken. Both are tested.
 - **Speech recognition garbled or cut the Japanese reminder request in all 3 runs,** and one Bengali request too: 4 misses.
   - Muse Voice Transcribe hears 午後 (gogo, "afternoon") as 五五 ("five five"), so "6 PM" became "五五六時に".
   - After that, the middle of the sentence was lost and only its last words arrived ("ようにリマインドして").
   - Saying 夕方六時 instead got 1 of 3 through. The middle still dropped out, so it's a limit of speech recognition on this sentence. Japanese weather questions passed every time.
 - **One was a trial restart,** a session the Fly trial closed mid-turn.
-- **A one-word yes is fragile in some languages.** In a separate check, "হ্যাঁ" (Bengali), "ஆம்" (Tamil), "అవును" (Telugu) and "ಹೌದು" (Kannada) alone often came back empty, or as English ("Um,", "How do"). Two words, like "হ্যাঁ, ঠিক আছে", worked in Bengali every time. Earshot also accepts romanized answers ("avunu", "haan"), and the page has Yes and No buttons in the user's language.
+- **A one-word yes is fragile in some languages.** In a separate check, "হ্যাঁ" (Bengali), "ஆம்" (Tamil), "అవును" (Telugu) and "ಹೌದು" (Kannada) alone often came back empty, or as English ("Um,", "How do"). Two words, like "হ্যাঁ, ঠিক আছে", worked in Bengali every time. EveryMuse also accepts romanized answers ("avunu", "haan"), and the page has Yes and No buttons in the user's language.
 
 The first run, before these fixes, passed 63/69 and 62/69 (`eval/results/live-languages-2026-11-04-run1.json`).
 
 **Rechecks after the fixes, live:**
 - Chinese and Turkish reminders passed 3/3 each, where the wake word had split before.
 - **Hebrew exposed one more problem.** In 2 of 3 runs the model wrote its own plan, in English, as the reply: "Need location then weather - but must not announce tool? Developer says never announce…".
-- So Earshot now never speaks a sentence that quotes its instructions, or a long English sentence when the user speaks a non-Latin-script language. If that leaves nothing to say, it retries the turn once at low effort. This is tested.
+- So EveryMuse now never speaks a sentence that quotes its instructions, or a long English sentence when the user speaks a non-Latin-script language. If that leaves nothing to say, it retries the turn once at low effort. This is tested.
 - After that, Hebrew passed 6/6, and the server log showed one leak caught and retried. English passed 6/6 after the change.
 
 ### Heads-up in other languages (`scripts/eval_headsup_languages.py`)
@@ -360,9 +363,9 @@ Every real moment was still caught in every language. Translation cost 0 to 6 po
 
 ### Diarization: who said what?
 
-Muse Voice Transcribe also has a diarization mode. We ran it on a conversation between a friend, the user and Earshot's own voice.
+Muse Voice Transcribe also has a diarization mode. We ran it on a conversation between a friend, the user and EveryMuse's own voice.
 - **It labeled the friend and the user correctly every time.**
-- **It merged Earshot's reply into the user's turn.**
+- **It merged EveryMuse's reply into the user's turn.**
 - **Each turn landed about 1.3 to 1.9 s after the speech ended,** against 0.3 to 0.8 s in endpointing mode, and a session can use only one mode.
 
 **On 12 two-person conversations, 60 lines in all, with 6 different pairs of voices** (`scripts/eval_diarization.py`):
@@ -380,9 +383,9 @@ So commands stay on endpointing. Diarization is the next step for Heads-up and R
 
 Muse Spark, asked on its own, agreed with the requested side in all 60, so those sides are the ground truth. The whole agent then got each photo and "Where is the …? Show me." through the live server.
 
-![Four of the synthetic scenes, with the outline Earshot drew around what was asked for](media/find-it.jpg)
+![Four of the synthetic scenes, with the outline EveryMuse drew around what was asked for](media/find-it.jpg)
 
-*Synthetic scenes made with Muse Image, with Earshot's outlines: an exit sign, a departures board, an elevator button and a shopping basket.*
+*Synthetic scenes made with Muse Image, with EveryMuse's outlines: an exit sign, a departures board, an elevator button and a shopping basket.*
 
 | Check | Result |
 |---|---|
@@ -403,9 +406,9 @@ Muse Spark, asked on its own, agreed with the requested side in all 60, so those
 
 This is where someone with low vision most needs the help. Muse Image made 60 more photos, each a small target among other things in dim or uneven light: keys on a cluttered entryway floor, a light switch in a dark hallway, a power outlet in a crowded cafe, a red-capped bottle on a shelf of bottles.
 
-![Four of the hard scenes, with Earshot's outlines](media/find-it-hard.jpg)
+![Four of the hard scenes, with EveryMuse's outlines](media/find-it-hard.jpg)
 
-*Synthetic hard scenes made with Muse Image, with Earshot's outlines: keys, a red-capped bottle, a platform sign at night, and a ticket machine behind the luggage.*
+*Synthetic hard scenes made with Muse Image, with EveryMuse's outlines: keys, a red-capped bottle, a platform sign at night, and a ticket machine behind the luggage.*
 
 | Check | Easy scenes (above) | Hard scenes |
 |---|---|---|
@@ -431,7 +434,7 @@ This is where someone with low vision most needs the help. Muse Image made 60 mo
 
 The 8th session was turned away by the limit of 8 open sessions per network address, since another session was already open from the same address. The 512 MB machine didn't slow down.
 
-**Research beyond one demo (`scripts/eval_research.py`).** 100 varied "look into it" jobs ran through Earshot's own Muse Wonder path, in background mode, 10 at a time. Among them: earbuds under $200, the cheapest way from SFO to downtown, dogs on Washington State Ferries, renewing a passport by mail, sledding near Seattle, a lost Orca card.
+**Research beyond one demo (`scripts/eval_research.py`).** 100 varied "look into it" jobs ran through EveryMuse's own Muse Wonder path, in background mode, 10 at a time. Among them: earbuds under $200, the cheapest way from SFO to downtown, dogs on Washington State Ferries, renewing a passport by mail, sledding near Seattle, a lost Orca card.
 - **All 100 reported back,** every one on Muse Wonder.
 - A job took 29 s at the median, 41 s at p90 and 56 s at most.
 - The median job ran 7 web searches (753 in all) and cost $0.13 ($14.44 in all).
@@ -454,7 +457,7 @@ The contradictions were near misses:
 
 The check cost $3.96.
 
-**An hour in a pocket (`scripts/eval_soak.py`).** One iPhone-style session stayed open for 70 minutes, against a local server, with the brain on Muse Spark Open: Meta's hosted models 404 from that Mac, but its speech recognition works. Every 5 minutes it was asked "Hey Earshot, what time is it?"
+**An hour in a pocket (`scripts/eval_soak.py`).** One iPhone-style session stayed open for 70 minutes, against a local server, with the brain on Muse Spark Open: Meta's hosted models 404 from that Mac, but its speech recognition works. Every 5 minutes it was asked "Hey EveryMuse, what time is it?"
 - 13 of 14 were answered, including both after speech recognition's 60-minute session cap.
 - The connection to speech recognition dropped 3 times (code 1006), and the relay reconnected each time within 3 s.
 - The one miss came while a connection still looked open but had stopped answering.
@@ -467,7 +470,7 @@ The check cost $3.96.
 | A fully stopped machine | 5.7 s | 0.3 s | 2.6 s |
 | A running machine | 0.2 s | 0.2 s | 2.5 s |
 
-**The risk that remains is the Fly trial itself.** It stops the machine 5 minutes after every start; the machine logs show stops at exactly 5 minutes. So Earshot now expects restarts:
+**The risk that remains is the Fly trial itself.** It stops the machine 5 minutes after every start; the machine logs show stops at exactly 5 minutes. So EveryMuse now expects restarts:
 - The page reconnects by itself, and a new session gets fresh reply bubbles.
 - The page asks again if a question got no reply at all.
 - Each device's conversation (without photos) is kept on the volume, so the reconnected session picks it up.

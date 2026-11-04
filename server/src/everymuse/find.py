@@ -1,4 +1,4 @@
-"""Find it: SAM 3.1 locates something in the photo the user asked about, so Earshot can say where it is.
+"""Find it: SAM 3.1 locates something in the photo the user asked about, so EveryMuse can say where it is.
 
 Muse Spark reads the photo. When the question is "where is it?" or "show me", it calls `find_in_photo` with a short
 noun phrase; SAM 3.1 segments that concept and returns boxes in pixels. This turns the boxes into spoken positions

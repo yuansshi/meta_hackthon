@@ -3,7 +3,7 @@
     uv run python scripts/eval_soak.py --url wss://earshot-yuansshi.fly.dev/ws --minutes 66 --every 5
 
 The session stays open the whole time, as the iPhone app's does; between prompts the client sends nothing and the
-server's relay fills silence on its own clock. Every few minutes the harness says "Hey Earshot, what time is it?"
+server's relay fills silence on its own clock. Every few minutes the harness says "Hey EveryMuse, what time is it?"
 and records whether it was heard and answered, and how fast. Muse Voice Transcribe closes a session at 60 minutes,
 so the prompts after that show whether the relay reconnected without the user noticing.
 Writes eval/results/soak-<date>.json.
@@ -33,7 +33,7 @@ async def main() -> None:
     ap.add_argument("--minutes", type=float, default=66)
     ap.add_argument("--every", type=float, default=5)
     a = ap.parse_args()
-    pcm = synth_pcm("Hey Earshot, what time is it?", 16000)
+    pcm = synth_pcm("Hey EveryMuse, what time is it?", 16000)
     out = ROOT / "eval" / "results" / f"soak-{time.strftime('%Y-%m-%d')}.json"
     rows: list[dict] = []
     started = time.perf_counter()

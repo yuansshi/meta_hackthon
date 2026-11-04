@@ -1,13 +1,13 @@
-"""Earshot in the user's language: speech recognition bias, replies, fixed phrases, wake word and yes/no."""
+"""EveryMuse in the user's language: speech recognition bias, replies, fixed phrases, wake word and yes/no."""
 
 import pytest
 from fakes import text_reply, tool_reply
 from test_session import HELLO, OFFER, env, make_session, next_msg, says  # noqa: F401  (env is a fixture)
 
-from earshot.config import load_config
-from earshot.headsup import is_answer
-from earshot.languages import ENGLISH, LANGUAGES, PHRASES, resolve, spaced
-from earshot.session import Gate, normalize
+from everymuse.config import load_config
+from everymuse.headsup import is_answer
+from everymuse.languages import ENGLISH, LANGUAGES, PHRASES, resolve, spaced
+from everymuse.session import Gate, normalize
 
 
 def test_resolve_reads_client_language_tags():
@@ -25,19 +25,19 @@ def test_bias_keeps_english_for_the_wake_word():
 
 
 @pytest.mark.parametrize("heard, rest", [
-    ("Hey earshot,今天下午会下雨吗?", "今天下午会下雨吗?"),  # no space after the comma, as transcribed
-    ("Hey Earshot、今日の午後は雨が降りますか？", "今日の午後は雨が降りますか？"),
-    ("Hey earshot 오늘 오후에 비가 올까요?", "오늘 오후에 비가 올까요?"),
-    ("Hey Earshot, ¿va a llover esta tarde?", "¿va a llover esta tarde?"),
-    ("Hey earshot, क्या आज दोपहर बारिश होगी?", "क्या आज दोपहर बारिश होगी?"),
-    ("ให้ Earshot บ่ายนี้ฝนจะตกไหม", "บ่ายนี้ฝนจะตกไหม"),
+    ("Hey everymuse,今天下午会下雨吗?", "今天下午会下雨吗?"),  # no space after the comma, as transcribed
+    ("Hey EveryMuse、今日の午後は雨が降りますか？", "今日の午後は雨が降りますか？"),
+    ("Hey everymuse 오늘 오후에 비가 올까요?", "오늘 오후에 비가 올까요?"),
+    ("Hey EveryMuse, ¿va a llover esta tarde?", "¿va a llover esta tarde?"),
+    ("Hey everymuse, क्या आज दोपहर बारिश होगी?", "क्या आज दोपहर बारिश होगी?"),
+    ("ให้ EveryMuse บ่ายนี้ฝนจะตกไหม", "บ่ายนี้ฝนจะตกไหม"),
 ])
 def test_wake_word_inside_other_scripts(heard, rest):
     assert Gate(load_config()["turns"]).find_wake(heard) == rest
 
 
 def test_spacing_leaves_accented_latin_words_alone():
-    assert spaced("Earshot, pioverà oggi pomeriggio?") == "Earshot, pioverà oggi pomeriggio?"
+    assert spaced("EveryMuse, pioverà oggi pomeriggio?") == "EveryMuse, pioverà oggi pomeriggio?"
     assert spaced("chiều nay trời có mưa không") == "chiều nay trời có mưa không"
     assert spaced("It's 3.5 miles") == "It's 3.5 miles"
 
@@ -81,7 +81,7 @@ async def test_a_spanish_session_hears_and_answers_in_spanish(env):
     ])
     assert s.relay.cfg["languages"] == ["Spanish", "English"]
     assert (await next_msg(sent, "ready"))["language"] == "es"
-    await s.on_asr_event({"type": "speechComplete", "transcript": "Hey Earshot, ¿va a llover esta tarde en Madrid?"})
+    await s.on_asr_event({"type": "speechComplete", "transcript": "Hey EveryMuse, ¿va a llover esta tarde en Madrid?"})
     await s.turn
     assert says(sent) == ["Enseguida.", "No, esta tarde no va a llover."]
     instructions = models["meta"].responses.calls[0]["instructions"]
@@ -93,7 +93,7 @@ async def test_a_spanish_reminder_is_confirmed_with_si(env):
         tool_reply("r1", "create_reminder", {"title": "Comprar café", "due": "2026-11-03T18:00"}, "c1"),
         text_reply("r2", "Listo."),
     ])
-    await s.on_asr_event({"type": "speechComplete", "transcript": "Hey Earshot, recuérdame comprar café a las seis"})
+    await s.on_asr_event({"type": "speechComplete", "transcript": "Hey EveryMuse, recuérdame comprar café a las seis"})
     await next_msg(sent, "confirm")
     assert says(sent)[0] == "Vale."
     await s.on_asr_event({"type": "speechComplete", "transcript": "Sí, por favor."})
@@ -121,8 +121,8 @@ async def test_heads_up_offers_in_the_users_language(env):
 def test_reminder_question_in_the_users_language():
     from datetime import date, datetime
 
-    from earshot.agent import confirm_question
-    from earshot.languages import REMIND, remind_question
+    from everymuse.agent import confirm_question
+    from everymuse.languages import REMIND, remind_question
 
     assert set(REMIND) == set(LANGUAGES) - {"en"}
     today = date(2026, 11, 4)
@@ -142,7 +142,7 @@ def test_reminder_question_in_the_users_language():
 async def test_a_pause_after_the_wake_word_keeps_the_question(env):
     import json as _json
     s, sent, models = await make_session(meta=[text_reply("r1", "No rain this afternoon.")])
-    await s.on_asr_event({"type": "speechComplete", "transcript": "Hey Earshot."})
+    await s.on_asr_event({"type": "speechComplete", "transcript": "Hey EveryMuse."})
     await __import__("asyncio").sleep(0.2)  # the user paused, so speech recognition ended the turn there
     await s.on_asr_event({"type": "speechComplete", "transcript": "Will it rain this afternoon?"})
     await s.turn
@@ -154,7 +154,7 @@ async def test_a_sentence_split_at_a_pause_is_answered_whole(env):
     import json as _json
     s, sent, models = await make_session(meta=[text_reply("r1", "Platform three.")])
     models["meta"].responses.delay = 0.4
-    await s.on_asr_event({"type": "speechComplete", "transcript": "Hey Earshot, which platform"})
+    await s.on_asr_event({"type": "speechComplete", "transcript": "Hey EveryMuse, which platform"})
     await __import__("asyncio").sleep(0.1)
     await s.on_asr_event({"type": "speechComplete", "transcript": "is the 19:05 to Harbor Quarter?"})
     await s.turn
@@ -168,7 +168,7 @@ async def test_a_sentence_split_at_a_pause_is_answered_whole(env):
 
 async def test_a_turn_that_has_spoken_is_not_restarted(env):
     s, sent, models = await make_session(meta=[text_reply("r1", "Sure.")])
-    await s.on_asr_event({"type": "speechComplete", "transcript": "Hey Earshot, hello"})
+    await s.on_asr_event({"type": "speechComplete", "transcript": "Hey EveryMuse, hello"})
     await s.turn
     await s.on_asr_event({"type": "speechComplete", "transcript": "so anyway I told him"})
     final = [m for m in sent if m["type"] == "transcript" and m.get("final")][-1]
@@ -178,7 +178,7 @@ async def test_a_turn_that_has_spoken_is_not_restarted(env):
 async def test_a_bare_wake_word_is_answered_in_the_users_language(env):
     s, sent, _ = await make_session(hello={**HELLO, "language": "es"})
     s.cfg["turns"]["wake_wait_s"] = 0.05
-    await s.on_asr_event({"type": "speechComplete", "transcript": "Earshot?"})
+    await s.on_asr_event({"type": "speechComplete", "transcript": "EveryMuse?"})
     await s.turn
     assert says(sent) == ["¿Sí?"]
 
@@ -193,7 +193,7 @@ async def test_the_rest_after_a_pause_is_awaited_while_speech_goes_on(env):
     import asyncio as _asyncio
     s, sent, models = await make_session(meta=[text_reply("r1", "No rain today.")])
     s.cfg["turns"]["wake_wait_s"] = 0.1
-    await s.on_asr_event({"type": "speechComplete", "transcript": "Hey Earshot."})
+    await s.on_asr_event({"type": "speechComplete", "transcript": "Hey EveryMuse."})
     await s.on_asr_event({"type": "speechStart"})  # they go on talking, longer than the wait
     await _asyncio.sleep(0.5)
     assert says(sent) == []  # no "Yes?" while they're mid-sentence
@@ -203,7 +203,7 @@ async def test_the_rest_after_a_pause_is_awaited_while_speech_goes_on(env):
 
 
 def test_leaked_planning_is_recognized():
-    from earshot.agent import leaked
+    from everymuse.agent import leaked
     assert leaked("Need location then weather - but must not announce tool? Developer says never announce that.", "he")
     assert leaked("Need location to check rain, but only one-three short sentences Hebrew, no announcement?", "he")
     assert leaked("The user wants the weather, so call get_location first, then the tool calls.", "en")

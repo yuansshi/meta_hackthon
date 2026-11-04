@@ -3,8 +3,8 @@ import json
 
 from fakes import CLOSE, FakeConnect, FakeWS
 
-from earshot.config import load_config
-from earshot.relay import AsrRelay
+from everymuse.config import load_config
+from everymuse.relay import AsrRelay
 
 
 def fast_cfg(**over) -> dict:
@@ -20,7 +20,7 @@ def test_handshake_sets_endpointing_explicitly():
     assert hs["mode"] == "ENDPOINTING"  # the API default is PUSH_TO_TALK
     assert hs["audioEncoding"] == "PCM_16KHZ"
     assert hs["authorization"]["accessToken"] == "Bearer k"
-    assert "Earshot" in hs["keywords"]
+    assert "EveryMuse" in hs["keywords"]
     assert hs["emitAudioProgress"] is True  # the stall watchdog's heartbeat
 
 

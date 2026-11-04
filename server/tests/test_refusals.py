@@ -2,7 +2,7 @@
 
 import time
 
-from earshot import agent
+from everymuse import agent
 
 
 def test_a_refused_brain_stays_skipped_across_a_restart(tmp_path, monkeypatch):

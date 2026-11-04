@@ -10,7 +10,7 @@ import time
 
 from openai import AsyncOpenAI
 
-from earshot.config import api_key, load_config, model_cfg
+from everymuse.config import api_key, load_config, model_cfg
 
 JOB = ("Find the three tallest buildings in Seattle and their heights. Reply as SUMMARY: one spoken sentence. "
        "DETAILS: a short list with sources.")

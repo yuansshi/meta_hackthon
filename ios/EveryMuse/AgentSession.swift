@@ -62,7 +62,7 @@ final class AgentSession {
     }
     var voiceProcessing = true
     var testSpeech = false
-    /// Heads-up: Earshot speaks up when it overhears something you'll want, and asks first. Hands-free only.
+    /// Heads-up: EveryMuse speaks up when it overhears something you'll want, and asks first. Hands-free only.
     var headsUp = UserDefaults.standard.bool(forKey: "headsUp") {
         didSet {
             UserDefaults.standard.set(headsUp, forKey: "headsUp")
@@ -129,7 +129,7 @@ final class AgentSession {
             return
         }
         guard await AVAudioApplication.requestRecordPermission() else {
-            lastError = "Microphone access is off. Turn it on in Settings → Earshot."
+            lastError = "Microphone access is off. Turn it on in Settings → EveryMuse."
             return
         }
         _ = try? await UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound])
@@ -295,7 +295,7 @@ final class AgentSession {
                 echoTranscripts += 1
                 note("ignored own voice (\(reason)): \(text)")
             } else if !text.isEmpty {
-                caption = "Heard “\(text)”. Start with “Hey Earshot”."
+                caption = "Heard “\(text)”. Start with “Hey EveryMuse”."
             }
         case "say":
             guard let text = msg["text"] as? String, !text.isEmpty, let turn = msg["turn"] as? String else { return }
@@ -346,7 +346,7 @@ final class AgentSession {
             note("server: \(lastError)")
         case "asr":  // speech recognition stopped answering (say, no credit), or came back
             let ok = msg["ok"] as? Bool ?? true
-            lastError = ok ? "" : (msg["message"] as? String ?? "Earshot can't hear you right now.")
+            lastError = ok ? "" : (msg["message"] as? String ?? "EveryMuse can't hear you right now.")
             note(ok ? "speech recognition is back" : "speech recognition unavailable")
         default:
             break
@@ -407,9 +407,9 @@ final class AgentSession {
         format = audio.formatDescription()
         audioBroken = !ok
         guard !ok else { return }
-        lastError = "Audio stopped. Open Earshot to resume."
+        lastError = "Audio stopped. Open EveryMuse to resume."
         let content = UNMutableNotificationContent()
-        content.title = "Earshot paused"
+        content.title = "EveryMuse paused"
         content.body = "Tap to resume listening."
         UNUserNotificationCenter.current().add(UNNotificationRequest(identifier: "resume", content: content, trigger: nil))
     }

@@ -1,4 +1,4 @@
-"""Find it, for someone who can't see well: does Earshot say where the thing they asked about is?
+"""Find it, for someone who can't see well: does EveryMuse say where the thing they asked about is?
 
     uv run python scripts/eval_find.py --n 60    # on the server (fly ssh console), which reaches Meta's image models
 
@@ -8,7 +8,7 @@
 3. SAM 3.1 looks for the target (it's there) and for an object that isn't (it should find nothing).
 4. The whole agent, through the running server's WebSocket, gets the photo and "Where is the …? Show me." It passes
    when the spoken answer names the right side and the app is told what to outline.
-Writes eval/results/find-<date>.json. Photos and finished rows are kept under $EARSHOT_DATA_DIR/eval-find, so a
+Writes eval/results/find-<date>.json. Photos and finished rows are kept under $EVERYMUSE_DATA_DIR/eval-find, so a
 rerun (say, after the Fly trial stops the machine at its 5-minute mark) picks up where the last one stopped.
 """
 
@@ -27,8 +27,8 @@ import httpx
 from openai import AsyncOpenAI
 from websockets.asyncio.client import connect
 
-from earshot.config import DATA_DIR, api_key, load_config, model_cfg
-from earshot.find import locate
+from everymuse.config import DATA_DIR, api_key, load_config, model_cfg
+from everymuse.find import locate
 
 ROOT = Path(__file__).resolve().parents[1]
 # (scene, what to find, something that isn't there): everyday things someone with low vision might ask about

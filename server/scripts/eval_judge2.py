@@ -5,7 +5,7 @@
 `eval_headsup_hard.py` kept the snippets where Muse Wonder's judgment matched the category a snippet was written for.
 Here a different model, Muse Spark 1.3 at medium effort, judges every snippet with the same question. Agreement
 between the two judges (and with the category) says how much the screener results can be trusted. Saves as it goes
-to $EARSHOT_DATA_DIR/eval-hard-2/judged2.jsonl and writes judge-agreement.json there.
+to $EVERYMUSE_DATA_DIR/eval-hard-2/judged2.jsonl and writes judge-agreement.json there.
 """
 
 from __future__ import annotations
@@ -21,7 +21,7 @@ from openai import AsyncOpenAI
 sys.path.insert(0, str(Path(__file__).parent))
 from eval_headsup_hard import JUDGE, append, lines  # noqa: E402
 
-from earshot.config import DATA_DIR, api_key, load_config, model_cfg  # noqa: E402
+from everymuse.config import DATA_DIR, api_key, load_config, model_cfg  # noqa: E402
 
 OUT = DATA_DIR / "eval-hard-2"
 

@@ -1,6 +1,6 @@
 # Single source of truth for providers, model ids, prices and request settings.
 # Prices are $ per 1M tokens from dev.meta.ai/docs/pricing-rate-limits, checked 2026-11-03.
-# Swap the brain with `brain:` or EARSHOT_BRAIN=<model key>; any OpenAI-compatible endpoint works.
+# Swap the brain with `brain:` or EVERYMUSE_BRAIN=<model key>; any OpenAI-compatible endpoint works.
 
 providers:
   meta:
@@ -90,7 +90,7 @@ asr:
   encoding: PCM_16KHZ
   mode: ENDPOINTING        # the API default is PUSH_TO_TALK; we want server-side turn boundaries
   languages: [English]
-  keywords: [Earshot]
+  keywords: [EveryMuse]
   frame_ms: 80
   prebuffer_frames: 2      # jitter buffer depth before real audio starts flowing
   max_backlog_s: 1.0       # drop the oldest audio past this; Meta closes streams beyond ~5 s ahead
@@ -98,12 +98,12 @@ asr:
   price_per_hour: 0.18
 
 turns:
-  wake_word: earshot
-  wake_variants: [ear shot, air shot, ears shot, here shot, ear shop, earshot's]
+  wake_word: everymuse
+  wake_variants: [every mews]  # "every muse", "Avery Muse", "everymuse's" and the like already pass the fuzzy ratio below
   wake_fuzzy: 0.8          # difflib ratio for near-miss spellings of the wake word
   follow_up_s: 8           # after a reply, the next utterance needs no wake word
   merge_s: 2.0             # a second piece of a sentence this soon, before the turn has spoken, restarts it whole
-  wake_wait_s: 1.0         # after a bare "Hey Earshot", wait this long for the rest before saying "Yes?"
+  wake_wait_s: 1.0         # after a bare "Hey EveryMuse", wait this long for the rest before saying "Yes?"
   echo_tail_s: 0.6         # ignore transcripts this long after the device stops speaking
   echo_similarity: 0.6     # drop transcripts this similar to what the device just said
   speaking_timeout_s: 30   # treat the device as silent if it never reports `tts end`

@@ -75,7 +75,7 @@ final class DeviceTools: NSObject, CLLocationManagerDelegate {
 
     private func location() async -> [String: Any] {
         guard let here = latest ?? manager.location else {
-            return ["error": "location isn't available yet; check that Earshot may use your location"]
+            return ["error": "location isn't available yet; check that EveryMuse may use your location"]
         }
         var out: [String: Any] = [
             "latitude": (here.coordinate.latitude * 1e4).rounded() / 1e4,

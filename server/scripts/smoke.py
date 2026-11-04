@@ -31,7 +31,7 @@ CANNED = {
 async def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--url", default="wss://earshot-yuansshi.fly.dev/ws")
-    ap.add_argument("--say", default="Hey Earshot, will it rain in Seattle this afternoon?")
+    ap.add_argument("--say", default="Hey EveryMuse, will it rain in Seattle this afternoon?")
     ap.add_argument("--text", help="send typed text instead of speech")
     ap.add_argument("--photo", action="store_true", help="attach a left-red, right-blue test image to the question")
     ap.add_argument("--wait-report", action="store_true", help="keep listening for a background research report")

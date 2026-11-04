@@ -1,6 +1,6 @@
 import json
 
-from earshot.actions import ActionLog, verify
+from everymuse.actions import ActionLog, verify
 
 
 def write(log: ActionLog, n: int) -> None:

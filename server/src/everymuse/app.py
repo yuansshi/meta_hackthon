@@ -9,7 +9,8 @@ import time
 from collections import Counter
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect
+from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
 from . import agent
@@ -19,7 +20,7 @@ from .research import Researcher
 from .session import Session
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
-log = logging.getLogger("earshot")
+log = logging.getLogger("everymuse")
 
 CFG = load_config()
 BUDGET = Budget(CFG["budget"]["daily_usd"], DATA_DIR / "spend.json")
@@ -58,7 +59,7 @@ async def lifespan(_: FastAPI):
     watcher.cancel()
 
 
-app = FastAPI(title="Earshot", lifespan=lifespan)
+app = FastAPI(title="EveryMuse", lifespan=lifespan)
 
 
 @app.middleware("http")
@@ -76,6 +77,17 @@ async def healthz() -> dict:
     return {"ok": True, "brain": CFG["brain"] if live else CFG.get("fallback"), "brain_live": live,
             "spent_today_usd": round(BUDGET.spent, 4), "budget_usd": BUDGET.daily_usd,
             "open_sessions": sum(OPEN.values()), "research_running": len(RESEARCHER.tasks)}
+
+
+VIDEOS = {"demo", "demo-full", "headsup", "languages"}
+
+
+@app.get("/media/earshot-{name}.mp4")
+async def renamed_video(name: str) -> RedirectResponse:
+    """The demo videos' names from before the rename (EveryMuse was called Earshot), so shared links keep working."""
+    if name not in VIDEOS:
+        raise HTTPException(404)
+    return RedirectResponse(f"/media/everymuse-{name}.mp4", status_code=301)
 
 
 def client_ip(ws: WebSocket) -> str:

@@ -4,7 +4,7 @@
 
 Muse Spark 1.3, at high effort and with web search, checks each spoken summary claim by claim: prices, places,
 rules, dates, products. Each claim is supported, contradicted or unverifiable. Writes
-$EARSHOT_DATA_DIR/eval-research-check.json and prints "done".
+$EVERYMUSE_DATA_DIR/eval-research-check.json and prints "done".
 """
 
 from __future__ import annotations
@@ -16,7 +16,7 @@ from pathlib import Path
 
 from openai import AsyncOpenAI
 
-from earshot.config import DATA_DIR, ROOT, api_key, load_config, model_cfg
+from everymuse.config import DATA_DIR, ROOT, api_key, load_config, model_cfg
 
 CHECK = """You are fact-checking a short research answer that an assistant gave someone in Seattle on {date}. Use web \
 search to check each concrete claim in it: prices, product names, places, opening hours, rules, dates, fares. Reply \

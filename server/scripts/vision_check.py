@@ -15,7 +15,7 @@ import zlib
 
 from openai import AsyncOpenAI
 
-from earshot.config import MissingKey, api_key, load_config, model_cfg
+from everymuse.config import MissingKey, api_key, load_config, model_cfg
 
 QUESTION = "This test image has two halves. Name the color of the left half and the right half, in five words."
 

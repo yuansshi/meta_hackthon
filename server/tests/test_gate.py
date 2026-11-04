@@ -1,7 +1,7 @@
 import pytest
 
-from earshot.config import load_config
-from earshot.session import Gate
+from everymuse.config import load_config
+from everymuse.session import Gate
 
 
 @pytest.fixture
@@ -10,19 +10,30 @@ def gate() -> Gate:
 
 
 @pytest.mark.parametrize("heard, rest", [
-    ("Hey Earshot, what's the weather?", "what's the weather?"),
-    ("hey ear shot what time is it", "what time is it"),
-    ("Okay, air shot, remind me to call mom", "remind me to call mom"),
-    ("Earshott set a timer", "set a timer"),
-    ("Hi, Earshot. Where am I?", "Where am I?"),
+    ("Hey EveryMuse, what's the weather?", "what's the weather?"),
+    ("hey every muse what time is it", "what time is it"),
+    ("Every Muse, what's on my list?", "what's on my list?"),
+    ("Okay, every mews, remind me to call mom", "remind me to call mom"),
+    ("Hey Avery Muse, where did I park?", "where did I park?"),
+    ("EveryMuset set a timer", "set a timer"),
+    ("Hi, EveryMuse. Where am I?", "Where am I?"),
 ])
 def test_wake_word_variants(gate, heard, rest):
     d = gate.decide(heard, 0)
     assert (d.accept, d.text, d.reason) == (True, rest, "wake")
 
 
+@pytest.mark.parametrize("heard", [
+    "Every museum in town is closed today",
+    "every muscle in my legs hurts",
+    "every move counts",
+])
+def test_everyday_every_phrases_are_not_the_wake_word(gate, heard):
+    assert gate.decide(heard, 0).reason == "no_wake"
+
+
 def test_wake_word_alone_asks_for_more(gate):
-    assert gate.decide("Earshot.", 0).reason == "wake_only"
+    assert gate.decide("EveryMuse.", 0).reason == "wake_only"
 
 
 def test_no_wake_word_is_ignored_hands_free_but_not_push_to_talk(gate):
@@ -45,7 +56,7 @@ def test_follow_up_window_after_a_reply(gate):
 def test_echo_of_own_speech_is_dropped(gate):
     said = "It's sunny and sixty eight degrees right now."
     gate.device_speaking(True, said, 5)
-    assert gate.decide("Hey Earshot it's sunny", 6).reason == "echo:speaking"  # even with the wake word
+    assert gate.decide("Hey EveryMuse it's sunny", 6).reason == "echo:speaking"  # even with the wake word
     gate.device_speaking(False, None, 7)
     assert gate.decide("it's sunny and sixty eight degrees", 7.3).reason == "echo:speaking"  # echo tail
     assert gate.decide("it's sunny and sixty eight degrees", 8.0).reason == "echo:match"
@@ -54,5 +65,5 @@ def test_echo_of_own_speech_is_dropped(gate):
 
 def test_device_that_never_reports_tts_end_does_not_deafen_the_gate(gate):
     gate.device_speaking(True, "hello", 0)
-    assert gate.decide("Hey Earshot are you there", 10).reason == "echo:speaking"
-    assert gate.decide("Hey Earshot are you there", 31).accept
+    assert gate.decide("Hey EveryMuse are you there", 10).reason == "echo:speaking"
+    assert gate.decide("Hey EveryMuse are you there", 31).accept

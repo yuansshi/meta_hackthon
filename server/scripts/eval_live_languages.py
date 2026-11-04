@@ -1,11 +1,11 @@
-"""Earshot end to end in each language, against the live server: spoken question, tools, spoken answer, spoken yes.
+"""EveryMuse end to end in each language, against the live server: spoken question, tools, spoken answer, spoken yes.
 
     uv run python scripts/eval_live_languages.py --url wss://earshot-yuansshi.fly.dev/ws --trials 2
 
 Each session's hello carries the language. Per language and trial, two spoken scenarios:
-- weather: "Hey Earshot," (said the English way, like a product name) then "will it rain this afternoon?" in the
+- weather: "Hey EveryMuse," (said the English way, like a product name) then "will it rain this afternoon?" in the
   language. Passes if the wake word was heard, the forecast tool ran, and the reply is in that language.
-- reminder: "Hey Earshot," then "remind me to buy coffee at six" in the language; Earshot asks first, and the answer
+- reminder: "Hey EveryMuse," then "remind me to buy coffee at six" in the language; EveryMuse asks first, and the answer
   is a spoken yes in the language. Passes if the reminder was created.
 Device tools get canned answers, as in eval_live.py. Writes eval/results/live-languages-<date>.json.
 """
@@ -175,7 +175,7 @@ async def main() -> None:
     ap.add_argument("--only", default="")
     a = ap.parse_args()
     codes = [c for c in LANGS if not a.only or c in a.only.split(",")]
-    hey = pcm_of("Samantha", "Hey Earshot,")
+    hey = pcm_of("Samantha", "Hey EveryMuse,")
     gap = b"\0\0" * int(RATE * 0.15)
     pcm = {c: {"weather": hey + gap + pcm_of(LANGS[c][0], LANGS[c][1]),
                "reminder": hey + gap + pcm_of(LANGS[c][0], LANGS[c][2]),

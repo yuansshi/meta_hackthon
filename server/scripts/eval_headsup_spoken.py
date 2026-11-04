@@ -6,7 +6,7 @@ Snippets come from the cross-checked hard set (`eval/hard2/`, labels both Muse W
 number from each of the 12 categories. For each one, in its own hands-free session with Heads-up on:
 1. the user's notes, if the snippet has any, are saved first ("Remember: …", typed), as a user would have;
 2. the snippet's lines are spoken in two alternating macOS voices, streamed in real time like a phone's mic;
-3. it passes when Earshot makes an offer for a snippet that deserves one, or stays quiet (12 s) for one that doesn't.
+3. it passes when EveryMuse makes an offer for a snippet that deserves one, or stays quiet (12 s) for one that doesn't.
 That covers speech recognition, the turn gate, the Rewind buffer, the debounce, the screener and the offer itself.
 Writes eval/results/headsup-spoken-<date>.json.
 """

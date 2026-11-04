@@ -19,8 +19,8 @@ from pathlib import Path
 
 from openai import AsyncOpenAI
 
-from earshot.config import ROOT, MissingKey, api_key, load_config, model_cfg
-from earshot.relay import AsrRelay
+from everymuse.config import ROOT, MissingKey, api_key, load_config, model_cfg
+from everymuse.relay import AsrRelay
 
 WEATHER_TOOL = {
     "type": "function",
@@ -206,7 +206,7 @@ async def main() -> None:
 
     if args.only in (None, "asr"):
         print("== realtime ASR")
-        report["asr"] = await asr_probe(cfg, "Hey Earshot, will it rain this afternoon?")
+        report["asr"] = await asr_probe(cfg, "Hey EveryMuse, will it rain this afternoon?")
 
     out = ROOT / "results" / f"probe-{time.strftime('%Y%m%d-%H%M%S')}.json"
     out.parent.mkdir(exist_ok=True)

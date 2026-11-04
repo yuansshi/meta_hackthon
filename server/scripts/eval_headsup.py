@@ -1,6 +1,6 @@
 """Which model should screen overheard speech for Heads-up? A labeled comparison.
 
-Runs the shipped screener (`earshot.headsup.screen`, same prompt) over `eval/overheard.json`: 20 snippets that
+Runs the shipped screener (`everymuse.headsup.screen`, same prompt) over `eval/overheard.json`: 20 snippets that
 deserve an offer and 20 that don't. It tries several Meta models and settings, then reports precision, recall,
 latency and cost.
 
@@ -21,8 +21,8 @@ from pathlib import Path
 
 from openai import AsyncOpenAI
 
-from earshot.config import ROOT, api_key, load_config, model_cfg
-from earshot.headsup import screen
+from everymuse.config import ROOT, api_key, load_config, model_cfg
+from everymuse.headsup import screen
 
 TZ = "America/Los_Angeles"
 CONTRIBUTOR = {"price_in": 0.10, "price_cached_in": 0.002, "price_out": 0.20}

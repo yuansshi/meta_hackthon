@@ -28,7 +28,7 @@ struct SessionView: View {
                 }
                 .padding()
             }
-            .navigationTitle("Earshot")
+            .navigationTitle("EveryMuse")
         }
         .onChange(of: phase) { _, newPhase in session.scenePhaseChanged(newPhase) }
     }
@@ -83,7 +83,7 @@ struct SessionView: View {
                             .onChanged { _ in if !holding { holding = true; session.pttDown() } }
                             .onEnded { _ in holding = false; session.pttUp() })
                 } else {
-                    Toggle(session.muted ? "Muted" : "Say “Hey Earshot…”, or tap your glasses", isOn: Binding(
+                    Toggle(session.muted ? "Muted" : "Say “Hey EveryMuse…”, or tap your glasses", isOn: Binding(
                         get: { !session.muted }, set: { session.muted = !$0 }))
                         .font(.callout)
                     Toggle("Heads-up: offer help with what it overhears", isOn: $session.headsUp)
@@ -98,7 +98,7 @@ struct SessionView: View {
     private var conversation: some View {
         VStack(spacing: 10) {
             if session.messages.isEmpty {
-                Text("Pair your glasses or earbuds, tap Start, then put the phone in your pocket and say “Hey Earshot, will it rain this afternoon?”")
+                Text("Pair your glasses or earbuds, tap Start, then put the phone in your pocket and say “Hey EveryMuse, will it rain this afternoon?”")
                     .font(.callout).foregroundStyle(.secondary)
             }
             ForEach(session.messages) { m in

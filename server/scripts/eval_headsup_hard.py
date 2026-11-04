@@ -7,7 +7,7 @@
    where the judge agrees with the category's label are kept, so a mislabeled snippet can't count against a screener.
 3. Four screeners, all with the shipped prompt, screen the kept snippets once each: Muse Spark 1.2 minimal (shipped),
    Muse Spark 1.3 minimal, Muse Wonder low, and Muse Spark Open on Fireworks.
-Every stage saves to $EARSHOT_DATA_DIR/eval-hard/ as it goes, so a Fly trial restart loses nothing: rerun the
+Every stage saves to $EVERYMUSE_DATA_DIR/eval-hard/ as it goes, so a Fly trial restart loses nothing: rerun the
 same command and it picks up where it stopped. Writes summary.json there.
 """
 
@@ -26,8 +26,8 @@ from openai import AsyncOpenAI
 sys.path.insert(0, str(Path(__file__).parent))
 from eval_headsup_more import CATEGORIES, PROMPT  # noqa: E402
 
-from earshot.config import DATA_DIR, api_key, load_config, model_cfg  # noqa: E402
-from earshot.headsup import screen  # noqa: E402
+from everymuse.config import DATA_DIR, api_key, load_config, model_cfg  # noqa: E402
+from everymuse.headsup import screen  # noqa: E402
 
 TZ = "America/Los_Angeles"
 OUT = DATA_DIR / "eval-hard"  # --out picks another folder under the data dir
